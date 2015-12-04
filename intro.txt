@@ -1,0 +1,14 @@
+Este material sirve para formar una introducción como la gente.
+De cada pedazo que fuí extrayendo en la web se puede armar mi introducción general.
+
+Introducciones robadas
+----------------------
+
+When it comes to securing a digital device, antivirus is the major ingredient factor that comes to mind. It has been essential on desktop computers since the mid 1990’s, but is now just as essential on smartphones and other mobile devices.
+
+Hackers long ago learned that to trick users into thinking they are downloading antivirus to their desktops when they were really just extorting money from them. They are now using similar tricks to infect user’s devices with malware.
+
+Fuente:
+https://blog.comodo.com/mobile-security/warning-rats-attacking-mobile-devices/
+
+Mirar la tesis de Marquitos, en la parte introductoria, que habla sobre las RIAs.

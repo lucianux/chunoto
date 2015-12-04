@@ -1,0 +1,286 @@
+Capítulo 5
+
+Medidas de seguridad
+
+5.1 Objetivo
+
+El objetivo general del capítulo es demostrar que existe espacio para trabajar y mejorar la seguridad de los smartphones. 
+
+5.2 Esquema general
+
+Se cubren 2 aspectos distintos: por un lado, los usuarios pueden tomar iniciativa para defenderse de las amenazas a partir de un buen uso del dispositivo, siguiendo un criterio; y por otro lado, los desarrolladores pueden aportar con proyectos sencillos para mitigar riesgos. Se darán ejemplos prácticos en cuanto a las mejoras previstas con una explicación clara del procedimiento a realizar.
+El capítulo se divide en 4 partes:
+- Reconsideraciones en el Hardening.
+- Actitudes concretas que podría tomar el usuario para defenderse ante las amenazas posibles. Se muestran medidas disciplinarias (concientización del usuario).
+- Apps recomendadas para incrementar la seguridad según la aplicación a cubrir (llamadas telefónicas, envíos de sms, etc.).
+- Propuesta de desarrollo de una aplicación: descripción de una app simple que ayude a incrementar la seguridad.
+
+5.3 Reconsideraciones en el Hardening
+
+[ Se puede sacar info de acá ]
+[ https://blog.lookout.com/blog/2014/03/24/quick-guide-android-security-settings/ ]
+
+[ También en ]
+[ https://developer.android.com/intl/es/training/articles/security-tips.html ]
+
+[ Se puede sacar un poco de info del hardening en Organizaciones, acá ( abajo donde dice "Guidance to Concerned Parties" ) ]
+[ http://www.isightpartners.com/2015/03/android-phishing-malware-an-old-school-technique-going-mobile/ ]
+
+[ Hay 2 puntos de vista posibles: se tienen las reconsideraciones a nivel usuario (usar apps confiables, usar antivirus, etc.) y las que estan a nivel del desarrollador (crear apps seguras: usar herramientas, frameworks, seguir pautas, etc.). ]
+[ Se pueden considerar 2 niveles: el nivel de un usuario común y el nivel corporativo. ]
+
+Éstas son algunas definiciones de hardening, las cuales pueden orientar y guiar.
+El proceso de hardening de un sistema operativo consiste en la eliminación de todas las herramientas, utilidades y otras opciones de administración de sistemas que son innecesarias, que podrían ser utilizadas para facilitar el accionar de un hacker el sistema operativo. Después de ésto, el proceso de hardening asegurará que todos los elementos de seguridad apropiados serán activados y configurados correctamente [HARDUNIX].
+Según el paper [HARDUNIX], la idea de hardening de un sistema operativo es reducir al mínimo la exposición de una computadora a las amenazas actuales y futuras mediante una completa configuración del sistema operativo y la eliminación de aplicaciones (y dispositivos) innecesarias.
+Según el paper [HARDCONC], se define que hardening son los procesos, las metodologías, los productos o combinación de ellos que son usados para incrementar la seguridad del software existente. En este paper también se expone una clasificación de los métodos en que se aplica hardening en la seguridad; de estas clases de hardenings, hay una clase que abarca el estudio que se realiza en esta sección. La clase denominada hardening en el entorno operativo establece mejoras en la seguridad del contexto de ejecución (redes, sistemas operativos, bibliotecas, etc.) que se apoya en el software; son esos cambios que hacen que la explotación de vulnerabilidades sea más difícil, a pesar de que no son un remedio.
+De estas definiones extraemos los términos: configuración del sistema operativo para reducir 
+Se va a proceder a describir brevemente cada sugerencia, pero se hará referencia al método descrito en el capítulo 3. Por ejemplo, se indica "se puede realizar la medida A, acudiendo al método B (descrito en el capítulo 3)".
+
+Las pautas que definen al Hardening en Android se dividen en 3 partes: una parte corresponde a las configuraciones aconsejables para defender el sistema, otra dedicada a describir apps que contribuyen a proteger al sistema y finalmente una parte dedicada a la concientización del usuario. A la vez, la primer parte se agrupa en las siguientes categorías: seguridad básica, seguridad de autenticación, seguridad en el navegador, seguridad en la red y configuraciones adicionales de seguridad. Estas pautas se basan en la publicación de la Universidad de Texas [HARDTEX] y fueron enriquecidas con aportes personales.
+
+[ Por cada uno, se debería indicar como se realiza esa configuración ]
+
+5.3.1 Seguridad básica
+
+- Concientización del usuario. Se refiere a las actitudes que puede tomar el usuario para contrarrestar los riesgos. Luego, en la sección 5.4, se darán pautas específicas.
+- Mantener actualizado el software.
+	- Se debe actualizar el sistema operativo a la última versión. Sin embargo, cabe aclarar que no todos los smartphones tendrán soporte para la versión más reciente de Android y no todos los fabricantes publicarán actualizaciones disponibles para todos sus modelos, incluso aquellos que son capaces de correr software nuevo.
+	- Activación y/o configuración adecuada de servicios de actualizaciones automáticas. Dentro de las opciones de la app de Google Play hay una opción que permite actualizar automáticamente o manualmente a las apps instaladas por este marketplace. La forma automática es la sugerida y se explicó en el capítulo 3. [Se lo vió en el capítulo 3]
+	- En cuanto a las actualizaciones del Sistema, se realizan de forma manual o cuando se publica una nueva aparece una notificación a pantalla completa. Si se quiere realizar una actualización manual, el usuario se debe dirigir al ítem "Configurar" dentro del menú general del sistema, luego elegir "Acerca del teléfono", finalmente ir a "Actualizaciones del Sistema" donde aparecerán una notificación si es que hay una nueva actualización.
+	- Para ambientes donde la seguridad es importante (una organización, por ejemplo), es aconsejable planificar el reemplazo de smartphones cada 2-3 años para mantener actualizadas las versiones de los sistemas operativos. Además, se debe considerar el uso de los smartphones Nexus, los cuales son respaldados directamente por Google (el principal colaborador en el proyecto Android), en vez de un fabricante de dispositivos, con la finalidad de garantizar que las actualizaciones del sistema operativo realmente esten puestas a disposición.
+- Evitar la instalación de software desde fuentes desconocidas, generalmente son marketplaces de terceros. Google Play tiene la habilidad de eliminar apps maliciosas del repositorio ni bien se las descubren y también se las elimina directamente de los smartphones que descargaron la app de Google Play. En cambio, la instalación de apps desde otras . Este tema se lo tocó en el capítulo 3, en la sección 3.4.4.
+- Habilitar la encriptación del dispositivo: se puede aplicar la encriptación tanto en los datos contenidos en la tarjeta SD, como en los datos almacenados en la memoria interna del smartphone (cuentas, ajustes, apps descargadas, etc.).
+	- Se puede usar el servicio que trae Android para encriptar információn (sin acudir a una app desarrollada por un tercero): se usa la misma clave que el bloqueador de pantalla, es recomendable que esta clave sea fuerte (luego, en la sección de concientización se darán sugerencias en la elección de una contraseña). En el capítulo 3 se comentó acerca de esta funcionalidad (sección 3.4.8).
+- Deshabilitar las opciones de desarrollo. Android ofrece una serie de características que permiten a los desarrolladores interactuar con el smartphone a través del puerto USB para cambiar su comportamiento, lectura y escritura en la unidad de alamcenamiento local, etc. Cuando se activa, es posible controlar completamente un dispositivo a través de esta interfaz. Estas características deben estar habilitadas sólo cuando sea necesario y sólo durante el tiempo necesario para la prueba.
+- Usar un servicio/app de un tercero para poder borrar remotamente todos los datos ("wipeout"). Ésto es para asegurar al smartphone si se lo pierde, dado que los datos contenidos se los pueden borrar de forma remota. Muchas aplicaciones de terceros proporcionan esta funcionalidad, como también Google Play con su servicio gratuito "Android Device Manager". Hay varias apps de terceros que suministran esta funcionalidad: Norton Mobile Security [NORTSEC], McAfee Mobile Security [MCMOBSE], Lookout [LOOKOUT], entre otros.
+- Habilitar la función llamada "Android Device Manager". Esta funcionalidad fue explicada en el capítulo 3 (sección 3.4.5).
+- Borrar todos los datos antes de devolver, reparar o reciclar al smartphone. Ésto sirve para prevenir el acceso no autorizado a información sensible guardada en el smartphone, las unidades de almacenamiento (interna y externa) deben borrarse antes de que esten fuera del alcance físico del usuario.
+- Configuración de las apps para que no intefieran. Se pueden desactivar las notificaciones de las apps. Por la velocidad de las notificaciones, a veces, éstas envían al usuario a lugares que no siempre son del todo seguros. Por ejemplo, pueden llegar notificaciones para aceptar condiciones de las cuales el usuario no siempre es consciente de lo que se está aceptando. Estas notificaciones pueden surgir en cualquier momento y lugar, dado que por lo general el usuario siempre lleva consigo su smartphone. El procedimiento para desactivar las notificaciones de una app es el siguiente: ir al menú general, elegir "Configurar", luego "Aplicaciones", elegir una app específica y destildar el casillero que dice "Mostrar notificaciones".
+- Configuración adecuada de las cuentas de usuario. En Android se pueden tener varios usuarios para separar las preferencias de cada uno, tema que se tocó en el capítulo 3 (sección 3.4.7).
+
+5.3.2 Seguridad de autenticación
+
+- Establecer un PIN o una contraseña para desbloquear el smartphone. En el capítulo 3 (sección 3.4.1) se comentó de este punto.
+- Definir una contraseña alfanumérica para el bloqueo de la pantalla. Luego, en la parte de concientización (sección 5.4) se darán pautas para definir una buena política de contraseñas robusta.
+- Definir un plazo para que se active el bloqueo de pantalla automático, es decir que el smartphone se puede bloquear cuando permanece inactivo por una cierta cantidad de tiempo. Un tiempo razonable podría ser 15 segundos.
+- Deshabilitar la visualización de la contraseña cuando se la escribe. Esta función muestra la contraseña a medida que se la introduce. Al desactivar esta característica, aumenta la seguridad, al hacer que sea más difícil para las personas cerca del usuario conocer su contraseña mediante la observación del usuario usando el smartphone.
+- Habilitar el borrado de datos total ante una excesiva cantidad de intentos fallidos en el ingresos de la clave. Android no proporciona esta funcionalidad de forma nativa, pero hay aplicaciones de terceros que sí. A partir de los excesivos fracasos en la introducción del código de acceso, se puede deducir que el dispositivo está fuera del control físico del usuario, con lo cual el dispositivo automáticamente borrará todos los datos protegiendo la información confidencial.
+
+5.3.3 Seguridad en el Navegador
+[ Esto podría ir en la parte que se describen apps, sección "5.5 Software recomendado para mejorar la seguridad de Android" ]
+[ Para más info, ver http://www.phonearena.com/news/5-secure-browsers-for-Android-with-always-on-incognito-mode-and-automatic-user-data-clearing_id63735 ]
+[ O se puede mostrar la configuración de Google Chrome que es el navegador más empleado y popular... Así de simple ]
+[ O se pueden tomar las opciones más comunes para la mayoría de los Navegadores y escribirlas y chau! ]
+
+- Mostrar advertencias de seguridad ante sitios sospechosos. [???]
+- Deshabilitar 'autocompletar formularios'.
+- Deshabilitar el recordatorio de contraseñas.
+- Deshabilitar los plugins del Navegador. Es una característica muy avanzada para ser usada en un smartphone.
+- Deshabilitar la funcionalidad de rastrear la ubicación del smartphone en el Navegador.
+
+5.3.4 Seguridad en la red
+
+- Apagar Bluetooth cuando no se usa. La desactivación del Bluetooth reduce la posibilidad de sufrir un ataque remoto por parte de smartphones (u otros dispositivos) cercanos, también puede prevenir la conexión involuntaria del smartphone del usuario con servicios y dispositivos Bluetooth desconocidos. La conexión Bluetooth debería ser activada solo cuando se está usando activamente.
+- Deshabilitar las notificaciones de redes públicas. Por defecto, los smartphones con Android automáticamente presentan una lista de redes inalámbricas detectadas desde un ícono en la barra de estado (parte superior de la pantalla), entonces cuando el usuario no tiene redes confiables y conocidas al alcance, salvo alguna red pública. El usuario puede acceder a conectarse a estas redes peligrosas. Son peligrosas porque cualquiera puede asentar un hotspot Wi-Fi como una trampa, con lo cual unirse a una red mal configurada o insegura podría permitir a un usuario malicioso (conectado a esa misma red): interceptar, capturar y alterar todo el tráfico de red enviado por un usuario. Si esta función está desactivada, se debe buscar y seleccionar manualmente una red inalámbrica para poder unirse.
+- Desactivar la búsqueda de redes disponibles. Por defecto, un smartphone (u otro dispositivo) con Android recuerda redes inalámbricas a través de un registro que almacena; y automáticamente se reconecta a ellas. El problema con ésto es que si en esta lista hay una red Wi-Fi confiable pero no autenticada, ésta puede ser falsificada y luego el smartphone se reconectará a esta red ficticia. La forma en que se desactiva esta opción de configuración es yendo a "Configurar", luego seleccionar "Wi-Fi", en la esquina superior derecha seleccionar los puntos suspensivos y seleccionar las opciones avanzadas; ahí mismo, desactivar la opción que dice "Búsqueda siempre disponible".
+- Puede emplearse un proxy y/o una VPN para conectarse a una red. Este tema se lo tocó el capítulo 3 (sección 3.4.6.3 y sección 3.4.6.4).
+- [ OPCIONAL ] Se puede configurar algún tipo de firewall. Android no provee esta funcionalidad de forma nativa. Se puede acudir a una app de un tercero [???], como el que se verá dentro de la sección 5.5.
+- [ OPCIONAL ] Deshabilitar las interfase NFC. [???]
+
+5.3.5 Configuraciones adicionales de seguridad
+
+- Realizar y programar un sistema de respaldos (backups) frecuente a los archivos y al estado del sistema.
+	- Android trae consigo algunos servicios de backup (fueron vistos en el capítulo 3), se puede acudir a ellos si es que el usuario confía en ellos. Aunque no es recomendable guardar documentos confidenciales o archivos muy personales en estos de servicios basados en la nube.
+	- Ésto se puede lograr con apps de terceros, por ejemplo Titanium Backup.
+- Apagar los Servicios de Ubicación. En el capítulo 1 (sección 1.5.3.5), se comentó acerca de los inconvenientes de usar este tipo de servicios. En Android, una vez que el acceso es otorgado a una app, ésta puede pedir los datos de la ubicación en cualquier momento sin ninguna notificación hacia los usuarios.
+- Utilizar una app de un tercero para proteger con contraseña las apps con datos sensibles. Estas apps permiten definir una contraseña independiente que se necesita para iniciar apps específicas. Entonces, no se puede acceder a estos datos, incluso si el dispositivo se encuentra desbloqueado. Aunque la encriptación es más recomendable porque representa un enfoque más fuerte y más segura.
+- Limitar la cantidad de mensajes de texto (SMS) y mensajes multimedia (MMS) guardados localmente en el smartphone. Para entornos que se requiere mayor seguridad, la limitación de la cantidad de mensajes MMS y SMS guardados en el smartphone puede reducir la posibilidad y el alcance de la divulgación de información privada, en el caso de que el dispositivo es perdido o robado.
+- Deshabilitar las cookies en el navegador. Por un lado, ésto tiene el efecto beneficioso de no permitirle a las cookies rastrear los hábitos del usuario por parte de terceros. Pero por otro lado, en general, para la mayoría de los usuarios, no se recomienda deshabilitar las cookies dado que son muy utilizadas por las apps web típicas modernas.
+- Deshabilitar la ejecución de JavaScript en el navegador. Se debería permitir la ejecución de JavaScript sólo cuando se navega en sitios web confiables. Para entornos que se requiere mayor seguridad, esta actitud es válida. Aunque para la mayoría de los usuarios no es recomendable deshabilitar la ejecución de JavaScript porque es utilizado intensamente por las aplicaciones modernas de la web.
+- Se debería usar una app de un tercero para encriptar los mensajes de texto. Ésto se explica en la sección 5.5, cuando se sugieren apps para ciertos casos.
+- Instalación, configuración y mantenimiento de programas de seguridad. Antivirus, Antispyware y un filtro Antispam.
+
+[extractos de la web]
+Eliminar aplicaciones innecesarias: Ya no hablamos de bloatware (esas apps que vienen preinstaladas de dudosa utilidad), si no de aplicaciones que en su día instalamos por una razón u otra y que ya no recordamos ni siquiera su utilidad. Cuantas más tengas, mayor será el riesgo de que alguna sea maliciosa. Mejor elimina aquellas sospechosas.
+[http://www.elandroidelibre.com/2014/12/10-sencillos-consejos-para-mejorar-la-seguridad-de-tu-android.html]
+
+[  - Bibliografía -  ]
+[HARDCONC] [ http://users.encs.concordia.ca/~debbabi/attachments/article/pdf/Security%20Hardening%20of%20Open%20Source%20Software.pdf ] [ Definición de Hardening ]
+[HARDUNIX] [ http://interscience.in/ijcct/IJCCT_Paper7.pdf ] [ Sirve la definición de Hardening ]
+[ https://wikis.utexas.edu/display/ISO/Google+Android+Hardening+Checklist ] [ Hardening en Android ] 
+[ http://www.slideshare.net/anupriti/android-device-hardening ] [ Hardening en Android - Slides ]
+[ http://www.cisco.com/web/about/security/intelligence/Linux_Hardening_Recommendations.pdf ]
+[ http://www.colorado.edu/oit/it-security/security-awareness/hardening-your-computer ] [ Hardening en PCs ]
+[ http://cdn.ttgtmedia.com/searchEnterpriseLinux/downloads/466_HTC_Linux_02.pdf ] [NO SIRVE DE MUCHO]
+[ANDSEC] [ Libro "Android Security" ]
+[NORTSEC] [https://mobilesecurity.norton.com/]
+[MCMOBSE] [https://www.mcafeemobilesecurity.com/]
+[LOOKOUT] [https://www.lookout.com/es]
+
+5.4 Concientización
+
+Esta parte expone una serie de sugerencias inherentes los comportamientos y hábitos del usuario.
+
+- Cuando se está por instalar una nueva app, tomar conciencia de los permisos que se le van a conceder. [ Dar consejos acá! ]
+	- [ La lista de los permisos más importantes está en el capítulo 3 ] [ No esta hecha aún ]
+	- Comprobar qué permisos requieren las apps. Si los permisos parecieran ir más allá de lo que la app debería requerir, no se debe instalar la app, podría ser un caballo de troya (portando código malicioso en un paquete atractivo).
+
+- Administración de las apps
+	- Eliminar apps innecesarias. Por ejemplo, se pueden eliminar aquellas apps que el usuario instaló por una razón u otra y ahora ya no recuerda ni siquiera su utilidad. Cuantas más se tenga, mayor será el riesgo de que alguna sea maliciosa. Es mejor eliminar aquellas sospechosas.
+
+- Precauciones generales que debe tomar el usuario [CERTTHR].
+	- Evitar el acceso a links contenidos en mensajes SMS o mails sospechosos.
+	- Limitar la exposición del número del celular en un sitio web público. Los atacantes pueden usar un software para acumular números de celulares de la web y luego usarán esos números para dirigir ataques.
+	- Considerar cuidadosamente qué información se va a guardar en el smartphone. Tomar conciencia de que con suficiente tiempo, sofisticación y acceso físico al dispositivo, cualquier atacante podría obtener la infomación almacenada.
+	- Ser exigente en la selección de apps que se van a instalar. Realizar una pequeña investigación sobre las apps antes de instalarlas. Tener en cuentael tema de los permisos que ya se comentó.
+	- Ser precavido cuando se utilizan apps de las redes sociales. Estas apps pueden revelar más información privada que lo que pretenden. Ser especialmente cuidadoso cuando se usan servicios que rastrean la ubicación del smartphone.
+	- Cuando se va a reemplazar un smartphone, se debe borrar toda la información contenida antes de deshecharlo.
+	- Evitar el "rooteo" del dispositivo. Básicamente, el usuario debe entender que cuando "rootea" un smartphone con Android, se estará asumiendo la responsabilidad adicional de asegurar su smartphone y protegerse frente el software malicioso. Para más información, dirigirse al capítulo 1, en la sección 1.5.4.2.
+	- Evitar abrir archivos adjuntos de correos electrónicos sospechosos y evitar responder a solicitudes sospechosas.
+
+- En caso de conectarse con una red desconocida, se pueden tomar medidas:
+	- El primer paso importante es la educación acerca de las amenazas que estan en los entornos públicos y concientizar al usuario acerca de lo que debe tener en cuenta al usar estas redes móviles abiertas. El segundo paso consiste en fortificar la infraestructura de la misma red. Para lograrlo, las empresas de telefonía celular deben asimilar su verdadero tráfico de red, las amenazas, el rendimiento general bajo carga, etc.
+	- Estos riesgos se pueden reducir con el empleo de tecnologías de encriptación fuerte para proteger la confidencialidad y la integridad de las comunicaciones, así como también el uso de los mecanismos de autenticación mutua para verificar las identidades de los dos hosts antes de transmitir los datos.
+
+- Para disminuir las pérdidas en el smartphone si el usuario es víctima de un accidente o robo, se pueden tomar medidas preventivas para minimizar las consecuencias [YALESEC] [USACERT]:
+	- Nunca se debe perder la atención del smartphone cuando no está guardado, ni por un minuto. Que sea un hábito personal mantener el teléfono guardado en todo momento que no se usa.
+	- Mantener sólo los documentos que realmente se necesitan en el smartphone, retirar y archivar los archivos más antiguos que no utiliza activamente más.
+	- Revisar y descartar regularmente los datos en el dispositivo que no se van a utilizar activamente en el trabajo actual.
+	- Si utiliza el dispositivo en un área pública, debe prestar atención a la gente que lo rodea. Tomar precauciones para protegerse de la gente que espía con disimulo, por ello el usuario debe asegurarse que nadie pueda ver su pantalla cuando escribe sus contraseñas o ver cualquier información delicada.
+	- Realizar backups periódicamente sólo de los datos importantes y guardarlas en una ubicación distinta, para evitar perder toda la información del smartphone.
+	- Utilizar contraseñas en todos los documentos importantes guardados en el smartphone.
+	- Para establecer un impedimento en el acceso al dispositivo por otras personas ajenas al dueño, se puede utilizar contraseñas para bloquear la pantalla.
+	- Usa precavidamente las redes wifi públicas, tener en cuenta que el envío de información sensible sin protecciones como un red VPN o un mecanismo de encryptación SSL puede ser filtrado por terceros.
+	- Se pueden encriptar los datos sensibles para que no puedan ser accedidos por otras personas.
+
+- En caso de que el smartphone se haya perdido o robado [CERTTHR] se pueden tomar las siguientes acciones.
+	- Informar de la pérdida a la organización y/o proveedor de servicios de celulares.
+	- Informar de la pérdida o robo a la policía local.
+	- Cambiar las credenciales de la cuenta. Si el dispositivo se usa para acceder a recursos remotos, como redes de una organización o sitios web vinculadas a las redes sociales, entonces se deben revocar todas las credenciales que fueron guardadas en el smartphone robado o perdido. Esto implica que el usuario debe avisarle al área de soporte de la organización que revoque las credenciales.
+	- En caso de ser necesario, ejecutar un reestablecimiento al estado de fábrica del smartphone, de forma remota.
+
+- Para definir una política de contraseñas es conveniente tener en cuenta las siguientes consideraciones [NISTSEC]:
+	- Longitud: imponer un mínimo en la cantidad de caracteres de la contraseña.
+	- Complejidad: exigir una mezcla de caracteres determinada. Por ejemplo, se puede pedir una combinación que contengan letras en mayúsculas, letras en minúscula, carácteres no alfabéticos y que no contengan palabras de un diccionario.
+	- Caducidad: se refiere al transcurso de tiempo en que una contraseña no se cambia. Muchas políticas fuerzan a los usuarios y administradores a cambiar sus contraseñas periódicamente. En esos casos, la frecuencia debe ser basada en la longitud y la complejidad exigida en la contraseña, también en la sensibilidad de la información protegida y el nivel de exposición de las contraseñas.
+	- Reutilización: se refiere al caso si una contraseña puede ser reusada. Algunos usuarios tratan de superar el requisito de caducidad cambiando la contraseña por una que han utilizado anteriormente. Si la reutilización se prohibe (por la política de contraseñas), va a ser beneficioso si es posible asegurarse de que los usuarios no puedan cambiar sus contraseñas simplemente agregando caracteres al principio o al final de sus contraseñas originales (por ejemplo, las contraseña original es "mipass" y es cambiada por "mipass1" o "1mipass").
+
+[YALESEC] [http://its.yale.edu/secure-computing/physical-security/physical-security-mobile-devices]
+[NISTSEC] [http://csrc.nist.gov/publications/nistpubs/800-123/SP800-123.pdf]
+[CERTTHR] [https://www.us-cert.gov/sites/default/files/publications/cyber_threats_to_mobile_phones.pdf]
+[USACERT] [http://www.us-cert.gov/ncas/tips/ST04-017]
+
+5.5 Software recomendado para mejorar la seguridad de Android
+
+En la siguiente sección, se sugieren algunas apps para reforzar la seguridad en base a los aspectos de simplicidad, alcance de usuarios y amigabilidad en la interfase; se intentará realizar pruebas con estas apps para demostrar que se puede mejorar la seguridad con poco esfuerzo, en las actividades corrientes que realizan los usuarios.
+Por un lado, se van a mostrar las siguientes apps: "Signal" y "Send Anywhere". Estas apps pueden realizar las siguientes tareas: envíar mensajes de texto, relizar llamadas telefónicas y enviar archivos entre smartphones; en fin, se realizan transferencias de datos entre smartphones (y otros dispositivos). Sin embargo, tienen un enfoque más seguro.
+[ No me voy a meter con la implementación ]
+
+[ VER http://www.av-comparatives.org/wp-content/uploads/2015/09/avc_mob_2015_en.pdf ] [ HAY COMPARATIVAS ]
+( Se podrían realizar pruebas prácticas hechas con estas apps. para mostrar las ventajas, formas de uso y observaciones. Por ahora, solo hay descripciones breves )
+
+5.5.1 Signal
+
+[ Wiki: https://github.com/WhisperSystems/Signal-Android/wiki ]
+
+[ Función / Qué es? / Características ]
+Signal es una app que permite realizar llamadas de voz y envíar mensajes de texto de forma segura, sin que otra persona pueda escuchar o leer la información que se transmite entre 2 o más smartphones (y otros dispositivos) a través de una red de datos (WiFi, 3G, 4G), opcionalmente también puede enviar mensajes SMS / MMS. Todos los mensajes guardados en el smartphone estan encriptados, esta encriptación incluye a los cuerpos de los mensajes, pero otras partes del mensaje no están encriptadas, como la información del destino.
+
+[Qué tipo de seguridad ofrece?]
+A continuación se comentará acerca de algunas de las medidas de seguridad que proporciona esta app.
+
+[ Explicar como se usan 2 o 3 características ]
+[ No se va a evaluar su funcionamiento, se va a confiar en que funciona ]
+Cuando la app arranca por primera vez, le pide al usuario el número de celular para conectarse a los servidores de Signal. Según sus creadores, en sus servidores no se almacena información de los smartphones, este primer paso sirve para verificar si el smartphone tiene una cuenta asociada con algún proveedor de telefonía celular, entre otras cosas.
+Esta app automáticamente detecta la recepción de un mensaje de otro smartphone que también usa Signal, cuando llega, aparece una notificación que avisa si se quiere abrir la app para ver el mensaje e iniciar una sesión segura. Cuando se procede a iniciar la sesión, se producirá un intercambio de claves y un icono de un candado se mostrará sobre el botón "enviar". También se mostrará un ícono similar en cada mensaje cifrado recibido, con el fin de confirmar que se los transmite de forma segura.
+La app Signal posee características comunes a otras apps de mensajería instantánea como el envío de archivos (imágenes, videos, audios y contactos), creación de grupos, bloqueo de contactos, entre otras.
+Si se quiere verificar la identidad de otro smartphone, se puede verificar la clave del destinatario, para que el usuario se asegure de que no está siendo víctima de un ataque del tipo "man in the middle", porque con este ataque se pueden alterar los mensajes que se envían entre los smartphones. Ésto se puede realizar manualmente desde la app, yendo al menú de la pantalla de conversaciones y seleccionar el ítem "Mi clave de identidad", aparecerá una clave que genera la app para identificar al smartphone. Ésta se usa para compararla con la clave que tiene el otro smartphone (que debe realizar lo mismo para verla). Opcionalmente, en caso de que el otro smartphone se encuentre cerca, se puede comprobar la identidad escaneando un código QR que muestra en pantalla otro smartphone, es generado por la app en base a la clave de ese smartphone, pero para ello se necesita instalar la app "Barcode Scanner". Para ver el código QR o escanear uno, se debe dirigir a una conversación con otro usuario, en el menú que emerge de la parte superior se elige la que dice "Opciones de conversación", luego dentro de las opciones se elige "Verificar identidad" donde van a aparecer los 2 códigos de los 2 usuarios de la conversación; nuevamente, en la parte superior emerge un menú cuando se presiona la esquina superior derecha (hay un ícono de un código de barras), en ese menú se puede seleccionar "Escanear la clave de ellos" para escanear un código QR o "Escanear mi clave" para mostrar su código QR. La verificación de la identidad no se puede aplicar a un grupo, solo a una conversación entre 2 usuarios.
+
+It is prudent to verify the identity key of conversation's recipient, in order to ensure that no "man in the middle" attack has occurred. From the menu in a conversation, select "Conversation Settings" --> "Verify Identity." This will present you with an option to manually verify the recipient key's fingerprint, or to verify it by QR code scanning. If you're physically located in the same space as the recipient, you can select QR code scanning to quickly verify each-other's fingerprints. If you're remotely located, you can manually read the fingerprints to each-other over the phone.
+Once you verify that the recipient's identity is correct, this information is saved and used to automatically authenticate future secure sessions with that recipient.
+
+En esta app se puede establecer una contraseña para bloquear la app de forma manual o de forma automática (cuando se apaga el smartphone). Si esta contraseña se pierde, no se puede recuperar el acceso a Signal. O sea, en este caso, para continuar usando esta app, se debe desinstalar y volver a instalar la app, con lo cual todos los mensajes serán borrados.
+Para comodidad del usuario, se tiene un fácil acceso al comando que borra todos los mensajes de la app. Para ejecutar el comando, el usuario se debe dirigir a la pantalla de conversaciones y seleccionar una de ellas (manteniendo apretado), entonces, aparecerán 2 comandos en la barra superior, de los cuales se debe tocar primero el que representa la selección de todas las conversaciones (un ícono de un rectangulo con línea punteada) y luego se debe tocar el icono que representa al borrado (un ícono de un papelero), finalmente se presentará un advertencia avisando que se borrarán todas las conversaciones guardados localmente, se acepta y rápidamente se habrán borrado todos los mensajes.
+Otra de las características de seguridad de Signal es que se puede bloquear la toma de "screenshots" (imágenes instantáneas que capturan lo que se ve en pantalla).
+Para concluir se realiza un balance. La app Signal tiene las ventajas de que es gratis, es "open source" y es fácil de usar. Puede usarse a través de una red WiFi o red de datos del proveedor de la línea del smartphone. Entre las desventajas, se puede mencionar que la persona a la que se llama debe tener obligatoriamente la app Signal instalada. Otra desventaja es que cuando se realiza una llamada, tiene una demora más prolongada que otras apps de mensajería instantánea que soportan llamadas de voz como "WhatsApp". Aún no hay una versión para PC, sólo para Android y iOS.
+
+5.5.2 Send Anywhere
+
+La app "Send Anywhere" permite el intercambio de un grupo de archivos entre smartphones (y otros dispositivos). Tiene algunas características interesantes que a continuación se describirán.
+Es una herramienta directa (tiene una interfase amigable y autoexplicativa), rápida (la velocidad de la transferencia de archivos es rápida) y segura (los archivos no se guardan en la Nube en una transferencia entre 2 dispositivos). Para usar este servicio tampoco se requiere registrarse, ni iniciar sesión (mediante una red social, por ejemplo). Se pueden subir/recibir archivos de varios tipos (imágenes, audio, videos, APKs, contactos y más) y cualquier tamaño, de forma gratuita [LIFEHAC]. Ofrece soporte para los dispositivos móviles (Android, iOS, Windows Phone y Kindle), computadoras de escritorio (Windows, Mac OSX y Linux) y la Web.
+Es sencillo de usar, tiene 2 modos de uso: se pueden compartir archivos directamente sólo entre 2 dispositivos o se pueden compartir entre varios dispositivos. En el primer modo, mediante un dispositivo se puede indicar qué archivos se van a transferir a un segundo dispositivo; luego, cuando el segundo dispositivo se le comunique e ingrese la clave a través de la app recién se realizará la transferencia de los archivos, o sea que el emisor tiene que esperar al receptor para la transmisión y habrá un plazo de 10 minutos o se borrará esta vinculación entre la clave y el archivo. La segunda modalidad es similar a la primera, con la diferencia de que los archivos se subirán a la Nube, habrá un plazo de 24 horas para descargarlos y pueden ser descargados varias veces mientras estén dentro del plazo mencionado.
+En la versión Web, hay limitaciones: no se puede usar la segunda modalidad y hay un límite de 1 Gb. en el tamaño total de los archivos a transferir.
+En cuanto a la seguridad, esta app tiene algunas características interesantes para remarcar:
+- Una vez que se define el grupo de archivos a compartir, las únicas formas de acceder a este grupo puede ser mediante una clave (un código alfanumérico) y mediante una dirección URL acortada (o su equivalente en código QR).
+- Los archivos que comparten usando esta app tienen un tiempo de vigencia hasta que son descargadas. Si se supera este tiempo, los archivos son eliminados (por más que no se hayan transferido los archivos). Como se mencionó, para el caso de las transferencias directas que se dan sólo entre 2 dispositivos, tienen un tiempo de 10 minutos; en el caso de la distribución de un grupo de archivos a varios dispositivos, se les dá un tiempo de 24 horas.
+- En la primer modalidad, no se guardan archivos en la Nube, no hay un intermediario que almacene los archivos. La transferencia se realiza directamente entre dispositivos, cuando el destinatario ingresa la clave de acceso y después de que los archivos son transferidos, se eliminan.
+- Es un servicio anónimo, se comparten archivos sin la necesidad de ingresar información personal, no requiere que el usuario se registre, ni que inicie una sesión.
+- La app tiene un historial de las descargas hechas, pero tiene al alcance un comando para eliminar todo el registro y no dejar rastro de los movimientos hechos.
+Para obtener estos datos, en algunos casos, se recurrió a usar y probar la app con 2 smartphones.
+[ES DECIR, QUE ESTA INFORMACIÓN SURGIÓ A PARTIR DE PRUEBAS HECHAS EN LA INTERFASE DE LA APP]
+
+[SENDANY] [https://send-anywhere.com/web/page/faq]
+[LIFEHAC] [http://lifehacker.com/send-anywhere-transfers-files-quickly-and-securely-acro-1576763031]
+[SENDANY] [https://send-anywhere.com/web/page/product]
+
+5.6 Posibles políticas para el usuario y la organización
+
+Se pueden identificar algunos cuidados que se pueden efectuar para resguardar la información personal. El usuario puede realizar una copia de respaldo completa de la información almacenada en su dispositivo o una copia básica (que consta sólo de las fotos almacenadas en la tarjeta de memoria y los contactos guardados en la tarjeta SIM). Una opción para preservar nuestra privacidad es borrar el historial de nuestro browser web, aunque no es información directamente personal. Otra opción es deshabilitar la opción de seguir nuestra ubicación física, esta información puede ser usada por ciertas aplicaciones; los proveedores de telefonía celular saben (y mantienen un registro) donde esta el dispositivo siempre que esté conectado.
+(sugerencias acerca del uso del dispositivo)
+
+Cuando el dispositivo es robado o perdido, se pueden tomar ciertas medidas para entorpecer el acceso a los datos privados. Es una medida de rutina proteger el dispositivo con un código de acceso para bloquear la entrada a la pantalla principal, es una manera fácil de evitar el acceso no autorizado al dispositivo. Muchas empresas proveen servicios para seguir el rastro del dispositivo perdido y se le otorgará la opción de bloquear o destruir de forma remota los datos de un teléfono perdido o robado. Dadas las aptitudes de los dispositivos móviles cada vez mas parecidas a las de las computadoras de escritorio, se pueden aplicar las medidas generales que se toman en ellas para proteger la identidad en estos dispositivos móviles [FTC3]. Un caso posible podría ser cuando el usuario realiza transacciones en línea, es muy aconsejable usar software de encriptación que codifica la información que se vá a enviar a internet; cuando en el browser web aparece un "ícono de candado" en la barra de direcciones quiere decir que la información va a ser transmitida de forma segura, es recomendable percatarse de que ese símbolo esté presente antes de enviar información personal o financiera.
+
+Las redes sociales son un caso particular, dado que entra en juego la responsabilidad del usuario. Cuando un usuario publica mucha información acerca de uno mismo, un ladrón de identidad puede encontrar información acerca de la vida del usuario, que puede ser empleada para responder las preguntas secretas para recuperar la contraseña, lo que le podría dar acceso a las cuentas bancarias e información personal. Nunca se debería publicar datos como nombre completo, número de la obra social, dirección personal, número de teléfono o números de cuenta en la cuenta de la red social. La conciencia del usuario es vital para restringir el acceso a la información de su perfil de usuario en una determinada red social.
+
+[FTC3] [Fuente: http://www.consumer.ftc.gov/articles/0272-how-keep-your-personal-information-secure]
+
+5.7 Desarrollo de una aplicación
+
+( se muestra una aplicación sencilla para mejorar la seguridad, algo se me va a ocurrir )
+
+- SMS-based Two-Factor Authentication (2FA) by intercepting text messages containing One-Time Passwords (OTPs).
+- Fake GPS.
+- Encriptación de archivos.
+- Comunicación segura (SSL / TLS).
+
+o
+
+[ https://www.noconname.org/paper-item/sistema-para-dispositivos-android-que-permite-proteger-el-acceso-a-la-informacion/ ] [ Diapositivas que muestran ]
+[ http://www.researchgate.net/publication/274964088_Anti-Theft_Cloud_Apps_for_Android_Operating_System ] [ Paper de Investigación!!! ]
+[ http://research.ijcaonline.org/volume122/number17/pxc3905166.pdf ] [ Malware Detection Techniques in Android ]
+[ http://research.ijcaonline.org/volume120/number5/pxc3903942.pdf ] [ Malicious Applications Detection by Analyzing Manifest Files ]
+[ http://research.ijcaonline.org/volume117/number8/pxc3902985.pdf ] [ Droid Guard: An Approach to Make Android Secure ]
+
+Pautas para prevenir la seguridad  [ Es viejo, pero puede servir ]
+---------------------------------
+---------------------------------
+
+Para disminuir los efectos de el riesgo de que el dispositivo esté en manos de otra persona, se pueden tomar varias medidas, por un lado se pueden proteger los datos sensibles con un algoritmo de encriptación para que no puedan ser compartidos por usuarios no autorizados o también el usuario se podría acostumbrar a evitar guardar información sensible, efectuar copias de respaldo almacenadas en una ubicación independiente al dispositivo puede contribuir a evitar que la productividad disminuya; incluso aunque el dispositivo siempre esté en posesión del propietario, puede suceder que un atacante esté mirando por encima del hombro del usuario en un lugar público y de ahí puede mirar cierta información sensible en la pantalla de la víctima, como por ejemplo una contraseña ingresada. Por otro lado, se puede obstaculizar el acceso de los atacantes al dispositivo, exigiendo una autenticación para acceder a las funciones del dispositivo o a los recursos de la organización. Usualmente un dispositivo móvil no tiene una cuenta separada para cada usuario del dispositivo, cuando se asume que tiene solamente un usuario (no hay un nombre de usuario para ingresar, sólo una contraseña); pueden ser usadas formas mas robustas de autenticación como un reemplazo o un complemento de las funciones de autenticación incorporadas en el dispositivo.
+Se pueden tomar una serie de medidas que se recomienda tomar cuando el dispositivo es indispensable:
+* Nunca descuidar el dispositivo, ni siquiera por un minuto. Que sea un hábito personal mantener el teléfono cerca en todo momento. Esta consideración está ligado a que generalmente el dispositivo es considerado un aparato de uso individual.
+* Usar contraseñas cuando sea posible para proteger la privacidad del usuario si el teléfono es robado, tanto para el acceso a los documentos importantes como a las "pantallas" del teléfono que revelen datos personales. Aunque se debe usar con mesura, empezando a proteger lo que es vital.
+* Mantener sólo los documentos que realmente se necesitan en el dispositivo, y retirar y archivar los archivos antiguos que ya no se utilizan de forma activa. Realizar esta actividad con cierta periodicidad.
+* No permitir que el software del dispositivo suministre de forma automática una contraseña para el usuario. Si se ignora esta recomendación, cualquier persona que opere con el dispositivo podrá acceder a sus cuentas.
+* Usar las redes inalámbricas públicas y abiertas con precaución. Dado que los ladrones de identidad monitorean intensamente estas redes inseguras, por ejemplo en los aeropuertos y los hoteles, buscando datos de la tarjeta de crédito o información personal enviada sin protección SSL o VPN.
+
+{En el siguiente link hay varias pautas para prevenir disgustos}
+[Fuente: http://www.eset-la.com/centro-prensa/articulo/2012/eset-lanza-guia-seguridad-dispositivos-moviles/2847]
+
+[Fuente: http://www.nist.gov/itl/csd/mobile-071112.cfm]
+[Fuente: http://msisac.cisecurity.org/newsletters/2012-03.cfm]
+[Fuente: http://www.stanford.edu/group/security/securecomputing/mobile_devices.html]
+[Fuente: http://csrc.nist.gov/publications/drafts/800-124r1/draft_sp800-124-rev1.pdf]
+[Fuente: http://www.nsa.gov/ia/programs/mobility_program/index.shtml]
+	[http://www.nsa.gov/ia/_files/Mobility_Capability_Pkg_Vers_2_0.pdf]
+[Tener en cuenta los 2 papers de US-CERT]
+[Fuente: http://www.csl.sri.com/users/gehani/papers/GTIP-2011.Android.pdf]
+
+. Descargar aplicaciones sólo desde marketplaces con protecciones y políticas de seguridad claras.
+. Elegir aplicaciones con puntuaciones altas y leer los comentarios (especialmente los negativos).
+. Evitar aplicaciones que pidan la aprobación de muchos permisos que otras aplicaciones similares no necesitan.
+
+{Magnitud de relevancia - Tiempo de consideración }
+El 15 de Abril del 2010, una entidad gubernamental relevante de Estados Unidos denominada United States Computer Emergency Readiness Team (US-CERT) publicó un documento que presenta las amenazas emergentes que puedan tener un impacto significativo en los dispositivos móviles y los usuarios. Pasado un año aproximadamente, publicó otro documento. Lo que exponen estos documentos es que el tema en cuestión data de un tiempo atrás, no es un tema nuevo. A continuación, se presentan algunas pautas que pueden llegar a ser interesantes que contiene este documento.
+[Fuente: http://www.us-cert.gov/reading_room/TIP10-105-01.pdf]
+[Fuente: http://www.us-cert.gov/reading_room/cyber_threats_to_mobile_phones.pdf]
+{/Magnitud de relevancia - Tiempo de consideración }

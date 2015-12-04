@@ -1,0 +1,27 @@
+------------------------------
+--- Introducción a Android ---
+------------------------------
+Descripción: "Rejunte de características de Android"
+
+Introducción
+  Estado del arte
+  Estadísticas
+  Proyectos futuros
+
+Definición
+
+Características generales únicas
+
+Historia
+
+"La fama de Android" se pasa a "Introducción"
+
+Internals
+  Máquina virtual de Dalvik
+  etc..
+
+Entorno de desarrollo
+  (no explicar como se desarrolla,
+  sólo definir el entorno)
+  Marketplaces
+  SDK (y brevemente NDK)

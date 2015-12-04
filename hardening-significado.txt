@@ -1,0 +1,56 @@
+Definición corta:
+Un conjunto de actividades que son llevadas a cabo por el administrador de un sistema operativo para reforzar al máximo posible la seguridad de su equipo. Es el proceso de asegurar un sistema mediante la reducción de vulnerabilidades en el mismo.
+Su propósito, entorpecer la labor del atacante y ganar tiempo para poder minimizar las consecuencias de un inminente incidente de seguridad e incluso, en algunos casos, evitar que éste se concrete en su totalidad.
+
+Descripción general:
+- La idea es hacerle la vida más difícil al atacante.
+- No necesariamente se logrará forjar equipos "invulnerables".
+- A veces, al proceso de Hardening se lo llama "defense in depth".
+- Good computer security is about finding the right balance between hardening your system against potential threats and maintaining usability.
+- Reducing available vectors of attack
+
+Actividades propias de un proceso de hardening:
+- Configuraciones necesarias para protegerse de posibles ataques físicos o de hardware de la máquina.
+- Instalación segura del sistema operativo.
+- Activación y/o configuración adecuada de servicios de actualizaciones automáticas
+- Instalación, configuración y mantención de programas de seguridad (Antivirus, Antispyware y un filtro Antispam).
+- Configuración de la política local del sistema.
+- Política de contraseñas robusta.
+- Renombramiento y posterior deshabilitación de cuentas estándar del sistema
+- Asignación correcta de derechos de usuario
+- Configuración de opciones de seguridad generales
+- Restricciones de software.
+- Activación de auditorías de sistema
+- Configuración de servicios de sistema
+- Configuración de los protocolos de Red
+- Configuración adecuada de permisos de seguridad en archivos y carpetas del sistema.
+- Configuración de opciones de seguridad de los distintos programas,
+- Configuración de acceso remoto.
+- Configuración adecuada de cuentas de usuario.
+- Cifrado de archivos o unidades según las necesidades del sistema
+- Realizar y programar un sistema de respaldos frecuente a los archivos y al estado de sistema.
+
+Ejemplos conceptuales:
+La reducción de vulnerabilidades en el sistema se logra eliminando software, servicios, usuarios, etc. que son innecesarios en el sistema así como cerrando puertos que tampoco estén en uso; además de muchas otros métodos y técnicas.
+Applying vendor security patches regularly, installing a firewall. Additional hardening actions include closing server ports, disabling Windows and other programs file-sharing, and additionally hardening email programs.
+Another layer of protection for your computer is to install and regularly use virus and spyware protection software.
+Scheduling daily automatic definition updates and scans to be performed on your computer are vital steps.
+"Using antivirus and antispyware protection, regularly downloading the latest manufacturers patches, and disabling unneeded software and applications"
+
+Ejemplo en Windows de Hardening:
+Here are some helpful tips for hardening computers:
+    Patch Microsoft Windows automatically.
+    Use strong passwords or pass phrases for all Windows user accounts on your PC.
+    Use and properly maintain good anti-virus software, and optionally anti-spyware software.
+    Use a firewall, such as Windows XP's built-in software firewall.
+    Do not open suspicious email attachments or respond to suspicious requests.
+    If you're not using it, disable the Windows File and Printer Sharing service.
+    Disable any unneeded user accounts.
+    Lock your PC's screen when you step away, and shut down your computer when you'll be gone for more than 6 hours.
+    Where possible, consider using a web browser other than Internet Explorer, and treat "free" software with suspicion.
+
+Fuente:
+http://blog.smartekh.com/%C2%BFque-es-hardening/  [ ¿Qué es Hardening? ]
+https://en.wikipedia.org/wiki/Hardening_%28computing%29 [ No dice mucho ]
+https://security.berkeley.edu/node/143 (muy completa y seria)
+http://www.colorado.edu/oit/it-security/security-awareness/hardening-your-computer

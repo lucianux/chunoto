@@ -1,0 +1,193 @@
+Glosario
+--------
+
+AOSP (Android Open Source Project)
+Es una iniciativa creada para guiar en el desarrollo y mantenimiento de la plataforma móvil Android. No es una guía para el desarrollo de apps. La plataforma Android consiste del sistema operativo, middleware y las apps móviles integradas.
+[ Fuente: http://searchmobilecomputing.techtarget.com/definition/Android-Open-Source-Project-AOSP ]
+[ Fuente: http://source.android.com/source/index.html ]
+
+API (Application Programming Interface)
+En el contexto de la programación de computadoras, una interfase de programación de aplicaciones (API) es un conjunto de rutinas, protocolos y herramientas para la creación de aplicaciones.
+[ Fuente: https://en.wikipedia.org/wiki/Application_programming_interface ]
+
+AVD
+Es una configuración de un emulador que le permite al desarrollador modelar un dispositivo definiendo opciones de hardware y software a ser emuladas. Un AVD se lo puede ver como un perfil que contiene una serie de atributos y valores relacionados a un dispositivo virtual; cuando se tienen varios de éstos se los puede administrar con una herramienta llamada "AVD Manager".
+[ Fuente: http://developer.android.com/tools/devices/index.html ]
+
+App
+Es una aplicación informática diseñada para ser ejecutada en smartphones, tablets y otros dispositivos móviles.
+[ Fuente: https://es.wikipedia.org/wiki/Aplicaci%C3%B3n_m%C3%B3vil ]
+
+Banda base
+En Telecomunicaciones, el término banda base se refiere a la banda de frecuencias producida por un transductor, tal como un micrófono, un manipulador telegráfico u otro dispositivo generador de señales que no es necesario adaptarlo al medio por el que se va a trasmitir.
+https://es.wikipedia.org/wiki/Banda_base
+
+Boot (o booting)
+Se refiere a la fase de arranque o secuencia de arranque, que consiste en la ejecución de una serie de pasos para iniciar el sistema operativo cuando se enciende una computadora. Se encarga de la inicialización del sistema y de los dispositivos.
+https://es.wikipedia.org/wiki/Arranque_(inform%C3%A1tica)
+
+Bootloader
+Un gestor de arranque o arrancador (bootloader) es un programa sencillo que no tiene la totalidad de las funcionalidades de un sistema operativo. Está diseñado exclusivamente para preparar todo lo que necesita el sistema operativo para funcionar. Normalmente se utilizan los cargadores de arranque multietapas, en los que varios programas pequeños se suman los unos a los otros, hasta que el último de ellos carga el sistema operativo.
+https://es.wikipedia.org/wiki/Gestor_de_arranque
+
+BYOD (Bring your own device)
+Es una política empresarial basada en que los empleados de una empresa utilicen sus propios dispositivos personales para realizar sus asignaciones en el trabajo, ésto quiere decir que con ellos se van a acceder a los datos privados pertenecientes a la empresa. Hay variantes de esta política como "Bring your own technology", que no sólo cubre al equipo sino que también cubre al software, y otros derivados en relación al hardware como "Bring your own computer" (BYOC), "Bring your own laptop" (BYOL), "Bring your own PC" (BYOPC), entre otras. Hay posturas a favor y en contra de BYOD, a favor se puede mencionar que permite reducir costos en la compra de los equipos, algunos creen que BYOD ayuda a los empleados a ser más productivos por llevar su trabajo en su dispositivo personal a todos lados y en cualquier momento. Sin embargo, existe otra postura que manifiesta que ésta práctica puede llegar a ser perjudicial para la empresa porque puede generar vulnerabilidades donde se puede filtrar información o se puede introducir aplicaciones maliciosas a la red privada de la empresa; considerando que BYOD hace complica la creación de un estándar de seguridad frente a una pila heterogénea de dispositivos y sistemas. Para minimizar el riesgo y acomodar las tecnologías del consumidor, muchas empresas están implementando políticas de BYOD. Además, actualmente hay una inclinación en las empresas de Estados Unidos al rechazo de la política BYOD, según un artículo en el sitio computerworld y cio que se basan en las estadísticas de la empresa CompTIA. Este estudio encontró que sólo un pequeño porcentaje de empresas, por lo general pequeñas empresas, decidió comprometerse con la política BYOD y evitar por completo la compra de dispositivos.
+[Fuente: http://www.gartner.com/it-glossary/bring-your-own-device-byod/]
+[Fuente: http://whatis.techtarget.com/definition/BYOD-bring-your-own-device]
+[Fuente: http://es.wikipedia.org/wiki/BYOD]
+[Fuente: http://www.clearrisk.com/risk-management-blog/bid/57805/What-is-BYOD-What-Are-the-Risks-How-to-Protect-Your-Business]
+http://www.cio.com/article/2973977/byod/byod-the-tech-revolution-that-wasn-t.html
+http://www.computerworld.com/article/2948470/byod/the-bring-your-own-device-fad-is-fading.html
+http://hipertextual.com/archivo/presentado-por/g-data/que-es-byod-y-que-representa-problema-seguridad-para-empresas/
+
+COM
+???
+
+CORBA
+???
+
+In Unix and related computers operating systems, a file descriptor (FD, less frequently fildes) is an abstract indicator used to access a file or other input/output resource, such as a pipe or network connection. File descriptors are part of the POSIX application programming interface. A file descriptor is a non-negative integer, represented in C programming language as the type int.
+
+Driver
+Un controlador de dispositivo o manejador de dispositivo (device driver o simplemente driver) es un programa informático que permite al sistema operativo interactuar con un periférico, haciendo una abstracción del hardware y proporcionando una interfaz (posiblemente estandarizada) para utilizar el dispositivo.
+https://es.wikipedia.org/wiki/Manejador_de_dispositivo
+
+EXIF (Exchangeable image file format)
+Es un estándar que especifica los formatos para imágenes, sonidos y etiquetas auxiliares usadas por las cámaras digitales (incluyendo smartphones), escáners y otros sistemas que manejan archivos de imágenes y sonidos grabados por cámaras digitales.
+https://en.wikipedia.org/wiki/Exchangeable_image_file_format
+
+FHS
+The FHS is a community standard that describes the contents and use of the various directories within a Linux root filesystem.
+[ Fuente: Libro "Embedded Android" - pág. 53 ]
+
+Fork
+En el contexto de los sistemas operativos basados en Unix, fork es una operación en donde un proceso se crea una copia de sí mismo. Usualmente es una llamada al sistema, implementada en el kernel. Fork es el método principal para crear procesos en sistema basados en Unix.
+https://en.wikipedia.org/wiki/Fork_(system_call)
+
+Fork*
+Es la creación de un proyecto en una dirección distinta de la principal u oficial, tomando el código fuente del proyecto ya existente.
+https://es.wikipedia.org/wiki/Bifurcaci%C3%B3n_(desarrollo_de_software)
+
+Form factor: la apariencia general, el tamaño y la forma de un dispositivo móvil. Hay tres ramas principales: bar phones (aquellos que no tienen tapa y todas sus partes son fijas), flip phones (aquellos que se pueden abrir dado que tienen una tapa) y sliders (aquellos que descubren una parte oculta deslizando una parte hacia un lado, generalmente esconden un teclado físico).
+fuentes:
+[ http://www.gsmarena.com/glossary.php3?term=form-factor ]
+[ https://en.wikipedia.org/wiki/Form_factor_(mobile_phones) ]
+
+Forward declarations
+Es una declaración de un identificador, que denota una entidad (como un tipo, una variable, una constante o una función), para lo cual el programador aún no ha dado una definición completa.
+https://en.wikipedia.org/wiki/Forward_declaration
+
+GNU
+Es una amplia colección de software que se puede utilizar para construir un sistema operativo tipo Unix. GNU está compuesto enteramente de software libre.
+[ Fuente: https://en.wikipedia.org/wiki/GNU ]
+
+Header
+Muchos lenguajes de programación y otros archivos de computadora tienen una directiva, frecuentemente llamada "include" (como también "copy" e "import"), la cual acarrea la inserción de los contenidos de un segundo archivo al archivo original. A menudo los headers son usados para definir la disposición física de los datos de un programa, también pueden ser piezas de un código procedural y/o forward declarations si bien promueven la encapsulación y el reúso de código.
+https://en.wikipedia.org/wiki/Include_directive
+
+Hook
+En el contexto del desarrollo de aplicaciones, el término hooking cubre una gama de técnicas utilizadas para alterar o aumentar el comportamiento de un sistema operativo, aplicaciones o de otros componentes de software mediante la interceptación de llamadas a funciones, eventos o mensajes pasados entre componentes de software. El código que maneja este tipo de llamadas a funciones, eventos o mensajes interceptados, se llama "hook".
+Fuente: https://en.wikipedia.org/wiki/Hooking
+
+Host
+Un host de una red es una computadora u otro dispositivo conectado a una red de computadoras. Un host puede ofrecer recursos de información, servicios y aplicaciones a usuarios u otros nodos de la red.
+https://en.wikipedia.org/wiki/Host_(network)
+
+IDE
+Un ambiente de desarrollo integrado o entorno de desarrollo interactivo (en inglés, Integrated Development Environment - IDE), es una aplicación informática que proporciona servicios integrales para facilitarle al desarrollador o programador el desarrollo de software. Normalmente, un IDE consiste de un editor de código fuente, herramientas de construcción automática y un depurador.
+https://es.wikipedia.org/wiki/Ambiente_de_desarrollo_integrado
+
+IPC (Inter-process Communication)
+En informática, la comunicación entre procesos (IPC) es la actividad de intercambio de datos a través de múltiples y comúnmente especializadas procesos que utilizan protocolos de comunicación.
+[ Fuente: https://en.wikipedia.org/wiki/Inter-process_communication ]
+
+JNI
+Java Native Interface es un framework de programación que permite dentro a un programa escrito en Java correr en una Java Virtual Machine (JVM) para llamar y ser llamado por aplicaciones nativas (programas para correr únicamente dentro de un contexto de hardware y sistema operativo específico) y librerías escritas en otros lenguajes como C, C++ y Assembly.
+https://en.wikipedia.org/wiki/Java_Native_Interface
+
+Logcat
+Es un comando que sirve para filtrar una gran cantidad de logs provenientes del sistema de logging de Android, el cual provee un mecanismo para la recolección y visualización de la salida del depurador del sistema. Se puede usar logcat desde una shell via ADB para ver los mensajes de log.
+http://developer.android.com/tools/help/logcat.html
+
+Logging
+Logging es el acto de mantener un registro (archivo de log). El archivo de log es un archivo en el cual generalmente se graban eventos que ocurren en un sistema operativo u otro software en tiempo de ejecución.
+https://en.wikipedia.org/wiki/Logfile
+
+Marketplace
+Un marketplace online (o marketplace de e-commerce online) es un tipo de sitio de e-commerce donde la información de los productos o servicios es provista por terceros, donde la transacción es procesada y realizada por el operador del marketplace.
+En un marketplace online, las transacciones del consumidor son procesadas por el operador del marketplace, luego es entregado y concluido por los minoristas o mayoristas que estan participando de la transacción. Otras competencias del marketplace podría incluir las subastas, catálogos, pedidos, publicidad, la opción de realizar intercambios comerciales, entre otras.
+[https://en.wikipedia.org/wiki/Online_marketplace]
+
+Middleware
+Es un software que proporciona servicios a las aplicaciones, más allá de las disponibles en el sistema operativo. Middleware es el software que conecta los componentes de software o aplicaciones empresariales.
+[ https://en.wikipedia.org/wiki/Middleware ]
+
+Multitarea
+[???]
+
+Multithreading
+Multithreading se encuentra principalmente en los sistemas operativos multitarea. Es un término de programación ampliamente usado, concretamente es un modelo de ejecución que permite a múltiples hilos de existir en el contexto de un proceso único.
+[ https://en.wikipedia.org/wiki/Thread_(computing)#Multithreading ]
+
+Namespace
+Un namespace define un grupo de clases relacionadas.
+[ http://www.cs.ait.ac.th/~on/O/oreilly/java-ent/jnut/ch02_11.htm ]
+
+NFC (Near field communication)
+Es una tecnología de comunicación inalámbrica, de corto alcance y alta frecuencia que permite el intercambio de datos entre dispositivos.
+[ https://es.wikipedia.org/wiki/Near_field_communication ]
+
+Open source
+Es un modelo de desarrollo general que promueve el acceso universal a través de una licencia gratuita para el diseño o modelo de un producto, y la redistribución universal de este diseño o modelo, incluyendo las mejoras posteriores al mismo por cualquiera.
+[ https://en.wikipedia.org/wiki/Open_source ]
+
+Package
+En Java, un paquete es un contenedor de clases que permite agrupar las distintas partes de un programa cuya funcionalidad tienen elementos comunes.
+[ https://es.wikipedia.org/wiki/Paquete_Java ]
+
+Parser
+Un parser es un componente de software que toma datos de entrada (comunmente texto) y construye una estructura de datos (comunmente genera alguna estructura jerárquica) dando una representación estructural de la entrada y durante el proceso verifica si la sintaxis es correcta.
+https://en.wikipedia.org/wiki/Parsing#Parser
+
+Patch
+Es una pieza de software diseñada para actualizar un programa o los datos que maneja, para arreglarlo o mejorarlo.
+[ https://en.wikipedia.org/wiki/Patch_(computing) ]
+
+Pipes
+Es un canal de comunicación FIFO que puede ser usado para IPC de un sentido único. Si se requiere un canal con 2 sentidos, se necesitarían 2 pipes.
+[ https://en.wikipedia.org/wiki/Anonymous_pipe ]
+
+Pool
+Es un conjunto de recursos que se mantienen listos para su uso, en vez de adquirir los recursos en el momento que se los va a usar y luego se los libera.
+[ https://en.wikipedia.org/wiki/Pool_(computer_science) ]
+
+QEMU (Quick EMUlator)
+Es un proyecto open-source que desarrolla y mantiene un gestor de máquinas virtuales que permite la virtualización de hardware.
+[ https://en.wikipedia.org/wiki/QEMU ]
+
+Renderizar
+Es la actividad de generar una imagen a partir de un modelo por medio de un programa.
+[ https://en.wikipedia.org/wiki/Rendering_(computer_graphics) ]
+
+Script
+Un script es un programa usualmente simple, que por lo regular se almacena en un archivo de texto plano. Los scripts son casi siempre interpretados, pero no todo programa interpretado es considerado un script. El uso habitual de los scripts es realizar diversas tareas como combinar componentes, interactuar con el sistema operativo o con el usuario. Por este uso, es frecuente que los shells sean a la vez intérpretes de este tipo de programas.
+https://es.wikipedia.org/wiki/Script
+
+Serializar
+La serialización es el proceso de traducción de estructuras de datos o el estado de un objeto en un formato que puede ser almacenado (por ejemplo, en un archivo o en memoria) y puede ser reconstruido más tarde en el mismo o en otro ambiente. Esta técnica facilita la portabilidad de abstracciones en el contexto de la programación.
+[ https://en.wikipedia.org/wiki/Serialization ]
+
+Shell
+Es el programa informático que provee una interfaz de usuario para acceder a los servicios del sistema operativo.
+[ https://es.wikipedia.org/wiki/Shell_(inform%C3%A1tica) ]
+
+Socket (IPC Socket)
+Es un terminal de comunicaciones de datos para intercambiar datos entre procesos que se estan ejecutando sobre el mismo sistema operativo en el mismo host.
+[ https://en.wikipedia.org/wiki/Unix_domain_socket ]
+
+Thread
+Es la secuencia más chica de instrucciones programadas que pueden ser manejadas independientemente por un planificador, el cual es una parte del sistema operativo.
+[ https://en.wikipedia.org/wiki/Thread_(computing) ]
+
+Ubicuidad (ubiquity)
+Este término se refiere a la relación íntima entre la tecnología móvil y las personas, que cada vez se incrementa más. Este término surge del fenómeno de la presencia de la computación móvil en varios de los entornos cotidianos (en un auto, en un bar, en una casa, etc.) que cuenta con el soporte físico de algunos de los elementos que ya contamos (teléfonos, radios, televisores, etc.).

@@ -1,0 +1,18 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Prólogo
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+En el presente trabajo se expondrán un análisis de la seguridad en Android tratando de generalizar el estudio con otros entornos. Las preguntas que quiere responder esta tesina son ¿Qué utilidad tienen los dispositivos móviles? ¿La plataforma Android es segura? Si no lo es ¿Qué riesgos se corren? ¿Cómo se pueden mermar estos riesgos?
+Para responder estas preguntas, se describirán las fortalezas de Android, como también se mencionará las debilidades con pruebas prácticas de estas vulnerabilidades intentando generalizar la descripción para otros sistemas operativos para móviles. Luego, con la ayuda del resaltado de este contraste entre fortalezas y debilidades, se declaran mejoras en distintas formas.
+
+Estructura de la Tesina
+
+A continuación se presentará una exposición somera de los contenidos de los capítulos subsecuentes.
+Primero, se presentará los dispositivos moviles y la importancia de su seguridad.
+Segundo, se expondrá brevemente las cualidades generales de la plataforma Android.
+Tercero, se mostrarán las características de Android para mejorar la seguridad.
+Cuarto, se describirán pruebas de conceptos de algunas vulnerabilidades de los smartphones.
+Quinto, se propondrán medidas para mitigar riesgos.
+Finalmente, se concluirá con una exposición de los resultados y una reflexión a partir de los mismos.

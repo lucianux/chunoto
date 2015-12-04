@@ -1,0 +1,12 @@
+:: Observaciones del jurado ::
+
+Textual del Prof. Barbieri:
+- Dar una serie de reconsideraciones para el "hardening" del SO Android en celulares.
+- Mostrar a través de pruebas prácticas algunas vulnerabilidades de los equipos.
+
+Textual de Prof. Venosa:
+- Completitud del análisis de seguridad en relación a dispositivos móviles en general.
+- Ejemplos de vulnerabilidades y mecanismos para mitigar riesgos de la plataforma Android en particular y de aplicaciones que actualmente se usan sobre dicha plataforma.
+- Que en los resultados se presenten alternativas para mejorar la estructura de la seguridad de Android tanto desde el punto de vista del usuario como de la organización.
+- Aportes en general.
+

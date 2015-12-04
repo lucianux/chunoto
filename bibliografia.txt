@@ -1,0 +1,381 @@
+Bibliografía
+
+::::::::::::::::::: Capítulo 1 :::::::::::::::::::
+
+[UNDEMOB] Suprateek Sarker, John D. Wells, "Understanding mobile handheld device use and adoption", Diciembre, 2003.
+[NISTFOR] Rick Ayers, Sam Brothers, Wayne Jansen, "Guidelines on Mobile Device Forensics", NIST, Septiembre, 2013.
+[NISTGUI] Murugiah Souppaya, Karen Scarfone, "Guidelines for managing and securing mobile devices in the Enterprise (draft)", NIST, Junio, 2013.
+[PHONEAR] "Here's how screen size preferences have changed through the years (infographic)", http://www.phonearena.com/news/Heres-how-screen-size-preferences-have-changed-through-the-years-infographic_id71924
+[CHARGET] "Cell Phone Battery History", http://chargetech.com/cell-phone-battery-history/
+[EBAYPHO] "5 Different Types of Phone Battery Technologies Explained and How to Buy Them", http://www.ebay.co.uk/gds/5-Different-Types-of-Phone-Battery-Technologies-Explained-and-How-to-Buy-Them-/10000000177989705/g.html
+[BBCNEWS] "Taking pictures with your phone", http://news.bbc.co.uk/2/hi/science/nature/1550622.stm
+[DIGITRE] "A complete history of the camera phone", http://www.digitaltrends.com/mobile/camera-phone-history/
+[GARTIOT] "Internet of Things", http://www.gartner.com/it-glossary/internet-of-things/
+[CISCIOT] "Internet of Things (IoT)", http://www.cisco.com/web/solutions/trends/iot/overview.html
+[DNAIIOT] "Looking ahead: Smartphones and their place in the Internet of Things", http://www.dnaindia.com/scitech/report-smartphones-and-their-place-in-the-internet-of-things-data-transfer-safety-2089285
+[INFOWEE] "Apps To Unite Smartphones, IoT", http://www.informationweek.com/mobile/mobile-devices/apps-to-unite-smartphones-iot/d/d-id/1320222
+[MAPRIOT] "Internet of Things", https://www.mapr.com/solutions/enterprise/internet-of-things
+[GARTIOE] "The Internet of Things and the Enterprise", http://www.gartner.com/smarterwithgartner/the-internet-of-things-and-the-enterprise/
+[MCCSTAT] Saeid Abolfazli, Zohreh Sanaeia, Mohammad Hadi Sanaeia, Mohammad Shojafarb, Abdullah Gania, "Mobile Cloud Computing: The state-of-the-art, challenges, and future research", Septiembre, 2011.
+[GARTTRE] "Gartner Identifies the Top 10 Strategic Technology Trends for 2015", http://www.gartner.com/newsroom/id/2867917
+[WIREDSM] "In Less Than Two Years, a Smartphone Could Be Your Only Computer", http://www.wired.com/2015/02/smartphone-only-computer/
+[GARTPRE] "Gartner Says By 2018, More Than 50 Percent of Users Will Use a Tablet or Smartphone First for All Online Activities", http://www.gartner.com/newsroom/id/2939217
+[COMSCOR] "Number of Mobile-Only Internet Users Now Exceeds Desktop-Only in the U.S.", http://www.comscore.com/Insights/Blog/Number-of-Mobile-Only-Internet-Users-Now-Exceeds-Desktop-Only-in-the-U.S?
+[GARTSTA] "Gartner Says Worldwide Smartphone Sales Recorded Slowest Growth Rate Since 2013", http://www.gartner.com/newsroom/id/3115517
+[IDCSTAT] "Worldwide Smartphone Market Posts 11.6% Year-Over-Year Growth in Q2 2015, the Second Highest Shipment Total for a Single Quarter, According to IDC", http://www.idc.com/getdoc.jsp?containerId=prUS25804315
+[SECCOMP] Charles Pfleeger, "Security in computing", Prentice Hall P T R, 1996.
+[PRACSEC] Woongryul Jeon, Jeeyeon Kim, Youngsook Lee, Dongho Won, "A practical analysis of smartphone security", 2011.
+[GLOBJOU] Muneer Ahmad Dar, Javed Parvez, "Evaluating Smartphone Application Security: A Case Study on Android", 2013.
+[COMPSEC] Charles P. Pfleeger, "Security in computing", John Wiley & Sons, 2da edición., 2006.
+[MARKAND] "Alternative app stores", http://www.appfutura.com/blog/alternative-app-stores/
+[APWGREP] Jart Armin, "Mobile Threats and the Underground Marketplace", APWG, 2013.
+[DROIRAN] Yajin Zhou, Zhi Wang, Wu Zhou, Xuxian Jiang, "Hey, You, Get Off of My Market: Detecting Malicious Apps in Official and Alternative Android Markets", 2012.
+[PALOXGH] "Malware XcodeGhost Infects 39 iOS Apps, Including WeChat, Affecting Hundreds of Millions of Users", http://researchcenter.paloaltonetworks.com/2015/09/malware-xcodeghost-infects-39-ios-apps-including-wechat-affecting-hundreds-of-millions-of-users/
+[ZIMPSTA] "Experts Found a Unicorn in the Heart of Android", https://blog.zimperium.com/experts-found-a-unicorn-in-the-heart-of-android/
+[TIMESOC] "Teenagers unaware of social media privacy risks: Study", http://timesofindia.indiatimes.com/tech/social/Teenagers-unaware-of-social-media-privacy-risks-Study/articleshow/46609324.cms
+[COMPNUD] "Nude celebrity pictures posted online after alleged iCloud hack", http://www.computerweekly.com/news/2240227886/Nude-celebrity-pics-posted-online-after-alleged-iCloud-hack
+[COMPWEE] "Smartphone users unaware of hacking risks", http://www.computerweekly.com/news/2240228176/smartphone-users-unaware-of-hacking-risks
+[SMARAWA] Alexios Mylonas, Anastasia Kastania, Dimitris Gritzalis, "Delegate the Smartphone User? Security Awareness in Smartphone Platforms", 2013.
+[IJSRMOB] Nadhirah binti Nazri, Noor Azian binti Mohamad Ali, Jamaludin Ibrahim, "Survey on Mobile and Wireless Security Awareness: User Perspectives", 2015.
+[USACERT] "Protecting Portable Devices: Physical Security", https://www.us-cert.gov/ncas/tips/ST04-017
+[TAXONET] Simon Hansman, "A Taxonomy of Network and Computer Attack Methodologies", 2003.
+[PROTCHI] "Know the Risks Text/multi-media messaging", http://mobility.protectchildren.ca/know-the-risks/text-messaging-instant-messaging
+[NISTWNS] Tom Karygiannis, Les Owens, "Wireless Network Security - 802.11, Bluetooth and Handheld Devices", NIST, 2002.
+[ENHAQRC] Shuang Zheng, Linfan Zhang, "Enhancing QR Code Security", 2015.
+[GSMVULN] Mohsen Toorani, Ali A. Beheshti, "Solutions to the GSM Security Weaknesses", 2010.
+[NACICEL] "Celulares: crecen los reclamos por el cobro de contenidos no solicitados", http://www.lanacion.com.ar/1758617-celulares-crecen-los-reclamos-por-el-cobro-de-contenidos-no-solicitados
+[PANDASE] "Protege tu privacidad y desactiva el GPS de la cámara de tu móvil", http://www.pandasecurity.com/spain/mediacenter/consejos/protege-tu-privacidad-y-desactiva-el-gps-de-tu-camara-del-movil/
+[EFFMGPS] "El Problema con los Teléfonos Móviles", https://ssd.eff.org/es/module/el-problema-con-los-tel%C3%A9fonos-m%C3%B3viles
+[PREGEOS] Krishna P. N. Puttaswamy∗, Shiyuan Wang, Troy Steinbauer, Divyakant Agrawal, Amr El Abbadi, Christopher Kruegel, Ben Y. Zhao, "Preserving Location Privacy in Geo-Social Applications", 2012.
+[BLOGTHI] "¿Cuál es la diferencia entre el Jailbreak en iOS y el ROOT en Android?", http://blogthinkbig.com/diferencia-entre-jailbreak-y-root/
+[MOBIPHI] Hossain Shahriar, Tulin Klintic, Victor Clincy, "Mobile Phishing Attacks and Mitigation Techniques", Julio, 2015.
+[SECSUPE] "What is Url Spoofing?", http://www.securitysupervisor.com/security-q-a/network-security/262-what-is-url-spoofing
+[SEGANIO] Juan Carlos Albarracín Galindo, Leidy Maribel Parra Camargo, Juan José Camargo Vega, "Seguridad en dispositivos móviles con sistemas operativos Android y iOS", 2013.
+[CONSCOM] "Caller ID and Spoofing", https://consumercomplaints.fcc.gov/hc/en-us/articles/202654304-Caller-ID-and-Spoofing
+[FORTINE] Fortinet, "The World’s First Mobile Malware Celebrates its 10th Birthday", 2014.
+[ZITMOAN] "Android Online Banking Security Risk: Zbot & Zitmo", https://www.bankvaultonline.com/blog/2015/08/13/android-online-banking-risks/
+[FSECURE] "Threat Description Trojan: Android/droidkungfu.c", https://www.f-secure.com/v-descs/trojan_android_droidkungfu_c.shtml
+[SYMAITU] "Internet Security Threat Report 2015", Symantec_annual_internet_threat_report_ITU2015.pdf, 2015
+[OVEMALW] Fan Wu, Hira Narang, Dwayne Clarke, "An Overview of Mobile Malware and Solutions", Octubre, 2014.
+
+::::::::::::::::::: Capítulo 2 :::::::::::::::::::
+
+[ANDHACK] Joshua J. Drake, Pau Oliva Fora, Zach Lanier, Collin Mulliner, Stephen A. Ridley, Georg Wicherski, "Android Hacker's Handbook", Wiley, 2013.
+[ANSECIN] Nikolay Elenkov, "Android Security Internals: An In-Depth Guide to Android's Security Architecture", No Starch Press, 2014.
+[ANDSECU] Abhishek Dubey, Anmol Misra, "Android Security", CRC Press, 2013.
+[EMBANDR] Karim Yaghmour, "Embedded Android", O'Reilly, 2013.
+[GARTDRO] "Gartner Says Worldwide Smartphone Sales Recorded Slowest", http://www.gartner.com/newsroom/id/3115517
+[ANDABOU] "Android, the world's most popular mobile platform", http://developer.android.com/about/android.html
+[ANDROTV] "Android TV", https://www.android.com/tv/
+[ANDROWE] "Android Wear", https://www.android.com/wear/
+[ANDROPH] "Android Phones", https://www.android.com/phones/
+[ANDROTA] "Android Tablets", https://www.android.com/tablets/
+[ANDROAU] "Android AUto", https://www.android.com/auto/
+[ANDRX86] "Android-x86 - Porting Android to x86", http://www.android-x86.org/
+[FAQAND1] "Frequently Asked Questions", http://source.android.com/source/faqs.html#why-did-we-open-the-android-source-code
+[FAQAND2] "Frequently Asked Questions", http://source.android.com/source/faqs.html#what-is-the-android-open-source-project
+[STATIST] "Number of apps available in leading app stores 2015", http://www.statista.com/statistics/276623/number-of-apps-available-in-leading-app-stores/
+[APPBRAI] "Number of available apps", http://www.appbrain.com/stats/number-of-android-apps
+[WANDHIS] "Android (operating system)", http://en.wikipedia.org/wiki/Android_(operating_system)#History
+[WIKIOHA] "Open Handset Alliance", http://en.wikipedia.org/wiki/Open_Handset_Alliance#Products
+[ANDOPEN] "The Android Source Code", http://source.android.com/source/index.html
+[ANDWIRE] [ Fuente: Android Wireless Application Development - Página 18 ]
+[OHAOVER] "Alliance Overview", http://www.openhandsetalliance.com/oha_overview.html
+[DASHAND] "Dashboards", https://developer.android.com/about/dashboards/index.html#OpenGL
+[WIKFEAT] "List of features in Android", http://en.wikipedia.org/wiki/List_of_features_in_Android
+[ANDROTG] "Todo sobre el USB OTG: ¿Qué es? ¿Cómo se usa? ¿Es compatible mi smartphone?", http://www.elandroidelibre.com/2013/03/todo-sobre-el-usb-otg-que-es-como-se-usa-es-compatible-mi-smartphone.html
+[STACKLA] "What are the benefits of an N-layered architecture?", http://stackoverflow.com/questions/2637114/what-are-the-benefits-of-an-n-layered-architecture
+[ELINAMP] "Android Mainlining Project", http://elinux.org/Android_Mainlining_Project
+[KERFEAT] "Android Kernel Features", http://elinux.org/Android_Kernel_Features
+[TESBIND] Thorsten Schreiber, "Android Binder - Android Interprocess Communication", Octubre, 2011.
+[DIANNEH] "LKML - Dianne Hackborn", https://lkml.org/lkml/2009/6/25/3
+[PALBIND] "Binder Kit", http://www.angryredplanet.com/~hackbod/openbinder/docs/html/BinderKit.html
+[BINDGAR] Aleksandar Gargenta, "Deep Dive into Android IPC/Binder Framework at Android Builders Summit 2013", http://events.linuxfoundation.org/images/stories/slides/abs2013_gargentas.pdf, 2013.
+[ANDPARA] "Paranoid network-ing", http://elinux.org/Android_Security#Paranoid_network-ing
+[PARANDR] "ABS: Android security underpinnings", https://lwn.net/Articles/540196/
+[FREETYP] "FreeType", https://es.wikipedia.org/wiki/FreeType
+[ECLIPEN] "An update on Eclipse Android Developer Tools", http://android-developers.blogspot.com.ar/2015/06/an-update-on-eclipse-android-developer.html
+[SDKMANA] "SDK Manager", http://developer.android.com/tools/help/sdk-manager.html
+[TOOLSDK] "Tools Help", http://developer.android.com/tools/help/index.html
+[ANDRFUN] "Application Fundamentals", http://developer.android.com/guide/components/fundamentals.html
+[ANDRINT] "Intents and Intent Filters", http://developer.android.com/guide/components/intents-filters.html
+[EMULATO] "Android Emulator", http://developer.android.com/tools/help/emulator.html
+[ANDRVIE] "UI Overview", http://developer.android.com/guide/topics/ui/overview.html
+[ANDRLAY] "Layouts", http://developer.android.com/guide/topics/ui/declaring-layout.html
+[AMAZAPP] "Amazon Appstore", http://www.amazon.com/mobile-apps/b/ref=topnav_storetab_mas?ie=UTF8&node=2350149011
+[SLIDEME] "SlideME", http://slideme.org/
+[APPSLIB] "AppsLib", http://appslib.com/
+[INSMARK] "Inside Market", http://www.insydemarket.com/
+[FILEDIR] "FileDir.com", https://filedir.com/
+[APPBRAI] "AppBrain", http://www.appbrain.com/
+[ANDRPIT] "AndroidPIT", https://www.androidpit.com/android-apps
+[ALTMARK] "Distributing Android apps outside of the Android Market", http://stackoverflow.com/questions/2660081/distributing-android-apps-outside-of-the-android-market
+[OPENDIS] "Alternative Distribution Options", http://developer.android.com/distribute/tools/open-distribution.html
+[WIKPLAY] "Google Play", https://en.wikipedia.org/wiki/Google_Play
+[PLAYREG] "¿Es la primera vez que usas la Consola para programadores de Google Play? Aprende los conceptos básicos.", https://support.google.com/googleplay/android-developer/answer/6112435?hl=es-419
+[PLAYAPP] "Tarifas de transacción", https://support.google.com/googleplay/android-developer/answer/112622?hl=es-419&ref_topic=6075663
+[FDROIDM] "F-Droid", https://f-droid.org/repository/browse/
+[ALTPLAY] "Cómo darse de alta como desarrollador Android en Google Play", https://www.yeeply.com/blog/como-darse-de-alta-como-desarrollador-android-en-google-play/
+[APPLEPA] "In-App Purchase for Developers", https://developer.apple.com/in-app-purchase/
+[PLAYOVE] "Google Play", https://play.google.com/intl/en_us/about/overview/index.html
+[PLAYABO] "The Google Play Opportunity", https://developer.android.com/distribute/googleplay/about.html
+[PLAYPUB] "Publishing Overview", http://developer.android.com/tools/publishing/publishing_overview.html
+
+::::::::::::::::::: Capítulo 3 :::::::::::::::::::
+
+[LINPERM] [https://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions]
+[SECKERN] [http://source.android.com/devices/tech/security/overview/kernel-security.html]
+[APPSECU] [Fuente: Libro titulado "Application Security for the Android Platform"]
+[SECPERM] [http://developer.android.com/guide/topics/security/permissions.html]
+[SECOVER] [http://source.android.com/tech/security/index.html]
+[SIGNMAN] [http://developer.android.com/tools/publishing/app-signing.html#signing-manually]
+[KEYTOOL] [http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/keytool.html]
+[QUEESSE] [Libro "Qué es la seguridad informática" por Hugo Scolnik]
+[SISMODE] [Libro "Sistemas Operativos Modernos" por Andrew Tanenbaum]
+[SMRTLCK] [ https://support.google.com/nexus/answer/6093922?hl=es-419 ]
+[INFOSCR] [ https://support.google.com/nexus/answer/2824802?hl=es-419&ref_topic=3416293 ]
+[APPSBAC] [ https://support.google.com/nexus/answer/2819582?hl=en-GB ]
+[GOOFOTO] [ https://support.google.com/photos/answer/6193313?rd=1 ]
+[GOODRIV] [ https://support.google.com/drive/answer/1688488?hl=es ]
+[DRIVEPC] [ https://support.google.com/drive/answer/2374989?rd=1 ]
+[BOUNCER] [ http://googlemobile.blogspot.com.ar/2012/02/android-and-security.html ]
+[UNKSOUR] [ https://support.google.com/nexus/answer/2812853?hl=es-419&ref_topic=3416293 ]
+[AUTOUPD] [ https://support.google.com/googleplay/answer/113412?hl=en ]
+[ANDMOFF] [ https://support.google.com/accounts/answer/3265955?hl=en&ref_topic=6160499 ]
+[PANLADM] [ https://www.google.com/android/devicemanager]
+[GOOUSER] [ https://static.googleusercontent.com/media/www.google.com/es/AR/work/android/files/android-for-work-security-white-paper.pdf ]
+[TLSWIKI] [ https://es.wikipedia.org/wiki/Transport_Layer_Security#Navegadores]
+[CISCVPN] [ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/what_is_a_vpn.html ]
+[VPNANDR] [ Como conectarse: https://support.google.com/nexus/answer/2819573?hl=es-419&ref_topic=3416342 ]
+[PROXYIU] [ https://kb.iu.edu/d/ahoo ]
+[PROXAND] [ https://support.google.com/nexus/answer/2819519?hl=en ]
+[ANDENCR] [ https://source.android.com/devices/tech/security/encryption/ ]
+[ENCDATA] [ https://support.google.com/nexus/answer/2844831?hl=en ]
+[ENCRCEN] [ http://www.androidcentral.com/what-full-disk-encryption-android-lollipop ]
+
+::::::::::::::::::: Capítulo 4 :::::::::::::::::::
+
+
+
+----------------------------------  Descargas ------------------------------------------
+
+[UNDEMOB] [http://jpkc.fudan.edu.cn/picture/article/217/57/89/b0edb649422587f87d5e7abbb80c/6a31ac41-b06a-4355-984f-2dbefee6762e.pdf] ["Understanding mobile handheld device use and adoption"]
+[NISTFOR] [http://www.nist.gov/forensics/research/upload/draft-guidelines-on-mobile-device-forensics.pdf]
+[DLUENGO] [http://derecom.com/numeros/pdf/luengo.pdf]
+[NISTGUI] [http://csrc.nist.gov/publications/drafts/800-124r1/draft_sp800-124-rev1.pdf] ["Guidelines for managing and securing mobile devices in the Enterprise"]
+[PHONEAR] [http://www.phonearena.com/news/Heres-how-screen-size-preferences-have-changed-through-the-years-infographic_id71924] [ Infográfico ]
+[CHARGET] [http://chargetech.com/cell-phone-battery-history/ ]
+[EBAYPHO] [http://www.ebay.co.uk/gds/5-Different-Types-of-Phone-Battery-Technologies-Explained-and-How-to-Buy-Them-/10000000177989705/g.html ]
+[BBCNEWS] [http://news.bbc.co.uk/2/hi/science/nature/1550622.stm]
+[DIGITRE] [http://www.digitaltrends.com/mobile/camera-phone-history/]
+[GARTIOT] [http://www.gartner.com/it-glossary/internet-of-things/]
+[CISCIOT] [http://www.cisco.com/web/solutions/trends/iot/overview.html]
+[DNAIIOT] [http://www.dnaindia.com/scitech/report-smartphones-and-their-place-in-the-internet-of-things-data-transfer-safety-2089285]
+[INFOWEE] [http://www.informationweek.com/mobile/mobile-devices/apps-to-unite-smartphones-iot/d/d-id/1320222]
+[MAPRIOT] [https://www.mapr.com/solutions/enterprise/internet-of-things]
+[GARTIOE] [http://www.gartner.com/smarterwithgartner/the-internet-of-things-and-the-enterprise/]
+[MCCSTAT] [http://eprints.um.edu.my/11347/1/Mobile_Cloud_Computing_The-state-of-the-art%2C_Challenges%2C_and_Future_Research.pdf]
+[GARTTRE] [http://www.gartner.com/newsroom/id/2867917]
+[WIREDSM] [http://www.wired.com/2015/02/smartphone-only-computer/]
+[GARTPRE] [http://www.gartner.com/newsroom/id/2939217]
+[COMSCOR] [http://www.comscore.com/Insights/Blog/Number-of-Mobile-Only-Internet-Users-Now-Exceeds-Desktop-Only-in-the-U.S?]
+[GARTSTA] [http://www.gartner.com/newsroom/id/3115517]
+[IDCSTAT] [http://www.idc.com/getdoc.jsp?containerId=prUS25804315]
+[SECCOMP] [Fuente: Security in computing - Charles P. Pfleeger]
+[PRACSEC] [http://amifan.googlecode.com/svn/trunk/Documents/4.3%20%20A%20Practical%20Analysis%20of%20Smartphone%20Security.pdf] [ "A practical analysis of smartphone security" ]
+[GLOBJOU] [https://globaljournals.org/GJCST_Volume13/2-Evaluating-Smartphone-Application.pdf]
+[COMPSEC] [ Libro "Computer security" por Dieter Gollman (2006) ]
+[MARKAND] [http://www.appfutura.com/blog/alternative-app-stores/]
+[APWGREP] [http://docs.apwg.org/reports/mobile/apwg_mobile_fraud_report_april_2013.pdf]
+[DROIRAN] [http://yajin.org/papers/ndss12_droidranger.pdf]
+[PALOXGH] [http://researchcenter.paloaltonetworks.com/2015/09/malware-xcodeghost-infects-39-ios-apps-including-wechat-affecting-hundreds-of-millions-of-users/]
+[ZIMPSTA] [https://blog.zimperium.com/experts-found-a-unicorn-in-the-heart-of-android/]
+[TIMESOC] [http://timesofindia.indiatimes.com/tech/social/Teenagers-unaware-of-social-media-privacy-risks-Study/articleshow/46609324.cms]
+[COMPNUD] [http://www.computerweekly.com/news/2240227886/Nude-celebrity-pics-posted-online-after-alleged-iCloud-hack]
+[COMPWEE] [http://www.computerweekly.com/news/2240228176/smartphone-users-unaware-of-hacking-risks]
+[SMARAWA] [http://www.aueb.gr/users/amylonas/docs/COSE%20Smartphone%20Awareness.pdf]
+[IJSRMOB] [http://www.ijsr.net/archive/v4i1/SUB15466.pdf]
+[USACERT] [http://www.us-cert.gov/ncas/tips/ST04-017]
+[TAXONET] [http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.77.1606&rep=rep1&type=pdf] ["A Taxonomy of Network and Computer Attack Methodologies"]
+[PROTCHI] [http://mobility.protectchildren.ca/know-the-risks/text-messaging-instant-messaging]
+[NISTWNS] [http://www.pajhohesh.ir/e-books-m-biabani/computer-en/01.pdf] ["Wireless Network Security - 802.11, Bluetooth and Handheld Devices"]
+[ENHAQRC] [http://hkr.diva-portal.org/smash/get/diva2:824625/FULLTEXT01.pdf] ["Enhancing QR Code Security"]
+[GSMVULN] [http://arxiv.org/pdf/1002.3175.pdf] ["Solutions to the GSM Security Weaknesses"]
+[NACICEL] [http://www.lanacion.com.ar/1758617-celulares-crecen-los-reclamos-por-el-cobro-de-contenidos-no-solicitados]
+[PANDASE] [http://www.pandasecurity.com/spain/mediacenter/consejos/protege-tu-privacidad-y-desactiva-el-gps-de-tu-camara-del-movil/]
+[EFFMGPS] [https://ssd.eff.org/es/module/el-problema-con-los-tel%C3%A9fonos-m%C3%B3viles]
+[PREGEOS] [https://www.cs.ucsb.edu/~ravenben/publications/pdf/lbns-privacyTMC13.pdf]
+[BLOGTHI] [http://blogthinkbig.com/diferencia-entre-jailbreak-y-root/]
+[MOBIPHI] [http://www.scirp.org/journal/PaperDownload.aspx?paperID=57634] [ "Mobile Phishing Attacks and Mitigation Techniques" ]
+[SECSUPE] [http://www.securitysupervisor.com/security-q-a/network-security/262-what-is-url-spoofing]
+[SEGANIO] [http://revistas.udistrital.edu.co/ojs/index.php/tia/article/download/4312/6875] [ "Seguridad en dispositivos móviles con sistemas operativos Android y iOS" ]
+[CONSCOM] [https://consumercomplaints.fcc.gov/hc/en-us/articles/202654304-Caller-ID-and-Spoofing]
+[FORTINE] [http://www.fortinet.com/sites/default/files/whitepapers/10-Years-of-Mobile-Malware-Whitepaper.pdf]
+[ZITMOAN] [https://www.bankvaultonline.com/blog/2015/08/13/android-online-banking-risks/]
+[FSECURE] [https://www.f-secure.com/v-descs/trojan_android_droidkungfu_c.shtml]
+[SYMAITU] [Symantec_annual_internet_threat_report_ITU2015.pdf]
+[OVEMALW] [http://www.scirp.org/journal/PaperDownload.aspx?paperID=50704] ["An Overview of Mobile Malware and Solutions"]
+
+---------------------------------------------------------
+
+[1] [http://en.wikipedia.org/wiki/Mobile_device] (primera página) 
+[2] [http://www.techopedia.com/definition/23586/mobile-device] (cuerpo de la única página) 
+[3] [http://mobileman.projects.supsi.ch/glossary.html] (ver mobile computing) 
+[4] [http://dsid.escom.ipn.mx/julio/cursos/presen/arq_disp_moviles/Introduccion.pdf] 
+[5] [http://en.wikipedia.org/wiki/Mobile_computing#Limitations] (ver la sección "Limitations") 
+[6] [http://derecom.com/numeros/pdf/luengo.pdf] 
+[7] [NIST (2012) - Guidelines for managing and securing mobile devices in the Enterprise] 
+[8] [http://es.wikipedia.org/wiki/Tableta] 
+[9] [https://en.wikipedia.org/wiki/Laptop] 
+[10] [http://en.wikipedia.org/wiki/E-book_reader] 
+[11] [http://en.wikipedia.org/wiki/Wearable_computer] 
+[12] [http://es.wikipedia.org/wiki/Tel%C3%A9fono_inteligente] 
+[13] [https://en.wikipedia.org/wiki/Smartbook] 
+[14] [http://www.phonearena.com/news/Heres-how-screen-size-preferences-have-changed-through-the-years-infographic_id71924] 
+[15] [https://en.wikipedia.org/wiki/Car_phone] 
+[16] [https://es.wikipedia.org/wiki/Bater%C3%ADa_de_n%C3%ADquel-metal_hidruro] 
+[17] [https://es.wikipedia.org/wiki/Bater%C3%ADa_de_pol%C3%ADmero_de_litio] 
+[18] [http://chargetech.com/cell-phone-battery-history/] 
+[19] [http://www.ebay.co.uk/gds/5-Different-Types-of-Phone-Battery-Technologies-Explained-and-How-to-Buy-Them-/10000000177989705/g.html] 
+[20] [https://en.wikipedia.org/wiki/Camera_phone#History] 
+[21] [http://www.digitaltrends.com/mobile/camera-phone-history/] 
+[22] [http://news.bbc.co.uk/2/hi/science/nature/1550622.stm] 
+[23] [https://en.wikipedia.org/wiki/Nokia_Lumia_1020]
+[24] [http://www.gartner.com/newsroom/id/2867917] 
+[25] [https://www.mapr.com/solutions/enterprise/internet-of-things] 
+[26] [http://www.cisco.com/web/solutions/trends/iot/overview.html] 
+[27] [http://www.dnaindia.com/scitech/report-smartphones-and-their-place-in-the-internet-of-things-data-transfer-safety-2089285] 
+[28] [http://www.informationweek.com/mobile/mobile-devices/apps-to-unite-smartphones-iot/d/d-id/1320222] 
+[29] [http://www.gartner.com/smarterwithgartner/the-internet-of-things-and-the-enterprise/] 
+[30] [http://eprints.um.edu.my/11347/1/Mobile_Cloud_Computing_The-state-of-the-art%2C_Challenges%2C_and_Future_Research.pdf] 
+ [31] [http://www.gartner.com/newsroom/id/3115517] 
+[32] [http://www.idc.com/getdoc.jsp?containerId=prUS25804315] 
+[33] [http://www.wired.com/2015/02/smartphone-only-computer/] 
+[34] [http://www.gartner.com/newsroom/id/2939217] 
+[35] [http://www.comscore.com/Insights/Blog/Number-of-Mobile-Only-Internet-Users-Now-Exceeds-Desktop-Only-in-the-U.S?] 
+[PRACSEC] [ Woongryul Jeon, Jeeyeon Kim, Youngsook Lee, Dongho Won (2011) "A practical analysis of smartphone security" ] 
+[NISTGUI] [ Paper de NIST titulado "Guidelines for Managing and Securing Mobile Devices in the Enterprise (draft)" ] 
+[ZIMSTAGE] [ https://blog.zimperium.com/experts-found-a-unicorn-in-the-heart-of-android/ ] 
+[HISTMAL] [http://www.fortinet.com/sites/default/files/whitepapers/10-Years-of-Mobile-Malware-Whitepaper.pdf] 
+[ZITMO] https://www.bankvaultonline.com/blog/2015/08/13/android-online-banking-risks/ 
+[F-SECURE] https://www.f-secure.com/v-descs/trojan_android_droidkungfu_c.shtml 
+[CABIR] [https://en.wikipedia.org/wiki/Cabir_%28computer_worm%29] 
+[ANDSEC] [ Abhishek Dubey, Anmol Misra (2013) "Android Security - Attacks and defenses". Editorial: CRC Press ] 
+[38] [http://developer.android.com/about/android.html] 
+[39] [http://www.gartner.com/newsroom/id/3115517] 
+[40] [http://source.android.com/source/faqs.html#what-is-the-android-open-source-project] 
+[41] [http://source.android.com/source/faqs.html#why-did-we-open-the-android-source-code] 
+[42] [http://www.android-x86.org/] 
+[43] [https://www.android.com/phones/] 
+[44] [https://www.android.com/tablets/] 
+[45] [https://www.android.com/auto/] 
+[46] [https://www.android.com/tv/] 
+[47] [https://www.android.com/wear/] 
+[48] [ Andrew Hoog (2011) "Android Forensics - Investigation, Analysis, and Mobile Security for Google Android" ] 
+[ABOUTANDRO] [http://developer.android.com/about/android.html] 
+[STATISTA] [http://www.statista.com/statistics/276623/number-of-apps-available-in-leading-app-stores/] 
+[APPBRAIN] [http://www.appbrain.com/stats/number-of-android-apps] 
+[ANDROABOUT] [ http://source.android.com/source/index.html ] 
+[ANDHIS] [Fuente: http://en.wikipedia.org/wiki/Android_(operating_system)] (sección "history") 
+[OHA] [Fuente: http://en.wikipedia.org/wiki/Open_Handset_Alliance] (sección "products") 
+[ANDOPEN] [Fuente: http://source.android.com/source/index.html]
+
+[ANDWIRE] [ Shane Conder, Lauren Darcey (2011) "Android Wireless Application Development" ] 
+[ANDAPP] [ https://es.wikipedia.org/wiki/Android#Aplicaciones ] 
+[SOUABOUT] [ http://source.android.com/source/index.html ] 
+[DASHAND] [https://developer.android.com/about/dashboards/index.html#OpenGL] 
+[WIKIFEA] [ http://en.wikipedia.org/wiki/List_of_features_in_Android ] 
+[OTG] [http://www.elandroidelibre.com/2013/03/todo-sobre-el-usb-otg-que-es-como-se-usa-es-compatible-mi-smartphone.html] 
+[LAYERS] [http://stackoverflow.com/questions/2637114/what-are-the-benefits-of-an-n-layered-architecture] 
+[ELINAMP] [http://elinux.org/Android_Mainlining_Project] 
+[KERFEAT] [http://elinux.org/Android_Kernel_Features] 
+[ANDHACK] [Joshua J. Drake, Pau Oliva Fora, Zach Lanier, Collin Mulliner, Stephen A. Ridley, Georg Wicherski (2014) "Android Hacker's Handbook"] 
+[ANDSECINT] [Nikolay Elenkov (2015) "Android Security Internals: An In-Depth Guide to Android's Security Architecture"] 
+[ANDPAR] [http://elinux.org/Android_Security#Paranoid_network-ing] 
+[EMBAND] [Karim Yaghmour (2013) "Embedded Android" ] 
+[BINDELIN] [http://elinux.org/Android_Binder] 
+[PARANDR] [https://lwn.net/Articles/540196/] 
+[TESBIND] [https://www.nds.rub.de/media/attachments/files/2012/03/binder.pdf] 
+[DIANNE] [https://lkml.org/lkml/2009/6/25/3] 
+[SLIDBIND] [http://www.slideshare.net/jserv/android-ipc-mechanism] 
+[GARGENTA] [http://events.linuxfoundation.org/images/stories/slides/abs2013_gargentas.pdf] 
+[BINDBASIC] [http://www.cubrid.org/blog/dev-platform/binder-communication-mechanism-of-android-processes/] 
+[PALMBIND] [http://www.angryredplanet.com/~hackbod/openbinder/docs/html/BinderKit.html] 
+[BINDGARG] [http://events.linuxfoundation.org/images/stories/slides/abs2013_gargentas.pdf] 
+[IBINDER] [http://developer.android.com/intl/es/reference/android/os/IBinder.html] 
+[freeType] [https://es.wikipedia.org/wiki/FreeType] 
+[TUTODEV][https://sites.google.com/a/androidstartup.com/www/tutorial-de-desarrollo] 
+[ECLIPEND] [http://android-developers.blogspot.com.ar/2015/06/an-update-on-eclipse-android-developer.html] 
+[ANDFUN] [Fuente: http://developer.android.com/guide/components/fundamentals.html] 
+[ANDINT] [Fuente: http://developer.android.com/guide/components/intents-filters.html] 
+[ANDVIE] [Fuente: http://developer.android.com/guide/topics/ui/overview.html] 
+[ANDLAY] [Fuente: http://developer.android.com/guide/topics/ui/declaring-layout.html] 
+[azon] [http://www.amazon.com/mobile-apps/b/ref=topnav_storetab_mas?ie=UTF8&node=2350149011] 
+[slid] [http://slideme.org/] 
+[applib] [http://appslib.com/] 
+[inmark] [http://www.insydemarket.com/] 
+[filed] [https://filedir.com/] 
+[appbra] [http://www.appbrain.com/] 
+[andpit] [https://www.androidpit.com/android-apps] 
+[altmark] [http://stackoverflow.com/questions/2660081/distributing-android-apps-outside-of-the-android-market] 
+[opendis] [http://developer.android.com/distribute/tools/open-distribution.html] 
+[wikiplay] [https://en.wikipedia.org/wiki/Google_Play] 
+[playreg] [https://support.google.com/googleplay/android-developer/answer/6112435?hl=es-419] 
+[playapp] [https://support.google.com/googleplay/android-developer/answer/112622?hl=es-419&ref_topic=6075663] 
+[fdroid] [https://f-droid.org/repository/browse/] 
+[altaplay] [https://www.yeeply.com/blog/como-darse-de-alta-como-desarrollador-android-en-google-play/] 
+[altadev] [https://support.google.com/googleplay/android-developer/answer/6112435?hl=es-419] 
+[applepay] [https://developer.apple.com/in-app-purchase/] 
+[playover] [https://play.google.com/intl/ALL_us/about/overview/index.html] 
+[playabou] [https://developer.android.com/distribute/googleplay/about.html] 
+[playpubl] [http://developer.android.com/tools/publishing/publishing_overview.html]
+[LINUX] [ https://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions ] 
+[SECKER] [http://source.android.com/devices/tech/security/overview/kernel-security.html] 
+[APPSEC] [Libro "Application Security for the Android Platform"] 
+[QUESEG] [Libro "Qué es la seguridad informática" por Hugo Scolnik] 
+[SISMOD] [Libro "Sistemas Operativos Modernos" por Andrew Tanenbaum] 
+[SMARTLOCK] [ https://support.google.com/nexus/answer/6093922?hl=es-419 ] 
+[INFOOW] [ https://support.google.com/nexus/answer/2824802?hl=es-419&ref_topic=3416293 ] 
+[GOOFOTOS] [ https://support.google.com/photos/answer/6193313?rd=1 ] 
+[GOODRIVE] [ https://support.google.com/drive/answer/1688488?hl=es ] 
+[DRIVEPC] [ https://support.google.com/drive/answer/2374989?rd=1 ] 
+[APPSBACK] [ https://support.google.com/nexus/answer/2819582?hl=en-GB ] 
+[BOUNCER] [ http://googlemobile.blogspot.com.ar/2012/02/android-and-security.html ] 
+[CONFPLAY] [ https://support.google.com/nexus/answer/2812853?hl=en ] 
+[PROXYAND] [ https://support.google.com/nexus/answer/2819519?hl=en ] 
+[PROXYIU] [ https://kb.iu.edu/d/ahoo ] 
+[GOOUSER] [ https://static.googleusercontent.com/media/www.google.com/es/AR/work/android/files/android-for-work-security-white-paper.pdf ] 
+[VPNANDR] [ https://support.google.com/nexus/answer/2819573?hl=es-419&ref_topic=3416342 ] 
+[CISCOVPN] [ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/what_is_a_vpn.html ] 
+[TLSWIKI] [https://es.wikipedia.org/wiki/Transport_Layer_Security#Navegadores] 
+
+
+Formato de las Referencias bibliográficas
+=========================================
+
+Formato Ale
+===========
+[{número}] {autores} "{título del paper}"
+
+[34] Robert M. O’Keefe, Daniel E. O’Leary “Expert system verification and validation: a survey and tutorial”
+
+Formato IEEE
+============
+
+Papers
+
+[1] J. K. Author, “Name of paper,” Abbrev. Title of Periodical, vol. x, no. x, pp. xxx-xxx, Abbrev. Month, year.
+
+Ejemplo:
+[1] R. E. Kalman, “New results in linear filtering and prediction theory,” J. Basic Eng., ser. D, vol. 83, pp. 95-108, Mar., 1961.
+
+Libros
+
+Formato básico:
+[1] J. K. Author, “Title of chapter in the book,” in Title of His Published Book, xth ed. City of Publisher, Country if not USA: Abbrev. of Publisher, year, ch. x, sec. x, pp. xxx–xxx.-
+
+Ejemplos:
+[1] B. Klaus and P. Horn, Robot Vision. Cambridge, MA: MIT Press, 1986.
+[2] L. Stein, “Random patterns,” in Computers and You, J. S. Brake, Ed. New York: Wiley, 1994, pp. 55-70.
+
+[http://iie.fing.edu.uy/institucional/biblioteca/presentaciones/Citas-IEEE-2011.pdf]

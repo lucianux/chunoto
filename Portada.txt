@@ -1,0 +1,51 @@
+Título: Analizando el nivel de seguridad del entorno de Android.
+Autores: Jesús Luciano Catacora.
+Director: Lía Molinari.
+Carrera: Licenciatura en Sistemas
+
+------------------------------------------
+
+Resúmen (deben ser apróximadamente 8 líneas):
+
+En este trabajo se realizó una investigación de la seguridad en los dispositivos móviles. Primero, se realizó un estudio de los dispositivos móviles, buscando las causas por las cuales se hicieron protegonista en esta época, canalizando el foco en los smartphones. Luego se continuó con un análisis de la seguridad en smartphones, presentando varias vulnerabilidades y amenazas; ésto sirve para justificar el estudio en esta área y para plantear la definición del problema. El trabajo continua con una muestra de lo que es el sistema operativo Android, presentando: un panorama general del proyecto, su arquitectura dividida en capas (y la descripción de cada capa) y la descripción de su entorno de desarrollo. Luego, se exponen el modelo base de seguridad en Android y las medidas de seguridad adicionales que provee Android para contrarrestar las amenazas. Luego, se prosigue presentando pruebas de concepto (PoC) de las vulnerabilidades presentes, con la finalidad de demostrar que existen motivos para mejorar. En la última parte se proponen mejoras, presentando sugerencias, apps que pueden contribuir y una propuesta de desarrollo.
+
+-------------------------------------------
+
+Líneas de investigación/Palabras claves:
+
+- Seguridad.
+- Dispositivos móviles.
+- Android.
+- Sistemas operativos embebidos.
+- Hardening en dispositivos móviles.
+
+-------------------------------------------
+
+Conclusiones (deben ser apróximadamente 3 líneas):
+
+En este trabajo se demostró que existen problemas de seguridad en el ámbito móvil, con teoría y pruebas prácticas. Se mostraron alternativas concretas para contrarrestar los riesgos y concientizar al usuario. En el transcurso se concluyó que la materia de la seguridad móvil sufre el cambio constante y es un área de estudio precoz; es decir, necesita de aportes constantes para las nuevas características que van surgiendo. Por otro lado, la información necesaria para perjudicar al usuario del smartphone está al alcance de cualquier persona.
+
+------------------------------------------
+
+Trabajos realizados (deben ser apróximadamente 5 líneas):
+
+En este trabajo: 
+- Se expuso un panorama de los dispositivos móviles.
+- Se investigaron vulnerabilidades y amenazas de los smartphones.
+- Se elaboró una introducción a la plataforma Android.
+- Se describieron pruebas de concepto ejecutadas en Android.
+- Se propusieron alternativas para mejorar la seguridad.
+
+------------------------------------------
+
+Trabajos futuros (deben ser apróximadamente 3 líneas):
+
+Los trabajos futuros que se proponen para esta Tesina son:
+- Estudio de la seguridad de dispositivos móviles a bajo nivel (a nivel del hardware).
+- Adición de otras pruebas de concepto.
+- Realización de las pruebas de concepto en otros dispositivos, ajenos a la plataforma Android.
+- Confección de una comparación entre varios sistemas operativos.
+- Generación del hardening en otras plataformas móviles.
+- Implementación de la propuesta de desarrollo.
+
+------------------------------------------

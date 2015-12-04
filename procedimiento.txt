@@ -1,0 +1,133 @@
+Proceso de elaboración de una tesis
+----------------------------------
+Por Jesús
+---------
+
+En el presente documento se puede ver un análisis personal de varias tesis que se fueron viendo. De esta forma se intentó generar un template el cual nos puede servir para reutilizar las formas aplicadas en tesis anteriores.
+
+Template General de una Tesis (Estructura y organización)
+---------------------------------------------------------
+
+Capítulo 0 (Introducción)
+----------
+
+Lo que contiene este capítulo es mucha mentira, introducción berreta, siempre se deben aclarar objetivos: justificar el motivo por el cual se va a realizar la tarea, asignación, trabajo, análisis, párrafo, etc. en fin, cualquier elemento visible que exponga una idea en la tesis.
+
+Capítulo 1
+----------
+
+(*) Objetivos (generales relativos a TODO el trabajo)
+  -> A dónde se quiere llegar (el qué).
+  -> Justificación de la importancia de la Tesis: con observaciones generales, estadísticas, presentación de un escenario hipotético a modo de ejemplo.
+  -> Qué actividades se van a realizar (el cómo).
+  -> Potencial, perspectivas, qué trabajos futuros se pueden realizar para mejorar esta obra.
+  -> Presentación muy breve de los temas generales que se van a tocar, los que no requieran una descripción o definición.
+
+(*) Motivación
+  -> Explicación coloquial (con un lenguaje simple) la importancia del tema central. En fin, es un discurso choto.
+     Ej.: "con el pasar de los años, la informática fue avanzando en cuánto a complejidad se refiere..."
+
+(*) Pasos a seguir
+  -> Define el procedimiento como un listado de ítems simples, breves y bien definidos.
+
+Capítulo 2 - hasta - Capítulo (N - 2)
+-------------------------------------
+
+(*) Estado del arte, definiciones, desglose de los temas generales, descripción o reseña de las herramientas a utilizar (o el entorno de trabajo).
+
+Capítulo (N - 1)
+----------------
+
+(*) Análisis, aportes, conclusiones parciales acerca de un tema específico.
+
+Capítulo N
+----------
+
+(*) Conclusiones generales, posibilidades de expansión, extensión, migración, (volar), (volar), (volar), etc.
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+Estructura de un capítulo (template)
+------------------------------------
+
+  Títilo principal del capítulo
+  -----------------------------
+
+    Párrafo introductorio
+    ---------------------
+
+    ( Presenta la idea general que se va a usar en el capítulo y se justifica la importancia del tema y de su estudio )
+
+    Core
+    ----
+
+    ( Presentación del análisis / investigación )
+    ( Si es análisis, presentar: * Definir los puntos a evaluar, * realizar el análisis de cada herramienta y * al final se dá una conclusión )
+    ( Si es investigación, presentar: definiciones hechas con su punto de vista )
+
+
+    ( Posible organización de este capítulo )
+    Por cada ítem que se va a exponer
+    -> Introducción
+    -> Estructura y contenido
+    -> Análisis
+    ---- Al final se muestra una conclusión y tabla comparativa
+    ------- Tabla comparativa: aspectos duros (información estadística)
+    ------- Conclusión: aspectos blandos que no se tuvieron en cuenta en el cuadro / tabla comparativa ,
+    ------- y además se brinda una conclusión a partir de la tabla comparativa.
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+Frases hechas para denotar objetivos
+------------------------------------
+
+"El objetivo es..." "Focalizando en.." "nos permite..." "como apoyo.." "se generará.."
+"nos proporciona" (instrumentos para prevenir) "para ello, .." "se puede..."
+"incorporando" "se cuenta con..." "para dar soporte..." "...se utilizará como soporte"
+"se implementará un entorno.." (de comunicación o de difusión)
+
+Diccionario útil (compendio de frases hechas)
+----------------
+
+"Reconocer" - "Detectar" - "Explorar" - "Evaluación" - "Prueba" - "Análisis" (sobre herramientas)
+"Investigación" - "Nos permite concientizar" - "Profundizar" - "Integración" (de un módulo)
+"Se muestran los módulos, las funciones y actividades que contienen" "Se entra en detalle"
+"Para poder impartir" "Nos permite concientizar" "Para poder comprender"
+"Haciendo uso responsable" "Brindar información sobre.." "Fueron elegidas teniendo en cuenta"
+"Distintos tipos de usuario" "Planteos iniciales" "Hallar la idea" "Presentar alternativas"
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+Evitar:
+- Dar vueltas el mismo tema durante mucho tiempo.
+- Sentir incertidumbre y dudar de la calidad del trabajo hecho (¿está bien? ¿lo voy a terminar?).
+
+Para ser productivo, se debe escribir constantemente, no sólo leer.
+
+No hay que confundirse: tener muchas páginas en una tesis no quiere decir que haya mucha información de calidad.
+
+Personalmente, hay 2 cosas que me detuvieron/ralentizaron en el transcurso de la tesis: miedo, pereza (había que leer mucho y a mí me "cuesta" leer). Soy muy auto-exigente y pretendo hacer cosas que me superen, lo que genera presión y más miedo. Me tomé muy en serio la tesis, como si debiera descubrir algo.
+
+Crear herramientas propias (personales) para agilizar, organizarse, sentir confianza, etc. No tienen que ver con la tesis, sino con la forma en que la abordamos.
+
+Otro error mío: exceso de confianza al punto de llegar a la subestimación de las tareas. Cuidado!! Es bueno tener confianza, mientras se aplique. Es decir, no se debe confiar que la tesis se escribe sola.
+
+Otro error fuí muy exigente y exagerado en la referencias bibliográficas.
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+Investigación
+-------------
+
+Una vez definido el tema y el temario, mediante Google se debe especificar búsquedas, uno debe saber qué cosas debe descartar y qué cosas tomar, en esta instancia se debe tratar de ser objetivo. Luego, habiendo obtenido los papers (parte objetiva), se deben realizar observaciones, acotaciones, análisis, evaluaciones, comparaciones, etc. de estos documentos (parte subjetiva).
+
+Remarcando, la búsquedas en Google es un arte, se va a mejorando con la práctica, lo que se debe evitar es la dispersión.
+
+En muchos casos, uno se traba o se queda parado en una subtarea relativa a la tesis y le quedan 2 opciones: se vé obligado a bajar la calidad del trabajo (copiarse, recortar, etc.) o pasa a otra tarea. Por sobre todas las cosas, uno debe evitar trabarse para evitar fatiga.
+
+No encontrar lo que uno busca para que quede cierre la idea (apoyo o aval de una idea por parte de un paper o una nota en una revista o post en un blog) causa frustración, acá se requiere tenacidad. Si se demora mucho, se debe volver atrás para realizar una revisión.
+
+Formas de escribir
+------------------
+
+De atrás para adelante: lo utilicé cuando estaba trabado, primero se escribe la información más obvia (que DEBE ir en la tesis, lo que forma el centro de la cuestión) y luego se analiza si se puede agregar algo más que sea accesorio, que avale, que apoye lo esencial como un compendio de hitos históricos o un conjunto de definiciones que ayuden a entender lo principal. Ej.: si queremos escribir acerca de la seguridad en smartphones, podemos empezar por mencionar las vulnerabilidades de los dispositivos, amenazas que pueden explotarlas y algunos vectores de ataque (formas para aprovecharse de esas amenzas).

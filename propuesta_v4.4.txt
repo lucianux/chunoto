@@ -1,0 +1,115 @@
+:::: Índice ::::
+
+-->>>Título: Seguridad en Dispositivos móviles. [Capítulo voluminoso]
+	-Introducción a los dispositivos móviles.
+		-Evolución de los dispositivos móviles.
+    	-Definición de dispositivo móvil.
+	-Introducir el tema de la seguridad.
+		-Entrar en contexto con la variedad y complejidad de los dispositivos móviles.
+	-Enlazar estos 2 temas (seguridad y dispositivos móviles).
+    -Objetivos de seguridad de acuerdo al uso.
+		-Comentar la problemática que surge dado el crecimiento de los dispositivos móviles.
+	-Criterios de seguridad (confidencialidad, integridad, disponibilidad).
+		-Desarrollar, en lo posible, criterios propios.
+	-Análisis de riesgo sobre móviles (vulnerabilidades, amenazas, probabilidad, impacto).
+		-Resaltar la peculiaridad que adhieren los dispositivos móviles en la seguridad informática.
+	-Dispositivos moviles como medio para reforzar la autenticación. Como intervienen los celulares en el escenario clásico de seguridad: como por ejemplo, tener en cuenta la autenticación en celulares.
+	-Malware en dispositivos móviles.
+		-Reseña con datos estadísticos.
+	:::>> Sumario del capítulo:
+	"Presentar los factores relevantes que intervienen en el tema central."
+
+-->>>Título: Introducción a Android. [Capítulo tenue]
+	-Características. Componentes claves. [Panorama general incluyendo algunos datos estadísticos del avance]
+	-Diseño en capas. Arquitectura. {incluir Máquina Virtual Dalvik}
+	-NDK Android (cuando usar NDK?). Device Administration.
+	-Plataforma. Desarrollo de aplicaciones(SDK). SDK. {incluir Activities. Services. Content Providers. Broadcast Receivers. Intents.} [Herramientas que vienen con Eclipse]
+	:::>> Sumario del capítulo:
+	"Preludiar las cualidades de la plataforma Android"
+
+-->>>Título: Seguridad en Android [Capítulo escueto]
+	-Modelo de seguridad. The Application Sandbox: apps aisladas. Características de seguridad del kernel de Linux. [lo que es invisible al usuario]
+		-Temas de memoria como ASLR (Address Space Layout Randomization), prevenir a través de la no ejecución de las pilas, buffer overflow... etc. [SubCapítulo somero]
+	-Plataforma de seguridad. Componentes de Seguridad. Permisos. Manifiesto. App signing. [lo que es visible al usuario]
+	-Aportes: mejoras internas y externas (las visibles y transparentes al usuario).
+	:::>> Sumario del capítulo:
+	"Disponer de los mecanismos que provee Android para mitigar los riesgos"
+	"Explicar el modelo TEóRICO de Android con respecto a la seguridad. Lo que debería pasar. Lo ideal. Visión positiva"
+	"A grandes rasgos, este capítulo se centra en mostrar qué recursos cuenta la plataforma para mitigar riesgos de seguridad. Es una investigación exploratoria."
+
+-->>>Título: Riesgos de emplear la plataforma Android [contracara del capítulo anterior. Capítulo denso: esencia de la obra]
+	-Malware en Android.
+		-Antecedentes y sus consecuencias. [Enfatizar el daño que produce]
+		-Proyectos libres que buscan erradicar el malware.
+		-Factores de riesgo.
+		-Buenas prácticas.
+	-Ataques. Exploits.
+	-Vulnerabilidades y Amenazas en Android.
+	-Ejemplos prácticos para demostrar ciertos riesgos que conlleva el uso de un celular.
+	-Elegir aplicaciones específicas (y actuales) para efectuar las pruebas.
+    :::>> Sumario del capítulo:
+    "Demostración acerca de la garantía personal de seguridad de la plataforma" dixit de Lía.
+    "Mostrar el lado oscuro de Android. Exponer las cosas que le falta en materia de seguridad con ejemplos PRáCTICOS. Visión negativa"
+
+--->>>Título: Concientización en Android.
+	-Reconsideraciones del "hardening" en Android para celulares.
+	-Aportes: mejoras internas y externas (las visibles y transparentes al usuario).
+
+-->>>Título: Comparación con otros SO de móviles: [Capítulo pesado]
+		-Android, Symbian, Apple iOS, RIM, MeeGo (ahora Tizen), Windows Phone.
+	:::>> Sumario del capítulo:
+	"Comparaciones a partir de conclusiones personales"
+
+|OPCIONAL :: En última instancia|
+-->>>Título: MDM
+	-Qué es.
+	-Comparación de algunos productos.
+	-Ventajas y riesgos.
+	:::>> Sumario del capítulo:
+	"Presentar MDM como una herramienta alternativa para el desarrollo de una plataforma mas sistematizada y prolija. Ésto previene desastres o merma el daño producido"
+
+-->>>Título: Conclusiones
+	-Concientización: políticas de uso.
+	-Tendencias.
+	-Nuevas funcionalidades en nuevas versiones.
+	:::>> Sumario del capítulo:
+	"Resumir los resultados del trabajo y deliberar algo"
+
+-->>>Referencias bibliográficas
+
+:::: Mis notas ::::
+
+Incrementando el nivel de seguridad del entorno de Android
+
+Orientación:
+	"Análisis del comportamiento de aplicaciones maliciosas [malware] en Android. Para incrementar el nivel de seguridad (en el ámbito empresarial). De creación de un software preventivo o un manual efectivo de uso de la tecnología"
+	"Los temas generales que se reúnen en el trabajo giran en torno a los Sistemas Operativos, la Seguridad Informática y la Computación Móvil. Tener en cuenta las variantes que presentan los celulares"
+	"Se intenta mostrar las grietas de la plataforma Android"
+	"Presentaremos los conceptos básicos relacionados al trabajo, antecedentes y datos estadísticos (variables que fueron alterando el escenario). Finalmente, se planteará cómo se pueden conseguir mejoras en los aspectos relacionados a:
+	+la estructura del SO,
+	+la disciplina del uso del SO (política) y
+	+concluir con ejemplos (aplicaciones)"
+	"Quizás podamos concluir con una aplicación capaz de proveer en algún sentido o de alguna manera seguridad"
+	"¿La plataforma de Android tiene fisuras? ¿Se puede mejorar la plataforma en materia de seguridad? ¿en qué aspectos y cómo?"
+
+Fases de estudio (ES UN MERO EJEMPLO):
+[lo que está encerrado entre comillas son notas mías]
+- Estado de la cuestión
+	"Factores que se iban desarrollando en función al tiempo:
+		# El aumento de la potencia que fueron adquiriendo los dispositivos móviles.
+		# Incremento de la complejidad de la seguridad.
+		# Cambio en la orientación de los Sistemas Operativos en función de las necesidades de los usuarios y otros factores. (en cuanto a la conectividad inalámbrica, los formatos multimedia para móviles y las diferentes maneras de introducir información en ellos)"
+- Investigaciones precedentes
+	"Hacer mención de algunos trabajos pasados."
+- Nuestra hipótesis
+	"Con este trabajo nos proponemos estudiar las posibles falencias en materia de seguridad que presentaría el entorno de Android. Para proponer alguna solución u alternativa que contraresten sus efectos negativos"
+- Los datos que podamos ofrecer.
+	"Estadísticas interesantes de crecimiento de distintos factores (adquisición de dispositivos, tráfico de datos en la red, descargas en Google Play, malwares detectados)"
+- Análisis de los mismos.
+	"- vacío -"
+- Demostración de la hipótesis.
+	"- vacío -"
+- Conclusiones y orientaciones para el trabajo posterior.
+
+Definición de Hardening:
+	In computing, hardening is usually the process of securing a system by reducing its surface of vulnerability. A system has a larger vulnerability surface the more that it does; in principle a single-function system is more secure than a multipurpose one. Reducing available vectors of attack typically includes the removal of unnecessary software, unnecessary usernames or logins and the disabling or removal of unnecessary services.

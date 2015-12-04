@@ -1,0 +1,355 @@
+@@@@@@@@@@@@
+@@@@@@@@@@@@
+@@@@@@@@@@@@	Capítulo: "Introducción a Android"
+@@@@@@@@@@@@
+@@@@@@@@@@@@
+
+Propósito del capítulo
+----------------------
+----------------------
+
+Presentar las características importantes de la plataforma Android en lo que respecta a su implementación, uso y desarrollo.
+
+Disposición de los temas en este capítulo
+-----------------------------------------
+-----------------------------------------
+
+Los temas se presentan de la siguiente forma. Primero, como una introducción se empieza comentando acerca de algunos datos estadísticos relevantes que destacan el crecimiento de la plataforma, asimismo se exhibe una reseña histórica, una definición del sistema y algunos datos interesantes. Continúa con una descripción de la perspectiva que tiene el usuario con respecto al sistema operativo, lo cual se relaciona con el diseño de la interfase. Luego, se presentan las características técnicas del sistema. Finalmente, se presenta el conjunto de herramientas que se usan para el desarrollo de aplicaciones.
+
+Introducción (realizado el 3 de Diciembre)
+------------
+
+Desde el repositorio de aplicaciones de Google se distribuyen aplicaciones Android de forma masiva, este repositorio ya alcanzó las 25 mil millones de descargas en Septiembre del 2012, según el blog oficial de Android [BLOG]. En este bazar virtual conocido como Google Play ya se alojan, a la fecha del 3 de Diciembre del 2012, mas de 600000 aplicaciones según el sitio oficial de Android [SITE].
+
+Según las cifras proporcionadas por el sitio web para desarrolladores de Android [ANDAB], a la fecha del 3 de Diciembre del 2012, Android suministra un sistema base a cientos de millones de dispositivos móviles en más de 190 países en todo el mundo. Cada día, más de 1 millón de dispositivos móviles con Android son activados a escala mundial. Los usuarios de Android descargan mensualmente más de 1,5 mil millones de aplicaciones mediante Google Play. La plataforma se sustenta gracias a la contribución de la comunidad Linux (seguidores del movimiento open source) y más de 300 empresas socias relacionadas en las siguientes áreas: hardware, software y telefonía móvil; los distintos participantes impulsaron a la plataforma para que se convirtiera rápidamente en el sistema operativo móvil de más rápido crecimiento. La libertad que otorga la plataforma en el desarrollo de aplicaciones ha impulsado un fuerte crecimiento en el consumo de aplicaciones. Con la contribución de sus socios tecnológicos, Android está continuamente renovando el soporte de hardware y software con la intención de proporcionar nuevas capacidades a los usuarios y desarrolladores.
+
+Además, según esta fuente, la plataforma promete todo lo que se necesita para desarrollar aplicaciones de una forma cómoda. Por un lado, dispone de un kit de desarrollo que brinda herramientas para programar aplicaciones. Por otro lado, dispone de un marketplace que distribuye las aplicaciones de forma global y abierta a un amplio rango de dispositivos (smartphones, tablets y cada vez se suman más dispositivos).
+
+La plataforma permite simplificar el proceso de desarrollo de aplicaciones, dado que sus creadores definieron un modelo individual de aplicaciones que permite distribuir las aplicaciones de forma holgada a cientos de millones de usuarios que manejan un amplio rango de dispositivos (smartphones y tablets, entre otros). Android otorga herramientas que asisten en la creación de aplicaciones para que se vean lo mejor posible en función del dispositivo ejecuta la aplicación y aprovechan las aptitudes del hardware disponible en cada dispositivo. Entonces, el sistema adapta automáticamente la interfase de usuario para que se vea correctamente en cada dispositivo, mientras el desarrollador se concentra en controlar la interfase de usuario tanto como lo requiera y en diferentes tipos de dispositivos.
+Por ejemplo, se puede crear una sola aplicación que esté optimizada para las resoluciones de pantalla de un smartphone y una tablet a la vez. Esto es factible porque cuando se define una interfase de usuario en formato XML, un conjunto de componentes de la interfase son comunes a todas las resoluciones y otro conjunto corresponde a optimizaciones visuales específicas para teléfonos y tablets por separado. Cuando se ejecuta la aplicación, Android elije y aplica el conjunto de recursos correcto basado en el tamaño de la pantalla, la posición del dispositivo y otros parámetros.
+El desarrollador tiene a disposición un IDE completo que posee funciones avanzadas para el desarrollo, la depuración y el compilado de aplicaciones Android. Con la ayuda de esta IDE se pueden desarrollar programas en escritos en el lenguaje Java y ejecutarlos en un dispositivo con Android o en dispositivos virtuales que emulan casi todas las funciones de un dispositivo real.
+
+La plataforma cuenta con Google Play, el principal marketplace para vender y distribuir aplicaciones. Google Play es un mercado abierto que le otorga al desarrollador el control de la forma en que se venden sus productos. Además, premia con la promoción a los productos que crecen en popularidad, por ejemplo existen rankings que exponen a los mejores productos según una determinada cualidad como la cantidad de ventas. Se puede publicar aplicaciones cuando uno lo desee y a los clientes que desee. Permite que las aplicaciones se distribuyan ampliamente, incluyendo a todos los mercados y todos los dispositivos con Android o enfocándose en dispositivos con atributos específicos. Google Play se encuentra preinstalado en la mayoría de los dispositivos con Android en el mundo. Con la aplicación de una configuración en una cuenta de Google Play se pueden obtener ganancias económicas de un producto; por ejemplo, se pueden fijar o alterar los precios en cualquier moneda disponible en el sistema en cualquier momento.
+
+(realizado el 20/12/2012)
+Una publicación de Reuters[REUT] podría llegar a ser interesante porque expone la experiencia de algunos desarrolladores que lucran con el desarrollo de aplicaciones en Android, muestra puntos positivos y negativos; además, se exponen los esfuerzos de Google para liderar en las ventas. Ésto nos puede dar una aproximación de la posibilidad de hacer negocios con la plataforma.
+
+Un grupo de desarrolladores que creó un videojuego popular para las plataformas iOS y Android, llamado 'Kingdoms at War', indican que existe cierta disparidad en cuanto a las ganancias. Dado que se gana más del doble de dinero con los dispositivos iPhone y iPad que con los dispositivos Android, según ellos. No obstante, Android ha surgido como el sistema operativo móvil más difundido del mundo, y a su vez ha sido calificado como una plataforma de segunda categoría, según los desarrolladores de aplicaciones que prefieren a la plataforma de Apple por su prestigio, uniformidad y las grandes posibilidades que brinda para ganar dinero.
+
+En el ámbito de los dispositivos móviles, los cambios surgen rápido: después de 3 años de la asociación de varias empresas que originó la Open Handset Alliance con la finalidad de contrarrestar el dominio que ejercía el producto de Apple (iPhone) en el mercado de smartphones, Android estaba introduciendo al mercado su propio sistema de pagos integrado y mejorado; cabe agregar que su flota de dispositivos estaba creciendo y su tienda virtual de aplicaciones fue rediseñada. Este modelo económico que dispuso Google produció un incremento en los ingresos de los desarrolladores de aplicaciones.
+
+Antes, cuando Android estaba empezando a desenvolverse, las empresas de desarrollo de aplicaciones móviles no sabían si la plataforma iba a resultar; ahora, en cambio, se pueden hacer negocios con Android, pese a que las ganancias son menores que en otras plataformas, igual siguen siendo significantes. Según cuenta Wilkins Chung, el cofundador de la empresa 'Thinking Ape', la cual creó 'Kingdoms at War'.
+
+Otro caso es Smule, un emprendimiento de desarrollo de software para dispositivos móviles, esta empresa publicó su primer aplicación para Android en el segundo trimestre del año 2012, aproximadamente un año después de la publicación de la versión para iOS. En Julio del 2012, la empresa lanzó una aplicación para ambas plataformas de forma simultánea. Smule cree que en el año 2013 podrán publicar todas sus aplicaciones en ambas plataformas a la vez, según cuenta Prerna Gupta, administradora general. Ella agrega que el nivel de rentabilidad de las aplicaciones hechas para Android no es tan bueno como lo es en iOS de Apple, sin embargo expresó su admiración por el mercado emergente de Android.
+
+En esta publicación de Reuters se indican algunos conceptos interesantes relacionados con la forma en que se desenvuelve una plataforma. Según este informe, es fundamental para Android tener una red de desarrolladores de calidad para competir con Apple, Amazon, Microsoft y otras empresas involucradas en la venta de aplicaciones móviles. Se debe tener en cuenta 2 aspectos en el análisis del desarrollo de una plataforma, por un lado, los diseños llamativos y los componentes de hardware de primer nivel son puntos de venta clave para smartphones y tablets, y por otro lado, está surgiendo otro aspecto a tener en cuenta, dado que el contenido y las atractivas aplicaciones digitales están en el mismo nivel de relevancia para la apariencia general de un producto. Riachar Wong, socio de la empresa de capital de riesgo llamada Accel Partners que ha invertido en Rovio (los creadores del éxitoso juego Angry Birds), dice que claramente ha pasado de ser una guerra exclusiva entre dispositivos a ser una batalla de ecosistemas.
+
+En esta publicación de Reuters se muestran los esfuerzos de Google para mejorar y expandir los servicios de la plataforma.
+
+Por empezar, en Marzo del 2012, Google renovó su tienda de aplicaciones y la renombró como Google Play, con un aspecto notable y con una selección de contenido digital variado que abarca películas, juegos, aplicaciones y música. A la fecha del 19 de Diciembre del 2012, Google Play cuenta con más de 700.000 aplicaciones, lo que equivale a la colección de Apple, aunque los analistas dicen que hay más aplicaciones de alta calidad en la tienda de Apple.
+
+Luego, Google aumentó la cantidad de países en donde se pueden vender aplicaciones para Android y se asoció con varios proveedores de telefonía móvil para que las compras en Google Play se cobren mediante la facturación que mantiene la empresa de telefonía celular con los clientes.
+
+Según Google, alrededor de tres cuartas partes de las compras de aplicaciones en Google Play se realizan mediante la facturación que maneja el proveedor de telefonía móvil, si es que la opción esta disponible.
+
+Una analista de la industria perteneciente a la firma Gartner, Carolina Milanesi, aclaró 2 puntos relacionados e interesantes: cree que se deben facilitar lo más que se pueda los accesos al contenido pago y remarcó que Android es popular en las economías emergentes en donde la facturación administrada por el proveedor de telefonía celular es importante dado que las tarjetas de crédito son menos vigentes.
+
+En este informe también se menciona la opinión de Jason Titus, el director de tecnología de 'Shazam', una de las aplicaciones mas populares en teléfonos tanto con Android y como con iOS. Él dice que se puede comprar un teléfono con casi un click y la entrada de una contraseña, además agrega que la gente de Apple ha hecho un gran trabajo por la integración profunda y natural de la experiencia de comprar aplicaciones. Por otro lado, la compra de contenidos en Android mejoró, dado que el flujo de pasos fue optimizado paulatinamente, aunque todavía tiene pequeños obstáculos en el medio del camino para la obtención de contenidos, mientras que en iOS es mas cómodo y fácil.
+
+No obstante, mientras que Google puede disfrutar de una ventaja en el mercado global, Apple y Amazon se basan en años de experiencia en el negocio de la venta on-line para introducir hábilmente algunas funciones de software para realizar compras dentro de sus dispositivos móviles. Con una gran colección de tarjetas de crédito registradas, ambas empresas le han simplificado a sus usuarios el procedimiento para comprar contenido digital dentro de sus dispositivos.
+
+Para tener una idea, Apple ha dicho que tiene 400 mil millones de cuentas activas con tarjetas de crédito y que había pagado un total de 6.5 mil millones (U$S) a los desarrolladores a partir de Octubre del 2012, frente a los 4 mil millones (U$S) en Enero del 2012. Apple se lleva 30% de las transacciones realizadas en su App Store. Google dispone de un acuerdo con los desarrolladores relativo al reparto de ingresos similar al de Apple.
+
+Un fenómeno destacable es el incremento de la cantidad de dispositivos Android de alta gama, lo que es especialmente atractivo para los desarrolladores. Aunque de forma frecuente ha probocado problemas por la diversidad de versiones de Android que estan disponibles para diferentes tipos de hardware, ésto trae consigo cierto desorden.
+
+En el informe de Reuters se menciona el factor de la promoción que aplica Google Play a los productos que vende. En Abril, los creadores de la aplicación 'Pocket Gem' lanzaron 'Tap Dragon Park', un juego para Android exclusivamente; las ganancias fueron mas bajas que lo que hubiese sido con iOS de Apple, dice Ben Liu (Director de operaciones), pero señaló que todavía era un éxito comercial, especialmente cuando Google promovió la aplicación en la tienda Google Play. Liu dice que el juego generó mucho dinero para la empresa y que fue una experiencia de aprendizaje importante en un mercado que cada vez parece más atractivo.
+
+Gupta de Smule (la empresa de software mencionada anteriormente) señaló otro de los beneficios que surgen cuando se publica una aplicación para Android con un ejemplo: poco después de que Google Play promoviera la versión de Android de 'AutoRap', una aplicación que graba lo que habla una persona y la transforma en una canción de rap, hubo un aumento en las descargas para la versión en iOS. Básicamente fomentó la difusión de "boca a boca" del producto y lo llevó a las millones de descargas.
+
+[REUT] [Fuente: http://www.reuters.com/article/2012/11/12/net-us-google-android-idUSBRE8AB18P20121112]
+[ANDAB] [Fuente: http://developer.android.com/about/index.html]
+[BLOG] [Fuente: http://officialandroid.blogspot.com.ar/2012/09/google-play-hits-25-billion-downloads.html]
+[SITE] [Fuente: http://www.android.com/about/]
+
+Breve historia de Android (hecho el 5/12/2012)
+-------------------------
+
+Se pueden mencionar los siguientes acontecimientos relevantes que de alguna forma marcaron el rumbo de Android:
+La empresa Android, Inc. fue fundada en Octubre del 2003 en Palo Alto, California por Andy Rubin (co-fundador de una empresa llamada Danger), Rich Miner (cofundador de Wildfire Communications, Inc.), Nick Sears (fue vicepresidente de T-Mobile) y Chris White (dirigió el área de diseño y desarrollo de interfases en WebTV). [ANDHIS]
+En Agosto del 2005, Google adquirió Android Inc. [ANDHIS]
+El 5 de Noviembre del 2007 la Open Handset Alliance, un consorcio de varias empresas multinacionales (entre ellas estan Google, Texas Instruments, Nvidia, Samsung Electronics, LG y Intel) se inauguró con el fin de desarrollar estándares abiertos para dispositivos móviles. Junto con la formación de la Open Handset Alliance, se estrenó su primer producto, Android, una plataforma para dispositivos móviles construida en base a la versión 2.6 del kernel de Linux. [OHA]
+Una versión beta del kit de desarrollo (SDK) fue lanzada el 12 de noviembre del 2007, con una licencia Open Source. [OHA]
+En Agosto del 2008, Google anunció la disponibilidad de Android Market en el cual los desarrolladores podían subir sus aplicaciones para que los usuarios de dispositivos móbiles puedan compararlas e instalarlas. La versión inicial no soportaba aplicaciones pagas. Sin embargo, esa característica fue agregada a principios del 2009. Finalmente, en Octubre del 2008 salió la versión oficial de Android Open Source Project que tiene la labor de mantener y desarrollar la plataforma Android. [ANDOPEN] [ANDFOR]
+El primer teléfono comercialmente disponible con Android fue el T-Mobile G1, también conocido como "HTC Dream", fabricado por la empresa taiwanesa HTC. Fue aprobado por la Comisión Federal de Comunicaciones (FCC) el 18 de agosto del 2008 y salió a la venta el 22 de octubre del 2008. [OHA]
+El 9 de diciembre del 2008, se anunció que 14 nuevos miembros se unirán al proyecto Android, incluyendo Asustek, Garmin, Softbank, Sony Ericsson, Toshiba, Vodafone y ZTE. [NEWOHA]
+Android ha pasado por un número de actualizaciones en su sistema operativo base desde su lanzamiento original. Usualmente, estas actualizaciones corrigen bugs y agregan nuevas características. A partir de Abril del 2009 y hasta la fecha de hoy (8 de Octubre del 2012), las versiones de Android han sido desarrolladas bajo nombres claves y se publican en orden alfabético: "Cupcake", "Donut", "Éclair", "Froyo", "Gingerbread", "Honeycomb", "Ice Cream Sandwich" y "Jelly Bean". Esta última es la actualización más reciente, la versión 4.1, que fue anunciada en Junio del 2012 y se publicó un mes después en Android Open Source Project.. [ANDHIS]
+
+[ANDHIS] [Fuente: http://en.wikipedia.org/wiki/Android_(operating_system)] (sección "history")
+[OHA] [Fuente: http://en.wikipedia.org/wiki/Open_Handset_Alliance] (sección "products")
+[NEWOHA] [Fuente: http://www.openhandsetalliance.com/press_120908.html]
+[ANDFOR] [Fuente: Android Forensics] (pág. 4, según la numeración del libro)
+[ANDOPEN] [Fuente: http://source.android.com/about/index.html]
+
+Definición (hecho el 5/12/2012)
+----------
+
+A la fecha de hoy, 5 de Diciembre del 2012, Android es una plataforma para dispositivos móviles que acompaña la filosofía del software libre, esta plataforma esta basada en el kernel de Linux 2.6 y el responsable de su desarrollo es la Open Handset Alliance. La cual consta de un grupo de aproximadamente 84 empresas lideradas por Google, las cuales se las puede agrupar en las siguientes categorías: fabricantes de dispositivos móviles, desarrolladores de aplicaciones, empresas de telefonía móvil, fabricantes de chips y empresas de negocios. La mayoría del código de Android se liberó bajo la licencia Apache, una licencia libre y open-source.
+Se lo usa en una variedad de dispositivos tal como smartphones, notebooks, netbooks, tablets, smart TVs, smartbooks, ebook readers, headphones, CD/DVD players, consolas de videojuegos, cámaras fotográficas digitales y otros; esto se efectúa a través de aplicaciones middleware.
+[Fuente: Android Forensics]
+
+La fama de Android (hecho el 6 de Diciembre del 2012)
+------------------
+
+A la fecha de hoy, 6 de Diciembre del 2012, Android es la plataforma móvil más popular: tiene una gran comunidad de desarrolladores programando aplicaciones con el fin de extender la funcionalidad de los dispositivos que soportan Android. Los desarrolladores pueden usar Google Play como medio de propagación para difundir sus aplicaciones, este repositorio alberga a más de 600000 aplicaciones. Según el libro titulado "Forense en Android", Google Play se lo puede comparar con la propuesta similar de Apple llamada App Store, salvo que esta última se distingue por su control estricto en el proceso de revisión de aplicaciones al momento de publicar una aplicación; no sucede así con Google Play, que tiene requisitos mas ligeros, aunque tiene la capacidad para inhabilitar a los desarrolladores que lleguen a publicar sofware malicioso y eliminar sus aplicaciones. [ANDACT]
+Android ha pasado por numerosas actualizaciones desde su liberación inicial. Estas actualizaciones usualmente arreglan bugs y agregan nuevas funciones. De hecho, Android ha sido criticado muchas veces por la fragmentación que sufren los dispositivos que lo usan al no ser soportado con actualizaciones constantes por los distintos fabricantes. Se intentó cambiar esta situación tras un anuncio de Google en el que se comunicó que los fabricantes se comprometían a aplicar actualizaciones al menos 18 meses después de su salida al mercado, aunque finalmente nunca se concretó y el proyecto se canceló. [ANDACT]
+Su plataforma de hardware principal es la arquitectura ARM. Pero también hay soporte para las arquitecturas x86 (el proyecto Android-x86), y Google TV utiliza una versión especial de Android x86. [ANDUSOS]
+Existe un tipo de imitación de Android que se denomina Replicant, es un proyecto que intenta reemplazar el código fuente de los controladores del hardware por otro código fuente desarrollado por entusiastas del software libre, dado que los controladores originales son propiedad de los proveedores de dispositivos móviles. [REPLI]
+El desarrollo de aplicaciones Android es relativamente sencillo, porque no requiere aprender lenguajes complejos de programación. Todo lo que se necesita es un conocimiento aceptable de Java y contar con el kit de desarrollo de software (también llamado SDK) provisto por Google, el cual se puede descargar gratuitamente. [ANDAPP]
+El siguiente cuadro se basa en la cantidad de accesos de dispositivos Android a Google Play según la versión, en un período de 14 días (del 20 de Noviembre al 3 de Diciembre del 2012 inclusive). [DASHBO]
+
+Version			Nombre en código	Versión de la API		Distribución
+1.5				Cupcake				3						0.1%
+1.6				Donut				4						0.3%
+2.1				Eclair				7						2.7%
+2.2				Froyo				8						10.3%
+2.3 - 2.3.2		Gingerbread			9						0.2%
+2.3.3 - 2.3.7						10						50.6%
+3.1				Honeycomb			12						0.4%
+3.2									13						1.2%
+4.0.3 - 4.0.4	Ice Cream Sandwich	15						27.5%
+4.1				Jelly Bean			16						5.9%
+4.2									17						0.8%
+
+Android sugiere el uso de los productos de Google, tal como Google Chrome, Google Maps, el buscador de Google, Google+ Hangouts, Google Play, YouTube, Google Drive y Gmail. Algunas de éstas son aplicaciones nativas y otras son aplicaciones web. Con el ingreso a una cuenta Google desde un dispositivo con Android, se puede acceder a los datos almacenados en los distintos productos; en el caso de Google Drive, se podría acceder a los archivos alojados; en el caso de Gmail, se podría acceder a los contactos, mensajes y afines; en el caso de Google Play, se podría acceder a las películas, música, juegos y aplicaciones que el usuario haya guardado como favorito. [ANDABO]
+Existe una gran disponibilidad de Android porque esta disponible en varios modelos que pertenecen a los principales fabricantes de dispositivos móviles como Samsung, HTC, Motorola, Sony, Asus y otros más. Según el sitio comercial de Android, el consumidor puede elegir entre una gran variedad de smartphones, tablets y otros dispositivos, a través de una asociación mundial entre más de 300 compañías en más de 169 países. [ANDABO]
+
+[ANDABO] [Fuente: http://www.android.com/about/]
+[DASHBO] [Fuente: http://developer.android.com/about/dashboards/index.html]
+[ANDACT] [Fuente: http://es.wikipedia.org/wiki/Android] (sección "Historial de actualizaciones")
+[ANDUSOS] [Fuente: http://es.wikipedia.org/wiki/Android] (sección "Usos y dispositivos")
+[ANDAPP] [Fuente: http://es.wikipedia.org/wiki/Android] (sección "Aplicaciones")
+[REPLI] [Fuente: http://replicant.us/about/]
+
+Características de uso
+----------------------
+----------------------
+
+En esta parte del capítulo se van a exponer los principales componentes que constituye la interfase de usuario, con el fin de dar una noción del diseño y uso del sistema Android. La descripción de algunas de las características de su interfase dará un panorama acerca del uso de las aplicaciones, las formas de acceder a ellas y qué eventos efectuará el usuario mediante la interfase.
+La forma en que se interactúa con la interfase es un tema relevante dado que ayuda a describir cómo se usa el dispositivo o el modo en que se ingresan datos al mismo. Para que el dispositivo pueda descifrar las órdenes del usuario se emplean controles táctiles que son fáciles de aprender y los resultados de su uso se pueden notar casi al instante antes de completar la acción, ésto reduce el tiempo de realización de una tarea [DMI]. Las acciones que se llevan a cabo en la pantalla (como deslizar, pellizcar y golpear ligeramente, entre otras) se emplean para manipular directamente a los objetos de la aplicación. El usuario también se puede apoyar en el hardware interno como acelerómetros, giroscopios y sensores de proximidad para que lo asistan en ciertas aplicaciones y respondan a acciones adicionales; por ejemplo cuando el usuario gira el dispositivo, la disposición de la aplicación puede ajustarse a una forma de portaretrato o panorámica; o en el caso de los juegos, cuando existe la posibilidad de usar el dispositivo como un volante [ANDWIK].
+
+Las temas que se van a tocar son:
+- Barras del sistema.
+- Navegación en el sistema.
+- Componentes de una aplicación.
+- Eventos que dispara el usuario.
+- Diseño general de una aplicación.
+Y la fuente que se consultó es el sitio para desarrolladores de Android.
+
+Barras del sistema
+------------------
+
+Según el sitio web para desarrolladores de Android [UIOVER], la barra del sistema es un área de la pantalla que casi siempre esta visible y esta dedicada a realizar las siguientes tareas: exponer notificaciones, mostrar lo más relevante del estado del dispositivo y controlar la navegación en el sistema. La aplicación y la barra del sistema se suelen mostrar a la vez, pero suele ocurrir que cuando se reproduce algún video o se expone alguna imagen, inmediatamente se activa el modo a pantalla completa lo que ocasiona la ocultación de las barras.
+La barra del sistema tiene 2 disposiciones, en una de ellas se divide en 2 partes separadas, la barra de estado y la de navegación; y en la otra disposición se combinan ambas barras en una única, las tablets con Android emplean la segunda forma. Para que quede claro que muestra cada barra cuando se divide la barra del sistema, se procede a describirlas.
+. Barra de estado: en el lado izquierdo, exhibe notificaciones pendientes, y en el lado derecho, algún aspecto del estado del dispositivo como la hora, el nivel de la batería, la intensidad de la señal. Para mostrar los detalles de las notificaciones de esta barra se debe arrastrar hacia abajo. Las notificaciones proporcionan actualizaciones, recordatorios o información importante, pero no es información suficientemente crítica como para justificar la interrupción del usuario.
+. Barra de navegación: la barra de navegación esta presente sólo en los dispositivos que no tienen las tradicionales teclas incorporadas al dispositivo, que se ubican en la parte inferior de la pantalla. Aloja los controles de navegación "Atrás", "Inicio" y "Recientes", y también muestra un menú para las aplicaciones escritas para Android 2.3 o anterior.
+
+Navegación en el sistema
+------------------------
+
+En cuanto al aspecto de la navegación, hay 3 pantallas principales [UIOVER]: la pantalla de inicio, la pantalla que muestra todas las aplicaciones y la pantalla de recientes.
+La pantalla de inicio se particiona en varios paneles que se pueden recorrer arrastrando a la izquierda o a la derecha, aloja 3 tipos de componentes: carpetas, widgets y accesos directos a las aplicaciones; en el fondo de todos los paneles esta presente la bandeja de favoritos que representa a las carpetas y accesos directos más importantes para el usuario. Desde la pantalla de inicio se puede acceder a la pantalla que contiene a todas las aplicaciones y widgets instalados tocando el botón en el centro de la bandeja de favoritos o en el lado derecho, según la versión de Android.
+La pantalla que contiene a todas las aplicaciones le permite al usuario explorar el conjunto entero de aplicaciones y widgets que estan instalados en su dispositivo. Los widgets son un aspecto esencial de los cambios que realiza el usuario con respecto a la pantalla de inicio, se las pueden ver como vistas en tiempo real de los datos y muestra la funciones más importantes de una aplicación; los usuarios pueden mover los widgets a través de los paneles de la pantalla de inicio [ANDWID].
+La pantalla de recientes provee una forma eficiente para intercambiar aplicaciones usadas recientemente. Proporciona una ruta de navegación clara entre múltiples tareas en curso. Esta herramiente se ubica a la derecha de la barra de navegación.
+
+Componentes de una aplicación
+-----------------------------
+
+Para tener una aproximación de la constitución de una aplicación de Android típica, en la siguiente lista se identifican los elementos comunes [UIOVER]:
+1. Barra de acción principal [ACTBAR]
+Se encuentra en la parte superior de la pantalla y frecuentemente es visible a lo largo de la ejecución de la aplicación. Generalmente esta barra incluye elementos para navegar por las distintas pantallas comunmente dispuestas jerarquícamente. A partir de esta barra se pueden realizar acciones importantes que otorgan acceso a la información de la aplicación de una forma predecible. A veces, se adhieren 2 barras más: una que se ubica abajo de la barra de acción principal, que comunmente contiene solapas para navegar por distintas pantallas y otra barra que se ubica en el fondo de la pantalla, que comunmente contiene acciones que no pudieron entrar en la barra de acción principal por el tamaño de la pantalla.
+2. Control de vista
+Le permite a los usuarios intercambiar entre diferentes vistas que la aplicación provee. Las vistas típicamente consisten de las diferentes disposiciones de los datos o los distintos aspectos funcionales de la aplicación.
+3. Área de contenido
+Es el espacio donde el contenido de la aplicación es mostrado. Ocupa la mayor parte de la pantalla.
+{ Gráfico de la disposición de los elementos comunes en una aplicación }
+
+Eventos que dispara el usuario
+------------------------------
+
+Los movimientos que se realizan con el dedo sobre la pantalla representan una acción en el dispositivo, se captura un evento provocado por el usuario y se ejecuta un comando; son los distintos eventos que puede captar una aplicación. Generalmente desde la posición del usuario, con estos gestos se trata de manipular objetos que hay en la pantalla. Debido a ésto, es importante la identificación de estos movimientos que se van a identificar a continuación, según se vió en la documentación de Android [ANDGES].
+Toque (Touch): ocurre cuando se presiona sobre un ítem y sin mover el dedo se suelta a la brevedad. Generalmente, ocasiona la ejecución de la función por defecto de un ítem dado.
+Toque largo (Long press): sucede cuando se presiona, se espera unos pocos segundos y se libera. Esta clase de evento permite entrar al modo de selección de datos, seleccionando uno o más datos en una vista y actuar sobre éstos con un menú contextual.
+Deslizamiento (Swipe): ocurre cuando se presiona y se desplaza el dedo soltándolo al final. Esta acción permite desplazarse sobre el contenido desbordante o navegar entre varias vistas de la misma jerarquía.
+Arrastre (Drag): es una combinación de un toque largo y un deslizamiento: se presiona durante unos segundos, se desliza el dedo y finalmente se suelta. Produce el movimiento de objetos para reordenar datos dentro de una vista o el traslado de datos al interior de un contenedor (por ejemplo, una carpeta de la pantalla de inicio que se le adhieren íconos).
+Doble toque (Double touch): son dos toques de forma inmediata. Este comportamiento acarrea un zoom de aumento con respecto al contenido de la pantalla. También es utilizado como una alternativa para la selección de texto.
+Abertura (Pinch open): acontece cuando se apoyan 2 dedos y se separan mientras se mantiene contacto con la pantalla. Esto permite accionar un zoom de aumento más preciso que el doble toque.
+Cierre (Pinch close): es la acción opuesta a la abertura, es decir cuando se apoyan en la pantalla 2 dedos separados y se van juntando, como si se estuviese pellizcando la pantalla. Esta acción provoca un zoom de alejamiento del contenido.
+
+Diseño general de una aplicación
+--------------------------------
+
+Básicamente hay 2 formas de presentar los datos en una aplicación: mostrando todo el contenido en una sola pantalla o presentando un conjunto de pantallas navegables [APPSTR]. A continuación se vá a presentar ciertas consideraciones con respecto a la forma en que generalmente se disponen los datos en una aplicación. Estas recomendaciones tratan de generar una tendencia que permite aprovechar las herramientas que dispone Android.
+La presentación de la vista de nivel superior debería ser una experiencia agradable para los nuevos visitantes y los frecuentes por igual, dado que ésta es la primer pantalla que la gente vé después del lanzamiento de su aplicación. Existe una tendencia que consiste en concentrarse en la visualización del contenido, evitando la navegación pantalla por pantalla, es decir que el usuario llegaría inmediatamente al centro de la atención, convirtiendo al contenido en la parte central de la pantalla de inicio. También forma parte de esta tendencia la elección de diseños que son visualmente atractivos y apropiados para el tipo de datos y tamaño de pantalla.
+Por otro lado, en el caso de las aplicaciones que poseen un repertorio de pantallas navegables, éstas frecuentemente se organizan en vistas de nivel superior y vistas de edición/detalle. Si el diseño de la interfase se vuelve complicado y la cantidad de pantallas se vuelve considerable, se usa una vista adicional que conecta a estas 2 vistas, a esta vista intermedia se la llama vista de categoría.
+
+-Vista de nivel superior
+Generalmente, esta sección define la identidad de la aplicación dada la forma en que se disponen los datos y las acciones principales que se pueden aplicar a ellos. Es lo que primero que se vé de la aplicación, es la presentación inicial, otorga una primera impresión. Muchas aplicaciones en vez de mostrar un conjunto de pantallas navegables, se enfocan en mostrar el contenido como una pieza principal de la aplicación al inicio de la ejecución, se debe tener en cuenta el tamaño de la pantalla y los tipos de datos.
+Un aspecto a considerar en esta sección es la barra de acciones. Ésta es una componente importante para la navegación y las acciones que permite ejercer la aplicación, está omnipresente a lo largo de toda la ejecución de la aplicación. Por ejemplo, si en la vista principal hay múltiples disposiciones posibles para ver los datos o hay un listado de elementos (datos) que se pueden examinar en detalle, por consiguiente, es para estos casos en que la barra de acciones puede ayudar a agilizar la interacción y navegación con la aplicación.
+
+-Vista de categoría
+Las categorías se utilizan para facilitar la organización de las pantallas cuando la navegación se vuelve compleja. Las categorías conducen hacia las vistas de detalles, en donde los datos pueden ser administrados y vistos de forma individual. Generalmente, las categorías minimizan la cantidad de pasos para llegar a un dato específico.
+Existen varias formas para acortar los pasos en la navegación:
+.Se pueden usar solapas para combinar la selección de una categoría con la exposición de los datos. Las solapas eliminan un nivel de jerarquía dentro del árbol de navegación. Es útil en situaciones en que se puede agrupar pantallas bajo un criterio o cuando la cantidad de categorías es reducida. La cantidad de solapas deben mantenerse en un nivel manejable para minimizar el esfuerzo de navegación.
+.Mediante una disposición (en forma de grilla o de lista) de los ítems (datos) de una aplicación se pueden formar atajos que permiten una invocación de las acciones (en forma de menú emergente) de alto nivel para un ítem dado. Ésto permite que el usuario invoque acciones directamente sobre los datos sin tener que navegar sobre ellos.
+.Selección de múltiples ítems en la vista de categorías. Para manipular colecciones de ítems se debería analizar que acciones se pueden aplicar a ellas.
+
+-Vista de detalle
+Esta vista permite ver los pormenores de un ítem perteneciente a una colección y actuar sobre los datos que componen cada ítem. Existen 2 formas básicas:
+.Existe un modo a pantalla completa que permite concentrarse en un ítem, sin distracciones dado que se esconde temporalmente las barras de acciones y el resto de la interfase de usuario, este efecto se acciona automáticamente en algunos contextos cuando el usuario no ha tocado la pantalla.
+.Los datos de un ítem se pueden presentar de una forma completa y exclusiva, mostrando un ítem por pantalla: las propiedades y las acciones que se pueden efectuar en cada uno. Existe una tendencia que consiste en navegar secuencialmente entre los ítems permaneciendo en la vista de detalle, se puede emplear el evento de deslizamiento (swipe) para lograr que el usuario efectúe el intercambio entre ítems.
+
+[UIOVER] [http://developer.android.com/design/get-started/ui-overview.html]
+[ANDWID] [http://developer.android.com/design/patterns/widgets.html]
+[ANDGES] [http://developer.android.com/design/patterns/gestures.html]
+[ANDWIK] [Fuente: http://en.wikipedia.org/wiki/Android_(operating_system)#Description]
+[DMI] [Fuente: http://en.wikipedia.org/wiki/Direct_manipulation_interface]
+[APPSTR] [Fuente: http://developer.android.com/design/patterns/app-structure.html]
+[ACTBAR] [Fuente: http://developer.android.com/design/patterns/actionbar.html]
+
+Características técnicas
+------------------------
+------------------------
+
+Soporte de Android
+------------------
+
+Esta es una lista resumida de las características de Android en cuanto al soporte de hardware [WIKFEA]:
++ Disposiciones del dispositivo. La plataforma es adaptable a diferentes tamaños y disposiciones de pantalla a parte de las tradicionales que tienen los smartphones; igualmente soporta bibliotecas de gráficos 2D y 3D, éstas últimas basadas en las especificaciones OpenGL ES 2.0.
++ Almacenamiento. Emplea SQLite, una base de datos relacional liviana que es usada para almacenar de datos.
++ Conectividad. Android suporta ciertas tecnologías para conectarse a una red, entre ellas estan: GSM/EDGE, IDEN, CDMA, EV-DO, UMTS, Bluetooth, Wi-Fi, LTE, NFC y WiMAX.
++ Mensajería. Estan disponibles las mensajería por SMS y MMS, incluyendo la mensajería de texto en cascada (threaded text messaging) y algunos servicios exclusivos de Android, como Android Cloud To Device Messaging (C2DM).
++ Soporte de múltiples idiomas.
++ Navegador Web. El navegador web disponible en Android esta basado en el motor de renderizado open-source WebKit, junto con el motor V8 de JavaScript de Chrome.
++ Soporte de Java. Las aplicaciones de Android estan escritas en Java, pero se compilan con la máquina virtual de Dalvik. El soporte de J2ME (la plataforma móvil de Java) puede ser provisto por aplicaciones de terceros.
++ Soporte multimedia. Android soporta los siguientes formatos de audio y video: WebM, H.263, H.264, AAC, HE-AAC, MPEG-4 SP, AMR, AMR-WB, MP3, MIDI, Ogg Vorbis, FLAC, WAV, JPEG, PNG, GIF, BMP, WebP.
++ Soporte de hardware adicional. Android puede manejar cámaras fotográficas o de video, pantallas tipo touchscreen, GPS, acelerómetros, giroscopios, magnetómetros, barómetros, controles dedicados para juegos, sensores de proximidad y de presión, termómetros, aceleración de gráficos 3D y 2D por hardware.
++ Videoconferencia. Android no soporta llamadas de video de forma nativa, pero algunos celulares tienen una versión adaptada del sistema operativo que posee soporte vía una red UMTS o sobre IP.
++ Multitarea. El sistema posee soporte multitarea en la ejecución de aplicaciones con un manejo único de la asignación de memoria.
++ Accesibilidad. Android provee la capacidad de convertir en texto la voz del usuario por medio de la aplicación TalkBack de Google para las personas con poca visión o sin visión. También hay asistentes para las personas con discapacidad auditiva.
++ Tethering. Android soporta tethering que permite a un teléfono con Internet ser usado como un mediador para ofrecer acceso inalámbrico (o cableado) a la red a otros dispositivos. Antes de Android 2.2 estaba disponible mediante aplicaciones de terceros o adaptaciones del fabricante.
++ Captura de pantalla. Android soporta la captura de pantalla, pulsando los botones de encendido y de volumen hacia abajo al mismo tiempo. Antes de Android 4.0, los únicos métodos para capturar un screenshot era mediante adaptaciones de los fabricantes y de terceros, o en otro caso, mediante el uso de una conexión a la PC (empleando el kit de desarrollo de Android).
++ Almacenamiento externo. La mayoría de los dispositivos Android incluyen soporte para tarjetas microSD formateadas con los sistemas de archivos FAT32, Ext3 o Ext4. Muchas tablets con Android incluyen entradas USB para permitir el uso de dispositivos de almacenamiento de alta capacidad como memorias USB y discos duros externos por USB. Los dispositivos de almacenamiento formateados con FAT32 son manejados por el driver VFAT del kernel Linux, mientras que para manipular otros sistemas de archivos populares (como NTFS, HFS Plus y exFAT) se necesita soluciones de terceros.
+
+[WIKFEA] [Fuente: http://en.wikipedia.org/wiki/List_of_features_in_Android]
+
+Arquitectura
+------------
+
+A la fecha de hoy, 8 de Octubre del 2012, el Sistema Operativo Android presenta un diseño en capas, las cuales se describen seguidamente.
+Capa de aplicaciones: consiste de las aplicaciones base que incluyen un cliente de correo electrónico, programa de SMS, calendario, mapas, navegador, agenda de contactos y otros. Esta es la capa de la arquitectura en donde se crean aplicaciones. Todas estas aplicaciones estan escritas en el lenguaje de programación Java.
+Capa de infraestructura de las aplicaciones: brinda un contexto para programar aplicaciones, los desarrolladores tienen acceso completo a la interfase de las librerias usadas por las aplicaciones base, el cual brinda un sistema de interfases gráficas y gestión de notificaciones, entre otros. La arquitectura esta diseñada para simplificar la reutilización de componentes, cualquier aplicación puede publicar sus funciones y para que otras hagan uso de ellas (dependiendo de las reglas de seguridad del framework). Este mismo mecanismo permite que los componentes nativos sean reemplazados por los del usuario.
+Capa de las bibliotecas: Android incluye un conjunto de bibliotecas de C y C++ utilizadas por el sistema para varios fines. Su acceso no es directo, dado que estas funcionalidades se exponen a los desarrolladores mediante la capa de aplicaciones; algunos de sus propósitos son: implementar la biblioteca C estándar, manejar la pantalla (surface manager), manipular mapas de bits y tipos de letra (Free Type), generar gráficos en 2D y 3D (SGL y OpenGL), manejo de multimedia (Media Framework), almacenamiento de datos (SQLite), implementar un navegador (WebKit), entre otras funciones. Junto a estas librerías, encontramos lo necesario para la ejecución de las aplicaciones a través de la máquina virtual Dalvik; cada aplicación utiliza una instancia de la máquina virtual ejecutando un archivo en el formato Dalvik Executable (.dex), que consume una mínima cantidad de memoria, asimismo el sistema está optimizado para que se ejecuten múltiples instancias de la máquina virtual de forma eficiente. Las aplicaciones se desarrollan en Java pero no se utiliza una máquina virtual de Sun para su ejecución ni tampoco archivos con extensión .class.
+Capa del kernel de Linux: en general, el núcleo actúa como una capa de abstracción entre el hardware y el resto de la pila de software. A la fecha, Android depende del kernel 2.6 de Linux para los servicios base del sistema como seguridad, gestión de memoria, gestión de procesos, pila de red y modelo de controladores. No obstante, Android no es lo mismo que Linux, dado que no cuenta con un sistema nativo de ventanas de Linux ni tiene soporte para glibc (libería estándar de C) ni tampoco es posible utilizar la mayoría de las aplicaciones de GNU de Linux. Además de todo lo ya implementado en el kernel de Linux, Android agrega algunas funciones específicas para plataformas móviles como la comunicación entre procesos (lograda a través del binder), la forma de manejar la memoria compartida (ashmem) y la administración de energía (con wakelocks).
+
+{ Gráfico clásico relacionado a la arquitectura: las capas de Android }
+[Fuente: http://es.wikipedia.org/wiki/Android] (Sección 'Arquitectura')
+[Fuente: el libro titulado "Curso de Android" (pdf) - Autor: sitio titulado 'Maestros del Web']
+
+Características únicas del kernel de linux
+{ Quizás pueda profundizar. Vale la pena? }
+
+Existe una serie de características únicas del kernel para Android, las más relevantes se van a mencionar a continuación.
+Binder: es un mecanismo de comunicación entre procesos específico de Android y el sistema de invocación a métodos remotos.
+[Fuente: http://elinux.org/Android_Binder]
+Ashmem: se puede usar para compartir memoria entre diferentes procesos en el framework de Android, es una herramienta utilitaria para el kernel de linux.
+[Fuente: http://www.androidenea.com/2010/03/share-memory-using-ashmem-and-binder-in.html]
+Pmem: el controlador pmem se utiliza para gestionar grandes regiones de memoria compartida físicamente contiguas, entre el espacio de usuario y controladores del núcleo.
+[http://elinux.org/Android_Kernel_Features#pmem]
+
+{ ...existen algunas más (características únicas). Vale la pena? Por el momento no }
+
+Máquina virtual de Dalvik (hecho el 03/01/2012)
+-------------------------
+
+Dalvik es la máquina virtual de proceso en Android, es el software que hace posible la ejecución de las aplicaciones sobre los dispositivos con Android. La forma en que funciona es la siguiente, los programas son comunmente escritos en Java y compilados a código intermedio (bytecode), entonces los programas son convertidos desde los archivos .class compatibles con la Java Virtual Machine a archivos .dex compatibles con Dalvik antes de que se instale en un dispositivo. Los archivos .dex tienen el formato ejecutable de Dalvik y son compactos, lo que los hacen apropiados para los sistemas que tienen limitaciones de memoria y procesamiento.
+
+Fuente: http://en.wikipedia.org/wiki/Dalvik_(software)
+
+Desarrollo de aplicaciones en Android
+-------------------------------------
+-------------------------------------
+
+SDK
+---
+
+Según el sitio central para desarrolladores de Android [SDKINFO] [SDKTOOL], el SDK (Software Development Kit) de Android le suministra al programador un ambiente de producción a nivel profesional, brindando las bibliotecas de la API y las herramientas para compilar, probar y depurar aplicaciones Android. Es una herramienta gratuita, open-source y funciona en la mayoría de los principales sistemas operativos. Generalmente, para el desarrollo de aplicaciones se emplea el entorno de desarrollo de Eclipse, las herramientas esenciales de Android y el plugin de Eclipse que adhiere estas herramientas al IDE (Integrated Development Environment). Dado que existen varias versiones de la API de Android, para cada una hay un paquete de desarrollo.
+
+{ ... se puede ampliar }
+
+[SDKINFO] [Fuente: http://developer.android.com/sdk/index.html]
+[SDKTOOL] [Fuente: http://developer.android.com/tools/index.html]
+
+Componentes de programación (elaborado el 29/01/2013)
+---------------------------
+
+Para el desarrollo de aplicaciones en Android, se emplean los siguientes componentes esenciales [ANDFUN]:
+
+. Activities: una activity es una componente de una aplicación que representa una pantalla que provee una interfase de usuario para que el usuario ejecute órdenes. Por ejemplo, una aplicación de e-mail podría tener una activity que muestre una lista de e-mails nuevos, otra activity para componer un e-mail y otro para leer mails. Aunque las activities trabajan en forma conjunta para formar una aplicación de email coherente, cada una es independiente de las otras. De esta forma, otra aplicación puede iniciar cualquier activity de esta aplicación (si ésta lo permite). Por ejemplo, una aplicación que usa la cámara fotográfica puede iniciar la activity que se usa para redactar un mail, con la finalidad de compartir una fotografía del usuario.
+
+. Services: un service es un componente que se ejecuta en background para ejecutar operaciones de larga duración o para realizar una tarea que necesite interactuar con procesos remotos. Un service no provee interfase de usuario. Por ejemplo, un service podría reproducir música en background mientras el usuario interactúa con otra aplicación, o podría extraer datos de la red sin bloquear la interacción que tiene el usuario con la activity actual.
+
+. Content Providers: un content provider maneja un conjunto compartido de datos de las aplicaciones. Los datos se pueden guardar en varios lugares, como el sistema de archivos, una base de datos SQLite, la Web o cualquier otro lugar de almacenamiento persistente en donde la aplicación tenga acceso; por medio de un content provider las aplicaciones pueden consultar o incluso modificar los datos (si el content provider lo permite). Un content provider también es útil para leer y escribir datos que son privados a la aplicación y no se comparten. Por ejemplo, el sistema provee un content provider que administra los datos de los contactos del usuario.
+
+. Broadcast Receivers: un broadcast receiver es un componente que reacciona ante las notificaciones que se difunden a todo el sistema. Muchos broadcasts se originan desde el sistema; por ejemplo, un broadcast que anuncia que la pantalla se ha apagado, otro que indica que la batería esta baja o que una fotografía fue tomada. Las aplicaciones también pueden iniciar broadcasts; por ejemplo, para permitir que otras aplicaciones sepan que algunos datos han sido descargados al dispositivo y ya estan disponibles para que los usen. A pesar de que los broadcast receivers no disponen de una interfase de usuario, ellos pueden crear una notificación para que se vea en la barra de estado y alertar al usuario que surgió un evento del tipo broadcast. Sin embargo, usualmente un broadcast receiver es sólo una "puerta" a otros componentes y pretende realizar una cantidad mínima de trabajo. Por ejemplo, un broadcast receiver podría disparar un servicio para ejecutar algún trabajo basado en el evento que le fue notificado.
+
+. Intents [ANDINT]: los intents son mensajes que sirven para activar 3 componentes claves de una aplicación: activities, services y broadcast receivers. El envío de intents tiene la finalidad de relacionar componentes en tiempo de ejecución, ya sean de diferentes aplicaciones o de la misma aplicación, que cuando son recibidos por services o activities pueden activar procesos. Internamente, un intent es una estructura de datos pasiva que posee una descripción abstracta de una operación a ejecutar o en el caso de los intents de tipo broadcast, una descripción de algo que ya ha sucedido y esta siendo notificado.
+
+. Views [ANDVIE]: todos los elementos de la interfase de usuario en una aplicación Android se construyen usando objetos tipo View y ViewGroup. Un View es un objeto que dibuja una figura en la pantalla con que el usuario puede interactuar. Un ViewGroup es un objeto que puede contener objetos de tipo View y a la vez, puede contener objetos ViewGroup, esta estructura se usa para definir la presentación de la interfase. Asimismo, todo componente que posea una interfase de usuario se la define usando una jerarquía de objetos View y ViewGroup. Esta jerarquía forma un árbol que puede ser tan complejo o tan simple como se requiera, no obstante la simplicidad mejora el rendimiento de la aplicación. Android provee una colección preparada de subclases View y ViewGroup, que ofrecen controles de entrada de uso común (como botones y campos de texto) y varios modelos de presentación (las cuales definen la disposición de los controles [ANDLAY]). Para declarar una capa de presentación (layout), se puede optar por 2 opciones. La primera consiste en instanciar objetos Views en el código que se vá a ejecutar y empezar a construir un árbol de objetos View y ViewGroup en tiempo de ejecución. La segunda opción, la más sencilla y más efectiva, consiste en definir la capa de presentación en un archivo XML; los archivos XML ofrecen una estructura razonablemente legible, son similares al formato HTML.
+
+. Manifest: un manifest es un archivo XML en donde se declaran todos los componentes de una aplicación, este archivo se debe ubicar en la raíz del directorio del proyecto de la aplicación. Además, cumple otras funciones importantes como:
+- Identificar los permisos que debe conceder el usuario para que la aplicación se instale. Por ejemplo, el acceso a Internet o el acceso de lectura a los contactos del usuario.
+- Definir el nivel de API mínimo que requiere la aplicación, ésto se basa en las APIs que utiliza la aplicación.
+- Definir los requerimientos de hardware y software de la aplicación, tal como la cámara fotográfica, servicios de bluetooth o una pantalla multitouch.
+- Definir los enlaces externos con las bibliotecas ajenas a la API nativa de Android, tal como la biblioteca de Google Maps.
+
+[ANDFUN] [Fuente: http://developer.android.com/guide/components/fundamentals.html]
+[ANDINT] [Fuente: http://developer.android.com/guide/components/intents-filters.html]
+[ANDVIE] [Fuente: http://developer.android.com/guide/topics/ui/overview.html]
+[ANDLAY] [Fuente: http://developer.android.com/guide/topics/ui/declaring-layout.html]
+
+{Fuentes opcionales:}
+[Fuente: http://www.androidpatterns.com/]
+[Fuente: http://developer.android.com/tools/index.html]
+
+NDK (hecho el 15/01/2013)
+---
+
+El NDK (Native Development Kit) de Android es un conjunto de herramientas que permiten embeber en una aplicación componentes que utilizan código nativo del sistema [NDKOVER]. Normalmente, las aplicaciones de Android se ejecutan en la máquina virtual de Dalvik, en cambio, el NDK permite implementar partes de sus aplicaciones usando lenguajes de código nativo como C y C++. Esto puede proporcionar beneficios para ciertas clases de aplicaciones, en el sentido de que se va a poder reutilizar código existente y en algunos casos se podrá incrementar la velocidad de ejecución.
+El NDK suministra:
+- Un conjunto de herramientas y archivos para generar librerías de código nativo a partir de código fuente escrito en C y C++.
+- Una herramienta que integra las correspondientes librerias nativas en un archivo empaquetado que corresponde a la aplicación (con extensión .apk) que puede ser instalado en un dispositivo Android.
+- Un conjunto de archivos cabeceras y librerias del sistema nativo que serán soportadas en todas las versiones futuras de la plataforma Android, a partir de la versión 1.5. En el caso de las aplicaciones que usen las activities nativas deben correr en Android 2.3 o posterior.
+- Documentación, ejemplos y tutoriales.
+
+[NDKOVER] [Fuente: http://developer.android.com/tools/sdk/ndk/overview.html]
+
+¿Cuándo desarrollar en NDK? (hecho el 18/01/2013)
+---------------------------
+
+Según el sitio que proporciona documentación oficial para Android [NDKCHO], generalmente el NDK no genera beneficios en la mayoría de las aplicaciones. La cuestión es que el desarrollador se debe esforzar para equilibrar las ventajas frente a las desventajas; claramente, el uso del código nativo no resulta en un incremento automático del rendimiento, dado que siempre incrementa la complejidad de la aplicación. En general, el desarrollador sólo debería usar código nativo si es esencial para la aplicación y no con un propósito arbitrario.
+Los candidatos típicos para el empleo del NDK son operaciones autónomas y que usan intensivamente a la CPU que no alocan mucha memoria, como el procesamiento de señales, simulación física, etc. La mera traducción de un método a una función en el lenguaje C no resulta en un gran incremento del rendimiento. Al analizar si se debe o no desarrollar en código nativo, se debe pensar en las necesidades y ver si la API de Android proporciona la funcionalidad que se necesita. Sin embargo, el NDK puede ser una forma efectiva de reutilizar una gran base de código C/C++ existente.
+
+[NDKCHO] [Fuente: http://developer.android.com/tools/sdk/ndk/overview.html] (Sección "choosing")
+
+Complicaciones en el desarrollo de software
+-------------------------------------------
+-------------------------------------------
+
+Para concluir con el capítulo, se mencionan algunos inconvenientes que pueden aparecer en el desarrollo de software para plataformas móviles, son cuestiones generales que se deben tener en cuenta [MOSOA]. Dado que existen varios factores que varían y crean una gran diversidad de dispositivos móviles en el mercado, tales factores pueden ser la marca, sistema operativo instalado, el tamaño de la pantalla, redes soportadas y muchos otros más; entonces, para que una aplicación pueda aprovechar las capacidades de ciertos dispositivos específicos, los desarrolladores deben adaptar su software en base a estos dispositivos, y así lograrán mejorar la experiencia que tiene el usuario con la aplicación. Esta delimitación del software conlleva un número de problemas:
+- La cantidad de dispositivos que pueden ejecutar este software exclusivo es bastante inferior que el número total de dispositivos. La adaptación del software para que pueda aprovechar las características propias de un grupo de dispositivos produce una reducción en el mercado al que apunta.
+- Los dispositivos son vendidos en el mercado sólo por períodos de tiempo y generalmente son reemplazados por nuevos dispositivos en cuestión de meses o a lo sumo un año luego de su introducción al mercado, lo que ocasiona una pérdida de clientes en el mercado.
+- El desarrollo de software dedicado a un grupo de dispositivos requiere la prueba del software sobre todos los dispositivos que integran el grupo.
+- El software específico de una gama de dispositivos puede ser difícil de ajustar para que corra en otros dispositivos.
+Mas allá de las contribuciones de la gente de Android para lograr que una sola aplicación funcione en todos los dispositivos, siempre aparecerán nuevos factores para apreciar en esta etapa que forzarán a especializar el software.
+
+[MOSOA] [Fuente: http://www.janbosch.com/mosoa.pdf] (pág. 3)

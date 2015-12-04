@@ -1,0 +1,57 @@
+Binder [ ES VIEJO, DADO QUE SE HICIERON CAMBIOS Y SE AGREGARON COSAS. PERO SE PRESERVA COMO UN ARCHIVO ]
+
+Intro
+-----
+As in any Unix-like system, processes in Android have separate address spaces and a process cannot directly access another process’s memory (this is called process isolation). This is usually a good thing, both for stability and security reasons: multiple processes modifying the same memory can be catastrophic, and you don’t want a potentially rogue process that was started by another user to dump your email by accessing your mail client’s memory. However, if a process wants to offer some useful service(s) to other processes, it needs to provide some mechanism that allows other processes to discover and interact with those services. That mechanism is referred to as IPC.
+[ANDSECINT]
+The need for a standard IPC mechanism is not new, so several options predate Android. These include files, signals, sockets, pipes, semaphores, shared memory, message queues, and so on. While Android uses some of these (such as local sockets), it does not support others (namely System V IPCs like semaphores, shared memory segments, and message queues).
+[ANDSECINT]
+
+Definición de Binder
+--------------------
+The Binder kernel driver facilitates the overall Binder architecture. The Binder (as an architecture) operates in a client-server model. It allows a process to invoke methods in "remote" processes synchronously. The Binder architecture abstracts away underlying details, making such method calls seem as though they were local function calls.
+[ANDHACK]
+Because the standard IPC mechanisms weren’t flexible or reliable enough, a new IPC mechanism called Binder was developed for Android. While Android’s Binder is a new implementation, it’s based on the architecture and ideas of OpenBinder.
+[ANDSECINT]
+Binder implements a distributed component architecture based on abstract interfaces. It is similar to Windows Common Object Model (COM) and Common Object Broker Request Architectures (CORBA) on Unix, but unlike those frameworks, it runs on a single device and does not support remote procedure calls (RPC) across the network (although RPC support could be implemented on top of Binder).
+[ANDSECINT]
+As mentioned earlier, on a Unix-like system, a process cannot access another process’s memory. However, the kernel has control over all processes and therefore can expose an interface that enables IPC. In Binder, this interface is the /dev/binder device, which is implemented by the Binder kernel driver. The Binder driver is the central object of the framework, and all IPC calls go through it.
+[ANDSECINT]
+But how is data actually passed between processes? The Binder driver manages part of the address space of each process. The Binder driver-managed chunk of memory is read-only to the process, and all writing is performed by the kernel module. When a process sends a message to another process, the kernel allocates some space in the destination process’s memory, and copies the message data directly from the sending process. It then queues a short message to the receiving process telling it where the received message is. The recipient can then access that message directly (because it is in its own memory space). When a process is finished with the message, it notifies the Binder driver to mark the memory as free. Figure 1-3 shows a simplified illustration of the Binder IPC architecture.
+[ANDSECINT]
+Higher-level IPC abstractions in Android such as Intents (commands with associated data that are delivered to components across processes), Messengers (objects that enable message-based communication across processes), and ContentProviders (components that expose a cross-process data management interface) are built on top of Binder. Additionally, service interfaces that need to be exposed to other processes can be defined using the Android Interface Definition Language (AIDL), which enables clients to call remote services as if they were local Java objects. The associated aidl tool automatically generates stubs (client-side representations of the remote object) and proxies that map interface methods to the lower-level transact() Binder method and take care of converting parameters to a format that Binder can transmit (this is called parameter marshalling/unmarshalling). Because Binder is inherently typeless, AIDL-generated stubs and proxies also provide type safety by including the target interface name in each Binder transaction (in the proxy) and validating it in the stub.
+[ANDSECINT]
+Binder Security
+On a higher level, each object that can be accessed through the Binder framework implements the IBinder interface and is called a Binder object. Calls to a Binder object are performed inside a Binder transaction, which contains a reference to the target object, the ID of the method to execute, and a data buffer. The Binder driver automatically adds the process ID (PID) and effective user ID (EUID) of the calling process to the transaction data. The called process (callee) can inspect the PID and EUID and decide whether it should execute the requested method based on its internal logic or system-wide metadata about the calling application. Since the PID and EUID are filled in by the kernel, caller processes
+cannot fake their identity to get more privileges than allowed by the system (that is, Binder prevents privilege escalation). This is one of the central pieces of Android’s security model, and all higher-level abstractions, such as permissions, build upon it. The EUID and PID of the caller are accessible via the getCallingPid() and getCallingUid() methods of the android.os.Binder class, which is part of Android’s public API.
+[ANDSECINT]
+Binder Identity
+One of the most important properties of Binder objects is that they maintain a unique identity across processes. Thus if process A creates a Binder object and passes it to process B, which in turn passes it to process C, calls from all three processes will be processed by the same Binder object. In practice, process A will reference the Binder object directly by its memory address (because it is in process A’s memory space), while process B and C will receive only a handle to the Binder object. The kernel maintains the mapping between “live” Binder objects and their handles in other processes. Because a Binder object’s identity is unique and maintained by the kernel, it is impossible for userspace processes to create a copy of a Binder object or obtain a reference to one unless they have been handed one through IPC. Thus a Binder object is a unique, unforgeable, and communicable object that can act as a security token. This enables the use of capability-based security in Android.
+[ANDSECINT]
+Capability-Based Security
+In a capability-based security model, programs are granted access to a particular resource by giving them an unforgeable capability that both references the target object and encapsulates a set of access rights to it. Because capabilities are unforgeable, the mere fact that a program possesses a capability is sufficient to give it access to the target resource; there is no need to maintain access control lists (ACLs) or similar structures associated with actual resources.
+[ANDSECINT]
+Binder Tokens
+In Android, Binder objects can act as capabilities and are called Binder tokens when used in this fashion. A Binder token can be both a capability and a target resource. The possession of a Binder token grants the owning 
+[ANDSECINT]
+
+Binder is a cornerstone of Android’s architecture. It’s what allows apps to talk the System Server, and it’s what apps use to talk to each others’ service components, although, as I mentioned earlier, app developers don’t actually talk to the Binder directly. Instead, they use the interfaces and stubs generated by the aidl tool. Even when apps interface with the System Server, the android.* APIs abstract its services, and the developer never actually sees that Binder is being used.
+[EMBAND]
+The in-kernel driver part of the Binder mechanism is a character driver accessible through /dev/binder. It’s used to transmit parcels of data between the communicating parties using calls to ioctl(). It also allows one process to designate itself as the “Context Manager.” The importance of the Context Manager, along with the actual user-space use of the Binder driver, will be discussed in more detail later in this chapter.
+[EMBAND]
+In essence, Binder attempts to provide remote object invocation capabilities on top of a classic OS. In other words, instead of reengineering traditional OS concepts, Binder “attempts to embrace and transcend them.” Hence, developers get the benefits of dealing with remote services as objects without having to deal with a new OS. It therefore becomes very easy to extend a system’s functionality by adding remotely invocable objects instead of implementing new daemons for providing new services, as would usually be the case in the Unix philosophy. The remote object can therefore be implemented in any desired language and may share the same process space as other remote services or have its own separate process. All that is needed to invoke its methods is its interface definition and a reference to it.
+[EMBAND]
+
+Internamente
+------------
+En un nivel bajo, Binder also uses process ID (PID) and UID information as a means of identifying the calling process, allowing the callee to make decisions about access control.
+[ANDHACK]
+
+Externamente
+------------
+At a higher level, exposed IPC methods, such as those provided by bound Services, are typically distilled into an abstract interface via Android Interface Definition Language (AIDL). AIDL allows for two applications to use “agreed-upon” or standard interfaces for sending and receiving data, keeping the interface separate from the implementation. AIDL is akin to other Interface Definition Language files or, in a way, C/C++ header files. Consider the following sample AIDL snippet
+[ANDHACK]
+
+[ANDSECINT] [Libro "Android Security Internals: An In-Depth Guide to Android's Security Architecture"]
+[ANDHACK] [Libro "Android Hacker's Handbook"]
+[EMBAND] [Libro "Embedded Android"]

@@ -1,0 +1,46 @@
+----------------  Hacking Android  ----------
+
+:: Uso de Kali Linux ::
+https://www.youtube.com/watch?v=-0E5tfQU1OU
+
+http://www.cyberhades.com/2015/08/07/material-de-black-hat-usa-2015/
+http://blog.segu-info.com.ar/2015/08/presentaciones-de-blackhat.html
+
+:: Pentesting desde Android ::
+
+https://www.zimperium.com/zanti-mobile-penetration-testing
+
+:: Blogs en Español ::
+
+http://unaaldia.hispasec.com/
+http://www.elladodelmal.com/
+
+:: Conferencias de Seguridad, repositorios de papers y afines ::
+
+http://www.rootedcon.es/ [ Conferencia española ]
+https://www.noconname.org/ [ Conferencia española ]
+https://www.bsideslv.org/
+http://www.securitybsides.com/w/page/12194156/FrontPage
+
+http://www.welivesecurity.com
+http://www.researchgate.net
+http://www.researchgate.net/publication/258003060_Evolution_Detection_and_Analysis_of_Malware_for_Smart_Devices
+http://www.scirp.org/
+http://www.scirp.org/journal/PaperInformation.aspx?PaperID=50704
+
+http://www.droidsec.org/wiki/
+http://www.kb.cert.org
+http://www.kb.cert.org/vuls/id/924951#sthash.8b06VLtD.dpuf
+
+:: Vulnerabilidades ::
+
+http://www.cvedetails.com/
+https://es.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures
+
+:: Mejoras de seguridad a lo largo de las versiones ::
+
+https://source.android.com/devices/tech/security/index.html
+
+:: Market Share de Android ::
+
+https://en.wikipedia.org/wiki/Android_%28operating_system%29#Platform_usage

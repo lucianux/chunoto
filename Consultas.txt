@@ -1,0 +1,42 @@
+Consultas [ enviado hace mucho ]
+---------
+
+- Por el momento NO me voy a enfocar en el Crimeware, me voy a CONCENTRAR en lo que pide el jurado (Revisar los puntos).
+- A grandes rasgos, se está maquetando la tesis. Pero también se está entrando en los detalles, se están realizando Pruebas de Concepto (PoC) de vulnerabilidades encontradas en Android (Revisar las pruebas). Además, se está terminando de definir el capítulo 1.
+- Se está planteando el capítulo 5 que incorpora medidas para afrontar los riesgos (Revisar el contenido).
+- Se eliminó el capítulo 6: comparación de varios Sistemas Operativos (Revisar esta decisión).
+
+Consultas [ enviado 28/10 19.30 hs. ]
+---------
+
+- En el capítulo 5, en la parte que se presente el desarrollo de una app ¿ Se puede proponer una app SIN presentar una implementación posible ?
+- Por las dudas, aclaro que los archivos .txt que le mando se les va a dar formato (alguno como .doc, .tex, .pdf ). En fin, no me preocupa el formato, por ahora .txt porque me permite enfocarme en el contenido puro.
+
+Consultas [ sin enviar ]
+---------
+
+- El ámbito que se tiene en cuenta es el de una empresa o de una persona individual? DEFINÍ QUE EL ÁMBITO SE AJUSTE A UNA EMPRESA! (lo pidió el jurado)
+- Cité varios papers de donde extraje un fragmento de cada uno. ¿Está mal? ¿Debería extraer lo más que pueda de esos papers?
+- La segunda parte del capítulo 1 que cuenta acerca de la seguridad en móviles, se podría separar por un lado lo que es la seguridad en móviles en general, y por otro lado, la seguridad en Android.
+- ¿ No tendría que haber un capítulo previo a las pruebas que remarque las falencias de Android ? ( Capítulo teórico )
+
+Por las dudas, si ese capítulo existe...
+
+Capítulo 3 bis - "Inseguridad en Android"
+-----------------------------------------
+
+[https://globaljournals.org/GJCST_Volume13/2-Evaluating-Smartphone-Application.pdf] Página 4
+
+- El capítulo 1 se puede dividir en 2: una parte de móviles y otra de seguridad.
+
+Consultas nuevas [ sin enviar ]
+----------------
+
+¿ La estructura está bien ? ( mostrar los planos )
+¿ Qué falta en mi tesis ? ¿ Me falta mucho ?
+¿ Qué tengo que cambiar de mi tesina ?
+¿ Faltan capturas de pantalla ?
+¿ Qué errores cometí ?
+¿ Qué le parece el formato del documento ?
+¿ Cuántas páginas debe tener una tesina ? (como máximo y mínimo)
+¿ Agrego screenshots de las pantallas ?

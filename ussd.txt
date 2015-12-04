@@ -1,0 +1,42 @@
+ Explicación de la vulnerabilidad de USSD en Android
+En la última Ekoparty 2012 realizada en Buenos Aires, (aqui pueden descargar la presentación del workshop que dicte), @raviborgaonkar presento una charla en la que exponia una vulnerabilidad presente en casi todos los dispositivos con sistema operativo Android, el cual autoejecuta todos los comandos USSD que recibe. Mucho se hablo sobre está vulnerabilidad, es por eso que en el siguiente post intento poner un poco de luz sobre este tema.
+
+Los códigos USSD son esos códigos que usan los carácteres * y #, por ejemplo si tecleamos  *#06# automáticamente aparecera un número llamado IMEI, este número identifica univocamente a cada celular dentro de la red, una especie de DNI de cada equipo. 
+Estos códigos tienen numerosos usos dentro de las redes GSM, pero a grandes rasgos diremos que su uso es muy similar al de los SMS.
+
+Ravi se apoyo en un tag perfectamente valido y definido en la W3C, (el ente que maneja los estandares de internet) que es el tag TEL:, esté posibilita que desde un link se puedan marcar números telefónicos. Los que venimos trabajando en movilidad desde hace tiempo, este tag nos es muy familiar ya que lo usabamos en la epoca de las páginas WAP, dicho sea de paso, 30 segundos de silencio por el protocolo WAP.... QEPD :-P
+Esta capacidad de interpretar este tag no es exclusiva de los dispositivos con Android, si no de todas las plataformas, e inclusive de teléfonos de gama baja, solo es necesario que tenga un navegador móvil.
+Hasta aqui, no vemos una vulnerabilidad a la vista, bueno el problema se da en que Android corre de forma automática  los comandos USSD, esto quiere decir que los ejecuta sin preguntarle al usuario.
+Ahora bien, sumado a este pequeño problema se agrega que los dispositivos Android de Samsung usan un código USSD (*2767*3855#) que posibilita realizar el wipe (borrado de todos los datos y volver a estado de fábrica el teléfono).
+Los vectores de ataque, es decir las formas en que un atacante podria aprovechar está vulnerabilidad son varios, a saber:
+1) SMS
+2) QR Codes
+4) Links recortados, los que suelen usarse en Twitter.
+5) y para los smartphones lanzados hace poco,  NFC.
+
+Ahora me han hecho varias preguntas que vamos a intentar responder:
+
+Todos los telefonos con Android son susceptibles a este ataque?
+SI, Google anuncio que la ultima versión de Jelly Bean (4.1) no ejecuta automaticamente los comandos USSD. Ahora bien, no todos los Android son susceptibles al borrado total del teléfono, solo los Samsung.
+
+Tengo un firmware de Cyanogen, puede ser victima de este ataque?
+Al ser Firmwares personalizados y modificados, puede no tener ese bug, pero en las dos versiones que probe se ejecuto y se borro el teléfono. Por eso es cuestion de probar.
+
+Como evito esto?
+-Si tienes NFC, deshabilitarlo. (al igual que el Bluetooth)
+-No abrir links acortados de fuentes desconocidas.
+-No usar para leer QR Codes la app que viene por defecto como el QRDroid.
+-No abrir links que vienen en SMS de fuentes desconocidas.
+-Recientemente Collin Mulliner, un investigador alemán, desarrollo una aplicación que posibilita no ejecutar los comandos USSD de forma automatica, se descarga de AQUI
+
+No tengo un dispositivo Android de Samsung, me tengo que preocupar?
+Si, ya que otra de las formas de ataque consiste en deshabilitar la SIM card, colocando PIN y PUK inválidos, o sea que si fueramos victimas de este ataque tendremos que ir a comprar o pedir el cambio de la SIM Card.
+
+Como saber si mi teléfono tiene está vulnerabilidad?
+Haz click aqui, tranquilo no pasa nada, si en tu teléfono aparece tu numero IMEI, significa que puedes sufrir este ataque.
+
+Conclusión
+Esta vulnerabilidad NO ROBA DATOS, NI LOS ENVIA A NADIE. Pero si logra que como máximo perdamos todos los datos del telefono (recordar siempre hacer un backup del mismo), y como mínimo nos inhabiliten la SIM Card y quedemos incomunicados hasta tanto podamos ir a cambiarla o comprar otra.
+
+Espero que esto ayude y deje mas tranquilo (o alimente la paranoia) de todos.
+Saludos.

@@ -1,0 +1,581 @@
+@@@@@@@@@@@@
+@@@@@@@@@@@@
+@@@@@@@@@@@@	Capítulo: "Seguridad en dispositivos móviles"
+@@@@@@@@@@@@
+@@@@@@@@@@@@
+
+En el presente capítulo se mostrarán los factores que caracterizan a los dispositivos móviles y su evolución. Luego, se describe como les afecta el tema de la seguridad remarcando su importancia.
+
+Disposición de los temas en este capítulo
+-----------------------------------------
+-----------------------------------------
+
+{ REVISAR!!! }
+Al principio, se expone la relevancia que pueden llegar a tener los dispositivos móviles. Luego se muestran algunos datos estadísticos para tener una aproximación del estado del mercado y su dinámica. Al final de la introducción, se muestran algunos datos estadísticos basados en estudios de entidades privadas que nos pueden llegar a dar una idea de la relevancia de la cuestión de la seguridad en dispositivos móviles.
+Luego, se empieza a desplegar el tema central a partir de algunas definiciones generales, con el fin de terminar de definir el alcance que le corresponde.
+
+Dispositivos Móviles
+--------------------
+--------------------
+
+Definición (hecho el 2/12/2012)
+----------
+
+Los dispositivos móviles son aquellos dispositivos que estan hechos para ser portables, siendo relativamente compactos y livianos para su transporte. Además, cuentan con tecnología que le permite procesar, almacenar y mostrar datos con un manejo eficiente de la energía, lo que le otorga cierto nivel de autonomía. Por último, algunos son capaces de conectarse a un canal de comunicación para alcanzar una red de datos que generalmente consiste de una tecnología inalámbrica. Tratan de alcanzar las aptitudes que tienen las computadoras personales tradicionales. Ejemplos de estos dispositivos son: tablets, smartphones, netbooks, notebooks, pagers, PDAs, etc.
+
+[Tres fuentes:]
+[Fuente: http://en.wikipedia.org/wiki/Mobile_device] (primera página)
+[Fuente: http://www.techopedia.com/definition/23586/mobile-device] (cuerpo de la única página)
+[Fuente: http://mobileman.projects.supsi.ch/glossary.html] (ver mobile computing)
+[Fuente: http://dsid.escom.ipn.mx/julio/cursos/presen/arq_disp_moviles/Introduccion.pdf]
+
+Limitaciones (hecho el 2/12/2012)
+------------
+
+Los dispositivos móviles no poseen las mismas comodidades que poseen las computadoras personales. Según un artículo publicado en Wikipedia [WIKMOB], un artículo de una revista llamada Derecom [LUENGO] y una guía del NIST [NISTGUI] visto el 30 de Noviembre del 2012, existe una serie restricciones en el uso de estos dispositivos:
+. El tamaño y el peso: la tendencia de la tecnología se inclina por aumentar la capacidad y las funciones en un espacio cada vez más reducido. Estos dispositivos se presentan en varias formas, en general, presentan un grosor menor a 2 cm. y pesan menos de 0,9 Kgrs (en smartphones y tablets). Este escaso tamaño supone una clara ventaja en adaptabilidad y accesibilidad, pero puede ser en ocasiones un inconveniente. En una pantalla de 4 pulgadas no podemos ver igual de cómodos una película o fotos de nuestras vacaciones que en una pantalla de una computadora de escritorio, o quizás una tablet.
+. La capacidad: se refiere a la capacidad interna del dispositivo, generalmente es limitada para las operaciones que llevamos a cabo. Sin embargo, este inconveniente puede resolverse o al menos mejorar sustancialmente por dos métodos. Por un lado, el aumento de capacidad de almacenamiento mediante las ranuras de tarjetas de memoria, y por otro, mediante el uso cada vez más estandarizado del trabajo en la nube.
+. Ancho de banda insuficiente: por lo general, el acceso a Internet móvil es mas lento que en las conexiones cableadas, a menos que se empleen tecnologías mas recientes como las que pertenecen a 4G. Usualmente, la disponibilidad de las redes móviles estan limitadas por el rango de las torres telefónicas que distribuyen la señal. Algunos dispositivos se pueden conectar a las redes locales mediante la tecnología WI-FI, las cuales resultan ser baratas aunque tienen un rango muy limitado.
+. Estándares de seguridad: cuando se le dá uso profesional a estos dispositivos, uno debería tener cuidado cuando emplea redes públicas. Cuando la seguridad es importante, uno se ocupa de respetar ciertos estándares de computación móvil. Se podría llegar a utilizar con cuidado la tecnología de redes VPN en las redes móviles.
+. Agotamiento del suministro eléctrico: cuando no se dispone de una toma de corriente o un generador portátil, los dispositivos móviles dependerán únicamente de la batería. Si se considera el tamaño compacto de muchos dispositivos, por lo general el usuario no estará forzado a emplear baterías onerosas para obtener la duración necesaria. Uno debe tener en cuenta que el dispositivo móvil es un complemento secundario.
+. Interferencias en la transmisión: algunos factores como el clima, el ambiente físico y la proximidad a la fuente de la señal, pueden interferir con la recepción de la señal. Por ejemplo, los túneles, algunos edificios y las áreas rurales representan obstáculos para el alcance de la señal.
+. Interfase física con el dispositivo: las pantallas y los teclados tienden a ser reducidos, lo que puede llegar a dificultar su uso. Métodos alternativos de entrada, tal como el reconocimiento de escritura o voz requieren cierta preparación para usarlos de forma segura.
+
+[WIKMOB] [Fuente: http://en.wikipedia.org/wiki/Mobile_computing#Limitations] (ver la sección "Limitations")
+[LUENGO] [Fuente: http://derecom.com/numeros/pdf/luengo.pdf]
+[NISTGUI] [Fuente: NIST (2012) - Guidelines for managing and securing mobile devices in the Enterprise]
+
+Clasificación (hecho el 2/12/2012)
+-------------
+
+{ REVISAR!!! }
+Existe una gran diversidad de dispositivos móviles en función del tamaño, capacidad de procesamiento, presencia de sensores, propósito del sistema operativo, entre otras; sucintamente se mencionará una posible clasificación con la intención de reducir y simplificar el repertorio para adaptarlo a los fines que se persiguen con este trabajo; principalmente se cubre el aspecto de la popularidad. Tiene el objeto de proveer un panorama del grado de heterogeneidad presente y posible.
+
+. Tablet: es una computadora portátil de mayor tamaño que un smartphone o una PDA y tiene una pantalla de tipo touchscreen, que dispone de un teclado virtual en vez de un teclado físico, con la que se interactúa principalmente con los dedos o un marcador digital. Este tipo de computadoras pueden ser una mala opción para el uso de aplicaciones que requieren un teclado físico para escribir texto. No obstante, por su capacidad de procesamiento, es capaz de lograr la mayoría de las tareas que una laptop realiza habitualmente. [TABLE]
+
+. Smartphone: tiene una amplia serie de características de hardware y una pluralidad de aplicaciones instalables. Entre las cualidades de estos dispositivos se puede mencionar: multitasking, acceso a Internet vía WI-FI o 3G, cámara digital integrada, administración de contactos, acelerómetro, GPS, capacidades de navegación y la disposición para leer documentos en varios formatos como PDF y los de Microsoft Office. [SMART]
+
+. Otros dispositivos
+	>> Portable computer: es una computadora de propósito general que puede ser fácilmente transportada, pero no puede ser usada mientras está siendo trasladada. Usualmente, se requiere un reacondicionamiento del lugar y una toma al suministro eléctrico para su funcionamiento. En esta categoría se puede ubicar la laptop, la cual puede llegar a ser más portable. Este dispositivo se lo menciona porque puede ser considerado un dispositivo móvil por sus características pero dentro del contexto de esta tesis no lo consideramos un dispositivo móvil.
+	>> Personal digital assistant (PDA): es una computadora diminuta con una funcionalidad limitada. Su propósito es complementar y sincronizar con una computadora de escritorio, brindándole acceso a los contactos, agenda, notas, correo electrónico y afines. Este dispositivo se considera obsoleto con la amplia adopción de los smartphones. [PDA]
+	>> Ultra mobile PC: es una herramienta completa, tiene el tamaño de un PDA y ejecuta un sistema operativo de propósito general. Al igual que la Portable computer, este dispositivo no es relevante para esta tesis.
+	>> Carputer: este instrumento se instala en un auto y opera como una computadora con acceso WI-FI, Bluetooth, un sistema de sonido, GPS y un reproductor de DVD.
+	>> Personal Navigation Assistant (PNA): es un producto electrónico portable que combina hardware de posicionamiento (tal como GPS) y funciones de navegación. [PNA]
+	>> E-book reader: es un dispositivo electrónico móvil que está diseñado principalmente para leer libros digitales, diarios y revistas. Se lo distingue por su diseño que puede mejorar su portabilidad, la facilidad de lectura (sobre todo en el sol brillante) y la larga vida de la batería para su propósito esencial. Su propósito es portar una gran cantidad de libros sin llevar consigo una gran carga. [EBOOK]
+	>> Wearable computer: son dispositivos electrónicos en miniatura que son usados bajo la ropa, con la ropa o sobre la ropa del usuario. Una de sus principales características es la consistencia: hay una interacción constante entre la computadora y el usuario, es decir, no hay necesidad de encender o apagar el dispositivo. Otra propiedad es la capacidad multitasking de ejecutar tareas al mismo tiempo; no es necesario parar lo que actualmente está haciendo para efectuar otra actividad. Estos dispositivos pueden ser incorporados al usuario para actuar como una prótesis. [WEAR]
+
+[Fuente: http://en.wikipedia.org/wiki/Mobile_computing#Portable_computing_devices] (sección "Portable computing devices")
+[SMART] [Fuente: http://es.wikipedia.org/wiki/Tel%C3%A9fono_inteligente] (en el tercer párrafo)
+[PNA] [Fuente: http://en.wikipedia.org/wiki/Personal_navigation_device] (al inicio)
+[EBOOK] [Fuente: http://en.wikipedia.org/wiki/E-book_reader] (al inicio)
+[WEAR] [Fuente: http://en.wikipedia.org/wiki/Wearable_computer] (al inicio: primero y segundo párrafo)
+[TABLE] [Fuente: http://es.wikipedia.org/wiki/Tableta]
+[PDA] [Fuente: http://en.wikipedia.org/wiki/Personal_digital_assistant] (al inicio)
+
+Se puede ver que existen variadas formas de los dispositivos móviles, pero en esta tesis se enfocará en las tablets y smartphones porque son dispositivos populares y están en boga, lo cual le dá mayor utilidad a este trabajo.
+
+Evolución de los Dispositivos Móviles
+-------------------------------------
+-------------------------------------
+
+{ Queda pendiente }
+{ Probablemente lo saque }
+
+Sistemas Operativos móviles (realizado el 2/12/2012)
+---------------------------
+---------------------------
+
+Un sistema operativo móvil controla un dispositivo móvil al igual que las PCs son controladas con Windows o Linux. Aunque en este caso son mucho mas simples y estan mas orientados a la conectividad inalámbrica, a los formatos multimedia para móviles y a las diferentes maneras de introducir información en ellos.
+
+[Fuente: http://es.wikipedia.org/wiki/Sistema_operativo_m%C3%B3vil]
+
+Para tener una noción de la situación del mercado de los sistemas operativos, puede ser útil exhibir la cuota del mercado que ocupa cada uno de ellos.
+
+Mercado de los sistema operativos móviles (realizado el 2/12/2012)
+-----------------------------------------
+
+En función de un artículo de FierceMobile IT, que se basa en informes hechos por la consultora IDC, se pretende dar una noción de la situación del mercado de los sistemas operativos, lo que puede llegar a ser útil dado que esta publicación exhibe las porciones que ocupa cada sistema en el mercado y su relación con el año pasado. Este artículo fue publicado el 2 de Noviembre del 2012.
+
+En primer lugar, con el 75% de los smartphones vendidos en todo el mundo durante el tercer trimestre del 2012, está el sistema operativo Android que domina el mercado de smartphones. Esto quiere decir que estuvo presente en las ventas de 136 millones de equipos sobre el total de 181,1 millones de dispositivos que se vendieron en el tercer trimestre del año, según datos de la consultora IDC. El sistema operativo móvil de Apple, iOS, queda en un distante segundo lugar con el 14,9%, equivalente a 26,9 millones de equipos vendidos con este sistema instalado.
+El porcentaje del mercado que consiguió Android en el tercer trimestre representa un marcado crecimiento interanual del 91.5% y es la segunda vez que el sistema operativo supera las 100 millones de unidades en equipos vendidos en un trimestre (la última vez fue en el trimestre pasado).
+En el tercer puesto se ubica Blackberry, con un 4,3% del mercado (7,7 millones unidades). La crisis de su fabricante, RIM, queda en evidencia por la comparación interanual de sus cifras que su sistema operativo descuidó su cuota del mercado de forma pronunciada, con una diferencia negativa de 34,7% respecto del tercer trimestre del 2011.
+Symbian, el antiguo sistema operativo de Nokia, queda en la cuarta posición, con 2,3% (4,1 millones de unidades). La cifra marca un retroceso del 77,3% en la comparación interanual.
+La compañía Microsoft, con sus sistemas Windows Phone 7 y Windows Mobile, aún no logra conseguir una porción interesante del mercado y alcanzó la quinta posición, detrás de Symbian, con 2%, es decir 3,6 millones de unidades.
+
+[Fuente: http://www.fiercemobileit.com/press-releases/android-marks-fourth-anniversary-launch-750-market-share-third-quarter-acco] (ver la tabla al final)
+
+Principales sistemas operativos móviles (realizado el 1/12/2012)
+---------------------------------------
+
+Sucintamente se describirá de forma somera a los Sistemas Operativos más populares para tener una conocimiento de los principales productores en el mercado.
+
+Android (realizado el 1/12/2012)
+Android emplea infraestructura a partir del kernel de Linux 2.6, es open source. Fue desarrollado por una pequeña empresa que fue comprada por Google Inc. en el 2005 y éste continuó su desarrollo en conjunto con principales proveedores de hardware y software (tal como Intel, HTC, ARM, Samsung, Motorola, Ebay y otros más), esta asociación se denominó Open Handset Alliance. El producto de este trabajo en conjunto fue publicado el 5 de Noviembre del 2007 y obtuvo buenas críticas. Entonces, se continuó con el desarrollo de Android: versiones anteriores a 2.0 (1.0, 1.5, 1.6) se utilizaron exclusivamente en los teléfonos móviles; la mayoría de los teléfonos Android, y algunas tablets Android, ahora utilizan una versión 2.x.; la versión 3.0 fue desarrollada exclusivamente para tablets (oficialmente no es apto para celulares). La mayoría de los principales proveedores de servicio móvil suministran un dispositivo con soporte para Android. Desde la salida del primer teléfono con la plataforma Android incorporada, se denominaba "HTC Dream", hubo una explosión en el número de dispositivos que lo llevaban instalado: desde el segundo trimestre del 2009 al del 2010, la cuota del mercado mundial de Android aumentó un 850% (del 1,8% al 17,2%), alcanzando el 52,5% del mercado global de smartphones el 15 Noviembre del 2011.
+
+BlackBerry (realizado el 1/12/2012)
+Este sistema operativo esta enfocado en facilitar la operación con el dispositivo y fue originalmente diseñado para el entorno empresarial. Es un producto de la empresa Research In Motion (RIM) y provee las siguientes capacidades: multitasking, soporte multimedia completo, soporta dispositivos de entrada especiales adoptados por RIM (esencialmente trackwhell, trackball y los recientes trackpad y touchscreen). Los desarrolladores ajenos a RIM pueden crear software usando la plataforma disponible de BlackBerry, a pesar de que las aplicaciones que emplean ciertas funciones deben ser firmadas digitalmente. [BLACK]
+
+iOS (realizado el 1/12/2012)
+iOS, antes se llamaba iPhone OS, es un sistema operativo móvil desarrollado y distribuido por Apple Inc, su lanzamiento fue en el año 2007. Originalmente fue desarrollado solo para iPhone y iPod Touch. Luego, se ha extendido para ser usado en dispositivos como iPad y Apple TV. A diferencia de Windows Phone y Android, Apple no concedió las licencias para que iOS pudiese ser instalado en equipos con hardware ajeno a Apple. Las aplicaciones nativas de terceros que no eran respaldados de forma oficial hasta el lanzamiento de iOS 2.0, el 11 de julio 2008. Antes, se podían eliminar este tipo de restricciones impuestas por Apple (práctica que se conoce como "jailbreaking") para permitir la instalación de aplicaciones de terceros, no obstante, este método todavía está disponible.
+La interfase de iOS esta basado en el concepto de manipulación directa, utilizando gestos multi-touch. Los elementos que controlan la interfaz consisten de sliders, switches y buttons. La interacción con el sistema operativo incluye gestos como swipe, tap, pinch y reverse pinch, todos ellos tienen definiciones específicas dentro del contexto del sistema operativo iOS y su interfaz multi-touch. Acelerómetros internos son usados por algunas aplicaciones para responder a las agitaciones del dispositivo o la rotación en algunas de las 3 dimensiones.
+iOS es un derivado de OS X, con el que comparte la infraestructura de Darwin, por lo tanto es un sistema operativo Unix. Se podría decir que iOS es la versión móvil del sistema operativo OS X. [iOS]
+
+Symbian (realizado el 1/12/2012)
+Symbian es un sistema operativo móvil y una plataforma de computación diseñada para smartphones. En Junio del 1998, se inició Symbian Ltd., una empresa grande que se asoció con algunos fabricantes de celulares (Ericsson, Motorola y Nokia) y reemprendió un software antiguo (llamado EPOC, usado principalmente en PDAs) para transformarlo en Symbian.
+En el año 2008 la empresa fue adquirida por Nokia.
+Con Nokia al mando, Symbian se diseñó para ser desarrollado por una comunidad liderada por Symbian Foundation, que se puso en marcha oficialmente en Abril del 2009.
+En Febrero del 2010, el código fuente de Symbian fue publicado bajo la licencia EPL, Symbian Foundation anunció a este evento como la transición a Open Source más grande de la historia.
+Symbian era el smartphone más popular hasta finales del 2010, cuando fue superado por Android.
+En Febrero del 2011, Nokia anunció una alianza con Microsoft con la finalidad de adoptar Windows Phone para algunos de sus smartphones, reduciendo paulatinamente el número de dispositivos con Symbian en los próximos meses.
+En Abril del 2011, Nokia declinó la licencia open source a todo el software de Symbian. El código fuente publicado bajo la licencia EPL sigue estando disponible en repositorios de terceros.
+En Junio del 2011, Nokia acordó un programa de outsourcing con Accenture.
+En cuanto a las características técnicas se pueden mencionar los siguientes atributos.
+Symbian ha tenido un toolkit de gráficos nativo desde su creación.
+Symbian tiene un fuerte soporte de localización. La localización es el proceso de adaptar software a diferentes idiomas, diferencias regionales y requerimientos técnicos de un mercado específico. En Symbian, le permite a los fabricantes y desarrolladores de aplicaciones de terceros que localizen sus productos basados ​​en Symbian con el fin de apoyar la distribución global. La versión actual de Symbian (Symbian Belle) tiene soporte para 48 idiomas.
+A partir de Symbian 3 (o Symbian^3) ha tenido un browser incorporado basado en Webkit; de hecho, Symbian fue la primera plataforma que usó Webkit (en Junio del 2005). Antes, usaba Opera Mobile como browser, algunos modelos viejos aún lo tienen como su browser por defecto.
+En cuanto al desarrollo de aplicaciones, desde 2010, Symbian optó por usar la asociación del estándar de C++ y la librería gráfica Qt como kit de desarrollo (SDK).
+Alternativamente se podía usar Python, Adobe Flash Lite o Java ME para el desarrollo de aplicaciones.
+En cuanto a la arquitectura del sistema operativo, el kernel de Symbian tiene una respuesta en tiempo real suficientemente rápida como para ser usado en un teléfono de un solo núcleo. Este kernel de tiempo real tiene una arquitectura de microkernel, la cual contiene sólo las mínimas y más básicas primitivas, y funcionalidad para máxima robustez, disponibilidad y capacidad de respuesta. 
+Symbian ha sido usado por muchos fabricantes de celulares, incluyendo a BenQ, Fujitsu, LG, Mitsubishi, Motorola, Nokia, Samsung, Sharp y Sony Ericsson. [SYM]
+
+Windows Phone (realizado el 1/12/2012)
+Windows Phone es una familia de sistemas operativos móviles desarrollado por Microsoft y es el sucesor de su plataforma Windows Mobile, aunque son incompatibles. A diferencia de su predecesor, se dirige principalmente al mercado de consumo en vez del mercado empresarial. Su lanzamiento se realizó en el segundo semestre del 2010. A partir de Windows Phone, Microsoft creó una nueva interfase de usuario, con su diseño llamado Metro. Incluye una integración completa con los servicios de Microsoft como Microsoft SkyDrive y Office, Windows Live, Xbox Music, Xbox Video, Xbox Live y Bing, pero también se integra con muchos otros que no son de Microsoft como cuentas de Facebook y Google. La nueva plataforma de software recibió cierta aprobación por parte de la prensa tecnológica.
+La última versión de Windows Phone es Windows Phone 8, que ha estado disponible para los consumidores desde el 29 de Octubre del 2012. [WINPH]
+
+[Fuente: http://en.wikipedia.org/wiki/Mobile_operating_system#Common_software_platforms] {fuente general para cada SO, menos Android}
+[BLACK] [Fuente: http://en.wikipedia.org/wiki/BlackBerry_OS]
+[iOS] [Fuente: http://en.wikipedia.org/wiki/IOS_(Apple)]
+[SYM] [Fuente: http://en.wikipedia.org/wiki/Symbian_OS]
+[WINPH] [Fuente: http://en.wikipedia.org/wiki/Windows_Phone]
+
+{ importancia/impacto de los dispositivos móviles }
+
+------------------------------- inicio de la reordenación -------------------------------------
+
+[hipótesis]
+En esta parte se revisan las consecuencias mas relevantes que tienen los dispositivos móviles en la sociedad. Esta parte tiene como objetivo explorar el dominio que tienen los dispositivos móviles en el aspecto social y empresarial, en cada caso se revisan los fundamentos para controlar su seguridad, o sea los motivos que se tienen en cuenta para proteger al móvil.
+
+Impacto de los dispositivos móviles en las empresas
+---------------------------------------------------
+---------------------------------------------------
+
+{ Introducción } (realizado 1/12/2012)
+En esta primera parte se intenta mostrar el movimiento que existe en la industria de los dispositivos móviles, el estado del mercado en que los cambios son habituales de un año a otro, cuales son las empresas que lideran en el tercer trimestre y que luego son desplazadas. Dado que los dispositivos son más fáciles de actualizar que las computadoras de escritorio, el reemplazo de los celulares se puede realizar con mayor frecuencia, éste es un factor que puede provocar estos cambios.
+
+Según un artículo publicado en la revista Forbes el 26 de Junio del 2012, redactado por la colaboradora Maribel Lopez, la combinación de la movilidad y el modelo del cloud computing está cambiando la forma en que se hacen negocios, para volverlos más inmediatos, mas relevantes y mas inteligentes. Para alcanzar este ideal y aprovechar las características de estas tecnologías, las compañías deben reformular las estrategias de computación y procesos de negocios, y así se alejan de los viejos paradigmas. El concepto de la movilidad puede cambiar a la empresa por los siguientes puntos.
+
+Conectividad.
+Con la tecnología actual es posible conectar teléfonos, tablets y una diversidad de dispositivos a Internet. En la actualidad, esta red no consiste sólo de computadoras de escritorio o laptops, sino de una gran variedad de dispositivos. La movilidad y la diversidad en Internet le exigen a una empresa modificar sus modelos de conectividad con la red como también prepararse para un incremento masivo en la recepción de información en tiempo real. Estos dispositivos pueden tolerar servicios con alto consumo de ancho de banda y con sensibilidad a la latencia, como por ejemplo streaming de video o pequeños streams de datos en constante actualización tal como los sensores de movimiento en los equipos. Un nuevo conjunto de dispositivos conectados también le exigirán a las empresas a considerar diferentes modelos de interacción tal como "de persona a persona", "de persona a cosas", "de máquina a máquina" (M2M).
+
+Adaptación.
+Las sistemas operativos de las computadoras de escritorio y laptops fueron diseñadas con un amplio menú de navegación, mientras los sistemas hechos para la movilidad estan orientados a tareas. Los usuarios típicamente quieren acceder a la información relevante en uno o dos clicks con un dispositivo móvil, es decir que la tecnología de la información no puede simplemente convertir una aplicación para computadora a una para dispositivos. Para el desarrollo de aplicaciones móviles existe un número de variables a considerar: el tamaño de la pantalla, el contenido, el proceso no está optimizado para el dispositivo, etc. En el futuro, las aplicaciones serán dependientes de factores tal como el tipo de dispositivo, la ubicación física y la red. Los dispositivos móviles proveen acceso en tiempo real a la información sensorial tal como la ubicación, dirección, vibración, húmedad y sonido. Finalmente, es aconsejable reformular los procesos de negocios para trabajar en un "mundo móvil".
+
+Portabilidad.
+La tendencia actual se está trasladando de un mundo de un dispositivo por persona a un mundo de múltiples dispositivos por persona y con copiosas conexiones inalámbricas. La movilidad tomará una nuevo significado porque no sólo los dispositivos serán portables sino también su contenido y sus servicios. Por ejemplo, la aplicación Blackberry Bridge de RIM le permite al usuario tomar documentos, páginas web, e-mails, mensajes y fotos que aparecen en algún smartphone Blackberry y lo muestra en una tablet BlackBerry (PlayBook) con el fin de visualizar y editar con mayor comodidad. Otro ejemplo que se puede citar es Google Drive que puede mostrar y almacenar archivos en la nube desde computadoras de escritorio o dispositivos con Android. Un último ejemplo que se puede citar es una herramienta denominada Citrix Receiver, esta aplicación consiste de un completo ambiente de escritorio virtual, el cual puede ser accedido por tablets.
+
+Organización.
+Se necesita una forma de separar las aplicaciones y datos personales de aquellos relativos a la empresa. Es decir que los proveedores de servicios cambiarán los productos ofrecidos para incluir al menos 2 perfiles: el de la empresa y el del usuario. La división entre el trabajo y el contenido personal es transparente para los usuarios, a menos que intenten llevar a cabo acciones prohibidas según la política de la empresa. Empresas como VMWare ofrecen "contenedores" para resolver este asunto, éstos se encargan de aislar los datos personales, se ejecutan bajo la plataforma Android.
+
+[informe de Forbes: http://www.forbes.com/sites/maribellopez/2012/06/26/four-ways-mobility-transforms-business/]
+
+Además, con la introducción de los dispositivos móviles, surgieron nuevas tendencias que se estan utilizando, éstas se describen brevemente a continuación:
+
+BYOD
+"Bring your own device" es una política empresarial que está creciendo, se basa en que los empleados de una empresa utilicen sus dispositivos personales para ejecutar aplicaciones y acceder a los datos vinculados con la empresa. Los dispositivos que se usan son smartphones y tablets, aunque también se está extendiendo a notebooks. Hay variantes como "Bring your own technology", que no sólo cubre al equipo sino que también cubre al software, y otras derivados en relación al hardware como "Bring your own computer" (BYOC), "Bring your own laptop" (BYOL), "Bring your own PC" (BYOPC), y de otras clases como "Bring your own network" (BYON) o "Bring your own apps" (BYOA). Hay posturas a favor y en contra de BYOD, algunos creen que BYOD ayuda a los empleados a ser más productivos, incluso se puede pensar que le eleva la moral de los empleados ya que se permite cierta flexibilidad dentro de la empresa. Sin embargo, existen otra postura que manifiesta que esta practica puede llegar a ser muy perjudicial para la empresa porque puede producir vulnerabilidades donde se puede filtrar información o se pueden introducir aplicaciones maliciosas a la red privada de la empresa. Para minimizar el riesgo y acomodar las tecnologías del consumidor, muchas empresas están implementando políticas BYOD.
+
+MDM
+Estos programas cumplen funciones relacionadas al mantenimiento, monitoreo, seguridad. Sirve de apoyo a la infraestructura móvil y trata de facilitar la relación con los dispositivos. Los componentes que conforman este sistema, es decir su arquitectura, consiste de un servidor que implementa el MDM, una base de datos para recopilar información y una aplicación (probablemente multiplataforma) que se instala en cada uno de los dispositivos que es controlada por el servidor mediante medios como USB, Wi-Fi, GPRS, 3G; se enfatiza una relación maestro-esclavos entre el servidor y los dispositivos. Concretamente, algunas funciones del MDM son: instalar y actualizar aplicaciones de forma masiva (manteniendo un registro de la fecha y tipo de conexión), sincronizar ciertos archivos con el servidor, controlar funciones específicas de los dispositivos, borrar de forma remota los datos de un dispositivo cuando se lo pierde, 
+Parafraseando a wikipedia: mediante el control y la protección de los datos y la configuración para todos los dispositivos de la red, MDM puede reducir los costos del soporte y los riesgos del negocio.
+
+Over-the-air programming (opcional)
+
+EMI (opcional)
+"Enterprise mobile integration" es 
+
+Ubiquity
+Este término se refiere a la relación íntima entre la tecnología móvil y las personas, que cada vez se incrementa más. Este término surge del fenómeno de la presencia de la computación móvil en varios de los entornos cotidianos (en un auto, en un bar, en una casa, etc.) que cuenta con el soporte físico de algunos de los elementos que ya contamos (teléfonos, radios, televisores, etc.).
+
+{ Describir los efectos de la tecnología en las empresas. Presentar las necesidades que surgen en seguridad. }
+Se analiza un factor que es el grado de integración que poseen los smartphones en las empresas.
+
+A partir de varias fuentes que se consultaron, se puede afirmar que la dependencia que tienen las organizaciones con los dispositivos móviles, principalmente tablets y smartphones, se está incrementando; como también su popularidad, su desarrollo y su promoción. Por lo tanto, se ha llevado a cabo una recopilación de datos que dan indicios de esta afirmación que a la vez, vuelve a la seguridad un tema vital, la seguridad es importante cuando el ámbito de trabajo se vuelve complejo (por la diversidad de dispositivos, incremento de usuarios, potencia de las máquinas, etc). Medidas que se pueden tomar para mermar los riesgos.
+
+[Fuente: http://en.wikipedia.org/wiki/Mobile_enterprise]
+{ MDM }
+[Fuente: http://es.wikipedia.org/wiki/Mobile_device_management]
+{ OTA }
+[Fuente: http://en.wikipedia.org/wiki/Over-the-air_programming]
+{ BYOD }
+[Fuente: http://www.gartner.com/it-glossary/bring-your-own-device-byod/]
+[Fuente: http://whatis.techtarget.com/definition/BYOD-bring-your-own-device]
+[Fuente: http://es.wikipedia.org/wiki/BYOD]
+[Fuente: http://www.clearrisk.com/risk-management-blog/bid/57805/What-is-BYOD-What-Are-the-Risks-How-to-Protect-Your-Business]
+{ Ubiquity }
+[Fuente: http://www.economist.com/node/21531116]
+[Fuente: http://www.retailtouchpoints.com/retail-crm/2160-ubiquity-the-true-impact-of-mobile]
+
+Impacto de los dispositivos móviles en la sociedad
+--------------------------------------------------
+--------------------------------------------------
+
+{ SOLIDIFICAR EN UN SOLO PÁRRAFO!!! }
+[Explicación de la sección]
+
+Esta parte se diferencia de las demás porque tiene otro enfoque [que prentende realizar una búsqueda de las causas]. Se explica cómo afectó a la sociedad el uso de estos dispositivos, tiene como objetivo identificar algunos [factores claves] efectos que tuvieron en la seguridad, dado que este último está vinculado con el uso del dispositivo.
+
+En esta primera parte se pretende dejar en claro la influencia de los dispositivos móviles en la sociedad. Se puede decir que la introducción de estos dispositivos le agregaron cierta complejidad a las relaciones sociales, se comenta cómo se relaciona con la seguridad. Se tocan varios aspectos que nos van a servir como variables para definir con qué nivel o simplemente cómo se relacionan con la seguridad móvil.
+
+[Introducción]
+La gran aceleración del proceso de evolución ha comenzado durante la segunda mitad del siglo XX. El uso generalizado de la electricidad y del teléfono, del automóvil, de la aviación comercial, de la televisión, de las computadoras personales y de una extensa lista de aparatos tecnológicos aplicados a nuestra rutina diaria, ha ido transformando radicalmente la vida de las personas. En particular, la tecnología móvil viene apoyada por "la revolución digital": la construcción de la computadora personal y la interconexión de muchas de ellas en una red denominada Internet. Entre los dispositivos móviles, el teléfono móvil es el dispositivo más extendido en el mundo y su constante innovación lo convierte en un integrador de muchos avances anteriores: teléfono, internet, música, video, radio, TV y chat, entre otras. Se ha convertido en un dispositivo fiable y de fácil acceso. Luego, con la llegada del smartphone no sólo facilitó enormemente las funciones clásicas del teléfono móvil, sino que ofrece un mundo de posibilidades al alcance de la mano, cuyos efectos en la vida cotidiana son enormes [LUENGO].
+Nos encontramos en una sociedad en que tiene relevancia la comunicación y cómo influye ésta en la sociedad. Además, estos factores produjeron un cambio en las relaciones sociales y ha hecho desaparecer muchas distancias. Es decir, los rasgos que caracterizan a nuestra sociedad vienen marcados por los cambios en los procesos de comunicación. Además de la movilidad, podemos hablar de la inmediatez, que se manifiesta a través de la comunicación instantánea. Por otro lado, estamos en una sociedad profundamente interactiva, caracterizada por una comunicación participativa. Otros rasgos característicos son la accesibilidad y la abundancia de información, en ocasiones excesiva, superior a lo que podemos procesar.
+A largo plazo, Internet puede ser superado y convertirse en un servicio más de los teléfonos móviles. La movilidad física, más la conectividad con todo el mundo, puede ser más revolucionaria que toda la información que Internet nos pueda traer a nuestro hogar. El móvil se ha convertido en uno de esos artículos que siempre llevamos encima, como la cartera, las llaves o el reloj. Aporta valores como la confianza, la seguridad, apertura y libertad de movimientos y permite estar en contacto permanente con nuestra red de contactos. Ninguna tecnología había influido tanto en el conjunto de la vida social como el móvil, ni había tenido unas dimensiones tan globales en la economía, la política y la cultura. La novedad reside en el carácter totalizante de la revolución tecnológica; alcanza a todas las dimensiones de la vida y a la sociedad mundial.
+
+Es importante identificar las etapas de los servicios del celular, el dispositivo más popular, porque refleja para qué se usaba y cómo se fueron adaptando a los intereses de los usuarios. El éxito del móvil radica precisamente en la capacidad de integración de los principales avances tecnológicos, no sólo en el campo de las comunicaciones, sino también en el sector del ocio.
+
+En la evolución de las funciones tecnológicas del dispositivo, podemos distinguir cuatro etapas [LUENGO]:
+1. Funciones tradicionales. El móvil se creó para poder realizar y recibir llamadas de teléfono desde cualquier lugar, en cualquier momento, sin necesidad de estar conectado en una línea de teléfono fija. Más adelante ha incluido los mensajes de texto escrito conocidos como SMS. Esto dio lugar a la creación de un nuevo lenguaje móvil, en especial entre los adolescentes, con la reducción de caracteres para simplificar la comunicación. El móvil, además, ha ido incorporando e integrando otras funciones y usos, que también incluimos entre los tradicionales, como el reloj, el despertador, la calculadora, la agenda, el calendario, las notas y algunos juegos.
+2. Servicios Multimedia. Luego, los dispositivos han ido incorporando elementos multimedia, tales como cámara de fotos, cámara de video, reproductor de música, radio, visualizador de mapas y GPS. De este modo, un dispositivo móvil sustituye inventos tecnológicos previos como el reproductor de CD portátil, el reproductor de archivos MP3 y los sistemas de navegación por GPS, que pueden llegar a quedar como dispositivos obsoletos o duplicados. En este sentido, la calidad de los aparatos específicos de música, video o mapas suele ser superior, por lo que los fabricantes de móviles trabajan e innovan para conseguir mejorar la calidad y que sea similar a los aparatos.
+3. Conexiones avanzadas. Pero la auténtica revolución del móvil llega con la llegada del smartphone. A todas las funciones anteriormente descritas se suma la ventaja del acceso a Internet y todo lo que ello implica, es decir, se puede acceder a cualquier tipo de información; también podemos visitar y actualizar nuestras comunidades virtuales gracias a la red 2.0; permite el uso de chats con cualquier persona que tengamos en nuestra agenda y que tenga también acceso a los chats. Es el contacto permanente.
+4. Las aplicaciones. Otra de las funciones que más se están desarrollando últimamente son las aplicaciones para móviles ("app"), con toda clase de utilidades diversas, muchas son gratuitas. Hacer deporte, controlar la salud, estar al tanto del ocio por la zona en que uno reside, buscar una peluquería o un restaurante cerca de donde uno está son sólo algunos ejemplos.
+
+No obstante, existen ciertos efectos negativos de estos dispositivos que a continuación se comentarán.
+
+[Brecha digital]
+La tecnología móvil está relacionada con un fenómeno social llamado "brecha digital", este término denota la capacidad de conectarse, de disponer de una computadora o un teléfono móvil y de estar familiarizado con las herramientas y lenguajes básicos. Es lo que separa a los que tienen acceso a la tecnología de aquellos que no lo tienen. La brecha digital no depende tanto de que los países sean ricos o pobres, sino del acceso a una red móvil. Estimular la difusión de los teléfonos móviles es la respuesta más sensata y eficaz a la brecha digital. A pesar de algunas diferencias entre usuarios y no usuarios de telefonía móvil e Internet, la brecha digital no parece ser objeto de gran preocupación. Los teléfonos móviles dejaron de ser un lujo y la tecnología es cada vez más accesible, más barata y más fácil de usar; ésto ocasiona que se difumine paulatinamente esta brecha digital a medida que la tecnología móvil digital avanza a un ritmo imparable.
+
+[Cultura móvil]
+Ésta es la era de las tecnologías de comunicación personal, que se distinguen de otras tecnologías de red (por ejemplo, la computadora de escritorio) en que éstas frecuentemente se pueden llevar en el cuerpo, otra propiedad es que por lo general sólo se usa de forma individual, y además, es considerada por algunos de sus usuarios como una extensión de su personalidad. La primer característica de portabilidad implica flexibilidad, dado que uno puede conectarse con mayor autonomía, con respecto a la ubicación y al momento, con otros miembros de la red mientras uno está fisícamente en movimiento, lo que contribuye a la individualización de la comunicación móvil.
+El acto de usar un teléfono móvil implica la participación simultánea con más sentidos que con otros dispositivos, dado que se puede tocar, escuchar y ver a la vez mediante el teléfono móvil con el fin de mantener el contacto con nuestros amigos. La integración con los sentidos y el apego corporal abre nuevas formas de apego emocional y nuevas posibilidades de representación simbólica de la personalidad.
+Como sucede con otros artefactos electrónicos, la moda forma parte de las consideraciones del consumidor cuando quiere comprar uno. Esto se debe en gran medida a la naturaleza altamente personal de esta tecnología. Como resultado, muchos usuarios de teléfonos móviles consideran al equipo como una extensión de su personalidad. Los teléfonos móviles pueden representar simbólicamente la identidad a través de su marca, color, forma, sonidos que producen y los adornos que se le dhieren.
+Generalmente, la gente jóven es la que le presta mayor atención a la comunicación móvil, dado que esta parte de la sociedad le dá un significado simbólico a esta tecnología, lo cual quiere decir que un teléfono puede ser considerado como un símbolo de un determinado estrato social y un artículo de moda para afiliarse a un sector social. Algunos usuarios de teléfonos móviles estan dispuestos a sacrificar ciertas funciones de su teléfono por el estilo. Es evidente que la moda de la tecnología es socialmente significativa para los usuarios que están formando y expresando su identidad.
+
+'the mobile phone has become an icon for contemporary teens in many countries'
+la personalización de la comunicación móvil , 
+the increasingly personal nature of communication technology in the desire for 'perpetual contact'
+El teléfono móvil ya se instauró como un símbolo natural en la sociedad.
+el usuario está conectado casi de forma permanente.
+
+Se pueden identificar 2 categorías primarias que representan nuevas formas de coordinación: micro-coordinación e hiper-coordinación. La micro-coordinación implica usos instrumentales de la telefonía móvil, tales como la coordinación de la logística básica, la reorientación de los viajes que ya están en marcha o hacer planes con otras personas "sobre la marcha". En cambio, la hiper-coordinación se refiere a las dimensiones expresivas de la comunicación móvil, tal como el chat con los amigos o saludar de forma ocasional a los amigos mediante mensajes de texto.
+
+{ Lo que realmente son vs. lo que la sociedad persive vs. lo que podrían llegar a ser. }
+{ Describir los efectos de la tecnología en la sociedad. Presentar las necesidades que surgen en seguridad. }
+Se comenta sobre los efectos en la sociedad de la incorporación de los dispositivos móbiles. De qué forma estos dispositivos se integran en nuestras vidas y que tendencias existen.
+{ ver brevemente el tema "Teléfonos móviles y educación (hábitos)" con una visión negativa }
+{ ver ... http://en.wikipedia.org/wiki/Smartphone#Social_factors_and_impact }
+[Hábitos]
+
+Privacidad móvil
+----------------
+
+Por lo general, en los teléfonos celulares, y más aún en los smartphones, se puede encontrar una gran cantidad de información personal [FTC1] como números de teléfonos, contraseñas, número de cuentas, direcciones de e-mail, mensajes de texto, números marcados, archivos descargados, historial de navegación en internet, archivos multimedia privados almacenados en la tarjeta de memoria como fotos, videos y grabaciones de audio. Por lo tanto, hay que tener cuidado porque estos dispositivos no son sólo aparatos eletrónicos, contienen información delicada que puede llegar a perjudicar al usuario si se emplea con malas intenciones, estos dispositivos ya forman parte de la vida del usuario.
+
+Según expone CNN en una nota acerca de la privacidad en dispositivos móviles, 54% de los usuarios en EE.UU. han decidido no instalar una aplicación de la cual descubrieron que accede a su información personal. Otro dato interesante, es que casi un tercio de los usuarios de EE.UU. que usan aplicaciones móviles comunicó haber desinstalado una aplicación de su teléfono, ya que se encontró con la sorpresa de que esa aplicación estaba recopilando información personal que no deseaba compartir.
+
+Una de las grandes preocupaciones vinculadas a la privacidad en los móviles no son las aplicaciones que se descargan en internet, sino es lo que puede llegar a suceder con el dispositivo cuando no está en su posesión y qué información privada puede llegar a divulgar. Por ejemplo, puede suceder el robo de identidad [FTC2], fenómeno conocido en el entorno de las computadoras de escritorio, es cuando alguien roba información personal y la utiliza sin el permiso del propietario; es un delito que produce problemas en la economía y reputación del usuario. Entonces, dada la portabilidad del dispositivo, se puede perder, por lo que algunos usuarios son conscientes en cierta medida de la potencial revelación de sus datos más íntimos y toman ciertas medidas básicas para protegerse.
+
+Se pueden identificar algunos cuidados que se pueden efectuar para resguardar la información personal. El usuario puede realizar una copia de respaldo completa de la información almacenada en su dispositivo o una copia básica (que consta sólo de las fotos almacenadas en la tarjeta de memoria y los contactos guardados en la tarjeta SIM). Una opción para preservar nuestra privacidad es borrar el historial de nuestro browser web, aunque no es información directamente personal. Otra opción es deshabilitar la opción de seguir nuestra ubicación física, esta información puede ser usada por ciertas aplicaciones; los proveedores de telefonía celular saben (y mantienen un registro) donde esta el dispositivo siempre que esté conectado.
+
+Cuando el dispositivo es robado o perdido, se pueden tomar ciertas medidas para entorpecer el acceso a los datos privados. Es una medida de rutina proteger el dispositivo con un código de acceso para bloquear la entrada a la pantalla principal, es una manera fácil de evitar el acceso no autorizado al dispositivo. Muchas empresas proveen servicios para seguir el rastro del dispositivo perdido y se le otorgará la opción de bloquear o destruir de forma remota los datos de un teléfono perdido o robado. Dadas las aptitudes de los dispositivos móviles cada vez mas parecidas a las de las computadoras de escritorio, se pueden aplicar las medidas generales que se toman en ellas para proteger la identidad en estos dispositivos móviles [FTC3]. Un caso posible podría ser cuando el usuario realiza transacciones en línea, es muy aconsejable usar software de encriptación que codifica la información que se vá a enviar a internet; cuando en el browser web aparece un "ícono de candado" en la barra de direcciones quiere decir que la información va a ser transmitida de forma segura, es recomendable percatarse de que ese símbolo esté presente antes de enviar información personal o financiera.
+
+Las redes sociales son un caso particular, dado que entra en juego la responsabilidad del usuario. Cuando un usuario publica mucha información acerca de uno mismo, un ladrón de identidad puede encontrar información acerca de la vida del usuario, que puede ser empleada para responder las preguntas secretas para recuperar la contraseña, lo que le podría dar acceso a las cuentas bancarias e información personal. Nunca se debería publicar datos como nombre completo, número de la obra social, dirección personal, número de teléfono o números de cuenta en la cuenta de la red social. La conciencia del usuario es vital para restringir el acceso a la información de su perfil de usuario en una determinada red social.
+
+[Fuente: http://www.cnn.com/2012/09/05/tech/mobile/pew-mobile-privacy-gahran]
+[FTC1] [Fuente: http://www.consumer.ftc.gov/articles/0200-disposing-your-mobile-device]
+[FTC2] [Fuente: http://www.consumer.ftc.gov/features/feature-0014-identity-theft]
+[FTC3] [Fuente: http://www.consumer.ftc.gov/articles/0272-how-keep-your-personal-information-secure]
+
+[LUENGO] [Fuente: http://derecom.com/numeros/pdf/luengo.pdf]
+[Fuente: http://www.squidoo.com/smart-phones-ruin-society]
+[Fuente: http://www.itu.dk/people/christie/mobilspeciale/litteratur/Haddon,%20Leslie%20-%20Social%20Consequences%20of%20Mobile%20Telephony,%20Th.pdf]
+
+{ Cultura tecnológica en Japón }
+[http://en.wikipedia.org/wiki/Japanese_mobile_phone_culture]
+{Cell phone culture: How cultural differences affect mobile use}
+[Fuente: http://www.cnn.com/2012/09/27/tech/mobile-culture-usage]
+
+Otros factores de importancia que ayudaron a que los dispositivos móviles se difundieran: consumo masivo y el progreso del hardware.
+
+Consumo masivo
+--------------
+
+Para destacar el alza en el consumo de smartphones y tablets se recurre a las estadísticas de 2 consultoras: Gartner e IDC.
+
+El consumo de smartphones esta en alza y hay una tendencia a que este incremento continúe.
+Según una publicación de Gartner del 14 de Noviembre del 2012 que expone cifras relacionadas con las ventas de celulares, se pudo extraer los siguientes datos que pueden llegar a ser interesantes.
+Las ventas mundiales de celulares para consumidores finales llegó a casi los 428 millones de unidades en el tercer trimestre del 2012, representó un descenso del 3,1% con respecto al tercer trimestre del 2011. Las ventas de smartphones representaron el 39,6% del total de ventas en celulares, lo cual significa un aumento del 46,9% en comparación al tercer trimestre del 2011.
+Un analista principal de Gartner, Anshul Gupta, remarcó que después de dos trimestres consecutivos de caída en las ventas de celulares, la demanda mejoró en los mercados maduros y emergentes, mientras las ventas se incrementan secuencialmente. También, indicó que por ejemplo, en China, la venta de celulares creció en consecuencia de las ventas de smartphones, mientras que la demanda de celulares convencionales sigue siendo débil. En los mercados maduros, finalmente vimos que las ventas para la renovación de celulares alentaban el lanzamiento de nuevos dispositivos en el trimestre.
+Siguiendo con esta publicación, aunque el mercado de los celulares se redujo año tras año, los analistas de Gartner afirman que hay señales positivas para el sector durante el tercer trimestre. Asimismo, los smartphones siguieron impulsando las ventas de celulares en todo el mundo, con ventas en aumento a 169,2 millones de unidades en el tercer trimestre de 2012. Otro dato interesante es que el mercado de smartphones ha sido dominado por Apple y Samsung. Anshul Gupta afirma que ambos controlan un 46,5% del mercado de smartphones dejando alejados a una parte de proveedores que compiten por una tercera posición. Nokia cayó desde el tercer puesto al séptimo en la venta de smartphones del tercer trimestre del 2012. RIM se trasladó al puesto número 3 con HTC que no se quedó tan atrás, en la cuarta posición.
+Según Gartner, las ventas de celulares Samsung continuó en alza, alcanzando casi las 98 millones de unidades en el tercer trimestre del 2012, un 18,6% del tercer trimestre del 2012 al del año 2011. Samsung percibió una fuerte demanda de smartphones Galaxy por su variedad en los precios, y se amplió aún más la brecha con Apple en el mercado de smartphones, vendiendo 55 millones de smartphones en el tercer trimestre de 2012. Samsung lidera con el 32,5% del mercado mundial de smartphones en el tercer trimestre de 2012.
+Las ventas de Apple a los consumidores finales ascendieron a 23,6 millones de unidades en el tercer trimestre del 2012, hasta el 36,2% en un año. Anshul Gupta asegura que Apple tiene un inventario de productos preparados para la temporada de vacaciones, planea expandirse globalmente, además prepara el lanzamiento del iPhone 5 en China en el cuarto trimestre del 2012. Con estos preparativos, los analistas de Gartner consideran que Apple tendrá su trimestre más fuerte como tradicionalmente lo ha sido.
+Finalizando con este informe, las ventas de teléfonos móviles en general (celulares) de Nokia bajó 21,9% en el tercer trimestre del 2012, pero las ventas totales de 82,3 millones fueron superiores a lo que Gartner había estimado, impulsado en gran medida por el incremento en ventas de la gama denominada Asha con pantalla full-touch. En cuanto a la venta de smartphones, Nokia particularmente tuvo un mal trimestre y cayó a la séptima posición con 7,2 millones de smartphones vendidos en el tercer cuatrimestre del 2012. La llegada de su nuevo modelo llamado Lumia con Windows 8 debería ayudarle a detener este descenso en su participación en este tercer cuatrimestre, aunque no será hasta el 2013 para ver una mejora significativa en la posición de Nokia.
+
+[informe de Gartner: http://www.gartner.com/it/page.jsp?id=2237315]
+
+Las tablets son otro de los dispositivos que se consume masivamente y sus ventas siguen creciendo.
+Para tener una aproximación del consumo de tablets, se cita un informe publicado el 19 de Septiembre del 2012 que fue hecho por la consultora International Data Corporation (IDC) la cual brinda un panorama del estado del mercado actual y un pronóstico del mismo.
+
+IDC aumentó su previsión para el mercado de las tablets en todo el mundo a 117,1 millones de unidades, frente a la anterior de 107,4 millones de unidades para el total del año 2012. Debido a la contínua demanda de los grandes consumidores y fuertes expectativas para el cuarto trimestre. En la última actualización de su pronóstico, la firma IDC también revisó el alza que prevé para el 2013, la cual subió de las 142,8 millones de unidades a las 165,9 millones de unidades. Y para el año 2016 las ventas mundiales deberían alcanzar las 261,4 millones de unidades.
+
+Dice Tom Mainelli, director de investigación de la división llamada Mobile Connected Devices de IDC: "A pesar de las preocupaciones económicas en curso en la mayoría de las regiones del mundo, los consumidores siguen comprando tablets generando cifras récord y esperamos particularmente una fuerte demanda en el cuarto trimestre". Agrega: "Apple lidera el mercado con su iPad, y estimamos que su dominio va a continuar en la segunda mitad del año. Sin embargo, creemos que hay espacio en el mercado para que otros puedan encontrar el éxito, y que los nuevos productos basados en Android y Windows llegarán en los próximos meses les dará a los consumidores muchas opciones de compra durante la temporada navideña."
+
+Se espera que las tablets con Windows crezcan del 1% del mercado (aproximadamente) en el 2011 al 4% en el 2012, camino hacia el 11% del mercado para el 2016. Durante esos mismos años iOS crecerá del 57,2% en 2011 al 60% en 2012, con el tiempo volverá al 58% en el 2016; Android se caerá del 38,9% al 35,3%, disminuyendo a 30,5% en 2016.
+
+"Las tablets que ejecuten los próximos sistemas operativos de Microsoft (Windows 8 y RT), incluyendo a las tablets llamadas Surface, le dará un poco impulso a la compañía" dice Jennifer Song, analista de investigación en IDC. "Sin embargo, se espera que los envíos se mantengan bajos en el cuarto trimestre debido a los altos precios y la confusión de los consumidores en torno a estos dispositivos limitará su atractivo. Además, en la segunda mitad del año Android debería beneficiarse del éxito de la tablet Nexus 7 (hecha por Google en conjunción con Asus) y el lanzamiento de Amazon de las nuevas Kindle Fire."
+
+[Fuente: http://www.idc.com/getdoc.jsp?containerId=prUS23696912]
+
+Evolución
+---------
+---------
+
+Accesorios de los dispositivos móviles
+--------------------------------------
+
+{En esta parte se analizan las características del hardware de algunos dispositivos móviles. Para simplificar en conveniencia con esta tesis, se toma analizar este factor, el estudio se reduce a un dispositivo en particular: el smartphone. Podría ser considerado el más popular de los dispositivos móbiles. Nos concentramos en los últimos 2 años para ver cómo evolucionaron.}
+
+Para los fines de esta tesis, se denomina accesorio a todos aquellos componentes que complementen al dispositivo dotándolo de nuevas aptitudes. Se van a mencionar los mas importantes.
+- Buscar acerca del Sensor Fotoeléctrico (regula la luminosidad de la pantalla según la luz ambiental que llegue), chip conectividad (Wi-Fi, Bluetooh y a veces FM), entrada de cables, batería, micrófono y auricular, Giroscopio.
+
+Según la disposición de esta tesis, están entre las partes más sobresalientes de un smartphone, la pantalla y la cámara. Luego, en segundo orden siguen los sensores, como el giroscopio.
+
+Pantalla [WIKISMA] [NAIDISP]: las pantallas de los smartphones varían considerablemente por 2 factores: el tamaño y la resolución. Los tamaños más comunes van desde 3 pulgadas a más de 5 (se mide la diagonal que une 2 vértices opuestos de la pantalla). Las resoluciones comunes varían de 240x320 píxeles (QVGA) a 1080x1920 (Full HD). A finales del 2012 y principios del 2013, surgió una tendencia en la industria que consistía en desplazarse hacia las pantallas full HD 1080p para los smartphones de la gama más alta. Existen algunas características que mejoran alguna propiedad de la pantalla, como la llamada "Gorilla Glass" que dota al dispositivo de un cristal especial protegido con resistencia a los arañazos, caídas, y golpes del uso diario; "touchscreen" es una propiedad de la pantalla que proporciona una respuesta al tacto, lo que proporciona una confirmación inmediata e inequívoca al usuario.
+Cámara [GEEKCAM] [ARQMOV]: la cámara se ha transformado en un elemento indispensable en los teléfonos móviles, la mayoría de los smartphones tienen una cámara con resoluciones que van de los 2 megapíxeles como mínimo. Los smartphones de media y alta gama llevan una cámara de 3 a 5 megapíxeles. Existen algunas mejoras de la cámara como el balance de blancos automático, enfoque automático o exposición automática que enriquecen la calidad de imagen.
+
+{ Hablar de la conectividad... }
+
+Los sensores definen los valores de las variables asociadas a características del entorno, como la temperatura, por ejemplo [WIKISEN]. Los smartphones avanzaron mucho en este campo, dotándolos de nuevas aptitudes, lo que los diferencia de las computadoras de escritorio que carecen de muchas de estas características, ergo las aplicaciones para smartphones cuentan con más posibilidades para interactuar con el medio y el usuario. Por ello que se va enfocar en los componentes mas importantes que complementen a los distintos smartphones.
+
+. GPS (Global Positioning System) [ARQMOV]: permite determinar a escala mundial la posición de un objeto en tiempo real. En los celulares que incorporan GPS significa que pueden obtener su propia posición y ubicarla en un gráfico como un mapa virtual, por ejemplo una aplicación podría determinar una ruta y monitorearla en todo momento para ver si el usuario va por buen camino. El GPS funciona por medio de una red de satélites que envían señales constantemente, ésta pueden ser captadas por un receptor incluído en la mayoría de los celulares que se encarga de conocer la posicion del celular en el mundo.
+. Acelerómetro [ARQMOV]: es un instrumento utilizado para medir la aceleración con que el dispositivo de desplaza y las fuerzas inducidas por la gravedad, es decir que con un smartphone podemos detectar su movimiento y su giro. Este pequeño componente es capaz de detectar cambios en la orientacion avisando de esta manera a la pantalla que debe rotar, asegurándose de esta manera que la imagen de la pantalla este siempre bien ubicada para nosotros.
+. Sensor de proximidad [ARQMOV]: es un transductor (convierte un determinado tipo de energía de entrada en otra diferente a la salida) que detecta objetos o señales que se encuentran cerca del sensor. Ésto puede funcionar para que el teléfono pueda detectar cuando el usuario haya llevado el teléfono al oído, en ese momento, la pantalla se podría apagar para ahorrar batería.
+. Giroscopio [UNISENS]: detecta la orientación actual del dispositivo o los cambios en la orientación.
+. Magnetómetro [MAGMOB]: mide la fuerza del campo magnético de la tierra, lo que le sirve a ciertas aplicaciones para funcionar como brújulas.
+. Sensor de la luz del ambiente [MOBINSE]: determina la intensidad de la luz que le llega al dispositivo. Hay aplicaciones que hacen uso de esta característica para extender la vida de la batería (apagando la luz de la pantalla cuando la luz del sol está presente en el ambiente) y permiten que las pantallas sean fáciles de ver dado estan optimizadas para el medio ambiente.
+
+[WIKISEN] [Fuente: http://es.wikipedia.org/wiki/Sensor]
+[WIKISMA] [Fuente: http://en.wikipedia.org/wiki/Smartphone#Features_and_applications]
+[ARQMOV] [Fuente: http://arqmoviles.blogspot.com.ar/] { GPS, Acelerómetro y sensor de proximidad. Cámaras de fotos. }
+[GEEKCAM] [Fuente: http://www.geek.com/smartphone-buyers-guide/camera/]
+[NAIDISP] [Fuente: http://www.nairaland.com/836519/10-types-smartphone-displays-touchscreens]
+[UNISENS] [Fuente: http://www.uni-weimar.de/medien/wiki/images/Zeitmaschinen-smartphonesensors.pdf]
+[MAGMOB] [Fuente: http://en.wikipedia.org/wiki/Magnetometer#Mobile_telephones]
+[MOBINSE] [Fuente: http://mobiledeviceinsight.com/2011/12/sensors-in-smartphones/]
+
+Arquitectura ARM
+----------------
+
+{ Para finalizar se comenta la forma en que CONTRIBUYÓ el progreso de la arquitectura ARM. }
+
+La arquitectura ARM establece una familia de procesadores basados ​​en RISC para uso comercial, fue desarrollado por primera vez en la década del 80 por Acorn Computers Ltd para abastecer a sus computadoras de escritorio y posteriormente se separó como una empresa independiente llamada ARM Holdings. Ésta no fabrica ni vende procesadores, sólo diseña la arquitectura y vende los derechos para que las empresas diseñen sus propios núcleos de CPU y formen parte de sus chips [WIKIARM]. Los procesadores de esta arquitectura se usan principalmente en smartphones, de hecho el 95% de los smartphones que hay en el mundo emplean un chip que se basa en ARM. ARM Holdings aún no está diseñando chips para servidores y computadoras de escritorio, pero tienen planeado hacerlo en conjunto con AMD para el año 2014 [BBCTEC].
+
+{ reordenar y ser breve }
+En la arquitectura computacional, RISC (Reduced Instruction Set Computer) es un tipo de microprocesador con las siguientes características fundamentales:
+-Instrucciones de tamaño fijo y presentadas en un reducido número de formatos
+-Sólo las instrucciones de carga y almacenamiento acceden a la memoria de datos
+Además estos procesadores suelen disponer de muchos registros de propósito general.
+El objetivo de diseñar máquinas con esta arquitectura es posibilitar la segmentación y el paralelismo en la ejecución de instrucciones y reducir los accesos a memoria. Las máquinas RISC protagonizan la tendencia actual de construcción de microprocesadores.
+
+[Razones de su éxito]
+Para comprender las razones del éxito de esta arquitectura se remarcan los hechos más relevantes de .
+
+En esta parte se explica de qué forma la incorporción casual de las limitaciones de energía de una batería ha conducido a ARM a desarrollar procesadores inteligentes y de bajo consumo energético que ahora son adecuados para una amplia gama de productos electrónicos.
+
+
+El procesador ARM fue desarrollado para una computadora de bajo costo a finales de la década del 80. El diseño consistía de un chip de bajo costo que contaba con un procesador que tenía la menor cantidad de transistores, para mantener la pequeñez del chip, y tenía una alta densidad de código (software) lo que reducía la cantidad de memoria que necesitaba. Estas últimas dos características acarreaban la ventaja adicional de que el chip consumía muy poca energía. Cuando se presentó esta tecnología en el Forum de Microprocesadores en 1992, un ingeniero de Texas Instruments estaba presente y estaba buscando un procesador inteligente y de baja potencia para aplicaciones desde aumotomotrices hasta teléfonos móviles.
+Los teléfonos móviles han sido siempre muy sensibles a la energía utilizada por cada componente dentro del teléfono. Sin embargo, los consumidores y los proveedores de telefonía celular quieren dispositivos móviles más inteligentes sin comprometer la vida de la batería. ARM ha trabajado en estrecha colaboración con los fabricantes de semiconductores, las empresas subcontratadas que fabrican los equipos originales (OEM) y los proveedores de servicios para obtener el equilibrio correcto entre:
+Rendimiento (Performance): el rendimiento del procesador de la obligación de entregar la funcionalidad deseada y capacidad.
+Potencia (Power): la potencia consumida por el chip, tanto durante la operación de pico y cuando está inactivo.
+Área (Area): área de silicio ocupada físicamente, lo que equivale al costo eventual del chip.
+Lograr el equilibrio adecuado entre estos 3 factores (PPA - Performance, Power, Area) ha sido la clave del éxito de ARM en la telefonía móvil, pero ahora se ha vuelto igual de importante en otras aplicaciones:
+.Equipos móviles, como las tablets, necesitan procesadores avanzados que permitan navegar por Internet, pero tienen restricciones en el consumo de energía similares a las que tienen los teléfonos celulares.
+.Los chips de los microcontroladores en los lavarropas y los juguetes son muy sensibles al costo, cada uno cuesta menos de 1 dólar cada uno, pero aún es necesario que sean inteligentes.
+.Los servidores consumen enormes cantidades de energía. Algunas de las empresas asociadas a ARM Holdings están trabajando en nuevos chips basados en tecnología ARM para reducir el consumo de energía en más de la mitad.
+
+{ buscar las fuentes originales de los datos encontrados en la presentación académica }
+
+[WIKIARM] [Fuente: https://en.wikipedia.org/wiki/ARM_architecture]
+[Fuente: https://en.wikipedia.org/wiki/ARM_Holdings]
+[BBCTEC] [Fuente: http://www.bbc.co.uk/news/technology-20137041]
+[Fuente: http://www.arm.com/annualreport10/20-20-vision/best-technology.html]
+[Fuente: http://www.expresionbinaria.com/supercomputadores-hibridos-procesadores-arm/] { blog informal }
+[Fuente: http://ofiweb.ugr.es/pages/pmoviles/arquitectura_de_las_plataformas_moviles/!] { paper de ARM }
+[Fuente: http://phx.corporate-ir.net/External.File?item=UGFyZW50SUQ9MTczODc5fENoaWxkSUQ9LTF8VHlwZT0z&t=1] { Annual Report 2012 de ARM }
+
+Potencial (en software)
+-----------------------
+-----------------------
+
+El potencial que tiene la tecnología de los smartphones...
+
+{ Lo sacamos, no va } { 29/08/2015 }
+
+[Fuente: http://www.hongkiat.com/blog/future-smartphone-features/] Buscar cada tema por separado de distintas fuentes.
+[Fuente: http://www.gartner.com/newsroom/id/2194115] { Tendencias de soft móvil }
+
+[conclusión]
+La conclusión se dará en cada subtema, consta de una relación entre la seguridad y el aspecto referido.
+
+------------------------------ fin de la reordenación --------------------------------------
+
+Seguridad en dispositivos móviles
+---------------------------------
+---------------------------------
+
+(hecho el 2/12/2012)
+
+La seguridad en los celulares se ha vuelto importante dentro de la computación móvil. Ahora, es de particular interés en lo que respecta a la seguridad de la información personal que actualmente se almacena en los smartphones.
+Cada vez más usuarios y empresas utilizan los smartphones como herramientas de comunicación, medio para planificar y organizar el trabajo y la vida privada. Dentro de las empresas, estas tecnologías están produciendo cambios profundos en la organización de los sistemas de información y por lo tanto se han convertido en la fuente de nuevos riesgos. De hecho, los smartphones almacenan y reúnen una cantidad de información confidencial cada vez mayor, cuyo acceso debe ser controlado para proteger la privacidad del usuario y la propiedad intelectual de la empresa.
+Todos los smartphones, como las computadoras, son objetivos preferidos de ataques. Estos ataques aprovechan las debilidades relacionadas a los smartphones que pueden venir de medios de comunicación como mensajes de texto, mensajes multimedia, redes GSM y Wi-Fi. También hay ataques que explotan las vulnerabilidades del software relativo al browser y sistema operativo. Finalmente, hay formas de software malicioso que se basan en el conocimiento débil del usuario promedio.
+Diversas medidas de seguridad estan siendo desarrolladas y aplicadas a los smartphones, desde un empleo a través de diversas capas de software hasta la divulgación de información a los usuarios finales. Hay buenas prácticas a ser analizadas para todos los niveles, desde el diseño al uso, pasando por el desarrollo de sistemas operativos, capas de software y aplicaciones para descargar.
+
+{Fuente: http://en.wikipedia.org/wiki/Mobile_security} (primer página)
+
+{Estadísticas}
+Las estadísticas pueden permitir interpretar los datos que se recolectan en una investigación para explicar el estado de algún fenómeno. Asimismo, los datos que se van a presentar a continuación son resultados de un análisis, los cuales nos brindan una idea de la situación de la seguridad informática en dispositivos móviles.
+[Fuente: http://es.wikipedia.org/wiki/Estad%C3%ADstica]
+{/Estadísticas}
+
+Según un informe de la empresa McAfee, a la fecha del 21 de Noviembre del 2012, indica que durante los últimos trimestres al segundo del 2012, se notó que el sistema operativo Android es el blanco más popular para los desarrolladores de malware en plataformas móviles. El segundo trimestre del 2012 no fue diferente, prácticamente todo el malware nuevo para móviles fue dirigido a la plataforma Android. La mezcla incluyó a los malwares que envían SMS, botnets móviles, spyware y troyanos destructivos.
+
+[Fuente: http://www.mcafee.com/us/resources/reports/rp-quarterly-threat-q2-2012.pdf] (página 4)
+
+Según un informe períodico publicado por la empresa TrustGo, el cual describe la conclusión de un estudio a partir de una muestra, con la finalidad de inspeccionar el estado general de la seguridad y protección de los principales marketplaces. Este estudio habitual pertenece al trimestre de Junio a Agosto del 2012 y para efectuarlo se emplearon 1,7 millones de aplicaciones para móviles que se descargaron de los principales marketplaces de Android a nivel mundial (175 marketplaces).
+Esta investigación identificó cerca de 14000 nuevas aplicaciones maliciosas, que representan un incremento del 216% en comparación con el trimestre anterior a Junio del 2012. Mientras las aplicaciones riesgosas permanecen como un problema global, los usuarios de China enfrentan las amenazas mas graves en cuanto a virus y aplicaciones nocivas debido al gran número de sitios de descargas no oficiales y medidas de seguridad menos estrictas. Globalmente, 1 de 6 aplicaciones disponibles incluyen código "altamente peligroso", éstas constan de comportamientos ocultos que pueden robar datos privados, hacer pagos no autorizados, modificar las configuraciones del usuario, etc.
+Dos ejemplos concretos de tipos de virus descubiertos por TrustGo Security Labs (la entidad específica que hizo este reporte) son Trojan!MMarketPay.A@Android que fue identificado el 4 de Julio del 2012 y afectó a mas de 100 mil usuarios. El 8 de Agosto del 2012, esta entidad de TrustGo también descubrió un virus denominado Trojan!SMSZombie.A@Android que afectó a mas de 500 mil usuarios en un mes. Algunos ejemplos de marketplaces altamente peligrosos son: http://osandroid.net, http://apps-for-android.ru, http://android-mobile-downloads.ru, http://myadroidmaklet.net, http://androidcountry.ru, http://igry-for-android.ru, http://android-bestgames.ru, http://www.android-app.ru, http://myppc.ru, http://android4u.net. Probablemente, al momento de leer este documento, algunos de estos sitios ya habrán dejado de existir.
+Este informe de TrustGo cita algunas zonas en función de su seguridad. En Rusia, la seguridad de los marketplaces varían significativamente de lugar en lugar; como dato ilustrativo, este reporte menciona que en su sondeo, 10 marketplaces rusos tenían tasas de infección por virus superiores al 95%. China es un caso grave, los marketplaces chinos representan el mayor riesgo para la seguridad global dado que según este sondeo, 33.2% de sus aplicaciones ponen en riesgo a los usuarios. En cambio, los marketplaces que se asentan en los Estados Unidos y Europa son los más seguros globalmente, 10,7% de sus aplicaciones ponen en riesgo a los usuarios.
+Este informe dispone de 2 rankings interesantes: uno relacionado a los marketplaces más seguros, el cual se encuentra encabezado por Aproov de Europa y le sigue Amazon de Estados Unidos; Google Play de Estados Unidos se enuentra en el quinto lugar. Y el otro ranking, relativo a los cinco marketplaces más riegosos en el que sólo se ubican marketplaces de China.
+En la clasificación de las aplicaciones más peligrosas según su función, se ubica en primer lugar a los juegos, mientras que las aplicaciones de redes sociales estan al final de este rango.
+Concluyendo, según TrustGo existe una serie de pautas simples a tener en cuenta al momento de querer descargar una aplicación para no padecer una injuria sobre el equipo:
+. Descargar aplicaciones sólo desde marketplaces con protecciones y políticas de seguridad claras.
+. Elegir aplicaciones con puntuaciones altas y leer los comentarios (especialmente los negativos).
+. Evitar aplicaciones que pidan la aprobación de muchos permisos que otras aplicaciones similares no necesitan.
+
+[Fuente: http://www.trustgo.com/images/en-GB/trustgo_summermobilemayhemreport_2012.pdf] (usé las 2 páginas del paper)
+
+{
+Algunas consultoras de interés:
+(sus buscadores correspondientes tienen una calidad paupérrima, recomiendo emplear San Google con el prefijo "site:")
+http://www.gartner.com
+http://www.idc.com/
+http://www.canalys.com/
+http://www.consultingcentral.com/
+http://www.nerac.com/
+http://vpit.rice.edu/
+http://www.itaginfo.com/
+}
+
+Vulnerabilidades
+----------------
+
+La portabilidad de los dispositivos móviles es una propiedad que tiene sus ventajas y desventajas, se propone mostrar sus riesgos para evitar consecuencias negativas, como pérdida de datos privados, disponibilidad del dispositivo, entre otros.
+
+>>> Vulnerabilidades inherentes al factor humano
+
+--- Falta de controles físicos
+
+Básicamente esta vulnerabilidad se basa en lo que puede llegar a suceder si el dispositivo llegase a estar en manos de otra persona. Dado que típicamente el dispositivo puede estar en movimiento mientras se usa, puede estar en varias ubicaciones físicas fuera del control de la organización, lugares como los hoteles, los bares, las casas de los empleados, las conferencias, etc. Esta portabilidad hace que estos dispositivos sean propensos a ser perdidos o robados que otros [NIST], lo que aumenta el riesgo de que sus datos privados sean develados.
+Sólo el usuario puede determinar lo que está en riesgo cuando su dispositivo está perdido o ha sido robado. Lo primero que se pierde es la disposición del dispositivo. Luego, si el ladrón es capaz de acceder a la información contenida en el dispositivo, toda la información almacenada estará en riesgo, como también aquella información que se puede acceder con la ayuda de los datos guardados en el dispositivo.
+
+Para disminuir los efectos de este riesgo se pueden tomar varias medidas, por un lado se pueden proteger los datos sensibles con un algoritmo de encriptación para que no puedan ser compartidos por usuarios no autorizados o también el usuario se podría acostumbrar a evitar guardar información sensible, efectuar copias de respaldo almacenadas en una ubicación independiente al dispositivo puede contribuir a evitar que la productividad disminuya; incluso aunque el dispositivo siempre esté en posesión del propietario, puede suceder que un atacante esté mirando por encima del hombro del usuario en un bar y de ahí puede mirar cierta información sensible en la pantalla de la víctima, como por ejemplo una contraseña ingresada. Por otro lado, se puede obstaculizar el acceso de los atacantes al dispositivo, exigiendo una autenticación para acceder a las funciones del dispositivo o a los recursos de la organización. Usualmente un dispositivo móvil no tiene una cuenta separada para cada usuario del dispositivo, cuando se asume que tiene solamente un usuario (no hay un nombre de usuario para ingresar, sólo una contraseña); pueden ser usadas formas mas robustas de autenticación como un reemplazo o un complemento de las funciones de autenticación incorporadas en el dispositivo.
+Se pueden tomar una serie de medidas que se recomienda tomar cuando el dispositivo es indispensable:
+* Nunca descuidar el dispositivo, ni siquiera por un minuto. Que sea un hábito personal mantener el teléfono cerca en todo momento. Esta consideración está ligado a que generalmente el dispositivo es considerado un aparato de uso individual.
+* Usar contraseñas cuando sea posible para proteger la privacidad del usuario si el teléfono es robado, tanto para el acceso a los documentos importantes como a las "pantallas" del teléfono que revelen datos personales. Aunque se debe usar con mesura, empezando a proteger lo que es vital.
+* Mantener sólo los documentos que realmente se necesitan en el dispositivo, y retirar y archivar los archivos antiguos que ya no se utilizan de forma activa. Realizar esta actividad con cierta periodicidad.
+* No permitir que el software del dispositivo suministre de forma automática una contraseña para el usuario. Si se ignora esta recomendación, cualquier persona que opere con el dispositivo podrá acceder a sus cuentas.
+* Usar las redes inalámbricas públicas y abiertas con precaución. Dado que los ladrones de identidad monitorean intensamente estas redes inseguras, por ejemplo en los aeropuertos y los hoteles, buscando datos de la tarjeta de crédito o información personal enviada sin protección SSL o VPN.
+
+[Fuente: NIST - 2012 ]
+[Fuente: http://its.yale.edu/secure-computing/physical-security/physical-security-mobile-devices]
+[Fuente: http://www.us-cert.gov/ncas/tips/ST04-017]
+
+--- Uso de dispositivos móviles no confiables
+
+Con la ayuda de BYOD se puede aumentar la productividad y reducir los costos, porque las empresas pueden ahorrar dinero al dejar que los empleados traigan o consigan sus propios dispositivos, lo que estimula velocidad con que se actualizan sus propios dispositivos personales, incluso los empleados lo hacen más rápido que cuando la empresa se hace cargo de esta tarea. Mas allá de este beneficio y otros que se mencionaron antes, existen ciertas vulnerabilidades que se deben tratar, a continuación se mencionan algunas.
+> Existe cierta capacidad para pasar por alto las reglas relacionadas a la política de red, que sólo se imponen en las redes locales cableadas.
+> El usuario tiene almacenado en su dispositivo material para su tiempo de ocio. Las aplicaciones y sitios web relacionados con las redes sociales, juegos, videos puede reducir la producción del usuario como también consumir los recursos de red de la organización. Más aún si este contenido es inseguro.
+> La mezcla de los datos personales con los de la organización pueden trastornar la forma en que se organiza el usuario. Algunas empresas, que aplican una seguridad estricta en los dispositivos, pueden llegar a efectuar un borrado remoto de forma parcial o total en caso de emergencia, provocando una pérdida de datos personales.
+> Una vulnerabilidad es la tendencia que tienen algunos usuarios de compartir su dispositivo con sus amigos o familiares (sobretodo con las tablets), dado que fuera del horario de trabajo tiene otros usos relacionados al ocio, por ejemplo. Sus amigos pueden alterar recursos de la organización, con o sin intención.
+
+Tanto la técnica de jailbreaking (en iOS) como la de rooting (en Android) debilitan la seguridad del sistema operativo porque los usuarios pueden evitar los procesos de Android y iOS que filtran aplicaciones y asegurar que los usuarios descargan aplicaciones libres de virus. Además, según el proveedor de telefónia celular, puede suceder que con la aplicación de esta técnica se pierda la garantía del dispositivo.
+
+[Fuente: http://www.zdnet.com/five-security-risks-of-moving-data-in-byod-era-7000010665/]
+[Fuente: http://www.untangle.com/inside-untangle/byod-risks-rewards]
+[Fuente: http://www.esecurityplanet.com/mobile-security/5-byod-risks-and-how-to-manage-them.html]
+[Fuente: http://www.sophos.com/en-us/security-news-trends/security-trends/byod-risks-rewards.aspx]
+[Fuente: http://www.sophos.com/en-us/medialibrary/Gated%20Assets/white%20papers/sophosBYODrisksrewardswpna.pdf?id=5d06bd71-1cc5-40f1-87e2-3895d2284bd8&dl=true] (BYOD Risks)
+[Fuente: http://blogs.mcafee.com/consumer/how-does-jailbreaking-or-rooting-affect-my-mobile-device-security]
+[Fuente: http://www.bullguard.com/bullguard-security-center/mobile-security/mobile-threats/android-rooting-risks.aspx]
+
+>>> Vulnerabilidades inherentes a la tecnología
+
+--- Uso de redes no confiables
+
+El acceso a la información en cualquier momento y lugar se ha vuelto en la actualidad en algo cotidiano. Asimismo, los dispositivos móviles se usan principalmente en redes externas a la organización para su acceso a internet, donde las organizaciones no tienen control sobre la seguridad, entonces algunas de las funcionalidades corporativas se extienden fuera de los límites de la organización, permitiendo a los usuarios interactuar en cualquier lugar que se encuentre el usuario (y que disponga de señal de una red), como por ejemplo: el acceso a los mails de la empresa, acceso a las aplicaciones empresariales, sincronización de contactos, guardado y edición de documentos, etc. Por lo tanto, estas redes son susceptibles al espionaje, lo que compromete la información confidencial transmitida.
+El primer paso importante es la educación acerca de las amenazas que estan en los entornos públicos y concientizar al usuario acerca de lo que debe tener en cuenta al usar estas redes móviles abiertas. El segundo paso consiste en fortificar la infraestructura de la misma red. Para lograrlo, las empresas de telefonía celular deben asimilar su verdadero tráfico de red, las amenazas, el rendimiento general bajo carga, etc.
+Estos riesgos se pueden reducir con el empleo de tecnologías de encriptación fuerte para proteger la confidencialidad y la integridad de las comunicaciones, así como también el uso de los mecanismos de autenticación mutua para verificar las identidades de los dos hosts antes de transmitir los datos.
+
+{Bluetooth}
+
+[Fuente: NIST - 2012 ]
+[Fuente: http://blogs.ixiacom.com/ixia-blog/mobile-network-security-threat/]
+[Fuente: http://www.networkworld.com/news/2012/091912-mobile-security-262581.html]
+{ Security on Wireless }
+[Fuente: http://en.wikipedia.org/wiki/Wireless_security]
+[Fuente: http://www.cse.wustl.edu/~jain/cse574-06/ftp/cellular_security.pdf]
+[Fuente: http://www.mobilesecurity.com/articles/328-how-secure-are-mobile-networks]
+
+--- La empresa carece de una política de gestión de los dispositivos
+
+Cuando se implementan soluciones móviles corporativas, la aplicación de políticas de seguridad apropiadas, al igual que en una estación de trabajo, plantea la misma pregunta: ¿Cómo se evita que el usuario use el dispositivo con fines no relacionados con el negocio?
+Por lo general, usuarios finales, casi siempre de alta jerarquía, deciden, sin el más mínimo análisis, incorporar estos dispositivos a las redes de la organización o bien incorporar información sensible en las memorias de almacenamiento de estos dispositivos.
+
+[Fuente: http://www.root-secure.com/arch/Seguridad%20en%20Dispositivos%20Moviles%20Smartphone%20y%20Pocket%20PC.pdf]
+
+>>> Vulnerabilidades inherentes a las aplicaciones
+
+--- Uso de aplicaciones creadas por grupos desconocidos.
+
+Los aplicaciones de los dispositivos móviles presentan beneficios tal como facilidad en su su búsqueda, su adquisición, su instalación y su uso. Pero ésto conlleva riesgos, si es que no hay restricciones de seguridad o alguna especie de limitación en la publicación de aplicaciones de terceros. Ergo el usuario individual o las organizaciones deberían tener un plan de seguridad para tomar acciones frente a esta circunstancia.
+
+	>>> Amenaza que emplea esta vulnerabilidad.
+	
+	--- Malware
+	
+
+Pautas para prevenir la seguridad
+---------------------------------
+---------------------------------
+
+{En el siguiente link hay varias pautas para prevenir disgustos}
+[Fuente: http://www.eset-la.com/centro-prensa/articulo/2012/eset-lanza-guia-seguridad-dispositivos-moviles/2847]
+
+{queda pendiente}
+
+.Seguridad
+Textual de Wikipedia:
+La seguridad informática se enfoca en la protección de la infraestructura computacional y todo lo relacionado con esta (incluyendo la información contenida). Para ello existen una serie de estándares, protocolos, métodos, reglas, herramientas y leyes concebidas para minimizar los posibles riesgos a la infraestructura o a la información. La seguridad informática comprende software, bases de datos, metadatos, archivos y todo lo que la organización valore (activo) y signifique un riesgo si ésta llega a manos de otras personas. Este tipo de información se conoce como información privilegiada o confidencial.
+
+Textual del libro de Bishop:
+Computer security rests on confidentiality, integrity, and availability. The interpretations of these three aspects vary, as do the contexts in which they arise. The interpretation of an aspect in a given environment is dictated by the needs of the individuals, customs, and laws of the particular organization.
+[explicar cada uno de estos términos]
+
+[Fuente: http://www.nist.gov/itl/csd/mobile-071112.cfm]
+[Fuente: http://msisac.cisecurity.org/newsletters/2012-03.cfm]
+[Fuente: http://www.stanford.edu/group/security/securecomputing/mobile_devices.html]
+[Fuente: http://csrc.nist.gov/publications/drafts/800-124r1/draft_sp800-124-rev1.pdf]
+[Fuente: http://www.nsa.gov/ia/programs/mobility_program/index.shtml]
+	[http://www.nsa.gov/ia/_files/Mobility_Capability_Pkg_Vers_2_0.pdf]
+[Tener en cuenta los 2 papers de US-CERT]
+[Fuente: http://www.csl.sri.com/users/gehani/papers/GTIP-2011.Android.pdf]
+
+{Magnitud de relevancia - Tiempo de consideración }
+El 15 de Abril del 2010, una entidad gubernamental relevante de Estados Unidos denominada United States Computer Emergency Readiness Team (US-CERT) publicó un documento que presenta las amenazas emergentes que puedan tener un impacto significativo en los dispositivos móviles y los usuarios. Pasado un año aproximadamente, publicó otro documento. Lo que exponen estos documentos es que el tema en cuestión data de un tiempo atrás, no es un tema nuevo. A continuación, se presentan algunas pautas que pueden llegar a ser interesantes que contiene este documento.
+[Fuente: http://www.us-cert.gov/reading_room/TIP10-105-01.pdf]
+[Fuente: http://www.us-cert.gov/reading_room/cyber_threats_to_mobile_phones.pdf]
+{/Magnitud de relevancia - Tiempo de consideración }
+
+||:::::Fuentes:::::||
+
+http://es.wikipedia.org/wiki/Dispositivo_m%C3%B3vil
+http://es.wikipedia.org/wiki/Tel%C3%A9fono_inteligente
+http://es.wikipedia.org/wiki/Seguridad_inform%C3%A1tica

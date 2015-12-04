@@ -1,0 +1,11 @@
+
+---------------------------------------------------------------------------
+
+Cosas que pueden ir en el capítulo 1
+
+---------------------------------------------------------------------------
+
+- > Tendencias del uso del dispositivo (me puede servir para culpar al usuario de su ignoracia).
+- > Dependencia cultural del uso del móvil
+- > Tendencia de la gente de almacenar información privada en el dispositivo e ignorar que se está usando un dispositivo con un alto poder de cómputo, eso sería un blanco ideal para los hackers (explicar por qué).
+- > Podría agrupar las vulnerabilidades. En fin, agrupar cosas.

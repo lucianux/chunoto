@@ -1,0 +1,118 @@
+PRUEBAS Y APPS RECOMENDADAS
+===========================
+
+PRUEBAS
+=======
+
+Temas:
+- Forensics
+
+- Malware
+Keywords: "demonstration malware android"
+http://gauss.ececs.uc.edu/Courses/c653/homework/assgn6.pdf [ Serie de pasos para construir un malware ]
+http://www.makeuseof.com/tag/malware-android-5-types-really-need-know/ [ Panorama general de Malwares ]
+Creando un Malware:
+Se bajó la app:
+https://play.google.com/store/apps/details?id=uk.co.nickfines.RealCalc
+Con la ayuda de http://apps.evozi.com/apk-downloader/
+
+- Pequeño Desarrollo
+
+- Explotando AirDroid
+http://forums.airdroid.com/viewtopic.php?f=0&p=43462 [ Qué es? ]
+https://www.exploit-db.com/exploits/37504/ [ Exploit ] [ Funciona ]
+http://www.apk4fun.com/apk/56479/ [ Versión 3.1.3 de AirDroid, aún vulnerable ]
+- Cuenta AirDroid
+User: celular.lg.g3.tesis@gmail.com
+Pass: android.
+- Otra cuenta AirDroid
+User = luciano_kta@yahoo.com.ar
+Pass = 123456abcdef
+Se probó AirDroid con una laptop con Windows que usa la aplicación desde la web, y en el otro extremo, hay un smartphone con Android 5.0.2 LG G3 que tiene instalada la app AirDroid. Ambos pueden compartir recursos por medio de esta app, normalmente. Sin embargo, existe un tercer componente en esta red local que no tiene instalado AirDroid, tiene el rol de atacante. Éste puede subir archivos al smartphones sin su concentimiento.
+Se ejecuta el exploit desde la línea de comandos. Los parámetros más importantes de este comando son los siguientes: IP y puerto del smartphone víctima, nombre del archivo a enviar y ubicación del archivo dentro del filesystem de la víctima.
+[ USAGE:python exploit.py ip port remote-file-name local-file-name remote-file-path ]
+$ python exploit.py 192.168.0.43 8888 prueba.txt prueba.txt /sdcard
+
+- Usando ADB
+Enable USB debugging on your device.
+To access these settings, open the Developer options in the system Settings. On Android 4.2 and higher, the Developer options screen is hidden by default. To make it visible, go to Settings > About phone and tap Build number seven times. Return to the previous screen to find Developer options at the bottom.
+Comando ADB: /root/Android/Sdk/platform-tools/adb
+Agregué:
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", MODE="0666", GROUP="plugdev"
+En:
+/etc/udev/rules.d/51-android.rules
+[ http://developer.android.com/intl/es/tools/device.html ]
+[ http://esausilva.com/2010/05/13/setting-up-adbusb-drivers-for-android-devices-in-linux-ubuntu/ ]
+Considerar la posibilidad de usarlo en Windows:
+[ http://www.howtogeek.com/125769/how-to-install-and-use-abd-the-android-debug-bridge-utility/ ]
+
+- Rooting
+http://www.taringa.net/comunidades/motoroladefy/7710427/Consulta-Rootear-motorola-defy-plus.html [Fundamental!!!]
+http://www.taringa.net/comunidades/motoroladefy/5277669/Pedido-Root-defy-plus-2-3-5.html [Accesorio]
+° Se bajan los drivers desde acá (son para Windows):
+https://motorola-global-portal.custhelp.com/app/answers/detail/a_id/88481
+° Se descarga el exploit que permite el rooting del smartphone desde acá:
+http://www.mediafire.com/?5d82batkh7hwm6z
+° Se instala la aplicación de escritorio "Motorola Device Manager", el cual instala los drivers para que Windows reconozca el smartphone conectado. Es un típica instalación de Windows (no requiere configuración).
+° Se enchufa el smartphone al puerto USB y se activa la Depuración USB (Menu / Aplicaciones / Desarrollo).
+° Se descomprime el paquete que contiene el exploit en una carpeta y desde la línea de comandos se debe dirigir a esa ubicación. Luego, ejecutar "adb.exe devices" para asegurarse que el smartphone ha sido detectado, si aparece en el listado se prosigue.
+° Se ejecuta el exploit, el mismo no tiene complicaciones: se presiona la tecla "enter" por cada mensaje que aparece hasta que indica que se terminó el proceso.
+
+- Sniffing
+El ARP Poising funciona, con Ettercap.
+Falta estudiar como se analiza Wireshark, con un ejemplo concreto que se puede encontrar en la web. Igual, se debe estudiar un poco de Wireshark.
+Algo de Wireshark: https://samsclass.info/120/proj/p3-wireshark.htm
+
+- SMS Spoofing
+http://www.digimessaging.com/
+User: luciano_kta@yahoo.com.ar
+Pass: 123456
+
+:: Links ::
+[Herramientas para explotar el smartphone]
+https://www.owasp.org/images/9/95/ASDC12-Smart_Bombs_Mobile_Vulnerability_and_Exploitation.pdf
+
+APPS RECOMANDADAS
+=================
+
+- Signal
+
+https://github.com/WhisperSystems/Signal-Android/wiki
+https://github.com/WhisperSystems/Signal-Android/wiki/Using-Signal [ Qué es? ]
+
+
+:: Links ::
+https://en.wikipedia.org/wiki/List_of_free_and_open-source_Android_applications#Security
+https://www.surespot.me/
+https://github.com/bpellin/keepassdroid
+https://mobilesecuritywiki.com/
+http://www.makeuseof.com/tag/6-open-source-messaging-apps-secure-skype/
+http://www.esecurityplanet.com/mobile-security/slideshows/top-20-android-security-apps.html
+
+Propuesta de desarrollo
+=======================
+
+https://www.authy.com/developers/ [ 2FA - Authy ]
+https://fedorahosted.org/freeotp/ [ two-factor authentication app ]
+http://lifehacker.com/the-best-two-factor-authentication-app-for-android-1638791349 [ 2FA - Authy ]
+http://developer.android.com/intl/es/samples/security.html [ Code samples!!! ]
+http://developer.android.com/intl/es/samples/ConfirmCredential/project.html [ Posible proyecto!! ]
+
+Papers
+======
+
+https://www.cl.cam.ac.uk/~drt24/papers/spsm-scoring.pdf
+https://www.cl.cam.ac.uk/~drt24/papers/spw15-07-Thomas.pdf
+http://www.sersc.org/journals/IJSIA/vol9_no4_2015/29.pdf - [ Android's External Device Attack: Demonstration and Security Suggestions ]
+http://www.ijcaonline.org/research/volume128/number12/lone-2015-ijca-906683.pdf - [ Implementation of Forensic Analysis Procedures for WhatsApp and Viber Android Applications ]
+
+Apps en el Defy+
+================
+
+- Advanced Task Manager.
+- AIMP.
+- QuickPic.
+- Contact Remover.
+- WhatsApp.
+- Root Checker Basic.
+

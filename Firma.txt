@@ -1,0 +1,67 @@
+Signing
+-------
+
+Code signing allows developers to identify the author of the application and to update their application without creating complicated interfaces and permissions. Every application that is run on the Android platform must be signed by the developer. Applications that attempt to install without being signed will rejected by either Google Play or the package installer on the Android device.
+On Google Play, application signing bridges the trust Google has with the developer and the trust the developer has with their application. Developers know their application is provided, unmodified to the Android device; and developers can be held accountable for behavior of their application.
+On Android, application signing is the first step to placing an application in its Application Sandbox. The signed application certificate defines which user id is associated with which application; different applications run under different user IDs. Application signing ensures that one application cannot access any other application except through well-defined IPC.
+When an application (APK file) is installed onto an Android device, the Package Manager verifies that the APK has been properly signed with the certificate included in that APK. If the certificate (or, more accurately, the public key in the certificate) matches the key used to sign any other APK on the device, the new APK has the option to specify in the manifest that it will share a UID with the other similarly-signed APKs.
+Applications can be signed by a third-party (OEM, operator, alternative market) or self-signed. Android provides code signing using self-signed certificates that developers can generate without external assistance or permission. Applications do not have to be signed by a central authority. Android currently does not perform CA verification for application certificates.
+Applications are also able to declare security permissions at the Signature protection level, restricting access only to applications signed with the same key while maintaining distinct UIDs and Application Sandboxes. A closer relationship with a shared Application Sandbox is allowed via the shared UID feature where two or more applications signed with same developer key can declare a shared UID in their manifest.
+[http://source.android.com/devices/tech/security/overview/app-security.html#app-verification]
+
+The app developer holds the certificate's private key.
+
+A certificate is a digitally signed statement from one entity (person, company, etc.), saying that the public key (and some other information) of some other entity has a particular value. (See Certificates.) When data is digitally signed, the signature can be verified to check the data integrity and authenticity. Integrity means that the data has not been modified or tampered with, and authenticity means the data indeed comes from whoever claims to have created and signed it.
+
+--------------------- Final -------------------------------
+
+Firmado digital
+---------------
+
+[ Definición ]
+Todas las apps, incluyendo las del sistema, deben ser firmadas con un certificado digital que identifique a su autor. Un certificado es un archivo que encapsula los datos de la persona (o entidad) y la clave pública, estos valores son declarados con el aval de una Firma que es difícil de falsificar (sin la clave privada); esta Firma se adjunta en el archivo. La clave pública es un número largo que sirve para verificar la Firma. En cambio, la clave privada es un archivo que contiene otro número largo que sirve para generar la Firma y esta protegida con una contraseña, además se sugiere almacenarla en un lugar secreto, donde nadie tenga acceso excepto el propietario (generalmente, el desarrollador). Ambas claves son generadas con la misma herramienta. La Firma se procesa en base a algún dato del archivo a firmar (por lo general se usa una función de hash que usa un archivo como entrada, se la suele llamar fingerprint y devuelve una cadena de caracteres de longitud fija); este archivo y el certificado forman la firma digital.
+Es habitual que un certificado digital sea firmado por una autoridad de certificación, sin embargo en Android esto no es necesario; de hecho, frecuentemente las apps de Android usan certificados auto-firmados (el mismo desarrollador puede generar el certificado).
+
+[ Función ]
+Los siguientes motivos son posibles razones para firmar una app con un certificado digital:
++ Se firman las apps como medida de seguridad y como requisito de garantía: garantiza que sólo la entidad propietaria de la clave privada de la firma pueda producir un certificado digital válido para sus apps.
++ Proporciona integridad: significa que el certificado digital garantiza que el paquete de instalación de la app (archivo con extensión .apk) no ha sido alterado.
++ Proporciona autenticidad: significa que los datos vienen de quien afirma haber creado y firmado. De esta forma, sólo los autores / dueños de la app puedan modificarla y actualizarla.
++ Si no se hace, la app será rechazada cuando se la intente instalar en algún dispositivo con Android. Ésto es debido a que el paquete de instalación de la app (archivo .apk) será verificado mediante el Administrador de Paquetes (Package Manager) para comprobar si ha sido correctamente firmado con un certificado digital incluído en este archivo.
++ Si se desea publicar la app en Google Play, es un requisito indispensable que la app esté firmada. Si no se hace, la app será rechazada por este repositorio.
+
+Los siguientes motivos son posibles razones para firmar apps con el mismo certificado:
++ Si se desea modificar la app (por ejemplo, para corregir bugs o para agregar nueva funcionalidad), tendrá que ser firmada de vuelta y esta operación solo podra hacerla el propietario de la app, o el que posea la clave privada cuando se firmó la primera vez. Entonces cuando las apps se actualizan, los desarrolladores deberían mantener el mismo certificado para que los usuarios puedan actualizarlas con transparencia.
++ Se puede compartir recursos: si se quiere que 2 apps compartan recursos, es un requisito necesario que las mismas el mismo certificado. Además, para lograrlo se debe especificar la opción en el manifiesto que verifica los permisos en base a la firma. Con estos 2 requisitos, se puede compartir un ID de usuario (UID) con 2 o más apps.
++ Un desarrollador podría firmar todas sus apps con el mismo certificado para formar una reputación aceptable.
++ Otro motivo es que en Android se permite el desarrollo de apps por módulos de forma tal que los usuarios puedan actualizar cada uno de estos módulos de forma independiente si es necesario.
+
+[ Práctica / Ejemplos ]
+En cuanto a la práctica, hay algunas cuestiones que se deben mencionar. Cuando la app está en etapa de desarrollo, no tiene mucha relevancia firmar una app, por lo cual se acude a usar una firma conocida y hecha especialmente para el proceso de desarrollo y pruebas. En cambio, cuando el proyecto se encuentra en la etapa de publicación, se usa un signado propio, que en caso de no tener uno se genera con una herramienta llamada Keytool y otra llamada Jarsigner, ambas heredadas del entorno Java, que son provistas en el entorno de desarrollo que suministra Android; ergo, la clave privada efectivamente puede ser generada por el mismo desarrollador sin necesidad de emplear la certificación de terceros para que validen la clave.
+
+El proceso de firmado se puede entender con mayor claridad describiendo el procedimiento manual:
+1) Se usa el comando para generar una keystore, que es un almacén de claves privadas en donde se encuentran los certificados pertenecientes a un desarrollador. Si es la primera vez que se va a firmar una aplicación entonces se debe crear una keystore.
+	$ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+	Donde:
+		my-release-key.keystore, es el nombre del archivo que se va a generar que contiene certificados, es un nombre que lo elige el usuario.
+		alias_name, identifica a una nueva clave privada que se agrega al keystore, es un nombre que lo elige el usuario.
+		Notas:
+		- Luego de ejecutar esta línea, se le pide al usuario contraseñas para el keystore y la clave privada dentro de este keystore; además de los datos de la entidad que certifica (generalmente, lo hace el desarrollador) como nombre, apellido, nombre de la unidad de organización, nombre de la organización, localidad, provincia, país (código de 2 letras).
+		- En este caso, el keystore generado contiene una sola clave privada, válida por 10000 días.
+
+2) Compilar la app en modo "release" para obtener un archivo APK sin firmar (suponiendo que ese archivo se llame "my_application.apk"), lo cual se puede realizar desde la IDE. Este paso no se va a explicar porque escapa a los fines del ejemplo.
+
+3) Se usa el comando para firmar la app.
+	$ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore my_application.apk alias_name
+	Donde:
+		my-release-key.keystore, es el nombre del archivo generado en el paso 1.
+		my_application.apk es el nombre de la aplicación no firmada creda en el paso 2.
+		alias_name, es el nombre del alias con el que se generó la firma en el paso 1.
+
+4) Se usa el comando para verificar que la app haya sido firmada correctamente.
+	$ jarsigner verify -verbose -certs my_application.apk
+	Donde:
+		my_application.apk, es el nombre del paquete del paso anterior.
+
+5) Zipalign - Optimiza la app para que consuma menos RAM.
+	$ zipalign -v 4 my_application.apk my_aligned_application.apk
