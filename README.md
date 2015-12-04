@@ -18,7 +18,7 @@ $ ssh-keygen -t rsa -C "lucianux@gmail.com"
 
 ## Comandos para iniciar un nuevo proyecto
 
-$ git clone git@github.com:lucianux/chunoto.git
+$ git clone git@github.com:lucianux/workspace.git
 
 ## Comandos de rutina
 
