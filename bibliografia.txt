@@ -5,6 +5,8 @@ Bibliografía
 [UNDEMOB] Suprateek Sarker, John D. Wells, "Understanding mobile handheld device use and adoption", Diciembre, 2003.
 [NISTFOR] Rick Ayers, Sam Brothers, Wayne Jansen, "Guidelines on Mobile Device Forensics", NIST, Septiembre, 2013.
 [NISTGUI] Murugiah Souppaya, Karen Scarfone, "Guidelines for managing and securing mobile devices in the Enterprise (draft)", NIST, Junio, 2013.
+[KINDMOB] "Computer Basics: Mobile Devices", http://www.gcflearnfree.org/computerbasics/9/print
+[DISCOMP] Misty E. Vermaat, Susan L. Sebok, Steven M. Freund, Jennifer T. Campbell, Mark Frydenberg, "Discovering Computers: Tools, Apps, Devices, and the Impact of Technology", Cengage Learning, 2016.
 [PHONEAR] "Here's how screen size preferences have changed through the years (infographic)", http://www.phonearena.com/news/Heres-how-screen-size-preferences-have-changed-through-the-years-infographic_id71924
 [CHARGET] "Cell Phone Battery History", http://chargetech.com/cell-phone-battery-history/
 [EBAYPHO] "5 Different Types of Phone Battery Technologies Explained and How to Buy Them", http://www.ebay.co.uk/gds/5-Different-Types-of-Phone-Battery-Technologies-Explained-and-How-to-Buy-Them-/10000000177989705/g.html
@@ -25,8 +27,10 @@ Bibliografía
 [IDCSTAT] "Worldwide Smartphone Market Posts 11.6% Year-Over-Year Growth in Q2 2015, the Second Highest Shipment Total for a Single Quarter, According to IDC", http://www.idc.com/getdoc.jsp?containerId=prUS25804315
 [SECCOMP] Charles Pfleeger, "Security in computing", Prentice Hall P T R, 1996.
 [PRACSEC] Woongryul Jeon, Jeeyeon Kim, Youngsook Lee, Dongho Won, "A practical analysis of smartphone security", 2011.
+[TECHTAR] "Attack vector definition", http://searchsecurity.techtarget.com/definition/attack-vector
 [GLOBJOU] Muneer Ahmad Dar, Javed Parvez, "Evaluating Smartphone Application Security: A Case Study on Android", 2013.
 [COMPSEC] Charles P. Pfleeger, "Security in computing", John Wiley & Sons, 2da edición., 2006.
+[MANBYOD] Martin Brodin, Jeremy Rose, "Management Issues For Bring Your Own Device", Junio, 2015.
 [MARKAND] "Alternative app stores", http://www.appfutura.com/blog/alternative-app-stores/
 [APWGREP] Jart Armin, "Mobile Threats and the Underground Marketplace", APWG, 2013.
 [DROIRAN] Yajin Zhou, Zhi Wang, Wu Zhou, Xuxian Jiang, "Hey, You, Get Off of My Market: Detecting Malicious Apps in Official and Alternative Android Markets", 2012.

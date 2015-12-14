@@ -38,5 +38,6 @@ Consultas nuevas [ sin enviar ]
 ¿ Faltan capturas de pantalla ?
 ¿ Qué errores cometí ?
 ¿ Qué le parece el formato del documento ?
-¿ Cuántas páginas debe tener una tesina ? (como máximo y mínimo)
+¿ Cuántas páginas debe tener una tesina ? ( como máximo y mínimo )
 ¿ Agrego screenshots de las pantallas ?
+¿ Con qué nivel de profundidad se deben atacar los temas ?

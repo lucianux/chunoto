@@ -5,9 +5,6 @@ Pruebas en Android
 4.1 Objetivo
 
 El objetivo general del capítulo es explorar distintas pruebas prácticas que explotan vulnerabilidades, para demostrar que existen riesgos en esta plataforma.
-
-4.2 Esquema general
-
 Para cada prueba, se explica como se usan las herramientas, dando así una prueba de concepto (PoC). Se intentan exponer un gama variada de explotaciones de las vulnerabilidades en dispositivos móviles, no sólo aquellas que afectan a Android sino a otras plataformas, debido a que se va a tratar de dar un panorama amplio.
 
 Cuando el usuario adquiere un equipo nuevo debe aplicar un esfuerzo adicional para defenderse de las amenazas de seguridad externas. En este capítulo se trata de mostrar qué cosas pueden dañar al dispositivo. Y en el siguiente capítulo, se muestra qué medidas se pueden tomar.
