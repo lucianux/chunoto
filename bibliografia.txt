@@ -160,6 +160,12 @@ Bibliografía
 ::::::::::::::::::: Capítulo 4 :::::::::::::::::::
 
 [PROOFCO] "Proof of Concept (POC)", https://www.techopedia.com/definition/4066/proof-of-concept-poc
+[PENTEST] "Pen Test (Penetration Testing) definition", http://searchsoftwarequality.techtarget.com/definition/penetration-testing
+
+::::::::::::::::::: Capítulo 5 :::::::::::::::::::
+
+[HARDUNIX] Prashant Kumar Patra, Padma Lochan Pradhan, "Hardening of UNIX Operating System", 2009.
+[HARDCONC] Azzam Mourad, Marc-André Laverdière, Mourad Debbabi, "Security Hardening of Open Source Software", Noviembre, 2006.
 
 ----------------------------------  Descargas ------------------------------------------
 

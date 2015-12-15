@@ -4,11 +4,8 @@ Medidas de seguridad
 
 5.1 Objetivo
 
-El objetivo general del capítulo es demostrar que existe espacio para trabajar y mejorar la seguridad de los smartphones. 
-
-5.2 Esquema general
-
-Se cubren 2 aspectos distintos: por un lado, los usuarios pueden tomar iniciativa para defenderse de las amenazas a partir de un buen uso del dispositivo, siguiendo un criterio; y por otro lado, los desarrolladores pueden aportar con proyectos sencillos para mitigar riesgos. Se darán ejemplos prácticos en cuanto a las mejoras previstas con una explicación clara del procedimiento a realizar.
+El objetivo general del capítulo es demostrar que existe espacio para trabajar y mejorar la seguridad en los smartphones.
+Se cubren 2 aspectos distintos: por un lado, los usuarios pueden tomar iniciativa para defenderse de las amenazas a partir de un buen uso del dispositivo, siguiendo un criterio; y por otro lado, los desarrolladores pueden aportar con proyectos sencillos para mitigar riesgos.
 El capítulo se divide en 4 partes:
 - Reconsideraciones en el Hardening.
 - Actitudes concretas que podría tomar el usuario para defenderse ante las amenazas posibles. Se muestran medidas disciplinarias (concientización del usuario).
@@ -19,24 +16,19 @@ El capítulo se divide en 4 partes:
 
 [ Se puede sacar info de acá ]
 [ https://blog.lookout.com/blog/2014/03/24/quick-guide-android-security-settings/ ]
-
 [ También en ]
 [ https://developer.android.com/intl/es/training/articles/security-tips.html ]
-
 [ Se puede sacar un poco de info del hardening en Organizaciones, acá ( abajo donde dice "Guidance to Concerned Parties" ) ]
 [ http://www.isightpartners.com/2015/03/android-phishing-malware-an-old-school-technique-going-mobile/ ]
-
 [ Hay 2 puntos de vista posibles: se tienen las reconsideraciones a nivel usuario (usar apps confiables, usar antivirus, etc.) y las que estan a nivel del desarrollador (crear apps seguras: usar herramientas, frameworks, seguir pautas, etc.). ]
 [ Se pueden considerar 2 niveles: el nivel de un usuario común y el nivel corporativo. ]
 
-Éstas son algunas definiciones de hardening, las cuales pueden orientar y guiar.
-El proceso de hardening de un sistema operativo consiste en la eliminación de todas las herramientas, utilidades y otras opciones de administración de sistemas que son innecesarias, que podrían ser utilizadas para facilitar el accionar de un hacker el sistema operativo. Después de ésto, el proceso de hardening asegurará que todos los elementos de seguridad apropiados serán activados y configurados correctamente [HARDUNIX].
-Según el paper [HARDUNIX], la idea de hardening de un sistema operativo es reducir al mínimo la exposición de una computadora a las amenazas actuales y futuras mediante una completa configuración del sistema operativo y la eliminación de aplicaciones (y dispositivos) innecesarias.
-Según el paper [HARDCONC], se define que hardening son los procesos, las metodologías, los productos o combinación de ellos que son usados para incrementar la seguridad del software existente. En este paper también se expone una clasificación de los métodos en que se aplica hardening en la seguridad; de estas clases de hardenings, hay una clase que abarca el estudio que se realiza en esta sección. La clase denominada hardening en el entorno operativo establece mejoras en la seguridad del contexto de ejecución (redes, sistemas operativos, bibliotecas, etc.) que se apoya en el software; son esos cambios que hacen que la explotación de vulnerabilidades sea más difícil, a pesar de que no son un remedio.
-De estas definiones extraemos los términos: configuración del sistema operativo para reducir 
-Se va a proceder a describir brevemente cada sugerencia, pero se hará referencia al método descrito en el capítulo 3. Por ejemplo, se indica "se puede realizar la medida A, acudiendo al método B (descrito en el capítulo 3)".
-
-Las pautas que definen al Hardening en Android se dividen en 3 partes: una parte corresponde a las configuraciones aconsejables para defender el sistema, otra dedicada a describir apps que contribuyen a proteger al sistema y finalmente una parte dedicada a la concientización del usuario. A la vez, la primer parte se agrupa en las siguientes categorías: seguridad básica, seguridad de autenticación, seguridad en el navegador, seguridad en la red y configuraciones adicionales de seguridad. Estas pautas se basan en la publicación de la Universidad de Texas [HARDTEX] y fueron enriquecidas con aportes personales.
+Como referencia y para entrar en contexto con el concepto de Hardening, se va a tomar algunas sus definiciones a partir de distintas fuentes:
+El proceso de hardening de un sistema operativo consiste en la eliminación de todas las herramientas, utilidades y otras opciones de administración de sistemas que son innecesarias, que podrían ser utilizadas para facilitar el accionar de un hacker en un sistema operativo. Asimismo, el proceso de hardening asegura que todos los elementos de seguridad apropiados serán activados y configurados correctamente [HARDUNIX].
+Por otro lado, según el paper [HARDUNIX], el proceso de hardening en un sistema operativo es aquel que reduce al mínimo la exposición de una computadora a las amenazas actuales y futuras mediante una completa configuración del sistema operativo y la eliminación de aplicaciones (y dispositivos) innecesarias.
+Según el paper [HARDCONC], el hardening consta de procesos, metodologías, productos o combinación de ellos que se usan para incrementar la seguridad del software existente. En este paper también se expone una clasificación de los métodos en que se aplica hardening en la seguridad; de estas clases de hardenings, hay una que abarca el estudio que se realiza en esta sección. Esta es la clase denominada hardening en el entorno operativo, el cual establece mejoras en la seguridad del contexto de ejecución (redes, sistemas operativos, bibliotecas, etc.) que se apoya en el software; son esos cambios que hacen que la explotación de vulnerabilidades sea más difícil, a pesar de que no son un remedio.
+De estas definiciones extraemos que el hardening es la configuración del sistema operativo para reducir las probabilidades de sufrir un ataque.
+Con las pautas que definen al Hardening en Android se pueden generar 3 grupos: una parte que corresponde a las configuraciones aconsejables para defender al sistema, otra dedicada a describir apps que contribuyen a proteger al sistema y una parte dedicada a la concientización del usuario. A la vez, la primer parte se agrupa en las siguientes categorías: seguridad básica, seguridad de autenticación, seguridad en el navegador, seguridad en la red y configuraciones adicionales de seguridad. Estas pautas se basan en la publicación de la Universidad de Texas [HARDTEX] y fueron enriquecidas con aportes.
 
 [ Por cada uno, se debería indicar como se realiza esa configuración ]
 
