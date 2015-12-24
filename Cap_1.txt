@@ -162,9 +162,12 @@ El hecho de identificar las vulnerabilidades contribuye al conocimiento de los p
 [INTRO]
 Las apps que se instalan en los smartphones aprovechan los recursos del equipo (poder de cómputo, memoria y accesorios externos como la cámara o el micrófono) para realizar una tarea. Además, son fáciles de buscar e instalar, gracias a la ayuda de los marketplaces y los sistemas operativos móviles. Pero esta libertad conlleva riesgos, si es que no hay restricciones de seguridad en el smartphone o alguna limitación en la publicación de apps de terceros por parte de los marketplaces.
 
+[]
 Los marketplaces estan reconociendo que los atacantes pueden usar este medio para explotar a los usuarios [APWGREP].
 
-Algunos de los marketplaces oficiales, como el de Android (Google Play), implementaron medidas para limitar el ingreso de malwares [BOUNCER]. Siguiendo con el caso de Android, hay varios marketplaces alternativos a Google Play [MARKAND], y en ellos pueden encontrarse malwares, [CITAAAA]. En ellos se pueden encontrar más malwares que en los oficiales [DROIRAN]. 
+Por lo general, los marketplaces oficiales estan implementando medidas preventivas para reducir la entrada de malwares, dado que son conscientes de que pueden ser atacados. En el caso de Android, con su marketplace oficial llamado "Google Play", se implementaron medidas para limitar el ingreso de malwares [BOUNCER].
+
+Dentro de los canales de distribución de apps de origen desconocido, se encuentran los marketplaces alternativos, los cuales se deben evitar en lo posible para evitar el riesgo de ser infectado con malware. Esto es debido a que, por lo general, en estos marketplaces no se sabe si se aplican medidas de seguridad, y además, la tasa de infección es más alta que en los marketplaces oficiales. Este fenómeno se lo puede apreciar en un estudio realizado a 204040 apps pertenecientes a distintos marketplaces (oficiales o no) [DROIRAN].
 
 [APPLE EXAMPLE]
 Se puede citar otro ejemplo, en Apple Store (el marketplace de Apple) se encontraron 39 apps de iOS infectadas con un malware llamado XcodeGhost [PALOXGH], algunas son muy populares en China, pero también en esta lista hay apps de alcance mundial como la app de mensajería instantánea llamada "WeChat".
@@ -173,13 +176,11 @@ Por lo tanto el usuario individual o la organización debería tener un plan de 
 [WINDOWS PHONE EXAMPLE]
 Se pueden citar antecedentes de marketplaces oficiales que tuvieron problemas con malwares. En Windows Phone Store se encontraron varias apps falsas en más de una oportunidad para cometer fraude, estas apps imitan a algunas que son populares como Facebook Messenger, CNN, BBC y WhatsApp [AVASTMA]. En cuanto a su comportamiento, estas apps maliciosas reunen información básica del usuario y muestra publicidades, en la mayoría de los casos, basadas en la ubicación del usuario; algunas apps intentan llevar al usuario a páginas web que obligan a presentar una solicitud para comprar algo.
 
-Por lo general, los marketplaces oficiales implementan medidas preventivas para reducir la entrada de malwares, dado que son conscientes de que pueden ser atacados. En el caso de Android, 
-
-Pero en el caso de los marketplaces alternativos, por lo general no se sabe si aplican medidas y la tasa de infección es más alta que en los marketplaces oficiales, por ejemplo ésto se lo puede apreciar en un estudio realizado a 204040 apps pertenecientes a distintos marketplaces [DROIRAN].
-Dentro de los canales de distribución de apps de origen desconocido, se encuentran los marketplaces alternativos, los cuales se deben evitar en lo posible para evitar el riesgo de ser infectado con malware.
+[ALTERNATIVE MARKETPLACE EXAMPLE]
+[ http://www.necoma-project.eu/m/filer_public/03/45/0345033b-245e-4063-bcc9-127f33823248/martina_andradar.pdf ]
 
 Google automatically scans all of the apps used in its own store for suspicious content. Such analysis often does not take place in alternative app stores. Many third-party providers are very imprecise, or do not even bother, when it comes to checking whether applications are infected with malware. To be able to use an alternative app market place, users must allow the installation of applications from sources other than the Play store in the Android device's settings. This disables the central protective function for Android and enables malware to find its way onto the mobile device. Malware authors are then able to lure Android users into their trap. Frequently, cheap versions of apps that are actually expensive, or apparently important system updates are used to try to induce smartphone owners to disable the protective function on their device. Users who still want to use a third-party provider's store should look into its trustworthiness beforehand.
-
+[ Fuente: https://www.gdata.nl/fileadmin/user_upload/Presse/Netherlands/Whitepaper_MMWR_EN_02-2014.pdf - página 6 ]
 
 [BACKUP]
 Dentro de los canales de distribución de apps de origen desconocido, se encuentran los marketplaces alternativos, los cuales se deben evitar en lo posible para evitar el riesgo de ser infectado con malware. Los marketplaces, en general, reconocen que los atacantes son capaces de explotar a los usuarios usando este canal de distribución tan recurrido por los usuarios [APWGREP]. Por ejemplo, en Android hay varios marketplaces alternativos a Google Play [MARKAND]. En ellos se pueden encontrar más malwares que en los oficiales [DROIRAN]. Se puede citar otro ejemplo, en Apple Store (el marketplace de Apple) se encontraron 39 apps de iOS infectadas con un malware llamado XcodeGhost [PALOXGH], algunas son muy populares en China, pero también en esta lista hay apps de alcance mundial como la app de mensajería instantánea WeChat.
