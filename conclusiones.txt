@@ -41,8 +41,10 @@ Tema SMARTPHONES
 - Android llevó al mercado global algunos proyectos de software libre (algunos estaban abandonados) que estaban contenidos en una comunidad de desarrolladores limitada, por ejemplo se puede mencionar los proyectos "Apache Harmony" y "OpenBinder". Reune proyectos que fueron usados en el entorno de las PCs y se los transportó a la plataforma móvil.
 - A grandes rasgos, los avances en la tecnología y los cambios en el comportamiento del consumidor son algunos de los factores que estan cambiando la industria de los smartphones.
 
+[RECIENTES]
 - El usuario debe ser más consciente del poder que ofrecen las prestaciones de un smartphone.
 - Los smartphones son grandes protagonistas en esta época. Pero no son los únicos, estan e iran apareciendo otros dispositivos, como los wearables devices; también se están redefiniendo algunos electrodomésticos, como las heladeras inteligentes que soportan Android. Estos factores propician el concepto de Internet de las Cosas.
+- Implantar medidas de seguridad también significa organización, ordenación para simplificar y mantener prudencia en los actos del usuario. Por ejemplo, los smartphones "dual-sim" pueden funcionar para separar los asuntos del trabajo y los de la vida personal, de esta forma si se presenta una llamada desconocida se puede ver de qué tarjeta SIM proviene y así obtener una idea de lo que esa llamada significa.
 
 Tema SEGURIDAD
 

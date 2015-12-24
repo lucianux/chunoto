@@ -19,6 +19,7 @@ Bibliografía
 [MAPRIOT] "Internet of Things", https://www.mapr.com/solutions/enterprise/internet-of-things
 [GARTIOE] "The Internet of Things and the Enterprise", http://www.gartner.com/smarterwithgartner/the-internet-of-things-and-the-enterprise/
 [MCCSTAT] Saeid Abolfazli, Zohreh Sanaeia, Mohammad Hadi Sanaeia, Mohammad Shojafarb, Abdullah Gania, "Mobile Cloud Computing: The state-of-the-art, challenges, and future research", Septiembre, 2011.
+[IOTPAPE] Chandrakanth, Venkatesh, Mahesh, Naganjaneyulu, "Internet of Things", Octubre, 2014.
 [GARTTRE] "Gartner Identifies the Top 10 Strategic Technology Trends for 2015", http://www.gartner.com/newsroom/id/2867917
 [WIREDSM] "In Less Than Two Years, a Smartphone Could Be Your Only Computer", http://www.wired.com/2015/02/smartphone-only-computer/
 [GARTPRE] "Gartner Says By 2018, More Than 50 Percent of Users Will Use a Tablet or Smartphone First for All Online Activities", http://www.gartner.com/newsroom/id/2939217
@@ -35,6 +36,7 @@ Bibliografía
 [APWGREP] Jart Armin, "Mobile Threats and the Underground Marketplace", APWG, 2013.
 [DROIRAN] Yajin Zhou, Zhi Wang, Wu Zhou, Xuxian Jiang, "Hey, You, Get Off of My Market: Detecting Malicious Apps in Official and Alternative Android Markets", 2012.
 [PALOXGH] "Malware XcodeGhost Infects 39 iOS Apps, Including WeChat, Affecting Hundreds of Millions of Users", http://researchcenter.paloaltonetworks.com/2015/09/malware-xcodeghost-infects-39-ios-apps-including-wechat-affecting-hundreds-of-millions-of-users/
+[AVASTMA] "Has the Windows Phone Store become a new target for hackers?", https://blog.avast.com/2015/10/06/has-the-windows-phone-store-become-a-new-target-for-hackers/
 [ZIMPSTA] "Experts Found a Unicorn in the Heart of Android", https://blog.zimperium.com/experts-found-a-unicorn-in-the-heart-of-android/
 [TIMESOC] "Teenagers unaware of social media privacy risks: Study", http://timesofindia.indiatimes.com/tech/social/Teenagers-unaware-of-social-media-privacy-risks-Study/articleshow/46609324.cms
 [COMPNUD] "Nude celebrity pictures posted online after alleged iCloud hack", http://www.computerweekly.com/news/2240227886/Nude-celebrity-pics-posted-online-after-alleged-iCloud-hack
@@ -181,6 +183,7 @@ Bibliografía
 [GARTIOT] [http://www.gartner.com/it-glossary/internet-of-things/]
 [CISCIOT] [http://www.cisco.com/web/solutions/trends/iot/overview.html]
 [DNAIIOT] [http://www.dnaindia.com/scitech/report-smartphones-and-their-place-in-the-internet-of-things-data-transfer-safety-2089285]
+[IOTPAPE] [https://www.researchgate.net/profile/Janni_Uma_mahesh/publication/269400955_INTERNET_OF_THINGS/links/5489b63c0cf2d1800d7a9f1e.pdf]
 [INFOWEE] [http://www.informationweek.com/mobile/mobile-devices/apps-to-unite-smartphones-iot/d/d-id/1320222]
 [MAPRIOT] [https://www.mapr.com/solutions/enterprise/internet-of-things]
 [GARTIOE] [http://www.gartner.com/smarterwithgartner/the-internet-of-things-and-the-enterprise/]
