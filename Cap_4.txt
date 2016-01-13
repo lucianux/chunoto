@@ -4,7 +4,7 @@ Pruebas en Android
 
 4.1 Objetivo
 
-El objetivo general del capítulo es explorar distintas pruebas prácticas que explotan vulnerabilidades, y así demostrar que existen riesgos en esta plataforma.
+El objetivo general del capítulo es explorar distintas pruebas prácticas que explotan vulnerabilidades para demostrar que existen riesgos en Android.
 Para cada prueba, se explica como se usan las herramientas, dando así una prueba de concepto (PoC). Una prueba de concepto (POC) es una demostración que tiene como objetivo verificar que ciertos conceptos o teorías son posibles aplicarlos en el mundo real para determinar su viabilidad [PROOFCO]. Se expone una gama de explotaciones de vulnerabilidades en dispositivos móviles, no sólo aquellas que afectan a Android exclusivamente, sino a otras plataformas, debido a que se va a tratar de dar un panorama amplio.
 
 4.2 Esquema general
@@ -20,10 +20,10 @@ A continuación, se enumerarán brevemente las pruebas principales.
 
 4.3 Medidas previas, entorno de trabajo y dispositivos.
 
-Se ha reunido un conjunto heterogeneo de pruebas, las cuales se ejecutan con la ayuda de herramientas.
-Antes de ejecutar las pruebas, es aconsejable tomar recaudos para no perder datos en el smartphone a utilizar. Se realiza una copia de resguardo (backup) de los archivos alojados en la tarjeta SD a otro medio, también es aconsejable copiar los contactos del celular a la tarjeta SIM (como una forma de respaldar los contactos).
-En cuanto al entorno, se utiliza el sistema operativo Kali Linux, dado que éste facilita algunas herramientas. Kali Linux es un Sistema Operativo que tiene como objetivo facilitar las auditorías y pruebas inherentes a la seguridad informática en general. Kali Linux trae preinstalados más de 600 programas incluyendo Nmap (un escáner de puertos), Wireshark (un sniffer), John the Ripper (Un crackeador de passwords) y la suite Aircrack-ng (Software para pruebas de seguridad en redes inalámbricas). Se usó esta herramienta con la idea de facilitar las pruebas y tener a disposición un entorno cómodo para las mismas, dado que no sé usó Kali Linux de forma amplia. Es un Sistema que trae herramientas que están documentadas, la mayoría son inherentes al software libre.
-Para la ejecución de las pruebas se utilizan 3 dispositiuvos: Motorola Defy+ (con Android 2.3.5), LG G3 (con Android 5.0.2) y Motorola Moto G (con Android 5.0.2).
+Se presentarán distintas pruebas que se realizan con la ayuda de herramientas. Pero antes de ejecutar las pruebas, es aconsejable tomar recaudos para no perder datos en el smartphone a utilizar.
+En cuanto a los datos, se podría realizar una copia de resguardo (backup) de los archivos alojados en la tarjeta SD a otro medio. También se podría copiar los contactos del celular a la tarjeta SIM, como una forma de respaldar los contactos.
+En cuanto al entorno de pruebas, se utiliza el sistema operativo Kali Linux, dado que éste facilita algunas herramientas. Kali Linux es un Sistema Operativo que tiene como objetivo facilitar las auditorías y pruebas inherentes a la seguridad informática en general. Kali Linux tiene preinstalados más de 600 programas incluyendo Nmap (un escáner de puertos), Wireshark (un sniffer), John the Ripper (Un crackeador de passwords) y la suite Aircrack-ng (Software para pruebas de seguridad en redes inalámbricas); es un Sistema que trae herramientas que están documentadas, la mayoría son inherentes al software libre. Se usó este sistema operativo con la idea de facilitar las pruebas y tener a disposición un entorno cómodo para las mismas, dado que no se usó Kali Linux de forma amplia.
+Para la ejecución de las pruebas se utilizan 3 dispositivos: Motorola Defy+ (con Android 2.3.5), LG G3 (con Android 5.0.2) y Motorola Moto G (con Android 5.0.2).
 
 4.4 Realización de las pruebas de concepto
 
@@ -31,8 +31,9 @@ Para la ejecución de las pruebas se utilizan 3 dispositiuvos: Motorola Defy+ (c
 
 4.4.1.1 Introducción
 
-Una "prueba de penetración", o "pentesting" es la práctica de probar un sistema de computadora, red o aplicación web con la finalidad de encontrar vulnerabilidades que un atacante puede explotar [PENTEST].
-Existen varias herramientas en el mercado para realizar este tipo de pruebas en el ámbito profesional, se eligió una que se llama "Metasploit". Ésta cuenta con la colaboración de la comunidad del software libre. Su subproyecto mas conocido se llama Metasploit Framework, el cual es una aplicación para desarrollar y ejecutar exploits contra una máquina remota.
+La definición de pentesting es [PENTEST]:
+	"Una prueba de penetración (también llamado pentesting) es la práctica de probar un sistema de computadora, red o aplicación web para encontrar vulnerabilidades que un atacante puede explotar."
+Existen varias herramientas en el mercado para realizar este tipo de pruebas en el ámbito profesional, se eligió una que se llama "Metasploit". Ésta cuenta con la colaboración de la comunidad del software libre. Su subproyecto mas conocido se llama "Metasploit Framework", el cual es una aplicación para desarrollar y ejecutar exploits contra una máquina remota.
 En esta primer prueba, se tiene acceso a una herramienta profesional para comprobar la seguridad de Android, la prueba es sencilla y nos sirve para iniciar esta serie de pruebas. A grandes rasgos, el camino es el siguiente: el exploit se genera con una serie de comandos, que luego de alguna forma se transmite este instalador del exploit (con ingeniería social, por ejemplo) con la intención de que la víctima lo instale; una vez logrado ésto, el desarrollador del exploit tendrá acceso a cierta información del equipo de forma remota. Cabe aclarar que Kali Linux instala por defecto a Metasploit, con lo cual sólo se comentará acerca su uso, no su instalación.
 
 4.4.1.2 Procedimiento

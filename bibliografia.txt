@@ -120,6 +120,7 @@ Bibliografía
 [WIKPLAY] "Google Play", https://en.wikipedia.org/wiki/Google_Play
 [PLAYREG] "¿Es la primera vez que usas la Consola para programadores de Google Play? Aprende los conceptos básicos.", https://support.google.com/googleplay/android-developer/answer/6112435?hl=es-419
 [PLAYAPP] "Tarifas de transacción", https://support.google.com/googleplay/android-developer/answer/112622?hl=es-419&ref_topic=6075663
+[APPFEES] "Choosing a Membership", https://developer.apple.com/support/compare-memberships/
 [FDROIDM] "F-Droid", https://f-droid.org/repository/browse/
 [ALTPLAY] "Cómo darse de alta como desarrollador Android en Google Play", https://www.yeeply.com/blog/como-darse-de-alta-como-desarrollador-android-en-google-play/
 [APPLEPA] "In-App Purchase for Developers", https://developer.apple.com/in-app-purchase/

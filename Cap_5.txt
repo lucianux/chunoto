@@ -12,7 +12,7 @@ El capítulo se divide en 4 partes:
 - Apps recomendadas para incrementar la seguridad según la aplicación a cubrir (llamadas telefónicas, envíos de sms, etc.).
 - Propuesta de desarrollo de una aplicación: descripción de una app simple que ayude a incrementar la seguridad.
 
-5.3 Reconsideraciones en el Hardening
+5.2 Reconsideraciones en el Hardening
 
 [ Se puede sacar info de acá ]
 [ https://blog.lookout.com/blog/2014/03/24/quick-guide-android-security-settings/ ]
@@ -32,7 +32,7 @@ Con las pautas que definen al Hardening en Android se pueden generar 3 grupos: u
 
 [ Por cada uno, se debería indicar como se realiza esa configuración ]
 
-5.3.1 Seguridad básica
+5.2.1 Seguridad básica
 
 - Concientización del usuario. Se refiere a las actitudes que puede tomar el usuario para contrarrestar los riesgos. Luego, en la sección 5.4, se darán pautas específicas.
 - Mantener actualizado el software.
@@ -50,7 +50,7 @@ Con las pautas que definen al Hardening en Android se pueden generar 3 grupos: u
 - Configuración de las apps para que no intefieran. Se pueden desactivar las notificaciones de las apps. Por la velocidad de las notificaciones, a veces, éstas envían al usuario a lugares que no siempre son del todo seguros. Por ejemplo, pueden llegar notificaciones para aceptar condiciones de las cuales el usuario no siempre es consciente de lo que se está aceptando. Estas notificaciones pueden surgir en cualquier momento y lugar, dado que por lo general el usuario siempre lleva consigo su smartphone. El procedimiento para desactivar las notificaciones de una app es el siguiente: ir al menú general, elegir "Configurar", luego "Aplicaciones", elegir una app específica y destildar el casillero que dice "Mostrar notificaciones".
 - Configuración adecuada de las cuentas de usuario. En Android se pueden tener varios usuarios para separar las preferencias de cada uno, tema que se tocó en el capítulo 3 (sección 3.4.7).
 
-5.3.2 Seguridad de autenticación
+5.2.2 Seguridad de autenticación
 
 - Establecer un PIN o una contraseña para desbloquear el smartphone. En el capítulo 3 (sección 3.4.1) se comentó de este punto.
 - Definir una contraseña alfanumérica para el bloqueo de la pantalla. Luego, en la parte de concientización (sección 5.4) se darán pautas para definir una buena política de contraseñas robusta.
@@ -58,7 +58,7 @@ Con las pautas que definen al Hardening en Android se pueden generar 3 grupos: u
 - Deshabilitar la visualización de la contraseña cuando se la escribe. Esta función muestra la contraseña a medida que se la introduce. Al desactivar esta característica, aumenta la seguridad, al hacer que sea más difícil para las personas cerca del usuario conocer su contraseña mediante la observación del usuario usando el smartphone.
 - Habilitar el borrado de datos total ante una excesiva cantidad de intentos fallidos en el ingresos de la clave. Android no proporciona esta funcionalidad de forma nativa, pero hay aplicaciones de terceros que sí. A partir de los excesivos fracasos en la introducción del código de acceso, se puede deducir que el dispositivo está fuera del control físico del usuario, con lo cual el dispositivo automáticamente borrará todos los datos protegiendo la información confidencial.
 
-5.3.3 Seguridad en el Navegador
+5.2.3 Seguridad en el Navegador
 [ Esto podría ir en la parte que se describen apps, sección "5.5 Software recomendado para mejorar la seguridad de Android" ]
 [ Para más info, ver http://www.phonearena.com/news/5-secure-browsers-for-Android-with-always-on-incognito-mode-and-automatic-user-data-clearing_id63735 ]
 [ O se puede mostrar la configuración de Google Chrome que es el navegador más empleado y popular... Así de simple ]
@@ -70,7 +70,7 @@ Con las pautas que definen al Hardening en Android se pueden generar 3 grupos: u
 - Deshabilitar los plugins del Navegador. Es una característica muy avanzada para ser usada en un smartphone.
 - Deshabilitar la funcionalidad de rastrear la ubicación del smartphone en el Navegador.
 
-5.3.4 Seguridad en la red
+5.2.4 Seguridad en la red
 
 - Apagar Bluetooth cuando no se usa. La desactivación del Bluetooth reduce la posibilidad de sufrir un ataque remoto por parte de smartphones (u otros dispositivos) cercanos, también puede prevenir la conexión involuntaria del smartphone del usuario con servicios y dispositivos Bluetooth desconocidos. La conexión Bluetooth debería ser activada solo cuando se está usando activamente.
 - Deshabilitar las notificaciones de redes públicas. Por defecto, los smartphones con Android automáticamente presentan una lista de redes inalámbricas detectadas desde un ícono en la barra de estado (parte superior de la pantalla), entonces cuando el usuario no tiene redes confiables y conocidas al alcance, salvo alguna red pública. El usuario puede acceder a conectarse a estas redes peligrosas. Son peligrosas porque cualquiera puede asentar un hotspot Wi-Fi como una trampa, con lo cual unirse a una red mal configurada o insegura podría permitir a un usuario malicioso (conectado a esa misma red): interceptar, capturar y alterar todo el tráfico de red enviado por un usuario. Si esta función está desactivada, se debe buscar y seleccionar manualmente una red inalámbrica para poder unirse.
@@ -79,7 +79,7 @@ Con las pautas que definen al Hardening en Android se pueden generar 3 grupos: u
 - [ OPCIONAL ] Se puede configurar algún tipo de firewall. Android no provee esta funcionalidad de forma nativa. Se puede acudir a una app de un tercero [???], como el que se verá dentro de la sección 5.5.
 - [ OPCIONAL ] Deshabilitar las interfase NFC. [???]
 
-5.3.5 Configuraciones adicionales de seguridad
+5.2.5 Configuraciones adicionales de seguridad
 
 - Realizar y programar un sistema de respaldos (backups) frecuente a los archivos y al estado del sistema.
 	- Android trae consigo algunos servicios de backup (fueron vistos en el capítulo 3), se puede acudir a ellos si es que el usuario confía en ellos. Aunque no es recomendable guardar documentos confidenciales o archivos muy personales en estos de servicios basados en la nube.
@@ -109,7 +109,7 @@ Eliminar aplicaciones innecesarias: Ya no hablamos de bloatware (esas apps que v
 [MCMOBSE] [https://www.mcafeemobilesecurity.com/]
 [LOOKOUT] [https://www.lookout.com/es]
 
-5.4 Concientización
+5.3 Concientización
 
 Esta parte expone una serie de sugerencias inherentes los comportamientos y hábitos del usuario.
 
@@ -162,7 +162,7 @@ Esta parte expone una serie de sugerencias inherentes los comportamientos y háb
 [CERTTHR] [https://www.us-cert.gov/sites/default/files/publications/cyber_threats_to_mobile_phones.pdf]
 [USACERT] [http://www.us-cert.gov/ncas/tips/ST04-017]
 
-5.5 Software recomendado para mejorar la seguridad de Android
+5.4 Software recomendado para mejorar la seguridad de Android
 
 En la siguiente sección, se sugieren algunas apps para reforzar la seguridad en base a los aspectos de simplicidad, alcance de usuarios y amigabilidad en la interfase; se intentará realizar pruebas con estas apps para demostrar que se puede mejorar la seguridad con poco esfuerzo, en las actividades corrientes que realizan los usuarios.
 Por un lado, se van a mostrar las siguientes apps: "Signal" y "Send Anywhere". Estas apps pueden realizar las siguientes tareas: envíar mensajes de texto, relizar llamadas telefónicas y enviar archivos entre smartphones; en fin, se realizan transferencias de datos entre smartphones (y otros dispositivos). Sin embargo, tienen un enfoque más seguro.
@@ -171,7 +171,7 @@ Por un lado, se van a mostrar las siguientes apps: "Signal" y "Send Anywhere". E
 [ VER http://www.av-comparatives.org/wp-content/uploads/2015/09/avc_mob_2015_en.pdf ] [ HAY COMPARATIVAS ]
 ( Se podrían realizar pruebas prácticas hechas con estas apps. para mostrar las ventajas, formas de uso y observaciones. Por ahora, solo hay descripciones breves )
 
-5.5.1 Signal
+5.4.1 Signal
 
 [ Wiki: https://github.com/WhisperSystems/Signal-Android/wiki ]
 
@@ -196,7 +196,7 @@ Para comodidad del usuario, se tiene un fácil acceso al comando que borra todos
 Otra de las características de seguridad de Signal es que se puede bloquear la toma de "screenshots" (imágenes instantáneas que capturan lo que se ve en pantalla).
 Para concluir se realiza un balance. La app Signal tiene las ventajas de que es gratis, es "open source" y es fácil de usar. Puede usarse a través de una red WiFi o red de datos del proveedor de la línea del smartphone. Entre las desventajas, se puede mencionar que la persona a la que se llama debe tener obligatoriamente la app Signal instalada. Otra desventaja es que cuando se realiza una llamada, tiene una demora más prolongada que otras apps de mensajería instantánea que soportan llamadas de voz como "WhatsApp". Aún no hay una versión para PC, sólo para Android y iOS.
 
-5.5.2 Send Anywhere
+5.4.2 Send Anywhere
 
 La app "Send Anywhere" permite el intercambio de un grupo de archivos entre smartphones (y otros dispositivos). Tiene algunas características interesantes que a continuación se describirán.
 Es una herramienta directa (tiene una interfase amigable y autoexplicativa), rápida (la velocidad de la transferencia de archivos es rápida) y segura (los archivos no se guardan en la Nube en una transferencia entre 2 dispositivos). Para usar este servicio tampoco se requiere registrarse, ni iniciar sesión (mediante una red social, por ejemplo). Se pueden subir/recibir archivos de varios tipos (imágenes, audio, videos, APKs, contactos y más) y cualquier tamaño, de forma gratuita [LIFEHAC]. Ofrece soporte para los dispositivos móviles (Android, iOS, Windows Phone y Kindle), computadoras de escritorio (Windows, Mac OSX y Linux) y la Web.
@@ -215,7 +215,7 @@ Para obtener estos datos, en algunos casos, se recurrió a usar y probar la app 
 [LIFEHAC] [http://lifehacker.com/send-anywhere-transfers-files-quickly-and-securely-acro-1576763031]
 [SENDANY] [https://send-anywhere.com/web/page/product]
 
-5.6 Posibles políticas para el usuario y la organización
+5.5 Posibles políticas para el usuario y la organización
 
 Se pueden identificar algunos cuidados que se pueden efectuar para resguardar la información personal. El usuario puede realizar una copia de respaldo completa de la información almacenada en su dispositivo o una copia básica (que consta sólo de las fotos almacenadas en la tarjeta de memoria y los contactos guardados en la tarjeta SIM). Una opción para preservar nuestra privacidad es borrar el historial de nuestro browser web, aunque no es información directamente personal. Otra opción es deshabilitar la opción de seguir nuestra ubicación física, esta información puede ser usada por ciertas aplicaciones; los proveedores de telefonía celular saben (y mantienen un registro) donde esta el dispositivo siempre que esté conectado.
 (sugerencias acerca del uso del dispositivo)
@@ -226,7 +226,7 @@ Las redes sociales son un caso particular, dado que entra en juego la responsabi
 
 [FTC3] [Fuente: http://www.consumer.ftc.gov/articles/0272-how-keep-your-personal-information-secure]
 
-5.7 Desarrollo de una aplicación
+5.6 Desarrollo de una aplicación
 
 ( se muestra una aplicación sencilla para mejorar la seguridad, algo se me va a ocurrir )
 
