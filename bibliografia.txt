@@ -164,6 +164,8 @@ Bibliografía
 
 [PROOFCO] "Proof of Concept (POC)", https://www.techopedia.com/definition/4066/proof-of-concept-poc
 [PENTEST] "Pen Test (Penetration Testing) definition", http://searchsoftwarequality.techtarget.com/definition/penetration-testing
+[METAVER] "Metasploit: Penetration Testing Software", http://www.rapid7.com/products/metasploit/editions.jsp
+[METAFRA] "Comparing Editions: Metasploit Framework vs. Metasploit Pro", https://community.rapid7.com/docs/DOC-2281
 
 ::::::::::::::::::: Capítulo 5 :::::::::::::::::::
 
