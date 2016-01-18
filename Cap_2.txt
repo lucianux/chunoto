@@ -124,7 +124,7 @@ Algunas de las características únicas del kernel de Android son: Binder (imple
 2.3.1.1 Binder {RESUMIR}
 
 [INTRO DE IPC] [PEQUEÑA RESEÑA DE IPC]
-Una de las ideas que Android heredó de Linux es que los procesos tienen espacios de direcciones separados, o sea que aprovecha las ventajas de aislar datos entre procesos, evitando el acceso directo de datos entre ellos que puede ser inseguro para el sistema. Sin embargo, existen casos en que se necesita lograr una comunicación entre procesos, se necesita de un mecanismo llamado IPC ("Inter-Process Communication"). Este mecanismo se requiere cuando un proceso quiere ofrecer uno o varios servicios útiles a otros, para ello este mecanismo permite descubrir estos servicios e interactuar con ellos.
+Una de las ideas que Android heredó de Linux es que los procesos tienen espacios de direcciones separados, o sea que aprovecha las ventajas de aislar datos entre procesos, evitando el acceso directo de datos entre ellos que puede ser inseguro para el sistema. Sin embargo, existen casos en que se necesita lograr una comunicación entre procesos, o sea que se necesita un mecanismo llamado IPC ("Inter-Process Communication"). El mismo se precisa cuando un proceso quiere ofrecer uno o varios servicios útiles a otros, para lograrlo este mecanismo permite descubrir estos servicios e interactuar con ellos.
 
 [INTRO DE BINDER]
 Dado que la implementación de IPC que viene con el kernel de Linux original no es eficiente para entornos embebidos, entonces se decidió tomar las bases de un viejo proyecto discontinuado llamado OpenBinder que soporta plataformas móviles (entre otras). No obstante, la implementación fue reescrita y el proyecto pasó a llamarse Binder. [FALTA CITA].

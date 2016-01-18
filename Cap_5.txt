@@ -96,6 +96,12 @@ Con las pautas que definen al Hardening en Android se pueden generar 3 grupos: u
 Eliminar aplicaciones innecesarias: Ya no hablamos de bloatware (esas apps que vienen preinstaladas de dudosa utilidad), si no de aplicaciones que en su día instalamos por una razón u otra y que ya no recordamos ni siquiera su utilidad. Cuantas más tengas, mayor será el riesgo de que alguna sea maliciosa. Mejor elimina aquellas sospechosas.
 [http://www.elandroidelibre.com/2014/12/10-sencillos-consejos-para-mejorar-la-seguridad-de-tu-android.html]
 
+6. Log out of sites after you make a payment.
+If you bank or shop from your smartphone, log out of those sites once your transactions are complete. Other tips include not storing your usernames and passwords on your phone and avoiding transactions while you are on public Wi-Fi.
+8. Avoid giving out personal information.
+That text message that looks to be from your bank may not be. If you get requests via email or text for account information from any business, contact the business directly to confirm the request. The same advice goes for tapping links in unsolicited emails or texts.
+[http://www.verizonwireless.com/mobile-living/network-and-plans/security-app-tips-to-keep-your-smartphone-secure/]
+
 [  - Bibliografía -  ]
 [HARDCONC] [ http://users.encs.concordia.ca/~debbabi/attachments/article/pdf/Security%20Hardening%20of%20Open%20Source%20Software.pdf ] [ Definición de Hardening ]
 [HARDUNIX] [ http://interscience.in/ijcct/IJCCT_Paper7.pdf ] [ Sirve la definición de Hardening ]
