@@ -4,7 +4,7 @@ Medidas de seguridad
 
 5.1 Objetivo
 
-El objetivo general del capítulo es demostrar que existe espacio para trabajar y mejorar la seguridad en los smartphones.
+El objetivo general del capítulo es demostrar que existe espacio para trabajar y mejorar la seguridad en los smartphones, tanto como para los desarrolladores como para los usuarios.
 Se cubren 2 aspectos distintos: por un lado, los usuarios pueden tomar iniciativa para defenderse de las amenazas a partir de un buen uso del dispositivo, siguiendo un criterio; y por otro lado, los desarrolladores pueden aportar con proyectos sencillos para mitigar riesgos.
 El capítulo se divide en 4 partes:
 - Reconsideraciones en el Hardening.
