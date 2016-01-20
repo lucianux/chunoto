@@ -4,8 +4,8 @@ Medidas de seguridad
 
 5.1 Objetivo
 
-El objetivo general del capítulo es demostrar que existe espacio para trabajar y mejorar la seguridad en los smartphones, tanto como para los desarrolladores como para los usuarios.
-Se cubren 2 aspectos distintos: por un lado, los usuarios pueden tomar iniciativa para defenderse de las amenazas a partir de un buen uso del dispositivo, siguiendo un criterio; y por otro lado, los desarrolladores pueden aportar con proyectos sencillos para mitigar riesgos.
+El objetivo general del capítulo es demostrar que existe espacio para trabajar y mejorar la seguridad en los smartphones, tanto para los desarrolladores como para los usuarios.
+Se cubren 2 aspectos distintos: por un lado, los usuarios pueden tomar iniciativa para prevenir caos ante los ataques que producen las amenazas a partir de un buen uso del dispositivo, siguiendo una guía; y por otro lado, los desarrolladores pueden aportar con medidas en sus apps o proyectos sencillos para mitigar riesgos.
 El capítulo se divide en 4 partes:
 - Reconsideraciones en el Hardening.
 - Actitudes concretas que podría tomar el usuario para defenderse ante las amenazas posibles. Se muestran medidas disciplinarias (concientización del usuario).
@@ -23,12 +23,12 @@ El capítulo se divide en 4 partes:
 [ Hay 2 puntos de vista posibles: se tienen las reconsideraciones a nivel usuario (usar apps confiables, usar antivirus, etc.) y las que estan a nivel del desarrollador (crear apps seguras: usar herramientas, frameworks, seguir pautas, etc.). ]
 [ Se pueden considerar 2 niveles: el nivel de un usuario común y el nivel corporativo. ]
 
-Como referencia y para entrar en contexto con el concepto de Hardening, se va a tomar algunas sus definiciones a partir de distintas fuentes:
-El proceso de hardening de un sistema operativo consiste en la eliminación de todas las herramientas, utilidades y otras opciones de administración de sistemas que son innecesarias, que podrían ser utilizadas para facilitar el accionar de un hacker en un sistema operativo. Asimismo, el proceso de hardening asegura que todos los elementos de seguridad apropiados serán activados y configurados correctamente [HARDUNIX].
-Por otro lado, según el paper [HARDUNIX], el proceso de hardening en un sistema operativo es aquel que reduce al mínimo la exposición de una computadora a las amenazas actuales y futuras mediante una completa configuración del sistema operativo y la eliminación de aplicaciones (y dispositivos) innecesarias.
-Según el paper [HARDCONC], el hardening consta de procesos, metodologías, productos o combinación de ellos que se usan para incrementar la seguridad del software existente. En este paper también se expone una clasificación de los métodos en que se aplica hardening en la seguridad; de estas clases de hardenings, hay una que abarca el estudio que se realiza en esta sección. Esta es la clase denominada hardening en el entorno operativo, el cual establece mejoras en la seguridad del contexto de ejecución (redes, sistemas operativos, bibliotecas, etc.) que se apoya en el software; son esos cambios que hacen que la explotación de vulnerabilidades sea más difícil, a pesar de que no son un remedio.
-De estas definiciones extraemos que el hardening es la configuración del sistema operativo para reducir las probabilidades de sufrir un ataque.
-Con las pautas que definen al Hardening en Android se pueden generar 3 grupos: una parte que corresponde a las configuraciones aconsejables para defender al sistema, otra dedicada a describir apps que contribuyen a proteger al sistema y una parte dedicada a la concientización del usuario. A la vez, la primer parte se agrupa en las siguientes categorías: seguridad básica, seguridad de autenticación, seguridad en el navegador, seguridad en la red y configuraciones adicionales de seguridad. Estas pautas se basan en la publicación de la Universidad de Texas [HARDTEX] y fueron enriquecidas con aportes.
+Como referencia y para entrar en contexto con el concepto de Hardening, se va a tomar algunas de sus definiciones a partir de distintas fuentes:
+El proceso de hardening de un sistema operativo consiste en la eliminación de todas las herramientas, utilidades y otras opciones de administración de sistemas que son innecesarias y que podrían ser utilizadas para facilitar el accionar de un hacker en un sistema operativo. Asimismo, el proceso de hardening asegura que todos los elementos de seguridad apropiados serán activados y configurados correctamente [HARDUNIX].
+Por otro lado, según la misma fuente de información [HARDUNIX], el proceso de hardening en un sistema operativo es aquel que reduce al mínimo la exposición de una computadora a las amenazas actuales y futuras mediante una completa configuración del sistema operativo y la eliminación de aplicaciones innecesarias.
+Según el paper [HARDCONC], el hardening consta de procesos, metodologías, productos o combinación de ellos que se usan para incrementar la seguridad del software existente. En este paper también se expone una clasificación de los métodos en que se aplica hardening en la seguridad; de estas clases de hardenings, hay una clase que se relaciona con el estudio que se realiza en esta sección. Esta es la clase denominada hardening en el entorno operativo, la cual establece mejoras en la seguridad del contexto de ejecución (redes, sistemas operativos, bibliotecas, etc.) que se apoya en el software; son esos cambios que hacen que la explotación de vulnerabilidades sea más difícil, a pesar de que no son un remedio.
+De estas definiciones se concluye, a grandes rasgos, que el hardening es el proceso de configuración del sistema operativo para mejorar la seguridad.
+Con las pautas que definen al Hardening en Android se pueden generar 3 grupos: una parte que corresponde a las configuraciones aconsejables para defender al sistema, otra dedicada a describir apps que contribuyen a proteger al sistema y una parte dedicada a la concientización del usuario. A la vez, la primer parte se la divide en las siguientes categorías: seguridad básica, seguridad de autenticación, seguridad en el navegador, seguridad en la red y configuraciones adicionales de seguridad. Estas pautas se basan en la publicación de la Universidad de Texas [HARDTEX] y fueron enriquecidas con aportes.
 
 [ Por cada uno, se debería indicar como se realiza esa configuración ]
 
@@ -170,8 +170,8 @@ Esta parte expone una serie de sugerencias inherentes los comportamientos y háb
 
 5.4 Software recomendado para mejorar la seguridad de Android
 
-En la siguiente sección, se sugieren algunas apps para reforzar la seguridad en base a los aspectos de simplicidad, alcance de usuarios y amigabilidad en la interfase; se intentará realizar pruebas con estas apps para demostrar que se puede mejorar la seguridad con poco esfuerzo, en las actividades corrientes que realizan los usuarios.
-Por un lado, se van a mostrar las siguientes apps: "Signal" y "Send Anywhere". Estas apps pueden realizar las siguientes tareas: envíar mensajes de texto, relizar llamadas telefónicas y enviar archivos entre smartphones; en fin, se realizan transferencias de datos entre smartphones (y otros dispositivos). Sin embargo, tienen un enfoque más seguro.
+En la siguiente sección, se sugieren algunas apps para reforzar la seguridad en base a cualidades como simplicidad y claridad de la interfase; {se intentará realizar pruebas con estas apps para demostrar que se puede mejorar la seguridad con poco esfuerzo, en las actividades corrientes que realizan los usuarios.}
+Por un lado, se van a mostrar las siguientes apps: "Signal" y "Send Anywhere", que pueden realizar funciones corrientes como: envíar mensajes de texto, realizar llamadas telefónicas y enviar archivos entre smartphones; o sea que estas apps básicamente realizan transferencias de datos entre smartphones (u otros dispositivos móviles), sin embargo usan un enfoque más seguro.
 [ No me voy a meter con la implementación ]
 
 [ VER http://www.av-comparatives.org/wp-content/uploads/2015/09/avc_mob_2015_en.pdf ] [ HAY COMPARATIVAS ]
@@ -182,9 +182,9 @@ Por un lado, se van a mostrar las siguientes apps: "Signal" y "Send Anywhere". E
 [ Wiki: https://github.com/WhisperSystems/Signal-Android/wiki ]
 
 [ Función / Qué es? / Características ]
-Signal es una app que permite realizar llamadas de voz y envíar mensajes de texto de forma segura, sin que otra persona pueda escuchar o leer la información que se transmite entre 2 o más smartphones (y otros dispositivos) a través de una red de datos (WiFi, 3G, 4G), opcionalmente también puede enviar mensajes SMS / MMS. Todos los mensajes guardados en el smartphone estan encriptados, esta encriptación incluye a los cuerpos de los mensajes, pero otras partes del mensaje no están encriptadas, como la información del destino.
+Signal es una app que permite realizar llamadas de voz y envíar mensajes de texto de forma segura, sin que otra persona pueda escuchar o leer la información que se transmita entre 2 o más smartphones (u otros dispositivos móviles) a través de una red de datos (WiFi, 3G, 4G), opcionalmente también puede enviar mensajes SMS / MMS. Todos los mensajes guardados en el smartphone estan encriptados, esta encriptación incluye a los cuerpos de los mensajes, pero otras partes del mensaje no están encriptadas, como la información del destino.
 
-[Qué tipo de seguridad ofrece?]
+[ Qué tipo de seguridad ofrece? ]
 A continuación se comentará acerca de algunas de las medidas de seguridad que proporciona esta app.
 
 [ Explicar como se usan 2 o 3 características ]
@@ -234,8 +234,16 @@ Las redes sociales son un caso particular, dado que entra en juego la responsabi
 
 5.6 Desarrollo de una aplicación
 
-( se muestra una aplicación sencilla para mejorar la seguridad, algo se me va a ocurrir )
+( se muestra una aplicación sencilla para mejorar la seguridad, con 3 contribuciones sencillas (visibles o no en la pantalla), funciones que vienen incorporadas en la API de Android, algo se me va a ocurrir... )
 
+- Marcar el PIN antes de avanzar con la siguiente pantalla!
+	[http://developer.android.com/intl/es/samples/ConfirmCredential/project.html]
+- (empty)
+	[http://developer.android.com/intl/es/training/articles/keystore.html] (candidato)
+- (empty)
+	[http://developer.android.com/intl/es/training/articles/security-ssl.html]
+- ver:
+	http://developer.android.com/intl/es/training/articles/security-tips.html
 - SMS-based Two-Factor Authentication (2FA) by intercepting text messages containing One-Time Passwords (OTPs).
 - Fake GPS.
 - Encriptación de archivos.
