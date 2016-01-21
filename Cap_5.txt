@@ -4,13 +4,13 @@ Medidas de seguridad
 
 5.1 Objetivo
 
-El objetivo general del capítulo es demostrar que existe espacio para trabajar y mejorar la seguridad en los smartphones, tanto para los desarrolladores como para los usuarios.
-Se cubren 2 aspectos distintos: por un lado, los usuarios pueden tomar iniciativa para prevenir caos ante los ataques que producen las amenazas a partir de un buen uso del dispositivo, siguiendo una guía; y por otro lado, los desarrolladores pueden aportar con medidas en sus apps o proyectos sencillos para mitigar riesgos.
+El objetivo general del capítulo es demostrar que los usuarios y los desarrolladores tienen espacio para trabajar y mejorar la seguridad en los smartphones.
+Se cubren 2 ámbitos distintos: por un lado, los usuarios pueden tomar iniciativa para prevenir caos ante los ataques que producen las amenazas siguiendo una guía; y por otro lado, los desarrolladores pueden aportar con medidas sencillas aplicadas a sus apps para mitigar riesgos.
 El capítulo se divide en 4 partes:
 - Reconsideraciones en el Hardening.
-- Actitudes concretas que podría tomar el usuario para defenderse ante las amenazas posibles. Se muestran medidas disciplinarias (concientización del usuario).
-- Apps recomendadas para incrementar la seguridad según la aplicación a cubrir (llamadas telefónicas, envíos de sms, etc.).
-- Propuesta de desarrollo de una aplicación: descripción de una app simple que ayude a incrementar la seguridad.
+- Concientización del usuario.
+- Software recomendado.
+- Medidas en el desarrollo de una app.
 
 5.2 Reconsideraciones en el Hardening
 
@@ -20,13 +20,13 @@ El capítulo se divide en 4 partes:
 [ https://developer.android.com/intl/es/training/articles/security-tips.html ]
 [ Se puede sacar un poco de info del hardening en Organizaciones, acá ( abajo donde dice "Guidance to Concerned Parties" ) ]
 [ http://www.isightpartners.com/2015/03/android-phishing-malware-an-old-school-technique-going-mobile/ ]
-[ Hay 2 puntos de vista posibles: se tienen las reconsideraciones a nivel usuario (usar apps confiables, usar antivirus, etc.) y las que estan a nivel del desarrollador (crear apps seguras: usar herramientas, frameworks, seguir pautas, etc.). ]
+[ Hay 2 puntos de vista posibles: se tienen las reconsideraciones a nivel de usuario (usar apps confiables, usar antivirus, etc.) y las que estan a nivel del desarrollador (crear apps seguras: usar herramientas, frameworks, seguir pautas, etc.). ]
 [ Se pueden considerar 2 niveles: el nivel de un usuario común y el nivel corporativo. ]
 
 Como referencia y para entrar en contexto con el concepto de Hardening, se va a tomar algunas de sus definiciones a partir de distintas fuentes:
-El proceso de hardening de un sistema operativo consiste en la eliminación de todas las herramientas, utilidades y otras opciones de administración de sistemas que son innecesarias y que podrían ser utilizadas para facilitar el accionar de un hacker en un sistema operativo. Asimismo, el proceso de hardening asegura que todos los elementos de seguridad apropiados serán activados y configurados correctamente [HARDUNIX].
-Por otro lado, según la misma fuente de información [HARDUNIX], el proceso de hardening en un sistema operativo es aquel que reduce al mínimo la exposición de una computadora a las amenazas actuales y futuras mediante una completa configuración del sistema operativo y la eliminación de aplicaciones innecesarias.
-Según el paper [HARDCONC], el hardening consta de procesos, metodologías, productos o combinación de ellos que se usan para incrementar la seguridad del software existente. En este paper también se expone una clasificación de los métodos en que se aplica hardening en la seguridad; de estas clases de hardenings, hay una clase que se relaciona con el estudio que se realiza en esta sección. Esta es la clase denominada hardening en el entorno operativo, la cual establece mejoras en la seguridad del contexto de ejecución (redes, sistemas operativos, bibliotecas, etc.) que se apoya en el software; son esos cambios que hacen que la explotación de vulnerabilidades sea más difícil, a pesar de que no son un remedio.
+El proceso de hardening de un sistema operativo consiste en la eliminación de todas las herramientas, utilidades y otras opciones de administración de sistemas que son innecesarias y que podrían ser utilizadas para facilitar el accionar de un hacker en un sistema operativo. Asimismo, el proceso de hardening asegura que todos los elementos de seguridad apropiados serán activados y configurados correctamente [HARUNIX].
+Por otro lado, según la misma fuente de información [HARUNIX], el proceso de hardening en un sistema operativo es aquel que reduce al mínimo la exposición de una computadora a las amenazas actuales y futuras mediante una completa configuración del sistema operativo y la eliminación de aplicaciones innecesarias.
+Según el paper [HARCONC], el hardening consta de procesos, metodologías, productos o combinación de ellos que se usan para incrementar la seguridad del software existente. En este paper también se expone una clasificación de los métodos en que se aplica hardening en la seguridad; de estas clases de hardenings, hay una clase que se relaciona con el estudio que se realiza en esta sección. Esta es la clase denominada hardening en el entorno operativo, la cual establece mejoras en la seguridad del contexto de ejecución (redes, sistemas operativos, bibliotecas, etc.) que se apoya en el software; son esos cambios que hacen que la explotación de vulnerabilidades sea más difícil, a pesar de que no son un remedio.
 De estas definiciones se concluye, a grandes rasgos, que el hardening es el proceso de configuración del sistema operativo para mejorar la seguridad.
 Con las pautas que definen al Hardening en Android se pueden generar 3 grupos: una parte que corresponde a las configuraciones aconsejables para defender al sistema, otra dedicada a describir apps que contribuyen a proteger al sistema y una parte dedicada a la concientización del usuario. A la vez, la primer parte se la divide en las siguientes categorías: seguridad básica, seguridad de autenticación, seguridad en el navegador, seguridad en la red y configuraciones adicionales de seguridad. Estas pautas se basan en la publicación de la Universidad de Texas [HARDTEX] y fueron enriquecidas con aportes.
 
@@ -103,8 +103,8 @@ That text message that looks to be from your bank may not be. If you get request
 [http://www.verizonwireless.com/mobile-living/network-and-plans/security-app-tips-to-keep-your-smartphone-secure/]
 
 [  - Bibliografía -  ]
-[HARDCONC] [ http://users.encs.concordia.ca/~debbabi/attachments/article/pdf/Security%20Hardening%20of%20Open%20Source%20Software.pdf ] [ Definición de Hardening ]
-[HARDUNIX] [ http://interscience.in/ijcct/IJCCT_Paper7.pdf ] [ Sirve la definición de Hardening ]
+[HARCONC] [ http://users.encs.concordia.ca/~debbabi/attachments/article/pdf/Security%20Hardening%20of%20Open%20Source%20Software.pdf ] [ Definición de Hardening ]
+[HARUNIX] [ http://interscience.in/ijcct/IJCCT_Paper7.pdf ] [ Sirve la definición de Hardening ]
 [ https://wikis.utexas.edu/display/ISO/Google+Android+Hardening+Checklist ] [ Hardening en Android ] 
 [ http://www.slideshare.net/anupriti/android-device-hardening ] [ Hardening en Android - Slides ]
 [ http://www.cisco.com/web/about/security/intelligence/Linux_Hardening_Recommendations.pdf ]
@@ -115,9 +115,9 @@ That text message that looks to be from your bank may not be. If you get request
 [MCMOBSE] [https://www.mcafeemobilesecurity.com/]
 [LOOKOUT] [https://www.lookout.com/es]
 
-5.3 Concientización
+5.3 Concientización del usuario
 
-Esta parte expone una serie de sugerencias inherentes los comportamientos y hábitos del usuario.
+En esta sección se expone una serie de sugerencias para un usuario o medidas disciplinarias para una organización, relativos a los comportamientos, actitudes y hábitos que podría tomar para defenderse ante las amenazas posibles.
 
 - Cuando se está por instalar una nueva app, tomar conciencia de los permisos que se le van a conceder. [ Dar consejos acá! ]
 	- [ La lista de los permisos más importantes está en el capítulo 3 ] [ No esta hecha aún ]
@@ -170,7 +170,7 @@ Esta parte expone una serie de sugerencias inherentes los comportamientos y háb
 
 5.4 Software recomendado para mejorar la seguridad de Android
 
-En la siguiente sección, se sugieren algunas apps para reforzar la seguridad en base a cualidades como simplicidad y claridad de la interfase; {se intentará realizar pruebas con estas apps para demostrar que se puede mejorar la seguridad con poco esfuerzo, en las actividades corrientes que realizan los usuarios.}
+En la siguiente sección, se sugieren algunas apps para reforzar la seguridad. La elección de apps se basa en cualidades como simplicidad y claridad de la interfase. {se intentará realizar pruebas con estas apps para demostrar que se puede mejorar la seguridad con poco esfuerzo, en las actividades corrientes que realizan los usuarios.}
 Por un lado, se van a mostrar las siguientes apps: "Signal" y "Send Anywhere", que pueden realizar funciones corrientes como: envíar mensajes de texto, realizar llamadas telefónicas y enviar archivos entre smartphones; o sea que estas apps básicamente realizan transferencias de datos entre smartphones (u otros dispositivos móviles), sin embargo usan un enfoque más seguro.
 [ No me voy a meter con la implementación ]
 
@@ -221,18 +221,9 @@ Para obtener estos datos, en algunos casos, se recurrió a usar y probar la app 
 [LIFEHAC] [http://lifehacker.com/send-anywhere-transfers-files-quickly-and-securely-acro-1576763031]
 [SENDANY] [https://send-anywhere.com/web/page/product]
 
-5.5 Posibles políticas para el usuario y la organización
+5.5 Medidas en el desarrollo de una app.
 
-Se pueden identificar algunos cuidados que se pueden efectuar para resguardar la información personal. El usuario puede realizar una copia de respaldo completa de la información almacenada en su dispositivo o una copia básica (que consta sólo de las fotos almacenadas en la tarjeta de memoria y los contactos guardados en la tarjeta SIM). Una opción para preservar nuestra privacidad es borrar el historial de nuestro browser web, aunque no es información directamente personal. Otra opción es deshabilitar la opción de seguir nuestra ubicación física, esta información puede ser usada por ciertas aplicaciones; los proveedores de telefonía celular saben (y mantienen un registro) donde esta el dispositivo siempre que esté conectado.
-(sugerencias acerca del uso del dispositivo)
-
-Cuando el dispositivo es robado o perdido, se pueden tomar ciertas medidas para entorpecer el acceso a los datos privados. Es una medida de rutina proteger el dispositivo con un código de acceso para bloquear la entrada a la pantalla principal, es una manera fácil de evitar el acceso no autorizado al dispositivo. Muchas empresas proveen servicios para seguir el rastro del dispositivo perdido y se le otorgará la opción de bloquear o destruir de forma remota los datos de un teléfono perdido o robado. Dadas las aptitudes de los dispositivos móviles cada vez mas parecidas a las de las computadoras de escritorio, se pueden aplicar las medidas generales que se toman en ellas para proteger la identidad en estos dispositivos móviles [FTC3]. Un caso posible podría ser cuando el usuario realiza transacciones en línea, es muy aconsejable usar software de encriptación que codifica la información que se vá a enviar a internet; cuando en el browser web aparece un "ícono de candado" en la barra de direcciones quiere decir que la información va a ser transmitida de forma segura, es recomendable percatarse de que ese símbolo esté presente antes de enviar información personal o financiera.
-
-Las redes sociales son un caso particular, dado que entra en juego la responsabilidad del usuario. Cuando un usuario publica mucha información acerca de uno mismo, un ladrón de identidad puede encontrar información acerca de la vida del usuario, que puede ser empleada para responder las preguntas secretas para recuperar la contraseña, lo que le podría dar acceso a las cuentas bancarias e información personal. Nunca se debería publicar datos como nombre completo, número de la obra social, dirección personal, número de teléfono o números de cuenta en la cuenta de la red social. La conciencia del usuario es vital para restringir el acceso a la información de su perfil de usuario en una determinada red social.
-
-[FTC3] [Fuente: http://www.consumer.ftc.gov/articles/0272-how-keep-your-personal-information-secure]
-
-5.6 Desarrollo de una aplicación
+Descripción de una app simple que ayuda a incrementar la seguridad.
 
 ( se muestra una aplicación sencilla para mejorar la seguridad, con 3 contribuciones sencillas (visibles o no en la pantalla), funciones que vienen incorporadas en la API de Android, algo se me va a ocurrir... )
 
@@ -243,7 +234,18 @@ Las redes sociales son un caso particular, dado que entra en juego la responsabi
 - (empty)
 	[http://developer.android.com/intl/es/training/articles/security-ssl.html]
 - ver:
-	http://developer.android.com/intl/es/training/articles/security-tips.html
+	[http://developer.android.com/intl/es/training/articles/security-tips.html]
+
+Tips de seguridad en el desarrollo de software
+
+[ Para compartir datos se debe ... ]
+* You should generally avoid using the MODE_WORLD_WRITEABLE or MODE_WORLD_READABLE modes for IPC files because they do not provide the ability to limit data access to particular applications, nor do they provide any control on data format.  If you want to share your data with other app processes, you might instead consider using a content provider, which offers read and write permissions to other apps and can make dynamic permission grants on a case-by-case basis.
+Files created on external storage, such as SD Cards, are globally readable and writable. Because external storage can be removed by the user and also modified by any application, you should not store sensitive information using external storage.
+Usar la SD Card con cuidado, dado que su acceso global.
+Para compartir información es bueno usar ContentProviders.
+
+* (varias cosas más ... :) )
+
 - SMS-based Two-Factor Authentication (2FA) by intercepting text messages containing One-Time Passwords (OTPs).
 - Fake GPS.
 - Encriptación de archivos.
@@ -256,6 +258,43 @@ o
 [ http://research.ijcaonline.org/volume122/number17/pxc3905166.pdf ] [ Malware Detection Techniques in Android ]
 [ http://research.ijcaonline.org/volume120/number5/pxc3903942.pdf ] [ Malicious Applications Detection by Analyzing Manifest Files ]
 [ http://research.ijcaonline.org/volume117/number8/pxc3902985.pdf ] [ Droid Guard: An Approach to Make Android Secure ]
+
+5.6 Plantilla de recomendaciones
+
+En esta sección se juntan sugerencias en materia de seguridad para prevenir efectos negativos de ataques hechos al smartphone.
+
+(escribir 10 puntos básicos)
+(ser específico para la plataforma Android)
+
+- Analizar los permisos [ ya está escrito más arriba, en los consejos ]
+Entender los tipos de permisos que se otorgan y prestar atención de los permisos que se autorizan con la instalación de apps nuevas. Comprobar que éstos sean coherentes con el propósito de la app. En las actualizaciones puede suceder que la app pida los mismos permisos que pedía originalmente o pida permisos adicionales, en este último caso se listan los permisos extras.
+Ej.: si se descarga un juego nuevo, se espera que solicite acceso al sistema de archivos. Sin embargo, si también solicita acceso a los mensajes de texto o a la cámara de fotos, entonces la app podría ser considerada sospechosa, dado que podría llegar a realizar otras actividades extrañas; ha no ser que se confíe en la empresa creadora de la aplicación. Existen muchos ejemplos, como apps que funcionan como calculadoras que exigen el acceso a la red. Por otro lado, la popularidad de la app puede engañar al usuario, dado que la cantidad de descargas de una app puede hacer pensar que la app es segura, un ejemplo de este fenómeno es la app de Facebook que en sus actualizaciones ha pedido más permisos.
+
+- Evitar el Wi-Fi gratuito.
+Las redes Wi-Fi gratuitas, públicas y abiertas pueden ofrecer a un smartphone una conexión a Internet sin ningún costo. No obstante, estas conexiones inseguras pueden ser despreciables para mantener la privacidad de la información confidencial contenida en el smartphone víctima. Para un hacker, es mucho más sencillo conectarse a esta clase de redes Wi-Fi y, una vez que ambos estén en la misma red, el hacker puede captar fácilmente casi toda la información que la víctima envíe a través de Internet. Es más seguro utilizar conexiones Wi-Fi seguras o, en lo posible, usar una conexión a Internet del proveedor de telefonía móvil reemplazando a las conexiones Wi-Fi.
+
+- Establecer un PIN para la tarjeta SIM.
+Cuando se usa una tarjeta SIM por primera vez, por lo general, viene con un código de PIN por defecto, del estilo "1234"; este código se lo debe redefinir manualmente, normalmente suele ser de 4 dígitos, debería cumplir las típicas normas de contraseñas: que no sea la fecha de nacimiento del usuario o el año en que nació, que no sea otra vez "1234", entre otras. Establecer un PIN para el SIM es importante, dado que evita que un usuario que desconoce el PIN (probablemente, un intruso) haga llamadas telefónicas sin autorización, básicamente; aunque se podría llegar a realizar una llamada de emergencia. Otra característica de este PIN es que solo se tienen 3 intentos en el ingreso del código PIN. Si se agotan estos intentos, pedirá el código "PUK", una contraseña más larga y formada por números, ésta es definida por el fabricante del SIM la provee el proveedor de telefonía móvil; generalmente, se encuentra junto con el envoltorio o si se descarta el mismo, también se lo puede pedir llamando al proveedor de telefonía móvil. En la última instancia, ya cuando se excede en el número máximo de intentos de PUK, la tarjeta SIM quedará bloqueada permanentemente y se tendrá que conseguir una nueva tarjeta SIM [WINPHON].
+[WINPHON] [http://www.windowsphone.com/es-es/how-to/wp7/basics/use-a-pin-to-lock-my-sim-card]
+
+{ Podrían ir fotos de las tarjetas SIM con sus envoltorios }
+
+- Si el usuario decide rootear su smartphone, se debe tener en cuenta que si una app malévola obtiene estos permisos de root, puede llegar a ser muy peligroso, ya que esta app tiene todos los permisos para realizar cualquier actividad. Por eso, el usuario que emplee un smartphone rooteado debe ser muy cuidadoso con las aplicaciones que instale y sus permisos. Una de las mejores apps que administran los permisos de root son SuperSu o Superuser.
+
+- En el acceso a la bandeja de entrada de la casilla de mails, desde el smarthpone, el usuario debe tener cuidado cuando llegan mails con enlaces, se debe comprobar a qué página lo lleva, se puede tratar de una estafa. Estas amenazas no se limitan al correo electrónico, también un sms de texto o mensaje por whatsapp puede incitar a que el usuario haga clic en un enlace supuestamente fiable para solicitar información personal. Es cuestión de que el usuario esté alerta de lo que recibe y sea conciente de la acción que toma.
+
+- Elegir una solución de seguridad para smartphones con características antirrobo. Existen varios productos en el mercado que incluyen una amplia gama de características antirrobo, ofreciendo acceso remoto al smartphone perdido o robado, para que pueda bloquearlo, borrarle los datos y encontrar su ubicación.
+
+5.7 Posibles políticas para el usuario y la organización
+
+Se pueden identificar algunos cuidados que se pueden efectuar para resguardar la información personal. El usuario puede realizar una copia de respaldo completa de la información almacenada en su dispositivo o una copia básica (que consta sólo de las fotos almacenadas en la tarjeta de memoria y los contactos guardados en la tarjeta SIM). Una opción para preservar nuestra privacidad es borrar el historial de nuestro browser web, aunque no es información directamente personal. Otra opción es deshabilitar la opción de seguir nuestra ubicación física, esta información puede ser usada por ciertas aplicaciones; los proveedores de telefonía celular saben (y mantienen un registro) donde esta el dispositivo siempre que esté conectado.
+(sugerencias acerca del uso del dispositivo)
+
+Cuando el dispositivo es robado o perdido, se pueden tomar ciertas medidas para entorpecer el acceso a los datos privados. Es una medida de rutina proteger el dispositivo con un código de acceso para bloquear la entrada a la pantalla principal, es una manera fácil de evitar el acceso no autorizado al dispositivo. Muchas empresas proveen servicios para seguir el rastro del dispositivo perdido y se le otorgará la opción de bloquear o destruir de forma remota los datos de un teléfono perdido o robado. Dadas las aptitudes de los dispositivos móviles cada vez mas parecidas a las de las computadoras de escritorio, se pueden aplicar las medidas generales que se toman en ellas para proteger la identidad en estos dispositivos móviles [FTC3]. Un caso posible podría ser cuando el usuario realiza transacciones en línea, es muy aconsejable usar software de encriptación que codifica la información que se vá a enviar a internet; cuando en el browser web aparece un "ícono de candado" en la barra de direcciones quiere decir que la información va a ser transmitida de forma segura, es recomendable percatarse de que ese símbolo esté presente antes de enviar información personal o financiera.
+
+Las redes sociales son un caso particular, dado que entra en juego la responsabilidad del usuario. Cuando un usuario publica mucha información acerca de uno mismo, un ladrón de identidad puede encontrar información acerca de la vida del usuario, que puede ser empleada para responder las preguntas secretas para recuperar la contraseña, lo que le podría dar acceso a las cuentas bancarias e información personal. Nunca se debería publicar datos como nombre completo, número de la obra social, dirección personal, número de teléfono o números de cuenta en la cuenta de la red social. La conciencia del usuario es vital para restringir el acceso a la información de su perfil de usuario en una determinada red social.
+
+[FTC3] [Fuente: http://www.consumer.ftc.gov/articles/0272-how-keep-your-personal-information-secure]
 
 Pautas para prevenir la seguridad  [ Es viejo, pero puede servir ]
 ---------------------------------

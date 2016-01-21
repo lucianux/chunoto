@@ -169,8 +169,8 @@ Bibliografía
 
 ::::::::::::::::::: Capítulo 5 :::::::::::::::::::
 
-[HARDUNIX] Prashant Kumar Patra, Padma Lochan Pradhan, "Hardening of UNIX Operating System", 2009.
-[HARDCONC] Azzam Mourad, Marc-André Laverdière, Mourad Debbabi, "Security Hardening of Open Source Software", Noviembre, 2006.
+[HARUNIX] Prashant Kumar Patra, Padma Lochan Pradhan, "Hardening of UNIX Operating System", 2009.
+[HARCONC] Azzam Mourad, Marc-André Laverdière, Mourad Debbabi, "Security Hardening of Open Source Software", Noviembre, 2006.
 
 ----------------------------------  Descargas ------------------------------------------
 
