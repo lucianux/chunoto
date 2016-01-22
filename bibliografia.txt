@@ -171,6 +171,7 @@ Bibliografía
 
 [HARUNIX] Prashant Kumar Patra, Padma Lochan Pradhan, "Hardening of UNIX Operating System", 2009.
 [HARCONC] Azzam Mourad, Marc-André Laverdière, Mourad Debbabi, "Security Hardening of Open Source Software", Noviembre, 2006.
+[HARDTEX] "Google Android Hardening Checklist", https://security.utexas.edu/handheld-hardening-checklists/android
 
 ----------------------------------  Descargas ------------------------------------------
 
