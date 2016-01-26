@@ -56,6 +56,9 @@ EXIF (Exchangeable image file format)
 Es un estándar que especifica los formatos para imágenes, sonidos y etiquetas auxiliares usadas por las cámaras digitales (incluyendo smartphones), escáners y otros sistemas que manejan archivos de imágenes y sonidos grabados por cámaras digitales.
 https://en.wikipedia.org/wiki/Exchangeable_image_file_format
 
+Feature phones
+Celulares que no tienen características de smartphones.
+
 FHS
 The FHS is a community standard that describes the contents and use of the various directories within a Linux root filesystem.
 [ Fuente: Libro "Embedded Android" - pág. 53 ]
