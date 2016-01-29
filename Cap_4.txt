@@ -149,7 +149,7 @@ En esta prueba se consiguió infiltrar archivos en un smartphone por medio de la
 
 4.3.5.1 Introducción
 
-Los smartphones actuales pueden conectarse a una red Wi-Fi, sin embargo la incorporación de esta tecnología permite capturar información del smartphone empleando técnicas conocidas y probadas en las PCs, como sniffing. En esta prueba se demuestra que se puede monitorear el tráfico que entra y sale de un smartphone que está conectado a una red WiFi, sin el consentimiento del usuario. Para ello se utilizan 2 herramientas: "Ettercap" y "Wireshark", las cuales corresponden a las 2 etapas de esta prueba.
+Los smartphones actuales pueden conectarse a una red Wi-Fi, sin embargo la incorporación de esta tecnología permite capturar información del smartphone empleando técnicas conocidas y probadas en las PCs, como sniffing. Esta prueba se puede aplicar en otros entornos móviles, no sólo en Android. Acá se demuestra que se puede monitorear el tráfico que entra y sale de un smartphone que está conectado a una red WiFi, sin el consentimiento del usuario. Para ello se utilizan 2 herramientas: "Ettercap" y "Wireshark", las cuales corresponden a las 2 etapas de esta prueba.
 
 Ettercap sirve para realizar ataques "man-in-the-middle", contiene una serie de herramientas que ayudan a realizar este ataque. También sirve para efectuar análisis de redes y hosts, entre otras funciones [ETTERCA]. En esta prueba se lo usa para realizar la primer etapa, configurar una PC atacante para que pueda interceptar los paquetes que se transmitan entre un router y un smartphone. Para ello, se realiza un ataque ARP spoofing con la herramienta Ettercap. { EXPLICAR ARP SPOOFING }
 [ETTERCA] [https://ettercap.github.io/ettercap/]
@@ -160,51 +160,52 @@ En esta prueba se lo usa para realizar la segunda etapa, estudiar los paquetes q
 
 4.3.5.2 Procedimiento
 
+[PRIMER ETAPA]
 En la primer etapa, en que se utiliza la herramienta "Ettercap", se deben realizar los siguientes pasos.
 
-Se debe abrir la aplicación, o sea, desde una consola se debe ejecutar (como "root"):
+Se debe abrir la aplicación, ésto se puede realizar desde una consola ejecutando como superusuario o "root":
 # ettercap -G
-Para configurar la operación, en el menú se elige Sniff >> Unified sniffing. Luego se elige la interfase inalámbrica, en nuestro caso es wlan0.
-Para explorar la red, en el menú se elige Hosts >> Scan for hosts
-Para visualizar los nodos de la red, en el menú se elige Hosts >> Hosts list
-Para definir la configuración para ponerse en el medio de los 2 hosts (el router y el smartphone), se debe seleccionar la IP del smartphone del listado y se toca el botón "Add to target 1"; con el otro host pasa algo similar, se selecciona la IP del router y se toca el botón "Add to target 2".
-( nos puede servir el comando "route -n" para conocer la IP del router )
-Para configurar el ataque, en el menú se elige Mitm >> Arp Poisoning. En la ventana que aparece, se tilda el casillero que dice "Sniff remote conections".
+Una vez dentro de la aplicación, dentro de la interfase gráfica, se debe preparar el ataque. Para ello se debe desplegar el menú "Sniff" para seleccionar el ítem "Unified sniffing". Aparece una ventana en que se debe elegir la interfase inalámbrica, en el caso de esta prueba, se llama "wlan0" y presionar el botón de aceptar.
+Después, para explorar la red en busca del host que queremos espiar, se busca dentro del menú "Hosts" el ítem "Scan for hosts". Con este comando se explora en la red a la cual está conectada la interfase que se eligió en el punto anterior, en busca de hosts.
+A continuación, se puede ver la lista de los nodos de la red, desplegando el menú "Hosts" y eligiendo el ítem "Hosts list". En este listado, se debe continuar configurando el ataque definiendo la intrusión entre 2 hosts (el router y el smartphone). Entonces, por un lado se debe seleccionar la IP del smartphone del listado y presionar el botón "Add to target 1", y por el otro lado, se debe seleccionar la IP del router y presionar el botón "Add to target 2".
+
+{ EXPLICAR COMO SE PUEDEN IDENTIFICAR LAS IPs DE LOS HOSTS }
+Cabe aclarar que ... para saber las IPs ... ( nos puede servir el comando "route -n" para conocer la IP del router )
+Para cerrar la configuración del ataque, se debe elegir dentro del menú "Mitm", el ítem "Arp Poisoning". Con ésto aparece una ventana en la que se debe tildar el casillero que dice "Sniff remote conections".
 Finalmente, para efectuar el ataque, en el menú se elige "Start Sniffing".
 
-En la segunda etapa, en que se usa "Wireshark", se deben realizar los siguientes pasos.
+[SEGUNDA ETAPA]
+En la segunda etapa se usa "Wireshark" y se deben realizar los siguientes pasos.
 
-Desde la PC, se debe abrir la aplicación, o sea, desde una consola se debe ejecutar (como "root"):
+Desde la PC, se debe abrir la aplicación, para ello se puede ejecutar desde una consola como superusuario o "root":
 # wireshark
-En la lista de interfases, seleccionar "wlan0".
-Iniciar la captura.
-Desde el smartphone, se debe ingresar a la página gogo6.com, se debe dirigir a la página web de inicio de sesión ingresando al enlace "sign in".
-Completar los datos del formulario: nombre de usuario y contraseña, apretar el botón "sign in".
-Desde la PC, dirigirse al Navegador y entrar a la página "gogo6.com". Utilizar la herramienta "Inspeccionar elemento", para ubicar el nombre del campo del fomulario correspondiente a "Business Email Address". En este caso, el nombre es "emailAddress".
-Luego, se debe detener la captura en la aplicación "Wireshark". Filtrar los paquetes de la siguiente forma: en el campo filtro escribir "frame contains emailAddress".
-Seleccionar uno de los paquetes que aparecen como resultado, hacer click secundario y elegir la opción que dice "Follow TCP Stream".
-En el texto que aparece, buscar "emailAddress", se verá que al lado de este texto se puede encontrar la contraseña ingresada.
+Probablemente se muestre una o dos advertencias indicando que el usuario que abrió la aplicación es "root", estos avisos deben ser ignorados.
+Una vez dentro de la aplicación, dentro de la interfase gráfica, se debe ejecutar la captura de paquetes. Para ello se debe desplegar el menú "Capture" para selecionar el ítem "Interfaces...". Aparece una ventana en la que una lista con interfases de red; se debe seleccionar la que se conecta a la red local. En el caso concreto de esta prueba se debe seleccionar la interfase, que se conecta a un red via Wi-Fi, denominada "wlan0"; acto seguido se debe presionar el botón "Start". Con ésto se inicia la captura de paquetes que entran y salen de la interfase de red seleccionada.
+
+Mientras se capturan paquetes con la PC, desde el smartphone se debe ingresar a un sitio web que demande un inicio de sesión para acceder a cierto contenido privado. Para esta prueba específica [SAMCLAS], se utiliza el sitio web: "gogo6.com", en éste se debe dirigir al inicio de sesión accediendo al enlace "sign in" en la parte superior a la derecha. Luego, se debe completar los datos del formulario: nombre de usuario y contraseña, acto seguido apretar el botón "sign in".
+
+Cuando se termina de trabajar con el smartphone, se debe retornar a la PC para detener la captura de paquetes. Con la captura realizada, se deben filtrar los paquetes así: en el campo "Filter:" escribir "frame contains gmail.com". El filtro aplicado sirve para seleccionar los paquetes que interesan, y a partir de un paquete, se debe extraer la información que interesa. El filtro se basa en la idea de que la dirección de e-mail ingresada como identificador de usuario pertenece a GMail.
+Seleccionar uno de los paquetes que aparecen como resultado del filtrado, hacer click secundario en él para que aparezca un menú emergente, elegir la opción que dice "Follow TCP Stream". Se muestra una nueva ventana con un texto en el centro, se debe usar la herramienta de búsqueda para localizar el texto "gmail.com", se verá que al lado de este texto se puede encontrar la contraseña ingresada, en este caso hay un texto "password" que señala cuál es la contraseña ingresada.
+
+[SAMCLAS] [https://samsclass.info/120/proj/p3-wireshark.htm] (usando Wireshark).
+[SNIFFTU] [http://hacking-pentesting.blogspot.com.ar/2013/09/sniffer-espiando-nuestra-red-local.html] (usando Ettercap).
 
 Fuente:
-http://hacking-pentesting.blogspot.com.ar/2013/09/sniffer-espiando-nuestra-red-local.html (usando Ettercap).
-https://samsclass.info/120/proj/p3-wireshark.htm (usando Wireshark).
-
 Otros vectores de ataque:
 https://en.wikipedia.org/wiki/DNS_hijacking
 https://en.wikipedia.org/wiki/ARP_spoofing
 
 4.3.5.3 Observaciones
 
-En este caso, se puede realizar un ataque del tipo "man-in-the-middle" porque los datos de la cuenta (usuario y contraseña) no estan encriptados. En el caso de que el sitio web utilice una encriptación, como lo hace "GMail" por ejemplo, no se pueden ubicar los datos de los campos que interesan para este caso. La primer etapa se la realiza de forma mécanica, o sea, casi siempre se va a realizar lo mismo; en cambio, la segunda puede requerir un poco de análisis.
+En este caso, se puede realizar un ataque del tipo "man-in-the-middle" porque los datos de la cuenta (usuario y contraseña) no estan encriptados. En el caso de que el sitio web utilice una tecnología de seguridad para encriptar los datos que se transmitan entre el navegador y el servidor (como lo hace "GMail", por ejemplo), no se podría ubicar la información que interesa para este caso.
+La primer etapa se realiza mécanicamente, o sea que casi siempre se van a efectuar los mismos pasos; en cambio, la segunda etapa puede requerir un poco de análisis para tomar de decisiones. Por ejemplo, el criterio del filtro puede cambiarse por uno más preciso quizás, para ello se podría inspeccionar el código HTML de la página web, y allí averiguar el nombre de los campos del usuario y contraseña que se envían al servidor.
 
 4.3.6 Sexta prueba [ COMPLETAR!!! ]
 
 4.3.6.1 Introducción
 
-El tamaño y peso del smartphone lo hacen portable para que el usuario pueda llevarlo consigo a cualquier lugar, así puede realizar sus tareas en cualquier momento. Sin embargo, ésto lo expone a riesgos, dado que el smartphone puede estar al alcance de otra persona con malas intenciones.
-Ésto se va a demostrar a continuación, dado que existen formas de acceder a la información contenida en el smartphone, eludiendo las medidas de seguridad, como el bloqueo de la pantalla.
-En esta sección se realizan 2 pruebas: por un lado existe la posibilidad de forzar al smartphone a volver al estado de fábrica ("hard reset") para poder volver a usar el smartphone y ver lo que contiene la tarjeta SD; por otro lado, se puede aprovechar las facilidades que brinda Android para el desarrollo de apps de forma maliciosa. Es decir, cuando se conecta el smartphone a la PC y el mismo esta en "modo desarrollo", se puede tener acceso al filesystem del smartphone por la línea de comandos.
-Previo a la realización de las pruebas, por precaución se deben extraer la tarjetas SIM (por si queda inhabilitada) y la tarjeta de memoria SD (para no perder datos).
+El tamaño y peso del smartphone lo hacen portable para que el usuario pueda llevarlo consigo a cualquier lugar, para poder aprovechar sus funciones en cualquier momento. Sin embargo, esta característica lo expone a riesgos, dado que el smartphone puede estar al alcance de una persona que no sea el dueño y que tiene malas intenciones. En esta prueba se va a demostrar que existen formas para tener acceso a la información contenida en el smartphone, eludiendo medidas de seguridad, como el bloqueo de la pantalla. Se realizarán 2 pruebas: la primera consiste en forzar al smartphone a volver al estado de fábrica ("hard reset") con la finalidad de poder volver a usar el smartphone (sin la pantalla bloqueada) y poder ver lo que contiene la tarjeta SD; la segunda prueba consiste en aprovechar las facilidades que brinda Android para el desarrollo de apps, pero con intenciones maliciosas. Esta última se apoya en que cuando un smartphone se conecta a la PC y el mismo está en "modo desarrollo", se puede tener acceso al filesystem del smartphone por la línea de comandos.
+Previo a la realización de las pruebas, es recomendable tomar precauciones. Se podría extraer la tarjetas SIM y la tarjeta de memoria SD, dado que no hay certeza de que esta operación deje a la tarjeta SIM en el mismo estado que estaba antes de la prueba.
 
 4.3.6.2 Procedimiento
 
@@ -213,26 +214,22 @@ Previo a la realización de las pruebas, por precaución se deben extraer la tar
 - Presionar botón para subir y bajar el volúmen a la vez.
 - Se muestra un menú, en el cual se debe elegir "Wipe data/factory reset".
 
-[OPCIONAL]
-En otros casos, es más sencillo acceder al celular, dado que según un estudio reciente se puede averiguar las passwords de los usuarios en segundos por la tendencia a elegir passwords sencillas.
-http://arstechnica.com/security/2015/08/new-data-uncovers-the-surprising-predictability-of-android-lock-patterns/
-http://www.lanacion.com.ar/1821871-muestran-que-los-patrones-de-bloqueo-de-pantalla-como-muchas-contrasenas-son-predecibles
-
 [DEV]
 Otra posibilidad es ingresar al sistema mediante shell si el equipo tiene habilitado el modo desarrollo.
 http://null-byte.wonderhowto.com/how-to/locked-out-your-phone-heres-you-bypass-android-pattern-lock-screen-0138807/
 
-4.3.6.3 Comentarios y observaciones
+4.3.6.3 Observaciones
 
-Cabe destacar que los pasos descritos dependen del modelo del smartphone utilizado. Para volver al estado de fábrica a otro modelo de smartphone, se puede consultar el siguiente el sitio web llamado "Hard reset" (http://www.hard-reset.com).
+Los pasos descritos dependen del modelo del smartphone utilizado. Para volver al estado de fábrica a otro modelo de smartphone se debe consultar el sitio web llamado "Hard reset" (http://www.hard-reset.com).
 
 4.3.7 Séptima prueba [ COMPLETAR!!! ]
 
 4.3.7.1 Introducción
 
-El proceso de "rooting" de dispositivos con Android es el aquel que permite obtener control privilegiado (permisos de superusuario) a los usuarios; sin embargo, los usuarios que tienen acceso a root deben manajerse con cuidado porque pueden causar daños al equipo. La siguiente prueba consiste en la eliminación de esta restricción en un smartphone.
-Para obtener información del procedimiento que se debe realizar, se pueden consultar foros, blogs, páginas web personales, sitios web, etc.
-En cuanto a la preparación del ambiente para esta prueba, se utilizó una PC con Windows 7 porque el exploit funciona en Windows. El proceso de ejecución del exploit se lo puede dividir en 2 etapas. Para empezar, se deben instalar los drivers que provee el fabricante del smartphone para que el sistema operativo lo detecte y así poder ejecutar comandos en el mismo; esencialmente, la herramienta de línea de comandos llamada "adb" es la que ayuda a realizar el "rooting", con lo cual se debe probar que funcione "adb" antes de ejecutar el exploit. Finalmente, se debe ejecutar el exploit.
+El proceso de "rooting" de dispositivos con Android le permite al usuario tener control privilegiado (permisos de superusuario) sobre el sistema operativo; sin embargo, estos usuarios deben manajerse con cuidado porque pueden causar daños al equipo de forma involutaria, se explicó este tema en el capítulo 1 (sección 1.5.4.2). Las aplicaciones que posibilitan el "rooteo" no dan ninguna garantía de que no van a dañar al smartphone que se va a someter, o sea que el hecho de aplicar este proceso ya es un riesgo en sí mismo, a parte de las consecuencias que acarrea. Esta prueba consiste en la realización de este proceso, para ello se obtuvo información del procedimiento que se debe realizar, a partir de foros, blogs, páginas web personales, etc.
+En cuanto a la preparación del ambiente para esta prueba, se utilizó una PC con Windows 7 porque el exploit funciona en Windows.
+{ EXPLICAR QUE TAMBIÉN SE USÓ LINUX :) }
+El proceso de ejecución del exploit se lo puede dividir en 2 etapas: instalación de drivers y rooteo. Primero se deben instalar los drivers que provee el fabricante del smartphone para que el sistema operativo lo detecte y así poder ejecutar comandos en el mismo; esencialmente, la herramienta de línea de comandos llamada "adb" es la que ayuda a realizar el "rooting", con lo cual se debe probar que funcione "adb" antes de ejecutar el exploit. Finalmente, se debe ejecutar el exploit.
 Para este caso, se utilizó un smartphone modelo "Defy Plus", de la marca "Motorola".
 
 http://www.taringa.net/comunidades/motoroladefy/7710427/Consulta-Rootear-motorola-defy-plus.html [Fundamental!!!]
@@ -245,8 +242,6 @@ http://www.mediafire.com/?5d82batkh7hwm6z
 ° Se enchufa el smartphone al puerto USB y se activa la Depuración USB (Menu / Aplicaciones / Desarrollo).
 ° Se descomprime el paquete que contiene el exploit en una carpeta y desde la línea de comandos se debe dirigir a esa ubicación. Luego, ejecutar "adb.exe devices" para asegurarse que el smartphone ha sido detectado, si aparece en el listado se prosigue.
 ° Se ejecuta el exploit, el mismo no tiene complicaciones: se presiona la tecla "enter" por cada mensaje que aparece hasta que indica que se terminó el proceso.
-
-
 
 4.3.7.2 Procedimiento
 
