@@ -62,16 +62,17 @@ Bibliografía
 [ZITMOAN] "Android Online Banking Security Risk: Zbot & Zitmo", https://www.bankvaultonline.com/blog/2015/08/13/android-online-banking-risks/
 [FSECURE] "Threat Description Trojan: Android/droidkungfu.c", https://www.f-secure.com/v-descs/trojan_android_droidkungfu_c.shtml
 [SYMAITU] "Internet Security Threat Report 2015", Symantec_annual_internet_threat_report_ITU2015.pdf, 2015
-[OVEMALW] Fan Wu, Hira Narang, Dwayne Clarke, "An Overview of Mobile Malware and Solutions", Octubre, 2014.
+[OVEMALW] Fan Wu, Hira Narang, Dwayne Clarke, "An Overview of Mobile Malware and Solutions", Octubre, 2014
 
 ::::::::::::::::::: Capítulo 2 :::::::::::::::::::
 
-[ANDHACK] Joshua J. Drake, Pau Oliva Fora, Zach Lanier, Collin Mulliner, Stephen A. Ridley, Georg Wicherski, "Android Hacker's Handbook", Wiley, 2013.
-[ANSECIN] Nikolay Elenkov, "Android Security Internals: An In-Depth Guide to Android's Security Architecture", No Starch Press, 2014.
-[ANDSECU] Abhishek Dubey, Anmol Misra, "Android Security", CRC Press, 2013.
-[EMBANDR] Karim Yaghmour, "Embedded Android", O'Reilly, 2013.
+[ANDHACK] Joshua J. Drake, Pau Oliva Fora, Zach Lanier, Collin Mulliner, Stephen A. Ridley, Georg Wicherski, "Android Hacker's Handbook", Wiley, 2013
+[ANSECIN] Nikolay Elenkov, "Android Security Internals: An In-Depth Guide to Android's Security Architecture", No Starch Press, 2014
+[ANDSECU] Abhishek Dubey, Anmol Misra, "Android Security", CRC Press, 2013
+[EMBANDR] Karim Yaghmour, "Embedded Android", O'Reilly, 2013
 [GARTDRO] "Gartner Says Worldwide Smartphone Sales Recorded Slowest", http://www.gartner.com/newsroom/id/3115517
 [ANDABOU] "Android, the world's most popular mobile platform", http://developer.android.com/about/android.html
+[ANDDIFF] Hadeel Tariq Al-Rayes, "Studying Main Differences between Android & Linux Operating Systems", Octubre, 2012
 [ANDROTV] "Android TV", https://www.android.com/tv/
 [ANDROWE] "Android Wear", https://www.android.com/wear/
 [ANDROPH] "Android Phones", https://www.android.com/phones/
@@ -197,6 +198,7 @@ Bibliografía
 [GARTPRE] [http://www.gartner.com/newsroom/id/2939217]
 [COMSCOR] [http://www.comscore.com/Insights/Blog/Number-of-Mobile-Only-Internet-Users-Now-Exceeds-Desktop-Only-in-the-U.S?]
 [GARTSTA] [http://www.gartner.com/newsroom/id/3115517]
+[ANDDIFF] [http://www.ijens.org/vol_12_i_05/128005-4747-ijecs-ijens.pdf]
 [IDCSTAT] [http://www.idc.com/getdoc.jsp?containerId=prUS25804315]
 [SECCOMP] [Fuente: Security in computing - Charles P. Pfleeger]
 [PRACSEC] [http://amifan.googlecode.com/svn/trunk/Documents/4.3%20%20A%20Practical%20Analysis%20of%20Smartphone%20Security.pdf] [ "A practical analysis of smartphone security" ]
