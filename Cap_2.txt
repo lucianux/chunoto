@@ -90,8 +90,15 @@ Desde el punto de vista de la arquitectura, el sistema operativo Android esta ba
 
 2.3.1 Kernel de Linux
 
+[ https://www.quora.com/What-are-the-major-changes-that-Android-made-to-the-Linux-kernel ]
+[ http://www.howtogeek.com/189036/android-is-based-on-linux-but-what-does-that-mean/ ]
+[ http://source.android.com/devices/index.html ]
+
 [INTRO] [NOS VAMOS A ENFOCAR EN LAS DIFERENCIAS ENTRE EL KERNEL DE LINUX Y EL DE ANDROID]
-En la capa mas interna, se encuentra el kernel de Android, que en realidad es un kernel de Linux modificado. El kernel de Linux proporciona una base sólida que se aprovecha para construir un sistema embebido, para lograrlo se realizaron adecuaciones especiales a sus partes principales para que corra en una plataforma móvil, se reutilizan partes del kernel como: sus drivers y la abstracción para el hardware, seguridad, networking, administración de procesos y memoria. Sin embargo, hay algunas características de Linux que se descartan, por lo tanto el kernel de Android no tiene todas las características de una distribución de Linux tradicional; por ejemplo, no hay un sistem de ventanas X en el kernel, ni tampoco estan todas las utilidades GNU que generalmente se encuentran en la ubicación "/bin" en un ambiente de Linux tradicional; además, muchos de los archivos de configuración no están (como "/etc/passwd") [ANDSECU]. También se eliminó el IPC del kernel de Linux, denominado "System V IPC". También, hay ciertas características particulares que se agregaron, a éstas se las llaman "Androidism" [KERFEAT], luego se verán algunas de estas singularidades.
+En la capa mas interna, se encuentra el kernel de Android, que en realidad es un kernel de Linux modificado. El kernel de Linux proporciona una base sólida que se aprovecha para construir un sistema embebido, para lograrlo se realizaron adecuaciones especiales a sus partes principales para que corra en una plataforma móvil, se reutilizan partes del kernel como: sus drivers y la abstracción para el hardware, seguridad, networking, administración de procesos y memoria. En esta adaptación se tuvo en cuenta las características del entorno móvil.
+
+[DESCARTES]
+Sin embargo, hay algunas características de Linux que se descartan, por lo tanto el kernel de Android no tiene todas las características de una distribución de Linux tradicional, como por ejemplo, se descarta el sistem de ventanas X en el kernel, como también se descartan todas esas utilidades GNU que generalmente se encuentran en la ubicación "/bin" en un ambiente de Linux tradicional; además, muchos de los archivos de configuración no están (como "/etc/passwd") [ANDSECU]. También se eliminó el IPC del kernel de Linux, denominado "System V IPC". También, hay ciertas características particulares que se agregaron, a éstas se las llaman "Androidism" [KERFEAT], luego se verán algunas de estas singularidades.
 
 System V IPC features (message queues, shared memory segments, semaphores)
 
@@ -100,11 +107,6 @@ En cuanto a los aspectos que se aprovechan de Linux, se puede mencionar que prov
 
 [MODIFICACIONES DEL KERNEL DE LINUX]
 En cuanto a las modificaciones del kernel de Linux, se reemplazaron algunas implementaciones. El IPC de Linux se reemplazó por uno nuevo, llamado "Binder". Se usaron gestores de memoria, gestores de energía, etc. Se agregaron ---, que luego se van a explicar.
-Esta adaptación se logró con la ayuda del proyecto "Android Mainlining Project" [ANSECIN], la cual es una wiki que expone y preserva información acerca del desarrollo y uso de las bases de Linux sobre Android; uno de sus principales objetivos es:
-	"permitir a un desarrollador usar la última versión del kernel de Linux para correrlo en un sistema Android, sin la necesidad de aplicar parches" [ELINAMP]
-Entonces, con las contribuciones de este proyecto, se puede correr un sistema Android con un kernel de Linux reciente sin modificaciones de terceros (un kernel descargado de kernel.org), sin embargo este proceso requiere cierto esfuerzo en la adaptación del software. Para lograr esta adaptación, básicamente se tomó el código fuente del kernel original y se lo modificó para que se pueda ejecutar en un ambiente embebido, para ello el equipo de desarrollo de Android ha creado, y sigue manteniendo, un fork* del kernel de Linux especial para ambientes embebidos [ANDSECU]. Entonces, las mejoras y actualizaciones que se van incorporando en el fork*, luego se irán incorporando (con una compilación del kernel) a las futuras versiones de Android, a medida que se vayan publicando. De esta forma los usuarios obtienen lo mejor de lo que Linux tiene para ofrecer. En la tabla 1 se muestran algunas versiones de Android con los kernels de Linux en que se basaron.
-Con respecto al proyecto "Android Mainlining Project", es un proyecto antiguo que tuvo su momento, dado que algunas páginas de esta wiki tuvieron su última modificación en el año 2011. Se puede decir que este proyecto impulsó la documentación de la implementación de Android que en ese tiempo no era un tema popular, por la falta de conocimientos y fuentes de información; luego, pasado cierto tiempo, se fueron escribiendo libros, blogs y sitios webs que mejoraron y propagaron la documentación de este tipo de temas acerca de Android, actividad que dejó obsoleta a esta wiki, aunque sirvió como una base para introducirse en este tema.
-En el kernel de Linux se agregaron mejoras en la seguridad que serán explicadas en el capítulo 3.
 
 [AGREGADOS]
 Soporte para YAFFS y YAFFS2.
@@ -117,6 +119,17 @@ Usualmente en Linux, todos los procesos tienen permitido la creación de sockets
 Ashmem
 Ashmem (Anonymous Shared Memory) es otro agregado al kernel de Linux (driver). Provee una interfase de memoria compartida basado en un archivo con referencias contadas. Es muy adecuado para ambientes con poca memoria porque esta diseñado para reducir automáticamente las caches de memoria y recuperar las regiones de memoria cuando la memoria disponible de todo el sistema es baja.
 Ashmem tiene la capacidad de utilizar el recuento de referencias para destruir regiones de memoria, cuando todos los procesos que se refieren a ellas han salido; esta característica es aprovechada por Binder. También tiene la capacidad de reducir regiones mapeadas si el sistema necesita memoria. Cuando se realizan estas operaciones, ashmem considera las regiones marcadas como "unpinning" y "pinning", que son aquellas que se puede ejecutar la reducción y aquellas que no, respectivamente.
+
+
+
+Esta adaptación se logró con la ayuda del proyecto "Android Mainlining Project" [ANSECIN], la cual es una wiki que expone y preserva información acerca del desarrollo y uso de las bases de Linux sobre Android; uno de sus principales objetivos es:
+	"permitir a un desarrollador usar la última versión del kernel de Linux para correrlo en un sistema Android, sin la necesidad de aplicar parches" [ELINAMP]
+Entonces, con las contribuciones de este proyecto, se puede correr un sistema Android con un kernel de Linux reciente sin modificaciones de terceros (un kernel descargado de kernel.org), sin embargo este proceso requiere cierto esfuerzo en la adaptación del software. Para lograr esta adaptación, básicamente se tomó el código fuente del kernel original y se lo modificó para que se pueda ejecutar en un ambiente embebido, para ello el equipo de desarrollo de Android ha creado, y sigue manteniendo, un fork* del kernel de Linux especial para ambientes embebidos [ANDSECU]. Entonces, las mejoras y actualizaciones que se van incorporando en el fork*, luego se irán incorporando (con una compilación del kernel) a las futuras versiones de Android, a medida que se vayan publicando. De esta forma los usuarios obtienen lo mejor de lo que Linux tiene para ofrecer. En la tabla 1 se muestran algunas versiones de Android con los kernels de Linux en que se basaron.
+
+[ANDROID MAINLINING PROJECT]
+Con respecto al proyecto "Android Mainlining Project", es un proyecto antiguo que tuvo su momento, dado que algunas páginas de esta wiki tuvieron su última modificación en el año 2011. Se puede decir que este proyecto impulsó la documentación de la implementación de Android que en ese tiempo no era un tema popular, por la falta de conocimientos y fuentes de información; luego, pasado cierto tiempo, se fueron escribiendo libros, blogs y sitios webs que mejoraron y propagaron la documentación de este tipo de temas acerca de Android, actividad que dejó obsoleta a esta wiki, aunque sirvió como una base para introducirse en este tema.
+En el kernel de Linux se agregaron mejoras en la seguridad que serán explicadas en el capítulo 3.
+
 
 
 [BACKUP]
