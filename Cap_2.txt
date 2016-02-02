@@ -92,26 +92,33 @@ Desde el punto de vista de la arquitectura, el sistema operativo Android esta ba
 
 [ https://www.quora.com/What-are-the-major-changes-that-Android-made-to-the-Linux-kernel ]
 [ http://www.howtogeek.com/189036/android-is-based-on-linux-but-what-does-that-mean/ ]
-[ http://source.android.com/devices/index.html ]
-
 [INTRO] [NOS VAMOS A ENFOCAR EN LAS DIFERENCIAS ENTRE EL KERNEL DE LINUX Y EL DE ANDROID]
-En la capa mas interna, se encuentra el kernel de Android, que en realidad es un kernel de Linux modificado. El kernel de Linux proporciona una base sólida que se aprovecha para construir un sistema embebido, para lograrlo se realizaron adecuaciones especiales a sus partes principales para que corra en una plataforma móvil, se reutilizan partes del kernel como: sus drivers y la abstracción para el hardware, seguridad, networking, administración de procesos y memoria. En esta adaptación se tuvo en cuenta las características del entorno móvil.
 
-[DESCARTES]
-Sin embargo, hay algunas características de Linux que se descartan, por lo tanto el kernel de Android no tiene todas las características de una distribución de Linux tradicional, como por ejemplo, se descarta el sistem de ventanas X en el kernel, como también se descartan todas esas utilidades GNU que generalmente se encuentran en la ubicación "/bin" en un ambiente de Linux tradicional; además, muchos de los archivos de configuración no están (como "/etc/passwd") [ANDSECU]. También se eliminó el IPC del kernel de Linux, denominado "System V IPC". También, hay ciertas características particulares que se agregaron, a éstas se las llaman "Androidism" [KERFEAT], luego se verán algunas de estas singularidades.
+En la capa mas interna de Android se encuentra el kernel, la parte central del sistema operativo. El kernel que usa Android es una versión modificada del kernel de Linux, el cual proporciona una base sólida que se aprovecha para construir un sistema embebido. Para ello se realizaron adecuaciones especiales a sus partes para que pueda correr en una plataforma móvil [STUANLI].
+Linux es un sistema operativo basado en Unix, que fue diseñado para suministrar un sistema operativo gratuito o de muy bajo costo, a los usuarios de computadoras personales, que esté a la altura de los tradicionales y costosos sistemas Unix [STUANLI]. Linux tiene una reputación de ser un sistema muy eficiente y con un rendimiento rápido. El kernel de Linux fue desarrollado por Linus Torvalds en la Universidad de Helsinki en Finland. Para terminar el sistema operativo, necesitó la colaboración otros desarrolladores que juntos usaron los componentes de sistemas desarrollados por miembros de la Fundación de Software Libre para el Proyecto GNU.
 
-System V IPC features (message queues, shared memory segments, semaphores)
+En Android se toman partes del kernel de Linux como punto de apoyo: el modelo de drivers [SOUANDR], drivers existentes, la Capa de Abstracción del Hardware (Hardware Abstraction Layer - HAL) [SOUANDR], soporte de red, administración de procesos y memoria, entre otros servicios que provee el core del sistema operativo [SURVLIN]. Sin embargo, hay algunas características de Linux que se descartaron, es decir que Android no tiene todas las características de una distribución de Linux tradicional. Como por ejemplo, se descartó el sistema de ventanas X, como también se descartaron todas las utilidades GNU que generalmente se encuentran en la ubicación "/bin"; además, muchos de los archivos de configuración ya no están (como el archivo que se ubica en "/etc/passwd") [ANDSECU].
+Una parte importante que se aprovechó de Linux es la Capa de Abstracción del Hardware, la cual define una interfase estándar para que los proveedores de hardware puedan implementar drivers de bajo nivel, ésto le permite a Android ser agnóstico a estas implementaciones [SOUANDR]. Es una capa que permite separar las implementaciones de los drivers de bajo nivel con el sistema de alto nivel. Esta capa le facilita el trabajo a los proveedores de hardware cuando desarrollan drivers, provee un procedimiento estándar para lograr que el hardware se comunique con el sistema operativo.
+Esto propicia la portabilidad a una gran variedad de dispositivos. Además, el kernel de Linux proporciona un modelo robusto de drivers para dispositivos, con el fin de que los fabricantes lo utilicen, dado que este modelo esta bien probado y documentado. Para muchos dispositivos, los drivers del hardware ya estan incorporados dentro del kernel y estan disponibles libremente; de hecho, hay una comunidad activa de desarrolladores que mantienen los drivers del kernel de Linux [ANDSECU].
 
-[REUSO DE PARTES DEL KERNEL DE LINUX]
-En cuanto a los aspectos que se aprovechan de Linux, se puede mencionar que provee una capa de abstracción del hardware (Hardware Abstraction Layer - HAL), lo que propicia la portabilidad a una gran variedad de dispositivos. Además, el kernel de Linux proporciona un modelo robusto de drivers para dispositivos, con el fin de que los fabricantes lo utilicen, dado que este modelo esta bien probado y documentado. Para muchos dispositivos, los drivers del hardware ya estan incorporados dentro del kernel y estan disponibles libremente; de hecho, hay una comunidad activa de desarrolladores que mantienen los drivers del kernel de Linux [ANDSECU].
+[FACTORES DE CAMBIO]
+En esta adaptación se tuvo en cuenta las características particulares de un entorno móvil, algunas de ellas son [STUANLI]: son pequeños y prácticos, tienen una conectividad continua (frecuente y múltiple), diversidad de productos, plataforma abierta, memoria limitada.
+Linux fue desarrollado para Desktops, Laptops y Servers; mientras que Android está desarrollado para Dispositivos Móviles [STUANLI].
+Sistemas Android usan memorias del tipo flash, mientras que los Sistemas Linux usan discos duros [STUANLI].
+Para administrar la energía, los Sistemas Android tienen Power Managemente PROPIO, los Sistemas Linux usan los conocidos APM, ACPI [STUANLI].
 
-[MODIFICACIONES DEL KERNEL DE LINUX]
-En cuanto a las modificaciones del kernel de Linux, se reemplazaron algunas implementaciones. El IPC de Linux se reemplazó por uno nuevo, llamado "Binder". Se usaron gestores de memoria, gestores de energía, etc. Se agregaron ---, que luego se van a explicar.
+Android tiene una shell como la que tiene Linux, pero no se puede acceder a ella a menos que se instale una app de un tercero, como "Android Terminal Emulator" [howtogeek].
 
 [AGREGADOS]
+A parte de reutilizar partes de Linux, hay ciertas características particulares que se agregaron, a éstas se las llaman "Androidism" [KERFEAT], luego se verán algunas de estas singularidades.
+Corrección de bugs y otros cambios pequeños [STUANLI].
 Soporte para YAFFS y YAFFS2.
+Bluetooth [STUANLI]
+Scheduler [STUANLI]
 Low Memory Killer
 Ashmem
+Wake Locks
+RAM Console y Log Device.
 
 Paranoid networking
 Usualmente en Linux, todos los procesos tienen permitido la creación de sockets y la interacción con la red. Pero según el modelo de seguridad de Android, el acceso a la red debe ser controlado. Por lo tanto, se agregó una opción al kernel para controlar el acceso a la creación de un socket y la administración de la interfase de red; el acceso se concede en función al grupo al que pertenece el proceso que quiere acceder a la red [EMBANDR]. Por ejemplo, si un proceso quiere acceder a la red, el sistema corrobora si es miembro del grupo "inet"; si lo es, le permite el acceso, de otro modo el acceso le es denegado. De hecho, los permisos para los archivos y dispositivos son establecidos por el proceso Init [PARANDR] [ANDPARA].
@@ -119,8 +126,6 @@ Usualmente en Linux, todos los procesos tienen permitido la creación de sockets
 Ashmem
 Ashmem (Anonymous Shared Memory) es otro agregado al kernel de Linux (driver). Provee una interfase de memoria compartida basado en un archivo con referencias contadas. Es muy adecuado para ambientes con poca memoria porque esta diseñado para reducir automáticamente las caches de memoria y recuperar las regiones de memoria cuando la memoria disponible de todo el sistema es baja.
 Ashmem tiene la capacidad de utilizar el recuento de referencias para destruir regiones de memoria, cuando todos los procesos que se refieren a ellas han salido; esta característica es aprovechada por Binder. También tiene la capacidad de reducir regiones mapeadas si el sistema necesita memoria. Cuando se realizan estas operaciones, ashmem considera las regiones marcadas como "unpinning" y "pinning", que son aquellas que se puede ejecutar la reducción y aquellas que no, respectivamente.
-
-
 
 Esta adaptación se logró con la ayuda del proyecto "Android Mainlining Project" [ANSECIN], la cual es una wiki que expone y preserva información acerca del desarrollo y uso de las bases de Linux sobre Android; uno de sus principales objetivos es:
 	"permitir a un desarrollador usar la última versión del kernel de Linux para correrlo en un sistema Android, sin la necesidad de aplicar parches" [ELINAMP]
@@ -130,7 +135,9 @@ Entonces, con las contribuciones de este proyecto, se puede correr un sistema An
 Con respecto al proyecto "Android Mainlining Project", es un proyecto antiguo que tuvo su momento, dado que algunas páginas de esta wiki tuvieron su última modificación en el año 2011. Se puede decir que este proyecto impulsó la documentación de la implementación de Android que en ese tiempo no era un tema popular, por la falta de conocimientos y fuentes de información; luego, pasado cierto tiempo, se fueron escribiendo libros, blogs y sitios webs que mejoraron y propagaron la documentación de este tipo de temas acerca de Android, actividad que dejó obsoleta a esta wiki, aunque sirvió como una base para introducirse en este tema.
 En el kernel de Linux se agregaron mejoras en la seguridad que serán explicadas en el capítulo 3.
 
-
+[SOUANDR] [ http://source.android.com/devices/index.html ]
+[SURVLIN] [ "A survey on Android vs. Linux" ]
+[STUANLI] [ "Studying main differences between Android & Linux Operating Linux" ]
 
 [BACKUP]
 En la capa más interna, se encuentra el kernel de Linux. Linux proporciona una base sólida para construir un sistema embebido, entre las características que se aprovechan estan: la abstracción del hardware, drivers para manejar el hardware, seguridad, administración de procesos y memoria. El kernel de Android es ligeramente diferente a un kernel de Linux "convencional", porque al kernel de Linux original se agregaron nuevas características [KERFEAT] que más adelante se explicarán. Gracias a las contribuciones del proyecto "Android Mainlining Project", ahora se puede correr un sistema Android con un kernel de Linux reciente sin modificaciones de terceros ("vanilla kernel"), aunque ésto requiera un poco de esfuerzo en la adaptación del software.
@@ -150,6 +157,8 @@ Android Icecream Sandwich 4.x    Linux Kernel 3.0.1
 Algunas de las características únicas del kernel de Android son: Binder (implementación de IPC en Android), Paranoid networking (control del acceso a la red), Ashmem (gestión de memoria en Android), entre otras. Se dará una descripción de los agregados al kernel original que se acaban de mencionar, como por ejemplo Binder, que es importante en Android por el rol protagónico que desempaña en el sistema.
 
 2.3.1.1 Binder {RESUMIR}
+
+Se eliminó el System V IPC features (message queues, shared memory segments, semaphores) de Linux.
 
 [INTRO DE IPC] [PEQUEÑA RESEÑA DE IPC]
 Una de las ideas que Android heredó de Linux es que los procesos tienen espacios de direcciones separados, o sea que aprovecha las ventajas de aislar datos entre procesos, evitando el acceso directo de datos entre ellos que puede llegar a ser inseguro para el sistema. Sin embargo, existen casos en que se necesita lograr una comunicación entre procesos, de eso se encarga un mecanismo llamado IPC ("Inter-Process Communication"), el cual sirve para que un proceso ofrezca uno o varios servicios útiles a otros, y así poder descubrir estos "servicios públicos", además permite que los otros procesos interactúen con estos servicios.
@@ -216,7 +225,7 @@ En base al funcionamiento descrito se puede sintetizar describiendo algunas de s
 
 2.3.2 Espacio de usuario nativo
 
-La capa correspondiente al espacio de usuario nativo ("native userspace") provee la funcionalidad mínima; en esta capa se ubican los componentes ejecutables que corren fuera de la máquina virtual de Dalvik y forman un sistema operativo base. Esta capa consiste de librerías y demonios nativos que fueron escritos en C o C++, los cuales estan optimizados para correr en un ambiente de hardware específico (consideran la arquitectura de la CPU, por ejemplo); en contraste están las apps y el framework de Android (en la capa superior) que estan escritos en Java y tienen un nivel de abstracción alto. En la capa del espacio de usuario nativo también se encuentran el singular proceso Init y el HAL (Hardware Abstraction Layer) de Linux. Generalmente, estos componentes se inician de forma automática o a demanda del proceso Init (que se basa en archivos de configuración). Estos binarios nativos también estan disponibles para ser invocados desde la línea de comandos cuando el desarrollador acceda por shell al dispositivo (mediante el comando adb, el cual se verá mas adelante). Los componentes de esta capa suelen tener acceso directo a la raíz del filesystem y a las librerías nativas incluidas en el sistema. Sus capacidades estan restringidas por los permisos concedidos por el filesystem y por la combinación UID / GID. Como sucede con el kernel, el espacio de usuario nativo de Android no es igual que el de Linux.
+La capa correspondiente al espacio de usuario nativo ("native userspace") provee la funcionalidad mínima y toma los principios de Linux; en esta capa se ubican los componentes ejecutables que corren fuera de la máquina virtual de Dalvik y forman un sistema operativo base. Esta capa consiste de librerías y demonios nativos que fueron escritos en C o C++, los cuales estan optimizados para correr en un ambiente de hardware específico (consideran la arquitectura de la CPU, por ejemplo); en contraste están las apps y el framework de Android (en la capa superior) que estan escritos en Java y tienen un nivel de abstracción alto. En la capa del espacio de usuario nativo también se encuentran el singular proceso Init y el HAL (Hardware Abstraction Layer) de Linux. Generalmente, estos componentes se inician de forma automática o a demanda del proceso Init (que se basa en archivos de configuración). Estos binarios nativos también estan disponibles para ser invocados desde la línea de comandos cuando el desarrollador acceda por shell al dispositivo (mediante el comando adb, el cual se verá mas adelante). Los componentes de esta capa suelen tener acceso directo a la raíz del filesystem y a las librerías nativas incluidas en el sistema. Sus capacidades estan restringidas por los permisos concedidos por el filesystem y por la combinación UID / GID. Como sucede con el kernel, el espacio de usuario nativo de Android no es igual que el de Linux.
 
 2.3.2.1 Librerías
 
