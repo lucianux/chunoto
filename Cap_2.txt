@@ -182,17 +182,29 @@ Dado que la implementación de IPC que viene con el kernel de Linux original no 
 [http://www.angryredplanet.com/~hackbod/openbinder/docs/html/BinderOverview.html]
 
 [ESENCIA DE BINDER]
-Binder suministra una serie de abstracciones y mecanismos que facilitan el desarrollo en las capas superiores, es un framework de bajo nivel. Principalmente permite registrar, descubrir e instanciar componentes; también provee la definición de un modelo de objetos genérico, un mecanismo estándar para describir interfaces de objetos, permite que las instancias de los componentes vivan en distintos procesos; Binder se encarga de los detalles de IPC cuando se producen interacciones entre instancias [PALBIND], con lo cual asegura una comunicación entre procesos con una orientación a objetos.
+Binder suministra una serie de abstracciones y mecanismos que facilitan el desarrollo en las capas superiores, dado que es un framework de bajo nivel. Principalmente permite registrar, descubrir e instanciar componentes; también provee la definición de un modelo de objetos genérico, un mecanismo estándar para describir interfaces de objetos, permite que las instancias de los componentes vivan en distintos procesos; Binder se encarga de los detalles de IPC cuando se producen interacciones entre instancias [PALBIND], con lo cual asegura una comunicación entre procesos con una orientación a objetos.
 
 	"A pesar de que el mecanismo RPC que subyace es muy complicado, el framework Binder empaqueta todo y expone APIs simples de usar para hacer que todo el mecanismo de comunicación entre procesos parezca simple" [CODETHE].
 
-PUNTOS A TENER EN CUENTA
-[COMO SE USA]
-[COMO FUNCIONA ... MUY BÁSICO]
+A grandes rasgos, Binder se compone de tres componentes [BLOGCUB]: driver, IPC y RPC; a continuación se las expondrán.
+Binder implementa el mecanismo de RPC (Remote Procedure Call) para realizar la comunicación entre procesos, el cual se aplica entre los procesos servidor y cliente, donde el proceso cliente puede ejecutar métodos remotos en el proceso servidor como si se estuviesen ejecutando localmente [TESBIND]. En el caso de Binder, los procesos corren sobre un único dispositivo y no soporta RPC a través de la red [ANSECIN].
+En cuanto al mecanismo de IPC, sigue una secuencia de pasos básica (cuando 2 procesos quieren comunicarse) [CODETHE]: cuando un proceso cliente hace una llamada a un proceso servidor (que tiene servicios para ofrecer), le pasa un bloque de datos; para eso, el cliente llama a una función especial para pasarle el bloque de datos, se la llamará "transact()", luego el servidor recibirá una invocación a un método que se lo llamará "onTransact()"; la llamada a "transact()" bloquea al hilo del cliente por defecto (mediante cierta configuración se puede volver en una llamada no bloqueante) hasta que la invocación al método "onTransact()" termine de ejecutarse.
+Otra de las partes de Binder es el controlador (driver), este driver contiene la implementación de Binder, la cual está dentro del espacio de direcciones kernel. Porque los procesos no pueden invocar operaciones de escritura/lectura de forma directa sobre otros procesos y el kernel si puede, por eso el driver esta en el espacio del kernel. Se puede acceder a este driver por una interfase, esta interfase es el dispositivo "/dev/binder" [ANSECIN]; la cual ofrece una API sencilla usando las llamadas al sistema: open, release, poll, mmap, flush y ioctl, que se heredan del kernel original se puede ejecutar las operaciones de Binder [BINDGAR].
+
+Los clientes y los servicios no conocen nada del protocolo Binder, entonces usan patrones de diseño para que el mecanismo interno de Binder le sea transparente: el cliente usa un "proxy" y el servidor usa un "stub" [CODETHE].
+El componente Proxy simula ser el proceso servidor, reciben las invocaciones a métodos en lenguajes de alto nivel (Java o C++), los convierte a bloques de datos crudos para enviarlos al driver de Binder y bloquea el flujo de ejecución del cliente. En el lado del proceso servidor, el componente Stub escucha al driver .
+Sin embargo, estos 2 componentes de desarrollo de software son autogenerados a partir de una especificación, un archivo .aidl [SLIBIND].
+{acá se podría explicar lo de .aidl a grandisimos rasgos, la definición, para que se usa y nada más}
+
+Clients and Services don’t want to know anything about the Binder protocol, hence they make use of proxies (by client) and stubs (by service). Proxies take your high-level Java/C++ method calls (requests) and convert them to Parcels (Marshalling) and submit the transaction to the Binder Kernel Driver and block. Stubs on the other hand (in the Service process) listens to the Binder Kernel Driver and unmarshalls Parcels upon receiving a callback, into rich data types/objects that the Service can understand.
+{ GRÁFICO }
+
+La infraestructura de Binder es utilizada en muchos Servicios del Sistema (dentro de la capa superior), como el servicio de notificaciones ("Notification Manager"), el servicio de telefonía ("Telephony Manager"), el servicio de la batería ("Battery Manager"), el servicio de Wi-Fi ("Wifi Manager") [CODETHE].
+
+-------------------
 
 [BASES DE FUNCIONAMIENTO]
 - Acceso a otros procesos mediante una interfase que se comunica con un driver: Binder utiliza un controlador (driver) dentro del espacio de direcciones del kernel que se lo utiliza a través de una interfase, la cual habilita el mecanismo de IPC en Android con la exposición de operaciones. Dado que los procesos no pueden invocar operaciones de escritura/lectura de forma directa sobre otros procesos; el kernel si puede, por eso el driver esta en el espacio del kernel.
-- Las llamadas a los métodos es asincrónica: This is achieved with a synchronous method call. Accordingly, the calling client process is blocked for the duration of the answer of the server process. To its advantage, the client has no need to provide a threat method for a asynchronous return message from the client [TESBIND].
 - Ventajas del modelo cliente/servidor [BLOGCUB]:
 Easy to expand or remove functions: It is easy to add a new system service or remove an existing function.
 Easy to port: Porting to a new processor requires few changes. A toolchain for porting is provided.

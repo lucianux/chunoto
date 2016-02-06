@@ -97,6 +97,8 @@ Bibliografía
 [TESBIND] Thorsten Schreiber, "Android Binder - Android Interprocess Communication", Octubre, 2011.
 [DIANNEH] "LKML - Dianne Hackborn", https://lkml.org/lkml/2009/6/25/3
 [PALBIND] "Binder Kit", http://www.angryredplanet.com/~hackbod/openbinder/docs/html/BinderKit.html
+[CODETHE] "An Overview of Android Binder Framework", http://codetheory.in/an-overview-of-android-binder-framework/
+[SLIBIND] Jim Huang, "Android IPC Mechanism", Marzo, 2012.
 [BINDGAR] Aleksandar Gargenta, "Deep Dive into Android IPC/Binder Framework at Android Builders Summit 2013", http://events.linuxfoundation.org/images/stories/slides/abs2013_gargentas.pdf, 2013.
 [ANDPARA] "Paranoid network-ing", http://elinux.org/Android_Security#Paranoid_network-ing
 [PARANDR] "ABS: Android security underpinnings", https://lwn.net/Articles/540196/
@@ -316,7 +318,7 @@ Bibliografía
 [PARANDR] [https://lwn.net/Articles/540196/] 
 [TESBIND] [https://www.nds.rub.de/media/attachments/files/2012/03/binder.pdf] 
 [DIANNE] [https://lkml.org/lkml/2009/6/25/3] 
-[SLIDBIND] [http://www.slideshare.net/jserv/android-ipc-mechanism] 
+[SLIDBIND] [http://www.slideshare.net/jserv/android-ipc-mechanism]
 [GARGENTA] [http://events.linuxfoundation.org/images/stories/slides/abs2013_gargentas.pdf] 
 [BINDBASIC] [http://www.cubrid.org/blog/dev-platform/binder-communication-mechanism-of-android-processes/] 
 [PALMBIND] [http://www.angryredplanet.com/~hackbod/openbinder/docs/html/BinderKit.html] 
