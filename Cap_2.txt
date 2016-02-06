@@ -111,19 +111,33 @@ Android tiene una shell como la que tiene Linux, pero no se puede acceder a ella
 A parte de reutilizar partes de Linux, hay ciertas características particulares de Android que se agregaron al kernel de Linux original, a éstas se las llaman "Androidism" [KERFEAT].
 Corrección de bugs y otros cambios pequeños [STUANLI].
 Soporte para YAFFS y YAFFS2.
-Bluetooth [STUANLI]
-Scheduler [STUANLI]
-Low Memory Killer
-Ashmem
 Wake Locks
 RAM Console y Log Device.
 
-Paranoid networking
-Usualmente en Linux, todos los procesos tienen permitido la creación de sockets y la interacción con la red. Pero según el modelo de seguridad de Android, el acceso a la red debe ser controlado. Por lo tanto, se agregó una opción al kernel para controlar el acceso a la creación de un socket y la administración de la interfase de red; el acceso se concede en función al grupo al que pertenece el proceso que quiere acceder a la red [EMBANDR]. Por ejemplo, si un proceso quiere acceder a la red, el sistema corrobora si es miembro del grupo "inet"; si lo es, le permite el acceso, de otro modo el acceso le es denegado. De hecho, los permisos para los archivos y dispositivos son establecidos por el proceso Init [PARANDR] [ANDPARA].
+Paranoid networking: usualmente en Linux, todos los procesos tienen permitido la creación de sockets y la interacción con la red; pero en Android, el acceso a estas operaciones debe ser más controlado. Por eso se agregó un mecanismo al kernel para controlar el acceso a estas acciones en la red en base al grupo al que pertenece el proceso [EMBANDR]. Por ejemplo, si un proceso quiere acceder a la red, el sistema corrobora si es miembro del grupo "AID_INET" (o "AID_NET_BT" para el caso del Bluetooth); si lo es, le permite el acceso, de otro modo el acceso le es denegado. De hecho, los permisos para los archivos y dispositivos son establecidos por el proceso Init [PARANDR] [ANDPARA].
 
-Ashmem
-Ashmem (Anonymous Shared Memory) es otro agregado al kernel de Linux (driver). Provee una interfase de memoria compartida basado en un archivo con referencias contadas. Es muy adecuado para ambientes con poca memoria porque esta diseñado para reducir automáticamente las caches de memoria y recuperar las regiones de memoria cuando la memoria disponible de todo el sistema es baja.
-Ashmem tiene la capacidad de utilizar el recuento de referencias para destruir regiones de memoria, cuando todos los procesos que se refieren a ellas han salido; esta característica es aprovechada por Binder. También tiene la capacidad de reducir regiones mapeadas si el sistema necesita memoria. Cuando se realizan estas operaciones, ashmem considera las regiones marcadas como "unpinning" y "pinning", que son aquellas que se puede ejecutar la reducción y aquellas que no, respectivamente.
+Ashmem (Anonymous Shared Memory): es un administrador de memoria compartida basado en archivos [ANDHACK]. Es muy adecuado para ambientes con poca memoria porque esta diseñado para reducir automáticamente las caches de memoria y recuperar las regiones de memoria cuando la memoria disponible de todo el sistema se vuelva baja [EMBANDR]. Ashmem tiene la capacidad de utilizar el recuento de referencias para destruir regiones de memoria, cuando todos los procesos que se refieren a ellas han salido; esta característica es aprovechada por Binder. También tiene la capacidad de reducir regiones mapeadas si el sistema necesita memoria. Cuando se realiza esta operación, ashmem considera las regiones marcadas como "unpinning" y "pinning", que son aquellas que se puede ejecutar la reducción y aquellas que no, respectivamente.
+
+:: Low Memory Killer ::
+
+[EMBEDDED ANDROID]
+- Android está pensado para ambientes con baja memoria, por lo tanto, es crucial el comportamiento del sistema cuando se queda sin memoria.
+- Se agragó un driver al kernel llamado "low-memory killer", es para que eliminen a los procesos activos que alojan componentes que no han sido usados por un largo tiempo y no tienen una prioridad alta.
+- Este driver esta basado en el driver que cumplía la misma función en el kernel original, llamado "Out-of-memory Killer" (OOM Killer), pero en Android es o tiene .
+- El driver original eliminaba procesos solo cuando el sistema se quedaba sin memoria, el de Android permite eliminar procesos cuando se alcance cierto umbral, hay diferentes umbrales que disparan distintas alertas asociados a distintas categorías de procesos de acuerdo a los componentes asociados.
+- Esta política de limpieza de procesos le permite al kernel adelantarse a la ejecución áspera del viejo driver "OOM Killer".
+[http://lwn.net/Articles/317814/]
+El driver de "Low Memory Killer" tiene múltiples umbrales de baja memoria, como si fuesen "perfiles críticos". Una posible situación hipotética podría ser la siguiente: cuando se alcanza el primer umbral, los procesos en background serán notificados del problema para que sólo guarden sus estados; cuando se alcanza el segundo umbral, es decir, hay una mayor tensión en el sitema por falta de memoria, el dirver procede a matar los procesos en background que no son críticos de los cuales se sabe que han sido guardados cuando se llegó al umbral anterior; finalmente, si la situación es muy difícil, se aplica lo anterior con los procesos que corren en foreground.
+
+Pmem: este driver es obsoleto [EMBANDR], la función de este driver era de compartir grandes bloques de memoria que estan dispuestos contiguamente, físicamente no virtualmente.
+
+Logger: .
+
+Soporte para YAFFS2:
+[STUANLI]
+Unlike PCs, which store files on disks, mobile phones store files in sold-state flash memory chips. The HTC G1 uses NAND flash, a type of flash memory that is becoming more popular due to its combination of high density and low cost. YAFFS2 is an acronym for ―Yet Another Flash File System, 2nd edition.‖ It provides a high-performance interface between the Linux kernel and NAND flash devices. YAFFS2 was already freely available for Linux. However, it is not part of the standard 2.6.25 Linux kernel, and so Google added it to Android.
+
+Bluetooth: Google realizó cambios en la pila de comunicaciones vía Bluetooth, son cambios que arreglan errores relacionados a dispositivos Bluetooth específicos; se agregaron funciones de depuración en Bluetooth y funciones de control de acceso [STUANLI].
 
 Esta adaptación se logró con la ayuda del proyecto "Android Mainlining Project" [ANSECIN], la cual es una wiki que expone y preserva información acerca del desarrollo y uso de las bases de Linux sobre Android; uno de sus principales objetivos es:
 	"permitir a un desarrollador usar la última versión del kernel de Linux para correrlo en un sistema Android, sin la necesidad de aplicar parches" [ELINAMP]
@@ -159,16 +173,55 @@ Algunas de las características únicas del kernel de Android son: Binder (imple
 Se eliminó el System V IPC features (message queues, shared memory segments, semaphores) de Linux.
 
 [INTRO DE IPC] [PEQUEÑA RESEÑA DE IPC]
-Una de las ideas que Android heredó de Linux es que los procesos tienen espacios de direcciones separados, o sea que aprovecha las ventajas de aislar datos entre procesos, evitando el acceso directo de datos entre ellos que puede llegar a ser inseguro para el sistema. Sin embargo, existen casos en que se necesita lograr una comunicación entre procesos, de eso se encarga un mecanismo llamado IPC ("Inter-Process Communication"), el cual sirve para que un proceso ofrezca uno o varios servicios útiles a otros, y así poder descubrir estos "servicios públicos", además permite que los otros procesos interactúen con estos servicios.
+Una de las ideas que Android heredó de Linux es que los procesos tienen espacios de direcciones separados, por lo tanto los datos contenidos en cada proceso estan aislados, evitando el acceso directo a datos entre distintos procesos, lo que puede llegar a ser inseguro para el sistema. Sin embargo, existen casos en que se necesita lograr una comunicación entre procesos, para lograr ésto se utiliza un mecanismo llamado IPC ("Inter-Process Communication"), el cual asiste en la divulgación de uno o varios servicios que un proceso ofrece a otros procesos, y así estos procesos pueden descubrir estos servicios; además permite la interacción entre los servicios y el resto de los procesos.
 
 [INTRO DE BINDER]
-Debido que la implementación de IPC que viene con el kernel de Linux original no es eficiente para entornos embebidos, entonces se decidió tomar las bases de un viejo proyecto discontinuado llamado OpenBinder que soporta plataformas móviles. No obstante, la implementación fue reescrita y el proyecto pasó a llamarse Binder, pero los conceptos principales se mantuvieron [TESBIND]. Binder esta pensado para correr en sistemas embebidos (entre otras plataformas), con él se busca disminuir la sobrecarga, aumentar el rendimiento y mejorar la seguridad. Por otro lado, Binder cumple más funciones que las de un IPC convencional, entre ellas se puede mencionar la administración de memoria y de hilos, estas funciones pueden ser reimplementadas por el desarrollador de sistemas de bajo nivel, lo que le otorga mayor control; según uno de sus creadores, Dianne Hackborn, sostiene que
+Dado que la implementación de IPC que viene con el kernel de Linux original no es eficiente para entornos embebidos, entonces se decidió tomar las bases de un viejo proyecto discontinuado llamado OpenBinder que soportaba plataformas móviles. No obstante, la implementación fue reescrita y el proyecto nuevo pasó a llamarse Binder, aunque las ideas principales se mantuvieron [TESBIND]. Binder esta pensado para correr en sistemas embebidos, con él se busca disminuir la sobrecarga, aumentar el rendimiento y mejorar la seguridad. Por otro lado, Binder cumple más funciones que un IPC convencional, entre ellas se puede mencionar la administración de memoria y de hilos, lo que le otorga mayor control; de hecho, según uno de sus creadores, Dianne Hackborn, sostiene que
 	"Binder es usado para casi todo lo que ocurre a través de los procesos en la plataforma central" [DIANNEH].
 
 [http://www.angryredplanet.com/~hackbod/openbinder/docs/html/BinderOverview.html]
 
 [ESENCIA DE BINDER]
-Binder suministra una serie de abstracciones y métodos que facilitan el desarrollo en las capas superiores, principalmente permite registrar, descubrir e instanciar componentes; también provee la definición de un modelo de objetos genérico, un mecanismo estándar para describir interfaces de objetos, permite que las instancias de los componentes vivan en distintos procesos; Binder se encarga de los detalles de IPC cuando se producen interacciones entre instancias [PALBIND], con lo cual asegura una comunicación entre procesos con una orientación a objetos.
+Binder suministra una serie de abstracciones y mecanismos que facilitan el desarrollo en las capas superiores, es un framework de bajo nivel. Principalmente permite registrar, descubrir e instanciar componentes; también provee la definición de un modelo de objetos genérico, un mecanismo estándar para describir interfaces de objetos, permite que las instancias de los componentes vivan en distintos procesos; Binder se encarga de los detalles de IPC cuando se producen interacciones entre instancias [PALBIND], con lo cual asegura una comunicación entre procesos con una orientación a objetos.
+
+	"A pesar de que el mecanismo RPC que subyace es muy complicado, el framework Binder empaqueta todo y expone APIs simples de usar para hacer que todo el mecanismo de comunicación entre procesos parezca simple" [CODETHE].
+
+PUNTOS A TENER EN CUENTA
+[COMO SE USA]
+[COMO FUNCIONA ... MUY BÁSICO]
+
+[BASES DE FUNCIONAMIENTO]
+- Acceso a otros procesos mediante una interfase que se comunica con un driver: Binder utiliza un controlador (driver) dentro del espacio de direcciones del kernel que se lo utiliza a través de una interfase, la cual habilita el mecanismo de IPC en Android con la exposición de operaciones. Dado que los procesos no pueden invocar operaciones de escritura/lectura de forma directa sobre otros procesos; el kernel si puede, por eso el driver esta en el espacio del kernel.
+- Las llamadas a los métodos es asincrónica: This is achieved with a synchronous method call. Accordingly, the calling client process is blocked for the duration of the answer of the server process. To its advantage, the client has no need to provide a threat method for a asynchronous return message from the client [TESBIND].
+- Ventajas del modelo cliente/servidor [BLOGCUB]:
+Easy to expand or remove functions: It is easy to add a new system service or remove an existing function.
+Easy to port: Porting to a new processor requires few changes. A toolchain for porting is provided.
+Easy to test: Tests are limited by the component unit, so it is not necessary to test the entire services, and more strict tests are available.
+Support for distribution system: Process communication is based on the Binder, so it guarantees transparency in location between components.
+Such benefits are very similar to those of Microkernel structure OS.
+
+[BLOGCUB]
+"Let requests and responses be written in an area where all processes can share and let each process refer to the memory address." [BLOGCUB]
+A Binder Driver is implemented to use the kernel space. The role of the Binder driver is to convert the memory address that each process has mapped with the memory address of the kernel space for reference. ==>> Brinda acceso.
+The Binder driver can be used by the ioctl() system function, which is a standard method in Linux. The mechanism is called Binder IPC.
+There is a C++ framework that processes the data transferred using the Binder IPC and makes Remote Procedure Call (RPC). It is used to create a system service. Then, a process can use functions provided by other processes as if their own.
+Hay tres componentes en Binder: Driver, IPC y RPC.
+Android has a process-unit component model and provides system functions as server processes. For a functional mesh-up of processes, it provides Binder.
+Android Binder uses the kernel memory reference to support communication between processes, optimized for mobile devices. { NO ENTENDí }
+
+{EL GRáFICO, pag. 20} [http://rts.lab.asu.edu/web_438/project_final/Talk%208%20AndroidArc_Binder.pdf]
+
+{VER} [http://codetheory.in/an-overview-of-android-binder-framework/]
+Intents, Content Providers, Messenger, all system services like Telephone, Vibrator, Wifi, Battery, Notification, etc. utilize IPC infrastructure provider by Binder. Even the lifecycle callbacks in your Activity like onStart(), onResume(), onDestroy() are invoked by ActivityManagerServer via binders.
+[SE DESTACA LA IMPORTANCIA DE BINDER, SE USA EN TODOS LADOS]
+
+
+
+[USO]
+Desde el punto de vista del desarrollo de sistemas de bajo nivel, si un proceso quiere comunicarse con otro o quiere emplear los servicios de otro proceso, entonces se debe tener conocimiento del funcionamiento de Binder. Éste opera dentro de un modelo cliente/servidor: cuando un cliente inicia una comunicación, espera la respuesta del servidor; el servidor tiene un pool de hilos por proceso esperando pedidos para procesarlos. Hay un lugar en donde se registran servicios, llamado Context Manager (en Android se llama Service Manager), asimismo el cliente solo debe saber el nombre del servicio para pedirle al Service Manager por la dirección de algún hilo del pool (del servidor); el hecho de que el cliente no sepa a priori la dirección del objeto Binder remoto funciona como un mecanismo de seguridad. Cuando el proceso servidor termina con la comunicación, le notifica al driver para marcar como liberada a la memoria utilizada [TESBIND].
+{ELiMINAR}
+El desarrollador (que programa en el espacio nativo) debe realizar una implementación de la interfase IBinder (si o si) para integrar sus servicios al framework Binder, asimismo este framework origina varias instancias (de la implementación de IBinder) en hilos dentro del proceso servidor; a cada una de estas instancias se las suele llamar "Objeto Binder".
+Los clientes se comunican con los servicios mediante transacciones, éstas contienen: un token (un número que identifica a una instancia unívocamente), el código del comando a ejecutar por el driver, el buffer de datos (un arreglo de datos serializados) y el par PID/UID del invocador (adherido por el driver). Fundamentalmente, dentro del campo del buffer de datos, hay 2 de campos importantes: uno que sirve para guardar un puntero a una función y el otro sirve para guardar los parámetros de esta función; este par de campos corresponden a un servicio que suministra el servidor (este par se repite por cada función que tenga el servidor) y son utilizados en los códigos fuentes que genera AIDL. AIDL es una herramienta (parte del entorno de desarrollo de Android) que le permite al desarrollador definir la interfase de programación (la funcionalidad de los servicios que se van a compartir), la cual va a ser como un contrato entre el/los cliente/s y el servidor, y así habilitar la comunicación entre ellos usando IPC. AIDL genera las capas de software (que utlizan abstracciones como fachadas y proxies) que son muy tediosas de desarrollar de forma manual porque forman parte de los detalles del mecanismo de Binder; de hecho, las operaciones de bajo nivel y las estructuras de datos del mecanismo interno de Binder son abstraídas por la librería libbinder (en la capa nativa), que es lo que los clientes y servicios usan [BINDGAR].
 
 [FUNCIONAMIENTO INTERNO]
 { ELIMINAR }
@@ -176,12 +229,6 @@ Binder suministra una serie de abstracciones y métodos que facilitan el desarro
 El funcionamiento básico de Binder consta de varias partes. {MENCIONAR PARTES}
 Binder utiliza un controlador (driver) dentro del espacio de direcciones del kernel que se lo utiliza a través de una interfase, la cual habilita el mecanismo de IPC en Android con la exposición de operaciones. Dado que los procesos no pueden invocar operaciones de escritura/lectura de forma directa sobre otros procesos; el kernel si puede, por eso el driver está en espacio del kernel.
 Concretamente, la interfase de Binder se encuentra en el dispositivo /dev/binder, cuya implementación es realizada por el driver de Binder en el kernel, la interfase forma una API simple que es usada para transmitir paquetes de datos entre los procesos que quieran comunicarse, usando llamadas al sistema ya conocidas como open, release, poll, mmap, flush y ioctl, ésta última es la que se usa con mayor frecuencia, es la que permite la transacción de datos.
-
-[USO]
-Desde el punto de vista del usuario de Binder, éste opera dentro de un modelo cliente/servidor: cuando un cliente inicia una comunicación, espera la respuesta del servidor. En el lado del servidor, hay un pool de hilos por proceso para procesar pedidos. Hay un lugar en donde se registran servicios, llamado Context Manager (en Android se llama Service Manager), asimismo el cliente solo debe saber el nombre del servicio para pedirle al Service Manager por la dirección de algún hilo del pool (del servidor); el hecho de que el cliente no sepa a priori la dirección del objeto Binder remoto funciona como un mecanismo de seguridad. Cuando el proceso servidor termina con la comunicación, le notifica al driver para marcar como liberada a la memoria utilizada [TESBIND].
-{ELiMINAR}
-El desarrollador (que programa en el espacio nativo) debe realizar una implementación de la interfase IBinder (si o si) para integrar sus servicios al framework Binder, asimismo este framework origina varias instancias (de la implementación de IBinder) en hilos dentro del proceso servidor; a cada una de estas instancias se las suele llamar "Objeto Binder".
-Los clientes se comunican con los servicios mediante transacciones, éstas contienen: un token (un número que identifica a una instancia unívocamente), el código del comando a ejecutar por el driver, el buffer de datos (un arreglo de datos serializados) y el par PID/UID del invocador (adherido por el driver). Fundamentalmente, dentro del campo del buffer de datos, hay 2 de campos importantes: uno que sirve para guardar un puntero a una función y el otro sirve para guardar los parámetros de esta función; este par de campos corresponden a un servicio que suministra el servidor (este par se repite por cada función que tenga el servidor) y son utilizados en los códigos fuentes que genera AIDL. AIDL es una herramienta (parte del entorno de desarrollo de Android) que le permite al desarrollador definir la interfase de programación (la funcionalidad de los servicios que se van a compartir), la cual va a ser como un contrato entre el/los cliente/s y el servidor, y así habilitar la comunicación entre ellos usando IPC. AIDL genera las capas de software (que utlizan abstracciones como fachadas y proxies) que son muy tediosas de desarrollar de forma manual porque forman parte de los detalles del mecanismo de Binder; de hecho, las operaciones de bajo nivel y las estructuras de datos del mecanismo interno de Binder son abstraídas por la librería libbinder (en la capa nativa), que es lo que los clientes y servicios usan [BINDGAR].
 
 [CONCLUSIóN]
 En un nivel más alto, en el contexto del desarrollo de apps, se pueden usar abstracciones de IPC como Intents y ContentProviders que yacen por arriba de Binder; el significado de estas abstracciones se explicarán mas adelante. Complementariamente, las interfases de servicios que necesitan ser expuestas a otros procesos pueden ser definidas usando AIDL (Android Interfase Definition Language), pero esta vez a nivel de las apps. Esta herramienta permite a los clientes invocar a los servicios remotos como si fuesen objetos Java locales [ANSECIN]. Es decir, AIDL permite que 2 aplicaciones usen un acuerdo o una interfase estándar para enviar y recibir datos, manteniendo la interfase separada de la implementación. AIDL es parecido a otros archivos que contienen Lenguajes de Definición de Interfases, en cierta forma, es parecido a los archivos headers de C/C++. Se debe tener en cuenta que cuando se usa esta herramienta se está eludiendo la máquina virtual de Dalvik y se está trabajando en el espacio de usuario nativo, para lo cual se debe tener mayor cuidado.
@@ -196,7 +243,7 @@ En base al funcionamiento descrito se puede sintetizar describiendo algunas de s
 - Multithread consciente: Binder mantiene el estado interno por thread.
 
 
-
+[BLOGCUB] [http://www.cubrid.org/blog/dev-platform/binder-communication-mechanism-of-android-processes/]
 
 [BACKUP]
 Como en Unix (y derivados), en Android los procesos tienen espacios de direcciones separados, o sea que un proceso no puede acceder directamente a la memoria de otro. Esta característica mejora la estabilidad y seguridad del sistema, debido a que la modificación de múltiples procesos en la misma área de memoria puede generar consecuencias catastróficas. No obstante, si un proceso quiere ofrecer uno o varios servicios útiles a otros procesos, se necesita de algún mecanismo que permita descubrir esos servicios e interactuar con ellos. Este mecanismo se llama IPC (Inter-Process Communication).
