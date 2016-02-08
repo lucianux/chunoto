@@ -100,6 +100,7 @@ Bibliografía
 [CODETHE] "An Overview of Android Binder Framework", http://codetheory.in/an-overview-of-android-binder-framework/
 [SLIBIND] Jim Huang, "Android IPC Mechanism", Marzo, 2012.
 [BINDGAR] Aleksandar Gargenta, "Deep Dive into Android IPC/Binder Framework at Android Builders Summit 2013", http://events.linuxfoundation.org/images/stories/slides/abs2013_gargentas.pdf, 2013.
+[AIDLDEV] "Android Interface Definition Language (AIDL)", http://developer.android.com/intl/es/guide/components/aidl.html
 [ANDPARA] "Paranoid network-ing", http://elinux.org/Android_Security#Paranoid_network-ing
 [PARANDR] "ABS: Android security underpinnings", https://lwn.net/Articles/540196/
 [FREETYP] "FreeType", https://es.wikipedia.org/wiki/FreeType
