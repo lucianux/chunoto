@@ -373,13 +373,43 @@ Cabe mencionar que se pueden usar otros IDEs (por ejemplo, NetBeans), dado que s
 
 2.5.2 Principales componentes de programación
 
-Para el desarrollo de apps en Android, se emplean los siguientes componentes esenciales [ANDRFUN]:
+Para la construcción de una app Android, se emplean los siguientes bloques principales [ANDRFUN]:
+
+{ MOSTRAR PARA CADA UNO: CARACTERÍSTICAS, EJEMPLOS DE USO, ETC. }
+
 . Activities: una activity es una componente de una app que representa una pantalla que provee una interfase de usuario para que el usuario ejecute órdenes. Por ejemplo, un cliente mails podría tener una activity que muestre una lista de e-mails nuevos, otra activity para componer un e-mail y otro para leer mails. Aunque las activities trabajan en forma conjunta para formar una app de gestión mails coherente, cada una es independiente de las otras. De esta forma, otra app puede iniciar cualquier activity de ésta (si lo permite). Por ejemplo, una app que usa la cámara fotográfica puede iniciar la activity que se usa para redactar un mail, con la finalidad de compartir una fotografía del usuario.
 { MOSTRAR CÓDIGO O ALGÚN EJEMPLO O ALGO MÁS TANGIBLE }
+	-Una activity tiene estados, un ciclo de vida.
+	-Subclase de Activity (o de una subclase existente de Activity).
+	-En esta subclase se necesita implementar métodos que el sistema llama cuando ocurre una transición de estados de sus ciclo de vida. Los estados más importantes son: "OnCreate()" que se llama cuando se está creando la activity (aún no está visible) y "OnPause()" que se llama cuando el usuario está dejando la pantalla. El primero principalmente se utiliza para inicializar variables internas y para definir el diseño de la pantalla en función a los recursos (imágenes, etiquetas, etc.); el segundo se utiliza para persistir cambios o guardar el estado de la app.
+	-.
+Ejemplo:
+
+public class ExampleActivity extends Activity {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Código a ejecutar
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Código a ejecutar
+    }
+}
+
+[ Fuente: http://developer.android.com/intl/es/guide/components/activities.html ]
 
 . Services: un service es un componente que se ejecuta en background para ejecutar operaciones de larga duración o para realizar una tarea que necesite interactuar con procesos remotos. Un service no provee interfase de usuario. Por ejemplo, un service podría reproducir música en background mientras el usuario interactúa con otra app, o podría extraer datos de la red sin bloquear la interacción que tiene el usuario con la activity actual.
+	-Tiene 2 formas: Started y Bound.
+[ Fuente: http://developer.android.com/intl/es/guide/components/services.html ]
+
 . Content Providers: un content provider maneja un conjunto compartido de datos de las apps. Los datos se pueden guardar en varios lugares, como el sistema de archivos, una base de datos SQLite, la Web o cualquier otro lugar de almacenamiento persistente en donde la app tenga acceso; por medio de un content provider las apps pueden consultar o incluso modificar los datos (si el content provider lo permite). Un content provider también es útil para leer y escribir datos que son privados a la app y no se comparten. Por ejemplo, el sistema provee un content provider que administra los datos de los contactos del usuario.
+[ Fuente: http://developer.android.com/intl/es/guide/topics/providers/content-providers.html ]
+
 . Broadcast Receivers: un broadcast receiver es un componente que reacciona ante las notificaciones que se difunden a todo el sistema. Muchos broadcasts se originan desde el sistema; por ejemplo, un broadcast que anuncia que la pantalla se ha apagado, otro que indica que la batería esta baja o que una fotografía fue tomada. Las apps también pueden iniciar broadcasts; por ejemplo, para permitir que otras apps sepan que algunos datos han sido descargados al dispositivo y ya estan disponibles para que los usen. A pesar de que los broadcast receivers no disponen de una interfase de usuario, ellos pueden crear una notificación para que se vea en la barra de estado y alertar al usuario que surgió un evento del tipo broadcast. Sin embargo, usualmente un broadcast receiver es sólo una "puerta" a otros componentes y pretende realizar una cantidad mínima de trabajo. Por ejemplo, un broadcast receiver podría disparar un servicio para ejecutar algún trabajo basado en el evento que le fue notificado.
+[ Fuente: http://developer.android.com/intl/es/reference/android/content/BroadcastReceiver.html ]
+
 . Intents [ANDRINT]: los intents son mensajes que sirven para activar 3 componentes claves de una app: activities, services y broadcast receivers. El envío de intents tiene la finalidad de relacionar componentes en tiempo de ejecución, ya sean de diferentes apps o de la misma app, que cuando son recibidos por services o activities pueden activar procesos. Internamente, un intent es una estructura de datos pasiva que posee una descripción abstracta de una operación a ejecutar o en el caso de los intents de tipo broadcast, una descripción de algo que ya ha sucedido y esta siendo notificado.
 . Views [ANDRVIE]: todos los elementos de la interfase de usuario en una app se construyen usando objetos tipo View y ViewGroup. Un View es un objeto que dibuja una figura en la pantalla con que el usuario puede interactuar. Un ViewGroup es un objeto que puede contener objetos de tipo View y a la vez, puede contener objetos ViewGroup, esta estructura se usa para definir la presentación de la interfase. Asimismo, todo componente que posea una interfase de usuario se la define usando una jerarquía de objetos View y ViewGroup. Esta jerarquía forma un árbol que puede ser tan complejo o tan simple como se requiera, no obstante la simplicidad mejora el rendimiento de la app. Android provee una colección preparada de subclases View y ViewGroup, que ofrecen controles de entrada de uso común (como botones y campos de texto) y varios modelos de presentación (las cuales definen la disposición de los controles [ANDRLAY]). Para declarar una capa de presentación (layout), se puede optar por 2 opciones. La primera consiste en instanciar objetos Views en el código que se vá a ejecutar y empezar a construir un árbol de objetos View y ViewGroup en tiempo de ejecución. La segunda opción, la más sencilla y más efectiva, consiste en definir la capa de presentación en un archivo XML; los archivos XML ofrecen una estructura razonablemente legible, son similares al formato HTML.
 . Manifest: un manifest es un archivo XML en donde se declaran todos los componentes de una app, este archivo se debe ubicar en la raíz del directorio del proyecto de la app. Además, cumple otras funciones importantes como:

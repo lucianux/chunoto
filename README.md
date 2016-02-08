@@ -28,8 +28,13 @@ $ git commit -m "comentario de commit" // Publica los cambios al repositorio loc
 
 $ git push // Publica los cambios al repositorio remoto
 
+## Comandos útiles
+
+$ git checkout HEAD -- file.txt // Descarta los cambios locales de un archivo
+
 ## Fuentes
 
 * http://learn.github.com/p/intro.html
 * http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=githubFirstStepsUploadProject
 * https://help.github.com/articles/generating-ssh-keys/
+* https://www.atlassian.com/git/tutorials
