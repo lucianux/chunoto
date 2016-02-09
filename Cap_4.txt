@@ -4,7 +4,7 @@ Pruebas en Android
 
 4.1 Objetivo
 
-El objetivo general del capítulo es explorar distintas pruebas prácticas que explotan vulnerabilidades para demostrar que existen riesgos en Android.
+El objetivo general del capítulo es explorar distintas pruebas prácticas que explotan vulnerabilidades y así demostrar que existen riesgos en Android.
 Por cada prueba, se explica como se usan las herramientas, demostrando su potencial y factibilidad. Se expone una gama de explotaciones de vulnerabilidades en dispositivos móviles, no sólo aquellas que afectan a Android exclusivamente, sino a otras plataformas.
 En líneas generales, las pruebas que se van a realizar son las siguientes:
 -Pentesting en Android: aspecto relativo a las pruebas de seguridad que se somete un sistema.
@@ -22,7 +22,7 @@ En cuanto a la protección de los datos, se podría realizar una copia de resgua
 En cuanto al entorno de pruebas, se utiliza el sistema operativo Kali Linux, dado que éste facilita algunas herramientas. Kali Linux es un Sistema Operativo que tiene como objetivo facilitar las auditorías y pruebas inherentes a la seguridad informática en general. Kali Linux tiene preinstalados más de 600 programas incluyendo Nmap (un escáner de puertos), Wireshark (un sniffer), John the Ripper (Un crackeador de passwords) y la suite Aircrack-ng (Software para pruebas de seguridad en redes inalámbricas); es un Sistema que trae herramientas que están documentadas, la mayoría son inherentes al software libre. Se usó este sistema operativo con la idea de facilitar las pruebas y tener a disposición un entorno cómodo para las mismas, dado que no se usó Kali Linux de forma amplia.
 Para la ejecución de las pruebas se utilizan 3 dispositivos: Motorola Defy+ (con Android 2.3.5), LG G3 (con Android 5.0.2) y Motorola Moto G (con Android 5.0.2).
 
-4.3 Realización de las pruebas de concepto
+4.3 Realización de las pruebas
 
 4.3.1 Primer prueba
 
@@ -61,6 +61,108 @@ Este comando funcionó para el modelo tal y tal, pero no para tal ---
 { REALIZAR PRUEBAS ADICIONALES }
 Cuando se activó el exploit y se ejecutaron comandos desde la PC, de forma remota, algunos de ellos no devolvían los resultados que se esperaban.
 En base a esta demostración, se obtuvieron las siguientes conclusiones. Una de ellas, es que se puede generar fácilmente un exploit que obtenga acceso a un smartphone, sin el consentimiento del usuario. Por otro lado, esta técnica se puede mejorar con la ayuda de la ingeniería social, de forma tal que se puede inducir a un usuario (víctima) a instalar el exploit en su celular pensando que es un software benigno. Finalmente, cabe aclarar que esta prueba se aplica específicamente a Android.
+
+Estos son los comandos que se probaron en los celulares.
+
+Core Commands
+=============
+
+    Command                   Description
+    -------                   -----------
+    ?                         Help menu
+    background                Backgrounds the current session
+    bgkill                    Kills a background meterpreter script
+    bglist                    Lists running background scripts
+    bgrun                     Executes a meterpreter script as a background thread
+    channel                   Displays information about active channels
+    close                     Closes a channel
+    disable_unicode_encoding  Disables encoding of unicode strings
+    enable_unicode_encoding   Enables encoding of unicode strings
+    exit                      Terminate the meterpreter session
+    help                      Help menu
+    info                      Displays information about a Post module
+    interact                  Interacts with a channel
+    irb                       Drop into irb scripting mode
+    load                      Load one or more meterpreter extensions
+    quit                      Terminate the meterpreter session
+    read                      Reads data from a channel
+    resource                  Run the commands stored in a file
+    run                       Executes a meterpreter script or Post module
+    use                       Deprecated alias for 'load'
+    write                     Writes data to a channel
+
+
+Stdapi: File system Commands
+============================
+
+    Command       Description
+    -------       -----------
+    cat           Read the contents of a file to the screen
+    cd            Change directory
+    download      Download a file or directory
+    edit          Edit a file
+    getlwd        Print local working directory
+    getwd         Print working directory
+    lcd           Change local working directory
+    lpwd          Print local working directory
+    ls            List files
+    mkdir         Make directory
+    pwd           Print working directory
+    rm            Delete the specified file
+    rmdir         Remove directory
+    search        Search for files
+    upload        Upload a file or directory
+
+
+Stdapi: Networking Commands
+===========================
+
+    Command       Description
+    -------       -----------
+    ifconfig      Display interfaces
+    ipconfig      Display interfaces
+    portfwd       Forward a local port to a remote service
+    route         View and modify the routing table
+
+
+Stdapi: System Commands
+=======================
+
+    Command       Description
+    -------       -----------
+    execute       Execute a command
+    getuid        Get the user that the server is running as
+    ps            List running processes
+    shell         Drop into a system command shell
+    sysinfo       Gets information about the remote system, such as OS
+
+
+Stdapi: Webcam Commands
+=======================
+
+    Command        Description
+    -------        -----------
+    record_mic     Record audio from the default microphone for X seconds
+    webcam_chat    Start a video chat
+    webcam_list    List webcams
+    webcam_snap    Take a snapshot from the specified webcam
+    webcam_stream  Play a video stream from the specified webcam
+
+
+Android Commands
+================
+
+    Command        Description
+    -------        -----------
+    check_root     Check if device is rooted
+    dump_calllog   Get call log
+    dump_contacts  Get contacts list
+    dump_sms       Get sms messages
+    geolocate      Get current lat-long using geolocation
+
+Algunos comandos funcionaron con el path por defecto; en caso de que se ingrese un path determinado, el comando no funcionaba.
+Algunos comandos devolvían errores luego de una espera como el siguiente:
+[-] Error running command webcam_snap: Rex::TimeoutError Operation timed out.
 
 4.3.2 Segunda prueba
 
