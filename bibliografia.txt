@@ -92,6 +92,10 @@ Bibliografía
 [WIKFEAT] "List of features in Android", http://en.wikipedia.org/wiki/List_of_features_in_Android
 [ANDROTG] "Todo sobre el USB OTG: ¿Qué es? ¿Cómo se usa? ¿Es compatible mi smartphone?", http://www.elandroidelibre.com/2013/03/todo-sobre-el-usb-otg-que-es-como-se-usa-es-compatible-mi-smartphone.html
 [STACKLA] "What are the benefits of an N-layered architecture?", http://stackoverflow.com/questions/2637114/what-are-the-benefits-of-an-n-layered-architecture
+[SOUANDR] "Android Interfaces and Architecture", http://source.android.com/devices/index.html
+[SURVLIN] Frank Maker, Yu-Hsuan Chan, "A survey on Android vs. Linux", 2009.
+[OMETERH] "Making Hardware Just Work", http://ometer.com/hardware.html
+[TANENBA] William Stallings, "Sistemas operativos", Prentice Hall, 2005
 [ELINAMP] "Android Mainlining Project", http://elinux.org/Android_Mainlining_Project
 [KERFEAT] "Android Kernel Features", http://elinux.org/Android_Kernel_Features
 [TESBIND] Thorsten Schreiber, "Android Binder - Android Interprocess Communication", Octubre, 2011.
@@ -202,6 +206,7 @@ Bibliografía
 [COMSCOR] [http://www.comscore.com/Insights/Blog/Number-of-Mobile-Only-Internet-Users-Now-Exceeds-Desktop-Only-in-the-U.S?]
 [GARTSTA] [http://www.gartner.com/newsroom/id/3115517]
 [ANDDIFF] [http://www.ijens.org/vol_12_i_05/128005-4747-ijecs-ijens.pdf]
+[SURVLIN] [http://www.handycodeworks.com/wp-content/uploads/2011/02/linux_versus_android.pdf]
 [IDCSTAT] [http://www.idc.com/getdoc.jsp?containerId=prUS25804315]
 [SECCOMP] [Fuente: Security in computing - Charles P. Pfleeger]
 [PRACSEC] [http://amifan.googlecode.com/svn/trunk/Documents/4.3%20%20A%20Practical%20Analysis%20of%20Smartphone%20Security.pdf] [ "A practical analysis of smartphone security" ]
