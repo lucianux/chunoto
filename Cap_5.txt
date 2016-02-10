@@ -258,6 +258,8 @@ o
 
 5.6 Plantilla de recomendaciones
 
+[Para el capítulo 5, se puede buscar en Google scholar: "securing android" ]
+
 En esta sección se juntan sugerencias en materia de seguridad para prevenir efectos negativos de ataques hechos al smartphone.
 
 (escribir 10 puntos básicos)

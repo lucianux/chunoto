@@ -86,7 +86,7 @@ Bibliografía
 [WANDHIS] "Android (operating system)", http://en.wikipedia.org/wiki/Android_(operating_system)#History
 [WIKIOHA] "Open Handset Alliance", http://en.wikipedia.org/wiki/Open_Handset_Alliance#Products
 [ANDOPEN] "The Android Source Code", http://source.android.com/source/index.html
-[ANDWIRE] [ Fuente: Android Wireless Application Development - Página 18 ]
+[ANDWIRE] Shane Conder, Lauren Darcey, "Android Wireless Application Development", Addison-Wesley, 2011
 [OHAOVER] "Alliance Overview", http://www.openhandsetalliance.com/oha_overview.html
 [DASHAND] "Dashboards", https://developer.android.com/about/dashboards/index.html#OpenGL
 [WIKFEAT] "List of features in Android", http://en.wikipedia.org/wiki/List_of_features_in_Android
@@ -99,6 +99,7 @@ Bibliografía
 [ELINAMP] "Android Mainlining Project", http://elinux.org/Android_Mainlining_Project
 [KERFEAT] "Android Kernel Features", http://elinux.org/Android_Kernel_Features
 [LWNOOMK] "Taming the OOM killer", http://lwn.net/Articles/317814/
+[BLOGCUB] "Binder: Communication Mechanism of Android Processes", http://www.cubrid.org/blog/dev-platform/binder-communication-mechanism-of-android-processes/
 [TESBIND] Thorsten Schreiber, "Android Binder - Android Interprocess Communication", Octubre, 2011.
 [DIANNEH] "LKML - Dianne Hackborn", https://lkml.org/lkml/2009/6/25/3
 [PALBIND] "Binder Kit", http://www.angryredplanet.com/~hackbod/openbinder/docs/html/BinderKit.html
