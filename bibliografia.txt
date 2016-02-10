@@ -98,6 +98,7 @@ Bibliografía
 [TANENBA] William Stallings, "Sistemas operativos", Prentice Hall, 2005
 [ELINAMP] "Android Mainlining Project", http://elinux.org/Android_Mainlining_Project
 [KERFEAT] "Android Kernel Features", http://elinux.org/Android_Kernel_Features
+[LWNOOMK] "Taming the OOM killer", http://lwn.net/Articles/317814/
 [TESBIND] Thorsten Schreiber, "Android Binder - Android Interprocess Communication", Octubre, 2011.
 [DIANNEH] "LKML - Dianne Hackborn", https://lkml.org/lkml/2009/6/25/3
 [PALBIND] "Binder Kit", http://www.angryredplanet.com/~hackbod/openbinder/docs/html/BinderKit.html
