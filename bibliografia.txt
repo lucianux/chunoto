@@ -111,6 +111,7 @@ Bibliografía
 [PARANDR] "ABS: Android security underpinnings", https://lwn.net/Articles/540196/
 [FREETYP] "FreeType", https://es.wikipedia.org/wiki/FreeType
 [ECLIPEN] "An update on Eclipse Android Developer Tools", http://android-developers.blogspot.com.ar/2015/06/an-update-on-eclipse-android-developer.html
+[ARTANDR] "Entendiendo el impacto de ART, la nueva máquina virtual de Android", http://www.elandroidelibre.com/2014/08/entendiendo-el-impacto-de-art-la-nueva-maquina-virtual-de-android.html
 [SDKMANA] "SDK Manager", http://developer.android.com/tools/help/sdk-manager.html
 [TOOLSDK] "Tools Help", http://developer.android.com/tools/help/index.html
 [ANDRFUN] "Application Fundamentals", http://developer.android.com/guide/components/fundamentals.html
