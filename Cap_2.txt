@@ -21,9 +21,9 @@ Con respecto a los esfuerzos para mejorar la portabilidad, Android soporta princ
 Android es una pila de software open source creada y pensada para una gran variedad de dispositivos. Según el sitio del proyecto AOSP, el propósito principal de Android es:
 	"Crear una plataforma de software abierta disponible para los fabricantes (OEMs - Original Equipment Manufacturer), proveedores de telefonía móvil y desarrolladores para hacer realidad sus ideas innovadoras y para introducir un producto en el mundo real con éxito que mejore la experiencia móvil de los usuarios."
 	"El resultado es un producto completo, con calidad de producción, con código fuente abierto para la personalización y portabilidad" [ANDOPEN].
-De ésto se puede llegar a concluir que uno de los objetivos del sistema operativo Android es que se pueda llegar a instalar en la mayor cantidad de dispositivos posibles, ergo plantea la posibilidad de tener un sistema operativo universal para la mayoría de los dispositivos. Para lograrlo, se le brinda al fabricante o al proveedor (o a cualquiera) de dispositivos la posibilidad de adaptar el software según el ámbito del dispositivo, dado que el código fuente es libre y gratuito.
+De ésto se puede llegar a concluir que uno de los objetivos del sistema operativo Android es que se pueda llegar a instalar en la mayor cantidad de dispositivos posibles, ergo plantea la posibilidad de tener un sistema operativo universal. Para lograrlo, se le brinda al fabricante o al proveedor (o a cualquiera) de hardware la posibilidad de adaptar el software según el ámbito del dispositivo, dado que el código fuente es libre y gratuito.
 
-2.2.2 Breve historia de Android
+2.2.2 Hitos históricos en Android
 
 Éstos son algunos de los hitos más relevantes en la historia de Android [WANDHIS] [WIKIOHA] [ANDOPEN]:
 En Octubre del 2003, se fundó la empresa Android, Inc. en Palo Alto, California.
@@ -51,10 +51,10 @@ En Marzo del 2015, salió la versión 5.1 de Android, también llamada "Lollipop
 2.2.3 Características generales
 
 En esta sección se congregan algunas características generales destacables de la plataforma Android:
-Desarrollo abierto: el desarrollo de apps para Android es relativamente sencillo, porque no requiere aprender lenguajes complejos de programación. Todo lo que se necesita es un conocimiento aceptable de Java, el cual es un lenguaje bastante conocido en el ámbito del desarrollo de software, luego contar con el kit de desarrollo de software de Android (en general se lo llama SDK, aunque en Android se lo llama ADK) provisto por Google, el cual se puede descargar gratuitamente, y por último, se necesita una IDE (Integrated Development Environment) para facilitar las tareas habituales de desarrollo de software [ANDWIRE].
+Desarrollo abierto: el desarrollo de apps para Android es relativamente sencillo, porque no requiere aprender lenguajes complejos de programación. Todo lo que se necesita es un conocimiento aceptable de Java, el cual es un lenguaje bastante conocido en el ámbito del desarrollo de software; luego se debe descargar, instalar y configurar el kit de desarrollo de Android (en general se lo llama SDK, aunque en Android se lo llama ADK) provisto gratuitamente por Google, el cual se puede descargar gratuitamente; y por último, se necesita un IDE (Integrated Development Environment) para facilitar las tareas habituales de desarrollo de software [ANDWIRE].
 Completo: los diseñadores de Android tomaron un enfoque integral cuando desarrollaron la plataforma. Comenzaron con un sistema operativo seguro y terminaron construyendo un framework robusto en el tope de la pila de capas, el cual permite buenas oportunidades de desarrollo de apps [OHAOVER].
 Abierto: la plataforma Android se proporciona a través de licencias open source. Ahora los desarrolladores tienen cierto acceso a las características de los smartphones en el desarrollo de apps que antes no tenían [ANDWIRE]. Y los fabricantes tienen acceso al código fuente de Android para portarlo a sus nuevos dispositivos [ANDOPEN].
-Gratuito: el desarrollo y testing de apps de Android es gratuito. Es decir, no hay licencias o cánones por el desarrollo en esta plataforma. Ni se requiere pagos por la certificación del software desarrollado (después se verá qué es y cómo se certifica una app). Las apps de Android pueden ser distribuidas y comercializadas en una variedad de formas (gratuitas o no) [ANDWIRE].
+Gratuito: el desarrollo y testing de apps de Android es gratuito. Es decir, no hay licencias o cánones por el desarrollo en esta plataforma. Ni se requiere pagos por el firmado digital del software desarrollado (en el capítulo 3 se verá qué es una firma y cómo se firma una app). Las apps de Android pueden ser distribuidas y comercializadas en una variedad de formas (gratuitas o no) [ANDWIRE].
 
 2.2.4 Características técnicas
 
