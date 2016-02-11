@@ -1,6 +1,10 @@
 Glosario
 --------
 
+Actuador
+Un actuador es un dispositivo inherentemente mecánico cuya función es proporcionar fuerza para mover o "actuar" otro dispositivo mecánico. La fuerza que provoca el actuador proviene de tres fuentes posibles: presión neumática, presión hidráulica y fuerza motriz eléctrica. Dependiendo del origen de la fuerza, el actuador se denomina "neumático", "hidráulico" o "eléctrico".
+[ Fuente: http://www.aie.cl/files/file/comites/ca/abc/actuadores.pdf ]
+
 AOSP (Android Open Source Project)
 Es una iniciativa creada para guiar en el desarrollo y mantenimiento de la plataforma móvil Android. No es una guía para el desarrollo de apps. La plataforma Android consiste del sistema operativo, middleware y las apps móviles integradas.
 [ Fuente: http://searchmobilecomputing.techtarget.com/definition/Android-Open-Source-Project-AOSP ]
@@ -39,12 +43,6 @@ Es una política empresarial basada en que los empleados de una empresa utilicen
 http://www.cio.com/article/2973977/byod/byod-the-tech-revolution-that-wasn-t.html
 http://www.computerworld.com/article/2948470/byod/the-bring-your-own-device-fad-is-fading.html
 http://hipertextual.com/archivo/presentado-por/g-data/que-es-byod-y-que-representa-problema-seguridad-para-empresas/
-
-COM
-???
-
-CORBA
-???
 
 In Unix and related computers operating systems, a file descriptor (FD, less frequently fildes) is an abstract indicator used to access a file or other input/output resource, such as a pipe or network connection. File descriptors are part of the POSIX application programming interface. A file descriptor is a non-negative integer, represented in C programming language as the type int.
 
