@@ -36,7 +36,9 @@ Bibliografía
 [APWGREP] Jart Armin, "Mobile Threats and the Underground Marketplace", APWG, 2013.
 [DROIRAN] Yajin Zhou, Zhi Wang, Wu Zhou, Xuxian Jiang, "Hey, You, Get Off of My Market: Detecting Malicious Apps in Official and Alternative Android Markets", 2012.
 [PALOXGH] "Malware XcodeGhost Infects 39 iOS Apps, Including WeChat, Affecting Hundreds of Millions of Users", http://researchcenter.paloaltonetworks.com/2015/09/malware-xcodeghost-infects-39-ios-apps-including-wechat-affecting-hundreds-of-millions-of-users/
+[PALOAPP] "Novel Malware XcodeGhost Modifies Xcode, Infects Apple iOS Apps and Hits App Store", http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modifies-xcode-infects-apple-ios-apps-and-hits-app-store/
 [AVASTMA] "Has the Windows Phone Store become a new target for hackers?", https://blog.avast.com/2015/10/06/has-the-windows-phone-store-become-a-new-target-for-hackers/
+[CHECKBL] "BrainTest - A New Level of Sophistication in Mobile Malware", http://blog.checkpoint.com/2015/09/21/braintest-a-new-level-of-sophistication-in-mobile-malware/
 [ZIMPSTA] "Experts Found a Unicorn in the Heart of Android", https://blog.zimperium.com/experts-found-a-unicorn-in-the-heart-of-android/
 [TIMESOC] "Teenagers unaware of social media privacy risks: Study", http://timesofindia.indiatimes.com/tech/social/Teenagers-unaware-of-social-media-privacy-risks-Study/articleshow/46609324.cms
 [COMPNUD] "Nude celebrity pictures posted online after alleged iCloud hack", http://www.computerweekly.com/news/2240227886/Nude-celebrity-pics-posted-online-after-alleged-iCloud-hack
@@ -71,7 +73,7 @@ Bibliografía
 [ANDSECU] Abhishek Dubey, Anmol Misra, "Android Security", CRC Press, 2013
 [EMBANDR] Karim Yaghmour, "Embedded Android", O'Reilly, 2013
 [GARTDRO] "Gartner Says Worldwide Smartphone Sales Recorded Slowest", http://www.gartner.com/newsroom/id/3115517
-[ANDABOU] "Android, the world's most popular mobile platform", http://developer.android.com/about/android.html
+[ANDABOU] "Android, the world's most popular mobile platform", http://developer.android.com/intl/es/about/android.html
 [ANDDIFF] Hadeel Tariq Al-Rayes, "Studying Main Differences between Android & Linux Operating Systems", Octubre, 2012
 [ANDROTV] "Android TV", https://www.android.com/tv/
 [ANDROWE] "Android Wear", https://www.android.com/wear/
@@ -216,6 +218,7 @@ Bibliografía
 [GLOBJOU] [https://globaljournals.org/GJCST_Volume13/2-Evaluating-Smartphone-Application.pdf]
 [COMPSEC] [ Libro "Computer security" por Dieter Gollman (2006) ]
 [MARKAND] [http://www.appfutura.com/blog/alternative-app-stores/]
+[MANBYOD] [http://www.diva-portal.org/smash/get/diva2:817936/FULLTEXT01.pdf]
 [APWGREP] [http://docs.apwg.org/reports/mobile/apwg_mobile_fraud_report_april_2013.pdf]
 [DROIRAN] [http://yajin.org/papers/ndss12_droidranger.pdf]
 [PALOXGH] [http://researchcenter.paloaltonetworks.com/2015/09/malware-xcodeghost-infects-39-ios-apps-including-wechat-affecting-hundreds-of-millions-of-users/]
