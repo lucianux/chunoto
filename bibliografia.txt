@@ -39,6 +39,7 @@ Bibliografía
 [PALOAPP] "Novel Malware XcodeGhost Modifies Xcode, Infects Apple iOS Apps and Hits App Store", http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modifies-xcode-infects-apple-ios-apps-and-hits-app-store/
 [AVASTMA] "Has the Windows Phone Store become a new target for hackers?", https://blog.avast.com/2015/10/06/has-the-windows-phone-store-become-a-new-target-for-hackers/
 [CHECKBL] "BrainTest - A New Level of Sophistication in Mobile Malware", http://blog.checkpoint.com/2015/09/21/braintest-a-new-level-of-sophistication-in-mobile-malware/
+[SMUDGES] Adam J. Aviv, Katherine Gibson, Evan Mossop, Matt Blaze, and Jonathan M. Smith, "Smudge Attacks on Smartphone Touch Screens", 2010.
 [ZIMPSTA] "Experts Found a Unicorn in the Heart of Android", https://blog.zimperium.com/experts-found-a-unicorn-in-the-heart-of-android/
 [TIMESOC] "Teenagers unaware of social media privacy risks: Study", http://timesofindia.indiatimes.com/tech/social/Teenagers-unaware-of-social-media-privacy-risks-Study/articleshow/46609324.cms
 [COMPNUD] "Nude celebrity pictures posted online after alleged iCloud hack", http://www.computerweekly.com/news/2240227886/Nude-celebrity-pics-posted-online-after-alleged-iCloud-hack
@@ -97,7 +98,7 @@ Bibliografía
 [SOUANDR] "Android Interfaces and Architecture", http://source.android.com/devices/index.html
 [SURVLIN] Frank Maker, Yu-Hsuan Chan, "A survey on Android vs. Linux", 2009.
 [OMETERH] "Making Hardware Just Work", http://ometer.com/hardware.html
-[TANENBA] William Stallings, "Sistemas operativos", Prentice Hall, 2005
+[WILLSTA] William Stallings, "Sistemas operativos", Prentice Hall, 2005
 [ELINAMP] "Android Mainlining Project", http://elinux.org/Android_Mainlining_Project
 [KERFEAT] "Android Kernel Features", http://elinux.org/Android_Kernel_Features
 [LWNOOMK] "Taming the OOM killer", http://lwn.net/Articles/317814/
@@ -143,35 +144,35 @@ Bibliografía
 
 ::::::::::::::::::: Capítulo 3 :::::::::::::::::::
 
-[LINPERM] [https://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions]
-[SECKERN] [http://source.android.com/devices/tech/security/overview/kernel-security.html]
-[APPSECU] [Fuente: Libro titulado "Application Security for the Android Platform"]
-[SECPERM] [http://developer.android.com/guide/topics/security/permissions.html]
-[SECOVER] [http://source.android.com/tech/security/index.html]
-[SIGNMAN] [http://developer.android.com/tools/publishing/app-signing.html#signing-manually]
-[KEYTOOL] [http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/keytool.html]
-[QUEESSE] [Libro "Qué es la seguridad informática" por Hugo Scolnik]
-[SISMODE] [Libro "Sistemas Operativos Modernos" por Andrew Tanenbaum]
-[SMRTLCK] [ https://support.google.com/nexus/answer/6093922?hl=es-419 ]
-[INFOSCR] [ https://support.google.com/nexus/answer/2824802?hl=es-419&ref_topic=3416293 ]
-[APPSBAC] [ https://support.google.com/nexus/answer/2819582?hl=en-GB ]
-[GOOFOTO] [ https://support.google.com/photos/answer/6193313?rd=1 ]
-[GOODRIV] [ https://support.google.com/drive/answer/1688488?hl=es ]
-[DRIVEPC] [ https://support.google.com/drive/answer/2374989?rd=1 ]
-[BOUNCER] [ http://googlemobile.blogspot.com.ar/2012/02/android-and-security.html ]
-[UNKSOUR] [ https://support.google.com/nexus/answer/2812853?hl=es-419&ref_topic=3416293 ]
-[AUTOUPD] [ https://support.google.com/googleplay/answer/113412?hl=en ]
-[ANDMOFF] [ https://support.google.com/accounts/answer/3265955?hl=en&ref_topic=6160499 ]
-[PANLADM] [ https://www.google.com/android/devicemanager]
-[GOOUSER] [ https://static.googleusercontent.com/media/www.google.com/es/AR/work/android/files/android-for-work-security-white-paper.pdf ]
-[TLSWIKI] [ https://es.wikipedia.org/wiki/Transport_Layer_Security#Navegadores]
-[CISCVPN] [ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/what_is_a_vpn.html ]
-[VPNANDR] [ Como conectarse: https://support.google.com/nexus/answer/2819573?hl=es-419&ref_topic=3416342 ]
-[PROXYIU] [ https://kb.iu.edu/d/ahoo ]
-[PROXAND] [ https://support.google.com/nexus/answer/2819519?hl=en ]
-[ANDENCR] [ https://source.android.com/devices/tech/security/encryption/ ]
-[ENCDATA] [ https://support.google.com/nexus/answer/2844831?hl=en ]
-[ENCRCEN] [ http://www.androidcentral.com/what-full-disk-encryption-android-lollipop ]
+[LINPERM] "Understanding Linux File Permissions", https://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions
+[SECKERN] "System and kernel security", http://source.android.com/devices/tech/security/overview/kernel-security.html
+[APPSECU] Jeff Six, "Application Security for the Android Platform", O'Reilly, 2012.
+[SECPERM] "System Permissions", http://developer.android.com/guide/topics/security/permissions.html
+[SECOVER] "Security", http://source.android.com/tech/security/index.html
+[SIGNMAN] "Signing Your Applications", http://developer.android.com/tools/publishing/app-signing.html#signing-manually
+[KEYTOOL] "keytool - Key and Certificate Management Tool", http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/keytool.html
+[QUEESSE] Hugo D. Scolnik, "Qué es la seguridad informática", Paidós, 2014.
+[SISMODE] Andrew Tanenbaum, "Sistemas Operativos Modernos", Pearson Educación, Tercera Edición, 2009.
+[SMRTLCK] "Configurar el dispositivo para el desbloqueo automático", https://support.google.com/nexus/answer/6093922?hl=es-419
+[INFOSCR] "Configuración de seguridad", https://support.google.com/nexus/answer/2824802?hl=es-419&ref_topic=3416293
+[APPSBAC] "Back up or restore data on your device", https://support.google.com/nexus/answer/2819582?hl=en-GB
+[GOOFOTO] "Back up photos from your mobile device", https://support.google.com/photos/answer/6193313?rd=1
+[GOODRIV] "Empezar a trabajar con la aplicación Drive para Android", https://support.google.com/drive/answer/1688488?hl=es
+[DRIVEPC] "Instalar y usar "Google Drive para Mac/PC", https://support.google.com/drive/answer/2374989?rd=1
+[BOUNCER] "Android and Security", http://googlemobile.blogspot.com.ar/2012/02/android-and-security.html
+[UNKSOUR] "Proteger el dispositivo de aplicaciones dañinas", https://support.google.com/nexus/answer/2812853?hl=es-419&ref_topic=3416293
+[AUTOUPD] "Update downloaded apps", https://support.google.com/googleplay/answer/113412?hl=en
+[ANDMOFF] "Turn Android Device Manager on or off", https://support.google.com/accounts/answer/3265955?hl=en&ref_topic=6160499
+[PANLADM] "Administrador de dispositivos Android", https://www.google.com/android/devicemanager
+[GOOUSER] "Android for Work Security white paper", https://static.googleusercontent.com/media/www.google.com/es/AR/work/android/files/android-for-work-security-white-paper.pdf
+[TLSWIKI] "Transport Layer Security", https://es.wikipedia.org/wiki/Transport_Layer_Security#Navegadores
+[CISCVPN] "What is a VPN", http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/what_is_a_vpn.html
+[VPNANDR] "Conectarse a redes privadas virtuales (VPN)", https://support.google.com/nexus/answer/2819573?hl=es-419&ref_topic=3416342
+[PROXYIU] "What is a proxy server?", https://kb.iu.edu/d/ahoo
+[PROXAND] "Connect to Wi-Fi networks", https://support.google.com/nexus/answer/2819519?hl=en
+[ANDENCR] "Full Disk Encryption", https://source.android.com/devices/tech/security/encryption/
+[ENCDATA] "Encrypt your data", https://support.google.com/nexus/answer/2844831?hl=en
+[ENCRCEN] "What is full disk encryption in Android Lollipop?", http://www.androidcentral.com/what-full-disk-encryption-android-lollipop
 
 ::::::::::::::::::: Capítulo 4 :::::::::::::::::::
 
@@ -218,6 +219,7 @@ Bibliografía
 [GLOBJOU] [https://globaljournals.org/GJCST_Volume13/2-Evaluating-Smartphone-Application.pdf]
 [COMPSEC] [ Libro "Computer security" por Dieter Gollman (2006) ]
 [MARKAND] [http://www.appfutura.com/blog/alternative-app-stores/]
+[SMUDGES] [https://www.usenix.org/legacy/event/woot10/tech/full_papers/Aviv.pdf]
 [MANBYOD] [http://www.diva-portal.org/smash/get/diva2:817936/FULLTEXT01.pdf]
 [APWGREP] [http://docs.apwg.org/reports/mobile/apwg_mobile_fraud_report_april_2013.pdf]
 [DROIRAN] [http://yajin.org/papers/ndss12_droidranger.pdf]

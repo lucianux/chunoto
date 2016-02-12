@@ -173,9 +173,29 @@ En el caso de Android, en su marketplace oficial llamado "Google Play" se implem
 
 1.5.3.2 Falta de controles físicos
 
+[https://www.uni-ulm.de/fileadmin/website_uni_ulm/iui.inst.100/institut/Papers/Prof_Weber/2012-MUM-shouldersurfing.pdf]
+[http://lersse-dl.ece.ubc.ca/record/286/files/paper.rev2.pdf]
+
 La característica de ubicuidad hace que el smartphone al desplazarse con su dueño, esté en cualquier momento y lugar: el trabajo, un aeropuerto, un bar, etc. Entonces, esta portabilidad en los smartphones los hace más propensos a ser perdidos o robados que otros tipos de dispositivos más robustos, por mencionar algunos de los peligros.
 Sólo el usuario puede determinar lo que esta en riesgo cuando pierde o le roban su smartphone. En líneas generales, se pierden 2 objetivos de seguridad [USACERT]: primero se pierde la disponibilidad del smartphone, o sea que el usuario ya no podrá usarlo; y segundo, se puede perder la privacidad de los datos, si el ladrón es capaz de acceder a la información contenida en el smartphone. Toda la información almacenada estará en riesgo, como también aquella información que se puede acceder indirectamente con la ayuda de los datos guardados en el smartphone.
-En caso de que la información almacenada en el smartphone sea crítica, el primer objetivo no es relevante frente al segundo. Por ejemplo, en el caso de una empresa que dispone de una flota de smartphones para sus empleados, los datos sensibles que contienen no deberían ser accedidos por personas no autorizadas. Incluso, si el smartphone perdido o robado no contiene información sensible, existe otro tipo de información en riesgo: citas, contraseñas, direcciones de mail, etc.
+Suponiendo que el atacante tiene control físico del smartphone, es posible que pueda abrir la tapa trasera del smartphone para extraer la tarjeta de memoria externa, luego el atacante tiene la posibilidad de copiar todos los datos mientras el dueño no esta viendo su smartphone. Una posible solución es la realización de copias de respaldo de la tarjeta de memoria externa.
+Otro posible modo de atacar a un smartphone es observando las manchas de grasa que deja el usuario en la superficie de la pantalla, debido al contacto que tiene con los dedos en su uso, con el fin de inferir el patrón que corresponde al código de acceso para desbloquear la pantalla. Según un documento de investigación que presenta un estudio de la factibilidad de este ataque en dispositivos con Android [SMUDGES], dado que la mayoría de los smartphones tiene una pantalla táctil, un efecto de su uso son los rastros de grasa que deja el usuario que se puede usar para extraer información sensible acerca de lo que ingresa el usuario. Según este estudio, existen tres razones por las que este tipo de ataques representa una amenaza: las manchas persisten en el tiempo, son difíciles de borrar o limpiar cuando el usuario está haciendo otras cosas y su análisis se puede realizar con equipamiento que está al alcance. El estudio de factibilidad que presenta este documento se basa en pruebas que emulan situaciones en que se usa el smartphone, en casos en que interfieren con la identificación del patrón y en casos en que ayudan a reconocer el patrón; por ejemplo, se puede extraer el patrón sacando fotos para luego ser analizadas, definiendo las condiciones en las cuales las manchas de grasa en la superficie de la pantalla van a ser fotografiadas: probando varios ángulos de la luz y las fuentes de luz como también varios ángulos de la cámara con respecto a la posición del smartphone. Con este método se puede deducir la figura gráfica, dado que los resultados de este estudio apoyan esta suposición:
+	"en uno de los experimentos, el patrón fue parcialmente identificable en el 92% y completamente en el 68% de las configuraciones de la cámara y de la iluminación que fueron puestos a prueba."
+
+****
+
+Otro modo de ataque es espiando al usuario cuando introduce contraseñas (técnica conocida como "shoulder surfing"), ---
+
+Caracteristicas que proveen los teclados virtuales
+such as magnification of the typed character or displaying the last typed character as cleartext in the password entry field.
+
+
+
+****
+
+Algunos usuarios utilizan códigos de acceso simples de adivinar ---.
+
+[ARSTECH] [http://arstechnica.com/security/2015/08/new-data-uncovers-the-surprising-predictability-of-android-lock-patterns/]
 
 1.5.3.3 Uso de redes desconocidas
 
