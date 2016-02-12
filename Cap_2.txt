@@ -24,7 +24,7 @@ Con respecto a los esfuerzos para mejorar la portabilidad, Android soporta princ
 2.2.1 Definición
 
 Android es una pila de software open source creada y pensada para una gran variedad de dispositivos. Según el sitio del proyecto AOSP, el propósito principal de Android es:
-	"Crear una plataforma de software abierta disponible para los fabricantes (OEMs - Original Equipment Manufacturer), proveedores de telefonía móvil y desarrolladores para hacer realidad sus ideas innovadoras y para introducir un producto en el mundo real con éxito que mejore la experiencia móvil de los usuarios."
+	"Crear una plataforma de software abierta disponible para los fabricantes (OEMs - Original Equipment Manufacturer), proveedores de telefonía móvil y desarrolladores para hacer realidad sus ideas innovadoras y para introducir un producto en el mundo real con éxito que mejore la experiencia móvil de los usuarios." [ANDOPEN]
 	"El resultado es un producto completo, con calidad de producción, con código fuente abierto para la personalización y portabilidad" [ANDOPEN].
 De ésto se puede llegar a concluir que uno de los objetivos del sistema operativo Android es que se pueda llegar a instalar en la mayor cantidad de dispositivos posibles, ergo plantea la posibilidad de tener un sistema operativo universal. Para lograrlo, se le brinda al fabricante o al proveedor (o a cualquiera) de hardware la posibilidad de adaptar el software según el ámbito del dispositivo, dado que el código fuente es libre y gratuito.
 
