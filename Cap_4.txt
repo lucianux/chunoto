@@ -245,10 +245,13 @@ En esta prueba se consiguió infiltrar archivos en un smartphone por medio de la
 
 Los smartphones actuales pueden conectarse a una red Wi-Fi, sin embargo la incorporación de esta tecnología permite que un tercero pueda capturar información del smartphone empleando técnicas conocidas y probadas en las PCs, como sniffing. Esta prueba se puede aplicar en otros entornos móviles, no sólo en Android. Acá se demuestra que se puede monitorear el tráfico que entra y sale de un smartphone que está conectado a una red WiFi, sin el consentimiento del usuario. Para ello se utilizan 2 herramientas: "Ettercap" y "Wireshark", las cuales corresponden a las 2 etapas en que se divide esta prueba.
 
-Ettercap es un conjunto de herramientas que sirven para realizar ataques "man-in-the-middle" en una red local [SECETTE]. También sirve para efectuar análisis de redes y hosts, entre otras funciones [ETTERCA]. En esta prueba se lo usa para realizar la primer etapa, configurar una PC atacante para que pueda interceptar los paquetes que se transmitan entre un router y un smartphone. Para ello, se realiza un ataque ARP spoofing con la herramienta Ettercap. { EXPLICAR ARP SPOOFING }
+Ettercap es un conjunto de herramientas que sirven para realizar ataques "man-in-the-middle" en una red local [SECETTE]. Esta aplicación se fue enriqueciendo con más y más funciones durante el transcurso del proceso de desarrollo, lo que lo transformó en una herramienta flexible y poderosa para este tipo de ataques. Tiene funciones para efectuar análisis de redes y hosts, entre otras [LINETTE]. En esta prueba se lo usa para realizar la primer etapa, configurar una PC atacante para que pueda interceptar los paquetes que se transmitan entre un router y un smartphone. Para ello, se realiza un ataque ARP spoofing con la herramienta Ettercap. { EXPLICAR ARP SPOOFING }
 [ETTERCA] [https://ettercap.github.io/ettercap/]
 [SECETTE] [http://sectools.org/tool/ettercap/]
 [LINETTE] [http://linux.die.net/man/8/ettercap]
+
+[REF INT] [https://github.com/Ettercap/ettercap]
+[REF INT] [https://www.sans.org/reading-room/whitepapers/tools/ettercap-primer-1406]
 
 Wireshark sirve para analizar paquetes y es la herramienta más popular que realiza este tipo de estudios; permite ver lo que sucede en la red con un alto nivel de detalle [WIRESHA], permite una inspección profunda de cientos de protocolos. Realiza una captura en vivo para su posterior análisis de forma offline. En esta prueba se usa Wireshark para llevar a cabo la segunda etapa, que estudia los paquetes que intercepta el host atacante. El objetivo es demostrar que se pueden capturar paquetes con intensiones maliciosas, como por ejemplo, el robo de una contraseña de una cuenta de usuario.
 [WIRESHA] [https://www.wireshark.org/about.html]
