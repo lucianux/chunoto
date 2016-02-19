@@ -228,10 +228,20 @@ Descripción de una app simple que ayuda a incrementar la seguridad.
 	[http://developer.android.com/intl/es/samples/ConfirmCredential/project.html]
 - (empty)
 	[http://developer.android.com/intl/es/training/articles/keystore.html] (candidato)
+	[http://developer.android.com/intl/es/reference/java/security/KeyStore.html]
 - (empty)
 	[http://developer.android.com/intl/es/training/articles/security-ssl.html]
 - ver:
 	[http://developer.android.com/intl/es/training/articles/security-tips.html]
+
+En términos generales:
+- Marcar un PIN previo al ingreso de una pantalla. Ésto es para asegurarse que el usuario que usa el smartphone es el dueño. "Proceso de autorización".
+- Encriptación local
+	http://developer.android.com/intl/es/reference/android/accounts/AccountManager.html
+- Encriptación remota (ej.: TLS, HTTPS, etc.)
+	http://developer.android.com/intl/es/reference/javax/net/ssl/HttpsURLConnection.html
+- Permisos de Android.
+	http://developer.android.com/intl/es/guide/topics/security/permissions.html
 
 Tips de seguridad en el desarrollo de software
 
@@ -241,7 +251,7 @@ Files created on external storage, such as SD Cards, are globally readable and w
 Usar la SD Card con cuidado, dado que su acceso global.
 Para compartir información es bueno usar ContentProviders.
 
-* (varias cosas más ... :) )
+* (varias cosas más ... )
 
 - SMS-based Two-Factor Authentication (2FA) by intercepting text messages containing One-Time Passwords (OTPs).
 - Fake GPS.
@@ -258,31 +268,60 @@ o
 
 5.6 Plantilla de recomendaciones
 
-[Para el capítulo 5, se puede buscar en Google scholar: "securing android" ]
+[ Para el capítulo 5, se puede buscar en Google scholar: "securing android" ]
 
-En esta sección se juntan sugerencias en materia de seguridad para prevenir efectos negativos de ataques hechos al smartphone.
+En esta sección se juntan sugerencias para mitigar los riesgos de los ataques que se pueden efectuar en un smartphone.
 
-(escribir 10 puntos básicos)
-(ser específico para la plataforma Android)
+[PERMISOS]
+- Analizar los permisos
+Entender los tipos de permisos que se otorgan y prestar atención de los permisos que se autorizan con la instalación de apps nuevas. Cuando se instala o se actualiza una app, se debería comprobar que sus permisos sean coherentes con el propósito de la app. En el caso de las actualizaciones, puede suceder que la app pida los mismos permisos que pedía originalmente o pida permisos adicionales, en este último caso se listan los permisos extras. Esta sugerencia se puede aclarar con un ejemplo: si se descarga un juego nuevo, se espera que solicite acceso al sistema de archivos, y a lo sumo, acceso a Internet; sin embargo, en el caso de que exija permisos ilógicos como el acceso a los mensajes de texto o a la cámara de fotos, entonces la app sería considerada sospechosa, a no ser que se confíe en la empresa creadora de la aplicación. Existen otros ejemplos, como apps que funcionan como calculadoras que exigen el acceso a la red. Por otro lado, la popularidad de la app puede engañar al usuario, dado que la cantidad de descargas de una app puede hacer pensar que la app es segura, un ejemplo de este fenómeno es la app de Facebook que en sus actualizaciones ha pedido cada vez más permisos.
+No hace falta que el usuario conozca toda la lista de permisos, pero al menos puede ver que hay 9 grupos importantes [PERMAND], para la versión 6.0: Calendar (permisos para administra el calendario), Camera (permisos para tomar fotos y grabar videos), Contacts (permisos para administrar contactos), Location (permiso para conocer la ubicación actual del dispositivo), Microphone (permisos para grabar audio), Phone (permisos para marcar números de teléfonos y administrar llamadas), Body Sensors (permisos para conocer la frecuencia cardíaca y datos afines), SMS (permisos para enviar y ver mensajes), Storage (permisos para acceder a las fotos, videos, audios y archivos). En las versiones previas (menores a la 6.0) eran 17 grupos [GROPERM].
+Además de la lista de permisos que aparece cuando se va a instalar una determinada app, es importante que el usuario sepa que pueden aparecer solicitudes de permisos en tiempo de ejecución. Es decir, las apps pueden solicitar permiso para acceder a la información o utilizar las características del dispositivo, en cualquier momento después de la instalación; por ejemplo, cuando un usuario necesita ejecutar una acción en una aplicación, como usar la cámara de fotos del smartphone, la aplicación puede solicitar permiso en ese momento. Ésta es una característica nueva de Android 6.0 [HOWGEEK], o sea que sólo las apps que fueron programadas para la versión 6.0 o superior pueden comportarse de esta forma. Existe otra característica que también viene con esta versión de Android, que es la revocación de permisos individuales de apps (ya sean apps programadas para versiones previas a 6.0 o no), antes sólo se podía revocar permisos en algunas versiones de Android personalizadas. De todas formas, se debe tener cuidado cuando se revocan permisos con apps viejas, porque en elgunos casos pueden causar anomalías en su ejecución (el cierre imprevisto de la app o mensajes emergentes de error).
 
-- Analizar los permisos [ ya está escrito más arriba, en los consejos ]
-Entender los tipos de permisos que se otorgan y prestar atención de los permisos que se autorizan con la instalación de apps nuevas. Comprobar que éstos sean coherentes con el propósito de la app. En las actualizaciones puede suceder que la app pida los mismos permisos que pedía originalmente o pida permisos adicionales, en este último caso se listan los permisos extras.
-Ej.: si se descarga un juego nuevo, se espera que solicite acceso al sistema de archivos. Sin embargo, si también solicita acceso a los mensajes de texto o a la cámara de fotos, entonces la app podría ser considerada sospechosa, dado que podría llegar a realizar otras actividades extrañas; ha no ser que se confíe en la empresa creadora de la aplicación. Existen muchos ejemplos, como apps que funcionan como calculadoras que exigen el acceso a la red. Por otro lado, la popularidad de la app puede engañar al usuario, dado que la cantidad de descargas de una app puede hacer pensar que la app es segura, un ejemplo de este fenómeno es la app de Facebook que en sus actualizaciones ha pedido más permisos.
+[PERMAND] [https://www.google.com/design/spec/patterns/permissions.html#permissions-usage]
+[HOWGEEK] [http://www.howtogeek.com/230683/how-to-manage-app-permissions-on-android-6.0/]
+[GROPERM] [https://support.google.com/googleplay/answer/6014972?hl=en]
 
-- Evitar el Wi-Fi gratuito.
-Las redes Wi-Fi gratuitas, públicas y abiertas pueden ofrecer a un smartphone una conexión a Internet sin ningún costo. No obstante, estas conexiones inseguras pueden ser despreciables para mantener la privacidad de la información confidencial contenida en el smartphone víctima. Para un hacker, es mucho más sencillo conectarse a esta clase de redes Wi-Fi y, una vez que ambos estén en la misma red, el hacker puede captar fácilmente casi toda la información que la víctima envíe a través de Internet. Es más seguro utilizar conexiones Wi-Fi seguras o, en lo posible, usar una conexión a Internet del proveedor de telefonía móvil reemplazando a las conexiones Wi-Fi.
+[WIFI, GPS, BLUETOOTH, NFC]
+- Evitar el uso de Wi-Fi de forma desmedida.
+Las redes Wi-Fi gratuitas, públicas y abiertas ofrecen al usuario de un smartphone una conexión a Internet sin ningún costo. No obstante, estas conexiones inseguras pueden ser despreciables para mantener la privacidad de la información que se transmite en la red inalámbrica. Para un hacker, es mucho más sencillo conectarse a esta clase de redes inalámbricas, puede captar fácilmente casi toda la información que la víctima envíe a través de Internet. Es más seguro utilizar conexiones Wi-Fi seguras, o incluso se puede reemplazar la conexión Wi-Fi por una conexión a Internet del proveedor de telefonía móvil.
+{ se pueden agregar otras formas de mermar los riesgos en la conexiones, como el Bluetooth, el NFC, GPS }
 
+[PIN de la SIM]
 - Establecer un PIN para la tarjeta SIM.
-Cuando se usa una tarjeta SIM por primera vez, por lo general, viene con un código de PIN por defecto, del estilo "1234"; este código se lo debe redefinir manualmente, normalmente suele ser de 4 dígitos, debería cumplir las típicas normas de contraseñas: que no sea la fecha de nacimiento del usuario o el año en que nació, que no sea otra vez "1234", entre otras. Establecer un PIN para el SIM es importante, dado que evita que un usuario que desconoce el PIN (probablemente, un intruso) haga llamadas telefónicas sin autorización, básicamente; aunque se podría llegar a realizar una llamada de emergencia. Otra característica de este PIN es que solo se tienen 3 intentos en el ingreso del código PIN. Si se agotan estos intentos, pedirá el código "PUK", una contraseña más larga y formada por números, ésta es definida por el fabricante del SIM la provee el proveedor de telefonía móvil; generalmente, se encuentra junto con el envoltorio o si se descarta el mismo, también se lo puede pedir llamando al proveedor de telefonía móvil. En la última instancia, ya cuando se excede en el número máximo de intentos de PUK, la tarjeta SIM quedará bloqueada permanentemente y se tendrá que conseguir una nueva tarjeta SIM [WINPHON].
+Cuando se usa una tarjeta SIM por primera vez, por lo general, viene con un código de PIN por defecto, del estilo "1234"; este código se lo debe redefinir manualmente, normalmente suele ser de 4 dígitos, debería cumplir las típicas normas de contraseñas: que no sea la fecha de nacimiento del usuario o el año en que nació, que no sea algo sencillo de adivinar como "4321", entre otras. Establecer un PIN para el SIM es importante, dado que evita que un usuario que desconoce el PIN (probablemente, un intruso) haga llamadas telefónicas sin autorización, básicamente; aunque se podría llegar a realizar una llamada de emergencia. Otra característica de este PIN es que solo se tienen 3 intentos en el ingreso del código PIN. Si se agotan estos intentos, pedirá el código "PUK", una contraseña más larga y formada por números, ésta es definida por el fabricante del SIM (se la consigue por medio del proveedor de telefonía móvil); generalmente, se encuentra junto con el envoltorio o si se descarta el mismo, también se lo puede pedir llamando al proveedor de telefonía móvil. En la última instancia, ya cuando se excede en el número máximo de intentos de PUK, la tarjeta SIM quedará bloqueada permanentemente y se tendrá que conseguir una nueva tarjeta SIM [WINPHON].
 [WINPHON] [http://www.windowsphone.com/es-es/how-to/wp7/basics/use-a-pin-to-lock-my-sim-card]
 
 { Podrían ir fotos de las tarjetas SIM con sus envoltorios }
 
+[ANTIVIRUS]
+- Uso de Antivirus, Antispyware y un filtro Antispam. ?? { Explotar }
+
+[ROOTING]
 - Si el usuario decide rootear su smartphone, se debe tener en cuenta que si una app malévola obtiene estos permisos de root, puede llegar a ser muy peligroso, ya que esta app tiene todos los permisos para realizar cualquier actividad. Por eso, el usuario que emplee un smartphone rooteado debe ser muy cuidadoso con las aplicaciones que instale y sus permisos. Una de las mejores apps que administran los permisos de root son SuperSu o Superuser.
 
-- En el acceso a la bandeja de entrada de la casilla de mails, desde el smarthpone, el usuario debe tener cuidado cuando llegan mails con enlaces, se debe comprobar a qué página lo lleva, se puede tratar de una estafa. Estas amenazas no se limitan al correo electrónico, también un sms de texto o mensaje por whatsapp puede incitar a que el usuario haga clic en un enlace supuestamente fiable para solicitar información personal. Es cuestión de que el usuario esté alerta de lo que recibe y sea conciente de la acción que toma.
+// Screenshot de SuperSU o SuperUser
 
-- Elegir una solución de seguridad para smartphones con características antirrobo. Existen varios productos en el mercado que incluyen una amplia gama de características antirrobo, ofreciendo acceso remoto al smartphone perdido o robado, para que pueda bloquearlo, borrarle los datos y encontrar su ubicación.
+[CONCIENCIA DEL USUARIO] [VARIOS SUBTEMAS PARA TOCAR]
+- En el acceso a la bandeja de entrada de la casilla de mails, desde el smarthpone, el usuario debe tener cuidado cuando llegan mails con enlaces, se debe comprobar a qué página lo lleva, se puede tratar de una estafa. Estas amenazas no se limitan al correo electrónico, también un sms de texto o mensaje por whatsapp puede incitar a que el usuario haga clic en un enlace supuestamente fiable para solicitar información personal. Es cuestión de que el usuario esté alerta de lo que recibe y sea conciente de la acción que toma.
+Con respecto a la instalación de apps nuevas, se debe evitar el uso de una fuente externa como los marketplaces de terceros, el correo electrónico, una sitio web que ofrece una app; a menos que sea de confianza. Es aconsejable que se use el marketplace oficial Google Play.
+[ Make sure you check ratings and reviews if they are available, and read the app’s privacy policy to see exactly what phone features it will have access to if you download. ]
+
+[PROTECCIÓN FÍSICA]
+Algunos proveedores de telefonía móvil disponen de un servicio que asegura al equipo ante robo, hurto, extravío o destrucción total mediante un pago fijo mensual [PROPERS].
+[PROPERS] [http://www.personal.com.ar/ayudaysoporte/#/individuos/soporte/17/53/160]
+
+[GEOLOCALIZACIÓN]
+- Elegir una solución de seguridad para smartphones con características antirrobo. Existen varios productos en el mercado que incluyen una amplia gama de características antirrobo, ofreciendo acceso remoto al smartphone perdido o robado, para que pueda bloquearlo, borrarle los datos y encontrar su ubicación. Android posee una aplicación que realiza esta tarea, se llama "Administrador de Dispositivos de Android" y se la describe en el capítulo 3.
+
+[ BACKUP ?? can you save your contacts, music, pictures, videos and documents to the cloud. ]
+
+[ ACTUALIZACIONES DE SISTEMA Y DE LAS APPS ]
+
+[ Avoid giving out personal information ]
+That text message that looks to be from your bank may not be. If you get requests via email or text for account information from any business, contact the business directly to confirm the request. The same advice goes for tapping links in unsolicited emails or texts.
+
+[ REF INT ] [http://www.verizonwireless.com/mobile-living/network-and-plans/security-app-tips-to-keep-your-smartphone-secure/]
 
 5.7 Posibles políticas para el usuario y la organización
 
