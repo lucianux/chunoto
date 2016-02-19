@@ -283,9 +283,13 @@ Además de la lista de permisos que aparece cuando se va a instalar una determin
 [GROPERM] [https://support.google.com/googleplay/answer/6014972?hl=en]
 
 [WIFI, GPS, BLUETOOTH, NFC]
-- Evitar el uso de Wi-Fi de forma desmedida.
+- Evitar el uso de las conexiones (Wi-Fi, GPS, Bluetooth, NFC) a otros sistemas de forma desmedida.
 Las redes Wi-Fi gratuitas, públicas y abiertas ofrecen al usuario de un smartphone una conexión a Internet sin ningún costo. No obstante, estas conexiones inseguras pueden ser despreciables para mantener la privacidad de la información que se transmite en la red inalámbrica. Para un hacker, es mucho más sencillo conectarse a esta clase de redes inalámbricas, puede captar fácilmente casi toda la información que la víctima envíe a través de Internet. Es más seguro utilizar conexiones Wi-Fi seguras, o incluso se puede reemplazar la conexión Wi-Fi por una conexión a Internet del proveedor de telefonía móvil.
+Por lo general, la conexión Bluetooth debe estar desactivada porque --- . Su propósito es posibilitar la transmisión de voz y de datos. Sincronización, evitar el uso de cables en la transmisión de datos, conexión de corto alcance.
 { se pueden agregar otras formas de mermar los riesgos en la conexiones, como el Bluetooth, el NFC, GPS }
+El uso del servicio del GPS no es algo que se necesite todo el tiempo, generalmente se lo debe tener deshabilitado. En ocasiones, se lo debe activar de forma manual cuando realmente se lo precise. Existen aplicaciones móviles como FourSquare, Happn, Family Locator, etc. que utilizan la información relativa a la ubicación geográfico con fines sociales; estas aplicaciones necesitan ser controladas para evitar sorpresas. El usuario debe ser conciente de que las aplicaciones móviles son las verdaderas responsables del rastreo de la ubicación del smartphone, ellas consultan la ubicación (vía GPS) para que luego transmita esta información a un tercero por Internet. En cambio, la infraestructura que está detrás del sistema GPS no almacena, ni observa nada de un smartphone en particular, ni siquiera cuantas personas están usando el sistema; sólo emite señales [EFFOGPS].
+
+[EFFOGPS] [https://ssd.eff.org/es/module/el-problema-con-los-tel%C3%A9fonos-m%C3%B3viles]
 
 [PIN de la SIM]
 - Establecer un PIN para la tarjeta SIM.
@@ -312,7 +316,7 @@ Algunos proveedores de telefonía móvil disponen de un servicio que asegura al 
 [PROPERS] [http://www.personal.com.ar/ayudaysoporte/#/individuos/soporte/17/53/160]
 
 [GEOLOCALIZACIÓN]
-- Elegir una solución de seguridad para smartphones con características antirrobo. Existen varios productos en el mercado que incluyen una amplia gama de características antirrobo, ofreciendo acceso remoto al smartphone perdido o robado, para que pueda bloquearlo, borrarle los datos y encontrar su ubicación. Android posee una aplicación que realiza esta tarea, se llama "Administrador de Dispositivos de Android" y se la describe en el capítulo 3.
+- Elegir una solución de seguridad para smartphones con características antirrobo. Existen varios productos en el mercado que incluyen una amplia gama de características antirrobo, ofreciendo acceso remoto al smartphone perdido o robado, para que pueda bloquearlo, borrarle los datos y encontrar su ubicación. Android posee una aplicación que realiza esta tarea, se llama "Administrador de Dispositivos de Android" y se la describe en el capítulo 3. Existe una contra en el uso de estas aplicaciones, es que exigen que el servicio del GPS esté activado, con ésto podría pasar que otras aplicaciones puedan invadir nuestra privacidad, además que este hardware consume la energía de la batería considerablemente.
 
 [ BACKUP ?? can you save your contacts, music, pictures, videos and documents to the cloud. ]
 
