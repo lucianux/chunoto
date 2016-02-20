@@ -270,60 +270,90 @@ o
 
 [ Para el capítulo 5, se puede buscar en Google scholar: "securing android" ]
 
-En esta sección se juntan sugerencias para mitigar los riesgos de los ataques que se pueden efectuar en un smartphone.
+En esta sección se congregan sugerencias para mitigar los riesgos de los ataques que se pueden efectuar en un smartphone.
+
+Protección física
+-----------------
+
+[PIN de la SIM]
+- Establecer un PIN para la tarjeta SIM.
+Cuando se usa una tarjeta SIM por primera vez, por lo general, viene con un código de PIN por defecto, este número lo suministra el proveedor de telefonía celular; es recomendable que este código se lo redefina manualmente; es un código de 4 a 8 dígitos y debería cumplir las típicas normas de contraseñas: que no sea el año de la fecha de nacimiento de alguien conocido, que no sea algo sencillo de adivinar como "4321", etc. Establecer un PIN para el SIM es importante, dado que evita que un usuario que desconoce este código (probablemente, sea un intruso) pueda realizar llamadas, enviar mensajes SMS o usar la red de datos [APPLSUP], aunque si permite realizar llamadas de emergencia. La solicitud del PIN se realiza cuando se enciende el celular o cuando se traslada la tarjeta SIM a otro celular, hay 3 intentos sino se bloquea la tarjeta SIM, impidiendo el uso de los servicios del proveedor de telefonía móvil. Es un código que no tiene ninguna vinculación con el código de la pantalla de bloqueo. Otra característica de este PIN es que solo se tienen 3 intentos en el ingreso del código PIN. Si se agotan estos intentos, pedirá el código "PUK", una contraseña más larga y formada por números, ésta es definida por el fabricante del SIM (se la consigue por medio del proveedor de telefonía móvil); generalmente, se encuentra junto con el envoltorio o si se descarta el mismo, también se lo puede pedir llamando al proveedor de telefonía móvil. En última instancia, cuando se excede en el número máximo de intentos de PUK, la tarjeta SIM se bloqueará permanentemente y se deberá reemplazarla por una nueva [WINPHON].
+[WINPHON] [http://www.windowsphone.com/es-es/how-to/wp7/basics/use-a-pin-to-lock-my-sim-card]
+[APPLSUP] [https://support.apple.com/es-es/HT201529]
+// Podrían ir fotos de las tarjetas SIM con sus envoltorios
+
+[GEOLOCALIZACIÓN]
+- Elegir una solución de seguridad para smartphones con características antirrobo. Existen varios productos en el mercado que incluyen una amplia gama de características antirrobo, ofreciendo acceso remoto al smartphone perdido o robado, para que pueda bloquearlo, borrarle los datos y encontrar su ubicación. Android posee una aplicación que realiza esta tarea, se llama "Administrador de Dispositivos de Android" y se la describe en el capítulo 3. Existe una contra en el uso de estas aplicaciones, es que exigen que el servicio del GPS esté activado, con ésto podría pasar que otras aplicaciones puedan invadir nuestra privacidad, además que este hardware consume la energía de la batería considerablemente.
+
+[SEGURO]
+Algunos proveedores de telefonía móvil disponen de un servicio que asegura al equipo ante robo, hurto, extravío o destrucción total mediante un pago fijo mensual [PROPERS].
+[PROPERS] [http://www.personal.com.ar/ayudaysoporte/#/individuos/soporte/17/53/160]
+
+[ BACKUP ?? can you save your contacts, music, pictures, videos and documents to the cloud. ]
+
+Protección ante software malicioso
+----------------------------------
 
 [PERMISOS]
-- Analizar los permisos
+- Analizar los permisos.
 Entender los tipos de permisos que se otorgan y prestar atención de los permisos que se autorizan con la instalación de apps nuevas. Cuando se instala o se actualiza una app, se debería comprobar que sus permisos sean coherentes con el propósito de la app. En el caso de las actualizaciones, puede suceder que la app pida los mismos permisos que pedía originalmente o pida permisos adicionales, en este último caso se listan los permisos extras. Esta sugerencia se puede aclarar con un ejemplo: si se descarga un juego nuevo, se espera que solicite acceso al sistema de archivos, y a lo sumo, acceso a Internet; sin embargo, en el caso de que exija permisos ilógicos como el acceso a los mensajes de texto o a la cámara de fotos, entonces la app sería considerada sospechosa, a no ser que se confíe en la empresa creadora de la aplicación. Existen otros ejemplos, como apps que funcionan como calculadoras que exigen el acceso a la red. Por otro lado, la popularidad de la app puede engañar al usuario, dado que la cantidad de descargas de una app puede hacer pensar que la app es segura, un ejemplo de este fenómeno es la app de Facebook que en sus actualizaciones ha pedido cada vez más permisos.
 No hace falta que el usuario conozca toda la lista de permisos, pero al menos puede ver que hay 9 grupos importantes [PERMAND], para la versión 6.0: Calendar (permisos para administra el calendario), Camera (permisos para tomar fotos y grabar videos), Contacts (permisos para administrar contactos), Location (permiso para conocer la ubicación actual del dispositivo), Microphone (permisos para grabar audio), Phone (permisos para marcar números de teléfonos y administrar llamadas), Body Sensors (permisos para conocer la frecuencia cardíaca y datos afines), SMS (permisos para enviar y ver mensajes), Storage (permisos para acceder a las fotos, videos, audios y archivos). En las versiones previas (menores a la 6.0) eran 17 grupos [GROPERM].
 Además de la lista de permisos que aparece cuando se va a instalar una determinada app, es importante que el usuario sepa que pueden aparecer solicitudes de permisos en tiempo de ejecución. Es decir, las apps pueden solicitar permiso para acceder a la información o utilizar las características del dispositivo, en cualquier momento después de la instalación; por ejemplo, cuando un usuario necesita ejecutar una acción en una aplicación, como usar la cámara de fotos del smartphone, la aplicación puede solicitar permiso en ese momento. Ésta es una característica nueva de Android 6.0 [HOWGEEK], o sea que sólo las apps que fueron programadas para la versión 6.0 o superior pueden comportarse de esta forma. Existe otra característica que también viene con esta versión de Android, que es la revocación de permisos individuales de apps (ya sean apps programadas para versiones previas a 6.0 o no), antes sólo se podía revocar permisos en algunas versiones de Android personalizadas. De todas formas, se debe tener cuidado cuando se revocan permisos con apps viejas, porque en elgunos casos pueden causar anomalías en su ejecución (el cierre imprevisto de la app o mensajes emergentes de error).
 
+[FUENTES DESCONOCIDAS]
+- Cuidar los lugares donde se descargan apps.
+
+Con respecto a la instalación de apps nuevas, se debe evitar el uso de una fuente externa como los marketplaces de terceros, el correo electrónico, una sitio web que ofrece una app; a menos que sea de confianza. Es aconsejable que se use el marketplace oficial Google Play.
+[ Make sure you check ratings and reviews if they are available, and read the app’s privacy policy to see exactly what phone features it will have access to if you download. ]
+
+Existen iniciativas independientes que distribuyen apps que siguen una tendencia, entre estos proyectos se puede mencionar a F-Droid, FossDroid, Guardian Project, PRISM Break. PRISM Break es un proyecto que busca mejorar la seguridad del usuario para impedir el espionaje por parte de autoridades guvernamentales, en este proyecto se agrupan apps de código abierto y muestran las apps equivalentes en el entorno corporativo [PRISMBR]; tiene un apartado para apps para Android [PRISAND]. F-Droid es un repositorio de apps de código abierto y gratuitas; este repositorio tiene una galería de apps que expone críticas, puntajes, novedades, revisiones y afines; tiene una app cliente que facilita la búsqueda, instalación y la aplicación de actualizaciones [FDROIDA]. Guardian Project busca facilitar la distribución de apps seguras, sencillas de usar y de código abierto; está pensado para los usuarios que desean proteger sus comunicaciones y los datos personales de la intrusión, la interceptación y la vigilancia [GUARPRO]. Fossdroid es un proyecto que promueve apps gratuitas y de código abierto para Android; Fossdroid se alimenta de los datos de F-Droid y los dispone al estilo de un marketplace [FOSSDRO].
+
+[FOSSDRO] [https://fossdroid.com/]
+[GUARPRO] [https://guardianproject.info/]
+[FDROIDA] [https://f-droid.org/about/]
+[PRISMBR] [https://prism-break.org/es/]
+[PRISAND] [https://prism-break.org/es/categories/android/]
+
 [PERMAND] [https://www.google.com/design/spec/patterns/permissions.html#permissions-usage]
 [HOWGEEK] [http://www.howtogeek.com/230683/how-to-manage-app-permissions-on-android-6.0/]
 [GROPERM] [https://support.google.com/googleplay/answer/6014972?hl=en]
+[ANSEOVE] [http://www.android.com/security/overview/]
+
+Protección de la privacidad de los datos
+----------------------------------------
 
 [WIFI, GPS, BLUETOOTH, NFC]
 - Evitar el uso de las conexiones (Wi-Fi, GPS, Bluetooth, NFC) a otros sistemas de forma desmedida.
 Las redes Wi-Fi gratuitas, públicas y abiertas ofrecen al usuario de un smartphone una conexión a Internet sin ningún costo. No obstante, estas conexiones inseguras pueden ser despreciables para mantener la privacidad de la información que se transmite en la red inalámbrica. Para un hacker, es mucho más sencillo conectarse a esta clase de redes inalámbricas, puede captar fácilmente casi toda la información que la víctima envíe a través de Internet. Es más seguro utilizar conexiones Wi-Fi seguras, o incluso se puede reemplazar la conexión Wi-Fi por una conexión a Internet del proveedor de telefonía móvil.
-Por lo general, la conexión Bluetooth debe estar desactivada porque --- . Su propósito es posibilitar la transmisión de voz y de datos. Sincronización, evitar el uso de cables en la transmisión de datos, conexión de corto alcance.
-{ se pueden agregar otras formas de mermar los riesgos en la conexiones, como el Bluetooth, el NFC, GPS }
-El uso del servicio del GPS no es algo que se necesite todo el tiempo, generalmente se lo debe tener deshabilitado. En ocasiones, se lo debe activar de forma manual cuando realmente se lo precise. Existen aplicaciones móviles como FourSquare, Happn, Family Locator, etc. que utilizan la información relativa a la ubicación geográfico con fines sociales; estas aplicaciones necesitan ser controladas para evitar sorpresas. El usuario debe ser conciente de que las aplicaciones móviles son las verdaderas responsables del rastreo de la ubicación del smartphone, ellas consultan la ubicación (vía GPS) para que luego transmita esta información a un tercero por Internet. En cambio, la infraestructura que está detrás del sistema GPS no almacena, ni observa nada de un smartphone en particular, ni siquiera cuantas personas están usando el sistema; sólo emite señales [EFFOGPS].
+Con respecto a la conexión Bluetooth, por lo general, debe estar desactivada porque un smartphone puede ser blanco de ataques con el de técnicas como bluejacking, bluesnarfing y bluebugging que producen efectos como: molestar con mensajes emergentes, robar información privada u obtener control total del dispositivo, entre otras acciones [BLUEPAB]. Considerando que el propósito de la interfase Bluetooth es posibilitar la transmisión de voz y de datos entre dispositivos (sincronización) con una conexión de corto alcance evitando el uso de cables; entonces, como estos dispositivos no siempre van a estas juntos, su conexión constante no es imprescindible. Cabe aclarar que no alcanza con la activación del modo oculto de la interfase Bluetooth, sino que directamente se lo debe desactivar. Por último, se debe tener en cuenta que hay aplicaciones que podrían tener los permisos para volver a activar el servicio del Bluetooth.
+El servicio GPS no necesita estar activo todo el tiempo, generalmente se lo debe tener deshabilitado. En ocasiones, se lo debe activar de forma manual cuando realmente se lo precise para las aplicaciones móviles (como FourSquare, Happn, Family Locator, etc.) que utilizan la información relativa a la ubicación geográfico con fines sociales, como la incorporación de la ubicación geográfica actual a las fotos que se publican en alguna red social; también existen otras aplicaciones que tienen propósitos de navegación (por ejemplo, MAPS.ME, MapFactor, Google Maps, etc.); todas estas aplicaciones necesitan ser controladas para evitar sorpresas. El usuario debe ser conciente de que las aplicaciones móviles son las verdaderas responsables del rastreo de la ubicación del smartphone, ellas consultan la ubicación (vía GPS) para que luego transmita esta información a un tercero por Internet. En cambio, la infraestructura que está detrás del sistema GPS no almacena, ni observa nada de un smartphone en particular, ni siquiera cuantas personas están usando el sistema; sólo emite señales [EFFOGPS].
+Para poder tener un control de las funciones del smartphone, se puede tener un tablero donde indique si cada uno está encendido o apagado.
+
+[PHISING] [VARIOS SUBTEMAS PARA TOCAR]
+- En el acceso a la bandeja de entrada de la casilla de mails, desde el smarthpone, el usuario debe tener cuidado cuando llegan mails con enlaces, se debe comprobar a qué página lo lleva, se puede tratar de una estafa (Phishing). Estas amenazas no se limitan al correo electrónico, también se usan otros medios como los mensajes SMS (Smishing) o mensajes por whatsapp que pueden incitar a que el usuario haga clic en un enlace supuestamente fiable para solicitar información personal, a veces son muy insistentes en el envío de mensajes (Spamming). Es cuestión de que el usuario esté alerta e informado de lo que recibe y sea conciente de la acción que toma.
+
+[ Avoid giving out personal information ]
+That text message that looks to be from your bank may not be. If you get requests via email or text for account information from any business, contact the business directly to confirm the request. The same advice goes for tapping links in unsolicited emails or texts.
 
 [EFFOGPS] [https://ssd.eff.org/es/module/el-problema-con-los-tel%C3%A9fonos-m%C3%B3viles]
+[BLUEPAB] [http://www.pabloyglesias.com/mundohacker-bluetooth/]
 
-[PIN de la SIM]
-- Establecer un PIN para la tarjeta SIM.
-Cuando se usa una tarjeta SIM por primera vez, por lo general, viene con un código de PIN por defecto, del estilo "1234"; este código se lo debe redefinir manualmente, normalmente suele ser de 4 dígitos, debería cumplir las típicas normas de contraseñas: que no sea la fecha de nacimiento del usuario o el año en que nació, que no sea algo sencillo de adivinar como "4321", entre otras. Establecer un PIN para el SIM es importante, dado que evita que un usuario que desconoce el PIN (probablemente, un intruso) haga llamadas telefónicas sin autorización, básicamente; aunque se podría llegar a realizar una llamada de emergencia. Otra característica de este PIN es que solo se tienen 3 intentos en el ingreso del código PIN. Si se agotan estos intentos, pedirá el código "PUK", una contraseña más larga y formada por números, ésta es definida por el fabricante del SIM (se la consigue por medio del proveedor de telefonía móvil); generalmente, se encuentra junto con el envoltorio o si se descarta el mismo, también se lo puede pedir llamando al proveedor de telefonía móvil. En la última instancia, ya cuando se excede en el número máximo de intentos de PUK, la tarjeta SIM quedará bloqueada permanentemente y se tendrá que conseguir una nueva tarjeta SIM [WINPHON].
-[WINPHON] [http://www.windowsphone.com/es-es/how-to/wp7/basics/use-a-pin-to-lock-my-sim-card]
+Protección del sistema
+----------------------
 
-{ Podrían ir fotos de las tarjetas SIM con sus envoltorios }
+[QR CODES]
+- Analizar el código QR antes de ejecutarlo con apps que escanean de forma segura.
 
 [ANTIVIRUS]
 - Uso de Antivirus, Antispyware y un filtro Antispam. ?? { Explotar }
 
 [ROOTING]
 - Si el usuario decide rootear su smartphone, se debe tener en cuenta que si una app malévola obtiene estos permisos de root, puede llegar a ser muy peligroso, ya que esta app tiene todos los permisos para realizar cualquier actividad. Por eso, el usuario que emplee un smartphone rooteado debe ser muy cuidadoso con las aplicaciones que instale y sus permisos. Una de las mejores apps que administran los permisos de root son SuperSu o Superuser.
-
 // Screenshot de SuperSU o SuperUser
 
-[CONCIENCIA DEL USUARIO] [VARIOS SUBTEMAS PARA TOCAR]
-- En el acceso a la bandeja de entrada de la casilla de mails, desde el smarthpone, el usuario debe tener cuidado cuando llegan mails con enlaces, se debe comprobar a qué página lo lleva, se puede tratar de una estafa. Estas amenazas no se limitan al correo electrónico, también un sms de texto o mensaje por whatsapp puede incitar a que el usuario haga clic en un enlace supuestamente fiable para solicitar información personal. Es cuestión de que el usuario esté alerta de lo que recibe y sea conciente de la acción que toma.
-Con respecto a la instalación de apps nuevas, se debe evitar el uso de una fuente externa como los marketplaces de terceros, el correo electrónico, una sitio web que ofrece una app; a menos que sea de confianza. Es aconsejable que se use el marketplace oficial Google Play.
-[ Make sure you check ratings and reviews if they are available, and read the app’s privacy policy to see exactly what phone features it will have access to if you download. ]
+[ ACTUALIZACIONES DEL SISTEMA Y DE LAS APPS ]
 
-[PROTECCIÓN FÍSICA]
-Algunos proveedores de telefonía móvil disponen de un servicio que asegura al equipo ante robo, hurto, extravío o destrucción total mediante un pago fijo mensual [PROPERS].
-[PROPERS] [http://www.personal.com.ar/ayudaysoporte/#/individuos/soporte/17/53/160]
-
-[GEOLOCALIZACIÓN]
-- Elegir una solución de seguridad para smartphones con características antirrobo. Existen varios productos en el mercado que incluyen una amplia gama de características antirrobo, ofreciendo acceso remoto al smartphone perdido o robado, para que pueda bloquearlo, borrarle los datos y encontrar su ubicación. Android posee una aplicación que realiza esta tarea, se llama "Administrador de Dispositivos de Android" y se la describe en el capítulo 3. Existe una contra en el uso de estas aplicaciones, es que exigen que el servicio del GPS esté activado, con ésto podría pasar que otras aplicaciones puedan invadir nuestra privacidad, además que este hardware consume la energía de la batería considerablemente.
-
-[ BACKUP ?? can you save your contacts, music, pictures, videos and documents to the cloud. ]
-
-[ ACTUALIZACIONES DE SISTEMA Y DE LAS APPS ]
-
-[ Avoid giving out personal information ]
-That text message that looks to be from your bank may not be. If you get requests via email or text for account information from any business, contact the business directly to confirm the request. The same advice goes for tapping links in unsolicited emails or texts.
+-------------------------
 
 [ REF INT ] [http://www.verizonwireless.com/mobile-living/network-and-plans/security-app-tips-to-keep-your-smartphone-secure/]
 

