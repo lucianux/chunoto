@@ -280,16 +280,24 @@ Protección física
 Cuando se usa una tarjeta SIM por primera vez, por lo general, viene con un código de PIN por defecto, este número lo suministra el proveedor de telefonía celular; es recomendable que este código se lo redefina manualmente; es un código de 4 a 8 dígitos y debería cumplir las típicas normas de contraseñas: que no sea el año de la fecha de nacimiento de alguien conocido, que no sea algo sencillo de adivinar como "4321", etc. Establecer un PIN para el SIM es importante, dado que evita que un usuario que desconoce este código (probablemente, sea un intruso) pueda realizar llamadas, enviar mensajes SMS o usar la red de datos [APPLSUP], aunque si permite realizar llamadas de emergencia. La solicitud del PIN se realiza cuando se enciende el celular o cuando se traslada la tarjeta SIM a otro celular, hay 3 intentos sino se bloquea la tarjeta SIM, impidiendo el uso de los servicios del proveedor de telefonía móvil. Es un código que no tiene ninguna vinculación con el código de la pantalla de bloqueo. Otra característica de este PIN es que solo se tienen 3 intentos en el ingreso del código PIN. Si se agotan estos intentos, pedirá el código "PUK", una contraseña más larga y formada por números, ésta es definida por el fabricante del SIM (se la consigue por medio del proveedor de telefonía móvil); generalmente, se encuentra junto con el envoltorio o si se descarta el mismo, también se lo puede pedir llamando al proveedor de telefonía móvil. En última instancia, cuando se excede en el número máximo de intentos de PUK, la tarjeta SIM se bloqueará permanentemente y se deberá reemplazarla por una nueva [WINPHON].
 [WINPHON] [http://www.windowsphone.com/es-es/how-to/wp7/basics/use-a-pin-to-lock-my-sim-card]
 [APPLSUP] [https://support.apple.com/es-es/HT201529]
-// Podrían ir fotos de las tarjetas SIM con sus envoltorios
+{ Fotos de las tarjetas SIM mostrando PIN y PUK }
 
-[GEOLOCALIZACIÓN]
-- Elegir una solución de seguridad para smartphones con características antirrobo. Existen varios productos en el mercado que incluyen una amplia gama de características antirrobo, ofreciendo acceso remoto al smartphone perdido o robado, para que pueda bloquearlo, borrarle los datos y encontrar su ubicación. Android posee una aplicación que realiza esta tarea, se llama "Administrador de Dispositivos de Android" y se la describe en el capítulo 3. Existe una contra en el uso de estas aplicaciones, es que exigen que el servicio del GPS esté activado, con ésto podría pasar que otras aplicaciones puedan invadir nuestra privacidad, además que este hardware consume la energía de la batería considerablemente.
+[ACCESO REMOTO]
+- Elegir una solución de seguridad para smartphones con características antirrobo que permitan controlar al smartphone remotamente. Existen varios productos en el mercado que incluyen una amplia gama de características antirrobo, ofreciendo acceso remoto al smartphone perdido o robado, para que pueda bloquearlo, borrarle los datos y encontrar su ubicación. Android posee una aplicación incorporada al sistema que realiza estas funciones, se llama "Administrador de Dispositivos de Android", fue descrita en el capítulo 3. Hay otras aplicaciones de terceros como "Cerberus" y "Prey Anti Theft" que otorgan mayor control que la herramienta que viene por defecto, ya que ofrecen más operaciones para ejecutar sobre el smartphone.
+La aplicación Cerberus puede ejecutar muchas operaciones sobre el smartphone de forma remota, en caso de robo o extravío, mediante un panel que se puede acceder desde la web; algunas de las operaciones que permite son [PLAYCER]: localizar y rastrear su dispositivo, bloquear el dispositivo con un código, activar una alarma sonora, tomar fotos, capturar lo que muestra la pantalla, grabar videos, grabar audio, borrar la memoria interna y la tarjeta SD, obtener una lista de los últimas llamadas enviadas y recibidas, abrir una línea de comandos (una consola), etc. No sólo permite ejecutar comandos desde la web, sino que también permite ejecutar comandos por mensajes SMS. Esta aplicación también permite recibir alertas cuando se dá una situación, por ejemplo cuando la SIM se cambie se enviará un SMS o un mail al dueño del smartphone.
+En el caso de Prey Anti Theft, forma parte de un proyecto de código abierto.
+Cuando se probaron estas 2 apps, no se necesitó tener el servicio del GPS activado.
+
+{ lo que permitiría que otras aplicaciones puedan invadir nuestra privacidad; además, este hardware consume la energía de la batería considerablemente. }
+{ Estos dispositivos permiten la triangulación por Wi-Fi }
 
 [SEGURO]
 Algunos proveedores de telefonía móvil disponen de un servicio que asegura al equipo ante robo, hurto, extravío o destrucción total mediante un pago fijo mensual [PROPERS].
-[PROPERS] [http://www.personal.com.ar/ayudaysoporte/#/individuos/soporte/17/53/160]
 
 [ BACKUP ?? can you save your contacts, music, pictures, videos and documents to the cloud. ]
+
+[PROPERS] [http://www.personal.com.ar/ayudaysoporte/#/individuos/soporte/17/53/160]
+[PLAYCER] [https://play.google.com/store/apps/details?id=com.lsdroid.cerberus&hl=es_419]
 
 Protección ante software malicioso
 ----------------------------------
