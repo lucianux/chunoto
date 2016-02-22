@@ -8,8 +8,7 @@ When it comes to securing a digital device, antivirus is the major ingredient fa
 
 Hackers long ago learned that to trick users into thinking they are downloading antivirus to their desktops when they were really just extorting money from them. They are now using similar tricks to infect user’s devices with malware.
 
-Fuente:
-https://blog.comodo.com/mobile-security/warning-rats-attacking-mobile-devices/
+[ https://blog.comodo.com/mobile-security/warning-rats-attacking-mobile-devices/ ]
 
 Mirar la tesis de Marquitos, en la parte introductoria, que habla sobre las RIAs.
 
@@ -19,5 +18,14 @@ Just a few years ago, mobile phones were basic devices that could send and recei
 
 People depend on their smartphones every day, and losing the data those devices contain can be as disastrous as suffering through a hard-drive crash on a proper PC. That's why it's important that you back up your phone as regularly and carefully as you do your other devices.
 
-Fuente:
-http://www.pcworld.com/article/248984/how_to_back_up_your_android_phone.html
+[ http://www.pcworld.com/article/248984/how_to_back_up_your_android_phone.html ]
+
+--------------------
+
+El Problema con los Teléfonos Móviles
+
+Los teléfonos móviles se han convertido en una herramienta de comunicación omnipresente y básica — hoy son usados no solamente para hacer llamadas, sino también para acceder a la Internet y enviar mensajes de textos y documentos al mundo.
+
+Desafortunadamente, los teléfonos móviles no fueron diseñados para la privacidad y seguridad. No solamente hacen un pobre trabajo para proteger tus comunicaciones, ellos también te exponen a un nuevo tipo de riesgo en la vigilancia, especialmente en el rastreo de localización. La mayoría de los teléfonos móviles le dan al usuario mucho menos control de lo que podría una computadora de escritorio personal o una laptop; es más difícil reinstalar el sistema operativo, más difícil de investigar los ataques maliciosos del malware, difícil de remover o reemplazar paquetes indeseables de software, y difícil de prevenir que personas, como el operador del servicio móvil, vigilen tu uso del dispositivo. Es más, el fabricante del dispositivo puede declarar que es obsoleto y parar de proveerte con software que actualizado, incluyendo componentes de seguridad; si esto pasa, tú no tienes ningún lugar donde ir para conseguir estos componentes.
+
+[ https://ssd.eff.org/es/module/el-problema-con-los-tel%C3%A9fonos-m%C3%B3viles ]
