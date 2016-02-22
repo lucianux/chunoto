@@ -188,14 +188,14 @@ Este exploit permite que una PC que se encuentra conectada en una red pueda tran
 
 4.3.4.2 Procedimiento
 
-Primero, en una PC se debe crear una cuenta de AirDroid e iniciar sesión con esa misma cuenta desde el sitio web de AirDroid (https://www.airdroid.com/). Con el smartphone se debe descargar, instalar y ejecutar la versión 3.1.3 de la app AirDroid con la ayuda del repositorio llamado "APK4Fun" (http://www.apk4fun.com/).
+Primero, en una PC se debe crear una cuenta de AirDroid e iniciar sesión con esa misma cuenta desde el sitio web de AirDroid que emula un escritorio (https://web.airdroid.com/). Con el smartphone se debe descargar, instalar y ejecutar la versión 3.1.3 de la app AirDroid con la ayuda del repositorio llamado "APK4Fun" (http://www.apk4fun.com/).
 Luego, desde la PC que tiene Linux, se debe ejecutar el script que explota la vulnerabilidad. Los parámetros más importantes de este script son: IP y puerto del smartphone víctima, nombre del archivo a enviar y ubicación del archivo dentro del filesystem de la víctima. Por ejemplo:
 $ python exploit.py 192.168.0.43 8888 prueba.txt prueba.txt /sdcard
-En donde, el primer parámetro es el nombre del archivo que se comporta como exploit, el segundo y tercer parámetro es la dirección IP y el puerto de la víctima, respectivamente, el cuarto parámetro es el nombre que se le va a asignar al archivo transferido, el quinto parámetro define el nombre del archivo local que se va a transferir, el sexto parámetro es la ubicación en el smartphone (donde se va a depositar al archivo).
+En donde, el primer parámetro es el nombre del archivo que se comporta como exploit, el segundo y tercer parámetro es la dirección IP y el puerto del smartphone víctima, respectivamente, el cuarto parámetro es el nombre que se le va a asignar al archivo transferido, el quinto parámetro define el nombre del archivo local que se va a transferir, el sexto parámetro es la ubicación en el smartphone (donde se va a depositar al archivo).
 
 4.3.4.3 Observaciones
 
-{ FALTAN PRUEBAS CON OTROS DISPOSITIVOS }
+{ FALTAN PRUEBAS CON OTROS DISPOSITIVOS } { FUNCIoNó con los smartphones LG G3 y Moto G 2, pero no se pudo instalar la app en Defy+ }
 En esta prueba se consiguió infiltrar archivos en un smartphone por medio de la app "AirDroid", sin el consentimiento del usuario y sin que lo perciba. No se analizó la implementación del exploit, sino los resultados de su aplicación. En este caso, esta prueba solo afecta a los dispositivos con Android; sin embargo, queda claro que las aplicaciones móviles, en general pueden contener bugs de seguridad que pueden ser aprovechados por exploits, se demostró que ésto también puede suceder en otra plataforma móvil.
 
 4.3.5 Quinta prueba [ COMPLETAR!!! ]

@@ -12,3 +12,12 @@ Fuente:
 https://blog.comodo.com/mobile-security/warning-rats-attacking-mobile-devices/
 
 Mirar la tesis de Marquitos, en la parte introductoria, que habla sobre las RIAs.
+
+--------------------
+
+Just a few years ago, mobile phones were basic devices that could send and receive voice calls but not do much else. These days, smartphones are about as significant as full-fledged desktop PCs and laptops, and are filled with valuable email messages, contacts, videos, photos, and documents.
+
+People depend on their smartphones every day, and losing the data those devices contain can be as disastrous as suffering through a hard-drive crash on a proper PC. That's why it's important that you back up your phone as regularly and carefully as you do your other devices.
+
+Fuente:
+http://www.pcworld.com/article/248984/how_to_back_up_your_android_phone.html
