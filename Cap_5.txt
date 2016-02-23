@@ -273,9 +273,6 @@ o
 [ https://en.wikipedia.org/wiki/Mobile_security#Countermeasures ]
 [ http://www.android.com/security/overview/ ]
 
-Buena intro que se puede usar en el inicio de la tesina...
-[ http://www.pcworld.com/article/248984/how_to_back_up_your_android_phone.html ]
-
 En esta sección se congregan sugerencias para mitigar los riesgos de los ataques que se pueden efectuar en un smartphone.
 
 Protección física
@@ -303,11 +300,10 @@ Para realizar backups o copias de resguardo se pueden recurrir a apps de tercero
 En el caso de Easy Backup, realiza copias incompletas, o sea guarda lo esencial: los mensajes SMS y MMS, registro de llamadas, calendario, marcadores, diccionario y contactos. Entre sus características se puede citar que permite realizar copias programadas, se pueden ver el contenido de los backups en el smartphone o en la PC (dado que usa formatos de archivo conocidos), permite guardar o recuperar copias a o desde una tarjeta SD, Gmail, Dropbox o Google Drive [MDROIDA]; por otro lado, permite guardar las aplicaciones con sus configuraciones y datos, pero para guardar ésta última exige que el smartphone esté "rooteado" para que pueda funcionar.
 Helium se encarga de guardar y restaurar los datos de las apps y sus paquetes instaladores hacia o desde la tarjeta SD o la PC, además de permitir la copia de los datos esenciales de un smartphone: contactos, mensajes SMS, etc.; no requiere que el smartphone esté rooteado.
 Los fabricantes de smartphones incorporan aplicaciones preinstaladas al sistema Android que facilitan el almacenamiento de los datos que almacena el usuario (fotos, videos, música), los datos que generan las apps (historial de navegación, puntaje en los juegos, etc), las configuraciones (conexiones de redes Wi-Fi, tonos de las distintas notificaciones, configuración de la pantalla de inicio). Además. por lo general, Google incorpora un servicio de este tipo para almacenar las configuraciones del equipo en sus servidores y los asocia con la cuenta de Google asignada al smartphone (los productos de Google piden la fijación de una cuenta de Google).
-Alternativamente, se pueden realizar backups de forma manual con distintos niveles de detalle, esta tarea es mas laboriosa que delegarla a una app de un tercero. A continuación se va a describir qué datos se deben considerar para guardarlos en un medio externo como la PC, la tarjeta SD o la Nube. Básicamente la distribución de archivos se realiza de la siguiente manera: en /system se guardan archivos de las apps y en /sdcard se guardan ---. Una vez que se tiene un panorama de los datos que se van a guardar, se puede empezar a abordar la copia de resguardo, para este caso se va a realizar una copia de los datos del smartphone a la PC, para ello se necesita tener la herramienta ADB en la PC.
+Alternativamente, se pueden realizar backups de forma manual con distintos niveles de detalle, esta tarea es mas laboriosa que delegarla a una app de un tercero. A continuación se va a describir qué datos se deben considerar para guardarlos en un medio externo como la PC, la tarjeta SD o la Nube. Básicamente la distribución de archivos se realiza de la siguiente manera: en /system se guardan archivos de las apps y en /sdcard se guardan los datos almacenados en la tarjeta SD. Una vez que se tiene un panorama de los datos que se van a guardar, se puede empezar a abordar la copia de resguardo, para este caso se va a realizar una copia de los datos del smartphone a la PC, para ello se necesita tener la herramienta ADB en la PC.
 Guardar las configuraciones del sistema y las apps de forma manual es más laborioso que utilizar las herramientas mencionadas, por ello no se las tendrán en cuenta en esta guía.
-Lo más sencillo de guardar son las fotos, música, videos del usuario; generalmente este tipo de archivos se guarda en la tarjeta SD.
-Los contactos estan guardados en la memoria interna del smartphone y en la tarjeta SIM, se los puede trasladar todos los contactos a la tarjeta SIM como una forma de resguardarlos, pero se perdería información (como las imágenes de los contactos, los teléfonos secundarios, dirección de mail, etc), sólo se guarda el nombre del contacto y el número.
-[ BACKUP ?? can you save your contacts, music, pictures, videos and documents to the cloud. ]
+Lo más sencillo de guardar son las fotos, música, videos del usuario; generalmente este tipo de archivos se guarda en la tarjeta SD, en la ubicación "/sdcard/DCIM".
+Los contactos estan guardados en la memoria interna del smartphone y en la tarjeta SIM, se los puede trasladar todos los contactos a la tarjeta SIM como una forma de resguardarlos, pero se perdería información adicional que guardan los smartphones como las imágenes de los contactos, los teléfonos secundarios, dirección de mail, etc.; en el caso de esta guía sólo se guarda el nombre del contacto y el número.
 
 [PROPERS] [http://www.personal.com.ar/ayudaysoporte/#/individuos/soporte/17/53/160]
 [PLAYCER] [https://play.google.com/store/apps/details?id=com.lsdroid.cerberus&hl=es_419]
@@ -358,6 +354,9 @@ Para poder tener un control de las funciones del smartphone, se puede tener un t
 [ Avoid giving out personal information ]
 That text message that looks to be from your bank may not be. If you get requests via email or text for account information from any business, contact the business directly to confirm the request. The same advice goes for tapping links in unsolicited emails or texts.
 
+[ENCRIPTACIÓN]
+{ ??? }
+
 [EFFOGPS] [https://ssd.eff.org/es/module/el-problema-con-los-tel%C3%A9fonos-m%C3%B3viles]
 [BLUEPAB] [http://www.pabloyglesias.com/mundohacker-bluetooth/]
 
@@ -365,17 +364,44 @@ Protección del sistema
 ----------------------
 
 [QR CODES]
-- Analizar el código QR antes de ejecutarlo con apps que escanean de forma segura.
+- Escaneo de códigos QR.
+Los códigos QR pueden contener información muy variada [QRSECUR]: dirección de e-mail, número de teléfono, ubicación geográfica, un SMS (un código QR puede crear un SMS con un texto y un remitente), información de contacto (como un nombre, número de teléfono, e-mail, dirección, sitio web, etc.), un evento de calendario (puede contener información del evento como título, horario de inicio y fin, ubicación, descripción, etc.), un texto, una dirección URL (puede llevar a una página web con cierta intensión), entre otras formas.
+Entonces, por la naturaleza del diseño del código QR, el usuario no va distinguir entre los códigos maliciosos y benignos con sólo observar el código, necesita de una herramienta o de una pista o algún tipo de señalización brindada por el autor de ese código, para tener noción de lo que hace y contiene. De todas formas, para saber exactamente qué representa el código QR, se pueden usar herramientas seguras que exponen su contenido detalladamente, como las aplicaciones "Barcode Scanner" y "QR Droid Code Scanner", entre otras; éstas permiten analizar el código y controlar la acción a realizar luego de escanear el código. Una vez que se puede ver la información que suplanta el código QR, se debe considerar: si es un enlace recortado, en este caso se pueden usar servicios online para desencriptar su contenido (como por ejemplo, http://unshorten.it/); si es un enlace que lleva a una página web con un formulario de logueo, evitar el ingreso de datos; no escanear códigos QR que se encuentren en la vía pública.
+{ screenshot de las apps "Barcode Scanner" o "QR Droid Code Scanner" }
 
 [ANTIVIRUS]
-- Uso de Antivirus, Antispyware y un filtro Antispam. ?? { Explotar }
+- Uso de Antivirus.
+El usuario puede tratar de protegerse ante la amenazas externas como el software malicioso con un antivirus. Hay un debate acerca de la necesidad de instalar un antivirus en Android, pero en base a la creciente cantidad de noticias acerca de malwares en Android, se puede concluir que es recomendable usar este tipo de software. Hay una gran variedad de antivirus en el mercado, pero esta guía sólo se va a enfocar en uno en particular.
+
+Existen 2 posturas, por un lado se tiene la idea de que Android no puede ser afectado por virus --- si el usuario es cuidadoso con las aplicacione que descarga, no hay necesidad de utilizar un antivirus.
+On the one hand you have the idea that Android is not susceptible to virus threats and, provided you are careful about what you download, there is no real need for antivirus software. On the other, you have reports and statistics claiming that malware is frighteningly common and any Android device without protection is sure to get infected.
+
+La mayoría de los antivirus comerciales ofrecen más que sólo una protección para los virus. Generalmente, estas aplicaciones son paquetes que ofrecen varias funciones como localización geográfica del smartphone, reestablecimiento de fábrica de forma remota (en caso de una pérdida del smartphone), generación de backups, etc.
+
+Según Google [ANSECOV], todas las aplicaciones que estan disponibles para ser descargadas de Google Play pasan por pruebas de seguridad rigurosas. Los desarrolladores también son purgados si no cumplen con las políticas de Google. Además, las aplicaciones que ya están instaladas son revisadas regularmente en busca de comportamiento malicioso, si se comprueba que alguna aplicación se comporta de forma irregular, el usuario es notificado y en Google Play puede llegar a ser bloquearla inmediatamente.
+
+Según un experto de la empresa de segurtidad "AV-Test" [DIGANTI], si el usuario sólo instala software de marketplaces confiables (como Google Play) y no usa al smartphone frecuentemente para navegar por la Web o mandar mails, el sistema operativo estará bien seguro. También comenta que ...
+"The majority of problems arise from the installation of ‘cracked’ applications from 3rd party market places which are often bundled with malicious software."
+As malware writers try to earn money for their bad deeds, they continually look for new ways to get their malicious software installed on your devices. The best recommendation is still to think twice before installing untrusted software or clicking on strange-looking links.
+Google Play tiene un filtro llamado Bouncer, pero no es infalible. Han aparecido casos en que se encontraron malwares en Google Play.
+
+Los smartphones se estan volviendo en objetivos más atractivo que las PCs porque contienen mucha información personal como fotos, videos, mensajes SMS, e-mails, etc.
 
 [ROOTING]
 - Si el usuario decide rootear su smartphone, se debe tener en cuenta que si una app malévola obtiene estos permisos de root, puede llegar a ser muy peligroso, ya que esta app tiene todos los permisos para realizar cualquier actividad. Por eso, el usuario que emplee un smartphone rooteado debe ser muy cuidadoso con las aplicaciones que instale y sus permisos. Una de las mejores apps que administran los permisos de root son SuperSu o Superuser.
 // Screenshot de SuperSU o SuperUser
 
-[ ACTUALIZACIONES DEL SISTEMA Y DE LAS APPS ]
+- Mantener actualizado al sistema y las apps.
+En la configuración del cliente Google Play se pueden activar las actualizaciones automáticas de las apps instaladas, también se puede optar por mostrar notificaciones en caso de que se publique una nueva actualización o se puede desactivar todo. Lo que se recomienda es la última opción, es decir descativar todo lo que tiene que ver con las actualizaciones y aplicarlas de forma manual cada mes, dado que no se encontró una forma de planificar automáticamente las actualizaciones. En el caso de las actualizaciones del sistema, Android muestra notificaciones para que el usuario aplique estas actualizaciones de forma manual, con la batería cargada completamente y con una conexión a Internet de alta velocidad, porque el archivo a descargar puede llegar a ser grande y en el momento de la instalación no se puede interrumpirse; cuando termina la instalación, se reinicia el sistema.
+Cuando se libera una nueva versión de Android, ésto no quiere decir que ésta está lista para el dispositivo del usuario.
+Algunas versiones viejas de Android, como las versiones menores a 4.1 ("Jelly Bean") no van a poder ser actualizadas a la última versión de Android, es muy probable que ese fabricante no otorgue soporte a esa clase de smartphones.
+Antes de aplicar actualizaciones del sistema, es aconsejable realizar backups de los datos del usuario. Las actualizaciones no deberían afectar los datos, pero no hay garantías.
+Para ver si hay nuevas actualizaciones del sistema, se debe ir a las configuraciones generales del smartphone, luego elegir la opción "Acerca del teléfono" y finalmente elegir el ítem "Actualizaciones del sistema"; es allí donde aparecerán actualizaciones del sistema para ese smartphone, si las hay. Estos menús puede variar según el modelo y la marca.
+[http://www.pcadvisor.co.uk/how-to/google-android/how-update-android-smartphone-or-tablet-summary-3614890/]
 
+[DIGANTI] [http://www.digitaltrends.com/mobile/do-you-need-antivirus-on-android/]
+[QRSECUR] [http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.467.9840&rep=rep1&type=pdf]
+[ANSECOV] [http://www.android.com/security/overview/]
 -------------------------
 
 [ REF INT ] [http://www.verizonwireless.com/mobile-living/network-and-plans/security-app-tips-to-keep-your-smartphone-secure/]

@@ -45,10 +45,11 @@ Tema SMARTPHONES
 - El usuario debe ser más consciente del poder que ofrecen las prestaciones de un smartphone.
 - Los smartphones son grandes protagonistas en esta época. Pero no son los únicos, estan e iran apareciendo otros dispositivos, como los wearables devices; también se están redefiniendo algunos electrodomésticos, como las heladeras inteligentes que soportan Android. Estos factores propician el concepto de Internet de las Cosas.
 - Implantar medidas de seguridad también significa organización, ordenación para simplificar y mantener prudencia en los actos del usuario. Por ejemplo, los smartphones "dual-sim" pueden funcionar para separar los asuntos del trabajo y los de la vida personal, de esta forma si se presenta una llamada desconocida se puede ver de qué tarjeta SIM proviene y así obtener una idea de lo que esa llamada significa.
+- Deberían haber estándares en el uso de códigos QR y direcciones URLs recortadas, por su amplia versatilidad y su gran alcance a diversos usuarios en distintas situaciones (contextos).
 
 Tema SEGURIDAD
 
-- El usuario debe aplicar un esfuerzo adicional para defenderse de las amenazas de seguridad externas.
+- El usuario debe aplicar un esfuerzo adicional para defenderse de las amenazas de seguridad externas; el usuario puede llegar a ser una persona que tiene su primer computadora en formato de celular.
 - Dado el incremento del poder de cómputo de un smartphone, se están volviendo en blancos favoritos de los atacantes. Incluso, se pueden efectuar ataques desde un smartphone a otro.
 - Existe cierta facilidad con que se puede desarrollar un malware contando con pocos recursos y conocimientos, dado el amplio alcance de la tecnología y la información.
 - Se portaron varias de los ataques existentes en el entorno de las PCs al entorno móvil, como por ejemplo "sniffing".
