@@ -190,7 +190,11 @@ Bibliografía
 [APKFFUN] "Download AirDroid 3.1.3 APK File", http://www.apk4fun.com/apk/56479/
 [AIRDROI] "AirDroid", https://www.airdroid.com/
 [IOSBETA] "AirDrop exploit can be used to push malicious apps to iOS and OS X", http://betanews.com/2015/09/16/airdrop-exploit-can-be-used-to-push-malicious-apps-to-ios-and-os-x/
-
+[SECETTE] "Ettercap", http://sectools.org/tool/ettercap/
+[LINETTE] "ettercap(8)", http://linux.die.net/man/8/ettercap
+[WIRESHA] "About Wireshark", https://www.wireshark.org/about.html
+[SAMCLAS] "Project 3: Sniffing for Passwords with Wireshark (10 Points)", https://samsclass.info/120/proj/p3-wireshark.htm
+[SNIFFTU] "Sniffer espiando el trafico en nuestra red local", http://hacking-pentesting.blogspot.com.ar/2013/09/sniffer-espiando-nuestra-red-local.html
 ::::::::::::::::::: Capítulo 5 :::::::::::::::::::
 
 [HARUNIX] Prashant Kumar Patra, Padma Lochan Pradhan, "Hardening of UNIX Operating System", 2009.

@@ -190,64 +190,40 @@ En donde el primer parámetro es el nombre del script, el segundo y tercer pará
 
 En esta prueba se consiguió infiltrar archivos en un smartphone sin el consentimiento del usuario y sin que lo perciba, usando como medio a la app AirDroid. Ésto funcionó para 2 smartphones: LG G3 y Moto G 2, en el smartphone Defy+ no se pudo instalar la app (el sistema no podía leer el paquete). En este caso, esta prueba solo afecta a los dispositivos con Android; sin embargo, las aplicaciones móviles de cualquier plataforma pueden contener bugs de seguridad que pueden ser aprovechados por exploits. Por ejemplo, una aplicación para iOS llamada AirDrop (provee una forma rápida para intercambiar archivos de un dispositivo a otro) también puede ser usada como medio para llevar a cabo un fin malicioso [IOSBETA].
 
-4.3.5 Quinta prueba [ COMPLETAR!!! ]
+4.3.5 Quinta prueba
 
 4.3.5.1 Introducción
 
-Los smartphones actuales pueden conectarse a una red Wi-Fi, sin embargo la incorporación de esta tecnología permite que un tercero pueda capturar información del smartphone empleando técnicas conocidas y probadas en las PCs, como sniffing. Esta prueba se puede aplicar en otros entornos móviles, no sólo en Android. Acá se demuestra que se puede monitorear el tráfico que entra y sale de un smartphone que está conectado a una red WiFi, sin el consentimiento del usuario. Para ello se utilizan 2 herramientas: "Ettercap" y "Wireshark", las cuales corresponden a las 2 etapas en que se divide esta prueba.
-
-Ettercap es un conjunto de herramientas que sirven para realizar ataques "man-in-the-middle" en una red local [SECETTE]. Esta aplicación se fue enriqueciendo con más y más funciones durante el transcurso del proceso de desarrollo, lo que lo transformó en una herramienta flexible y poderosa para este tipo de ataques. Tiene funciones para efectuar análisis de redes y hosts, entre otras [LINETTE]. En esta prueba se lo usa para realizar la primer etapa, configurar una PC atacante para que pueda interceptar los paquetes que se transmitan entre un router y un smartphone. Para ello, se realiza un ataque ARP spoofing con la herramienta Ettercap. { EXPLICAR ARP SPOOFING }
-[ETTERCA] [https://ettercap.github.io/ettercap/]
-[SECETTE] [http://sectools.org/tool/ettercap/]
-[LINETTE] [http://linux.die.net/man/8/ettercap]
+Los smartphones actuales pueden conectarse a una red Wi-Fi, sin embargo la incorporación de esta tecnología permite que un tercero pueda capturar información del smartphone empleando técnicas conocidas y probadas en las PCs, como sniffing. Esta prueba se puede aplicar en otros entornos móviles, no sólo en Android. En esta sección se demuestra que se puede monitorear el tráfico que entra y sale de un smartphone que está conectado a una red Wi-Fi, sin que el usuario se entere. Para ello, se utilizan 2 herramientas: "Ettercap" y "Wireshark", las cuales corresponden a las 2 etapas en que se divide esta prueba, ambas etapas transcurren en una PC con Kali Linux, en la segunda etapa se usa un smartphone que será espiado.
+Ettercap es un conjunto de herramientas que sirven para realizar ataques "man-in-the-middle" en una red local [SECETTE]. Esta aplicación se fue enriqueciendo con más y más funciones durante el transcurso del proceso de desarrollo, lo que lo transformó en una herramienta flexible y poderosa para este tipo de ataques. Tiene funciones para efectuar análisis de redes y hosts, entre otras [LINETTE]. En esta prueba se lo usa para realizar la primer etapa, configurar una PC atacante para que pueda interceptar los paquetes que se transmiten entre un router y un smartphone. Para ello, se realiza un ataque ARP spoofing con la herramienta Ettercap.
+Wireshark sirve para analizar paquetes y es la herramienta más popular que realiza este tipo de estudios; permite ver lo que sucede en la red con un alto nivel de detalle [WIRESHA], para ello se puede realizar una captura en vivo para su posterior análisis de forma offline; permite realizar una inspección profunda de cientos de protocolos. En esta prueba se usa Wireshark para llevar a cabo la segunda etapa, que estudia los paquetes que intercepta el host atacante. El objetivo es demostrar que se pueden capturar paquetes con la intención de violar la privacidad, un ejemplo concreto es el robo de una contraseña de una cuenta de usuario.
 
 [REF INT] [https://github.com/Ettercap/ettercap]
 [REF INT] [https://www.sans.org/reading-room/whitepapers/tools/ettercap-primer-1406]
 
-Wireshark sirve para analizar paquetes y es la herramienta más popular que realiza este tipo de estudios; permite ver lo que sucede en la red con un alto nivel de detalle [WIRESHA], permite una inspección profunda de cientos de protocolos. Realiza una captura en vivo para su posterior análisis de forma offline. En esta prueba se usa Wireshark para llevar a cabo la segunda etapa, que estudia los paquetes que intercepta el host atacante. El objetivo es demostrar que se pueden capturar paquetes con intensiones maliciosas, como por ejemplo, el robo de una contraseña de una cuenta de usuario.
-[WIRESHA] [https://www.wireshark.org/about.html]
-
 4.3.5.2 Procedimiento
 
-[PRIMER ETAPA]
-En la primer etapa, en que se utiliza la herramienta "Ettercap", se deben realizar los siguientes pasos.
-
-Se debe abrir la aplicación, ésto se puede realizar desde una consola ejecutando como superusuario o "root":
+En la primer etapa, en donde se utiliza la herramienta "Ettercap", se deben realizar los siguientes pasos [SNIFFTU].
+Desde la PC, se debe abrir la aplicación en una consola como superusuario o "root":
 # ettercap -G
-Una vez dentro de la aplicación, dentro de la interfase gráfica, se debe preparar el ataque. Para ello se debe desplegar el menú "Sniff" para seleccionar el ítem "Unified sniffing". Aparece una ventana en que se debe elegir la interfase inalámbrica, en el caso de esta prueba, se llama "wlan0" y presionar el botón de aceptar.
-Después, para explorar la red en busca del host que queremos espiar, se busca dentro del menú "Hosts" el ítem "Scan for hosts". Con este comando se explora en la red a la cual está conectada la interfase que se eligió en el punto anterior, en busca de hosts.
-A continuación, se puede ver la lista de los nodos de la red, desplegando el menú "Hosts" y eligiendo el ítem "Hosts list". En este listado, se debe continuar configurando el ataque definiendo la intrusión entre 2 hosts (el router y el smartphone). Entonces, por un lado se debe seleccionar la IP del smartphone del listado y presionar el botón "Add to target 1", y por el otro lado, se debe seleccionar la IP del router y presionar el botón "Add to target 2".
+Una vez dentro de la aplicación, dentro de la interfase gráfica, se debe preparar el ataque. Para ello se debe desplegar el menú "Sniff" para seleccionar el ítem "Unified sniffing". Aparece una ventana en que se debe elegir la interfase que se conecta a un red via Wi-Fi (generalmente se llama "wlan0") y presionar el botón de aceptar.
+Después, para explorar la red en busca del host que queremos espiar, se busca dentro del menú "Hosts" el ítem "Scan for hosts". Con este comando se explora (en la red a la cual está conectada la interfase que se eligió en el punto anterior) en busca de hosts.
+A continuación, se debe desplegar el menú "Hosts" y eligir el ítem "Hosts list" para ver una lista con los nodos de la red. En esta lista, se definen cuáles son los 2 hosts a interferir; por un lado se debe seleccionar la IP del smartphone del listado y presionar el botón "Add to target 1", y por el otro lado, se debe seleccionar la IP del router y presionar el botón "Add to target 2".
+Luego, se debe elegir dentro del menú "Mitm", el ítem "Arp Poisoning". Con ésto aparece una ventana en la que se debe tildar el casillero que dice "Sniff remote conections". Finalmente, para efectuar el ataque, en el menú se elige "Start Sniffing".
 
-{ EXPLICAR COMO SE PUEDEN IDENTIFICAR LAS IPs DE LOS HOSTS }
-Cabe aclarar que ... para saber las IPs ... ( nos puede servir el comando "route -n" para conocer la IP del router )
-Para cerrar la configuración del ataque, se debe elegir dentro del menú "Mitm", el ítem "Arp Poisoning". Con ésto aparece una ventana en la que se debe tildar el casillero que dice "Sniff remote conections".
-Finalmente, para efectuar el ataque, en el menú se elige "Start Sniffing".
-
-[SEGUNDA ETAPA]
 En la segunda etapa se usa "Wireshark" y se deben realizar los siguientes pasos.
-
-Desde la PC, se debe abrir la aplicación, para ello se puede ejecutar desde una consola como superusuario o "root":
+Desde la PC, se debe abrir la aplicación en una consola como superusuario o "root":
 # wireshark
 Probablemente se muestre una o dos advertencias indicando que el usuario que abrió la aplicación es "root", estos avisos deben ser ignorados.
-Una vez dentro de la aplicación, dentro de la interfase gráfica, se debe ejecutar la captura de paquetes. Para ello se debe desplegar el menú "Capture" para selecionar el ítem "Interfaces...". Aparece una ventana en la que una lista con interfases de red; se debe seleccionar la que se conecta a la red local. En el caso concreto de esta prueba se debe seleccionar la interfase, que se conecta a un red via Wi-Fi, denominada "wlan0"; acto seguido se debe presionar el botón "Start". Con ésto se inicia la captura de paquetes que entran y salen de la interfase de red seleccionada.
-
+Una vez dentro de la aplicación, dentro de la interfase gráfica, se debe ejecutar la captura de paquetes. Para ello se debe desplegar el menú "Capture" para selecionar el ítem "Interfaces...". Aparece una ventana con una lista de interfases de red y se debe seleccionar la que se conecta a la red local; en este caso, se debe seleccionar la interfase que se conecta a un red via Wi-Fi, denominada "wlan0"; acto seguido se debe presionar el botón "Start". Con ésto se inicia la captura de paquetes que entran y salen de la interfase de red seleccionada.
 Mientras se capturan paquetes con la PC, desde el smartphone se debe ingresar a un sitio web que demande un inicio de sesión para acceder a cierto contenido privado. Para esta prueba específica [SAMCLAS], se utiliza el sitio web: "gogo6.com", en éste se debe dirigir al inicio de sesión accediendo al enlace "sign in" en la parte superior a la derecha. Luego, se debe completar los datos del formulario: nombre de usuario y contraseña, acto seguido apretar el botón "sign in".
-
-Cuando se termina de trabajar con el smartphone, se debe retornar a la PC para detener la captura de paquetes. Con la captura realizada, se deben filtrar los paquetes así: en el campo "Filter:" escribir "frame contains gmail.com". El filtro aplicado sirve para seleccionar los paquetes que interesan, y a partir de un paquete, se debe extraer la información que interesa. El filtro se basa en la idea de que la dirección de e-mail ingresada como identificador de usuario pertenece a GMail.
-Seleccionar uno de los paquetes que aparecen como resultado del filtrado, hacer click secundario en él para que aparezca un menú emergente, elegir la opción que dice "Follow TCP Stream". Se muestra una nueva ventana con un texto en el centro, se debe usar la herramienta de búsqueda para localizar el texto "gmail.com", se verá que al lado de este texto se puede encontrar la contraseña ingresada, en este caso hay un texto "password" que señala cuál es la contraseña ingresada.
-
-[SAMCLAS] [https://samsclass.info/120/proj/p3-wireshark.htm] (usando Wireshark).
-[SNIFFTU] [http://hacking-pentesting.blogspot.com.ar/2013/09/sniffer-espiando-nuestra-red-local.html] (usando Ettercap).
-
-Fuente:
-Otros vectores de ataque:
-https://en.wikipedia.org/wiki/DNS_hijacking
-https://en.wikipedia.org/wiki/ARP_spoofing
+Cuando se termina de trabajar con el smartphone, se debe retornar a la PC para detener la captura de paquetes. Con la captura realizada, se deben filtrar los paquetes desde Wireshark así: en el campo "Filter:" escribir "frame contains gmail.com" (suponiendo que se sabe que el usuario ingresado es una cuenta de GMail). El filtro aplicado sirve para separar los paquetes que interesan, y a partir de un paquete seleccionado, se debe extraer la información que interesa. Entonces se debe elegir cualquiera de los paquetes que aparece como resultado del filtrado, hacer click secundario en él para que aparezca un menú emergente, elegir la opción que dice "Follow TCP Stream". Se muestra una nueva ventana con un texto en el centro, se debe usar la herramienta de búsqueda para localizar el texto "gmail.com", se verá que al lado de este texto se puede encontrar la contraseña ingresada, en este caso hay un texto "password" que señala cuál es la contraseña ingresada.
 
 4.3.5.3 Observaciones
 
-En este caso, se puede realizar un ataque del tipo "man-in-the-middle" porque los datos de la cuenta (usuario y contraseña) no estan encriptados. En el caso de que el sitio web utilice una tecnología de seguridad para encriptar los datos que se transmitan entre el navegador y el servidor (como lo hace "GMail", por ejemplo), no se podría ubicar la información que interesa para este caso.
 La primer etapa se realiza mécanicamente, o sea que casi siempre se van a efectuar los mismos pasos; en cambio, la segunda etapa puede requerir un poco de análisis para tomar de decisiones. Por ejemplo, el criterio del filtro puede cambiarse por uno más preciso quizás, para ello se podría inspeccionar el código HTML de la página web, y allí averiguar el nombre de los campos del usuario y contraseña que se envían al servidor.
+En cuanto a los resultados, esta prueba se aplica a los tres smartphones y en los 3 casos se pudo filtrar información.
+En este caso, se puede realizar un ataque del tipo "man-in-the-middle" porque los datos de la cuenta (usuario y contraseña) no estan encriptados. En el caso de que el sitio web utilice una tecnología de seguridad para encriptar los datos que se transmitan entre el navegador y el servidor (como lo hace "GMail", por ejemplo), no se podría ubicar la información que interesa para este caso.
 
 4.3.6 Sexta prueba [ COMPLETAR!!! ]
 
