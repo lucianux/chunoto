@@ -195,11 +195,18 @@ Bibliografía
 [WIRESHA] "About Wireshark", https://www.wireshark.org/about.html
 [SAMCLAS] "Project 3: Sniffing for Passwords with Wireshark (10 Points)", https://samsclass.info/120/proj/p3-wireshark.htm
 [SNIFFTU] "Sniffer espiando el trafico en nuestra red local", http://hacking-pentesting.blogspot.com.ar/2013/09/sniffer-espiando-nuestra-red-local.html
+
 ::::::::::::::::::: Capítulo 5 :::::::::::::::::::
 
 [HARUNIX] Prashant Kumar Patra, Padma Lochan Pradhan, "Hardening of UNIX Operating System", 2009.
 [HARCONC] Azzam Mourad, Marc-André Laverdière, Mourad Debbabi, "Security Hardening of Open Source Software", Noviembre, 2006.
 [HARDTEX] "Google Android Hardening Checklist", https://security.utexas.edu/handheld-hardening-checklists/android
+[WINPHON] "Uso de un PIN para bloquear la tarjeta SIM", http://www.windowsphone.com/es-es/how-to/wp7/basics/use-a-pin-to-lock-my-sim-card
+[APPLSUP] "Utiliza un PIN de la SIM para tu iPhone o iPad", https://support.apple.com/es-es/HT201529
+[PROPERS] "Ayuda y soporte", http://www.personal.com.ar/ayudaysoporte/#/individuos/soporte/17/53/160
+[PLAYCER] "Cerberus anti-robo", https://play.google.com/store/apps/details?id=com.lsdroid.cerberus&hl=es_419
+[PREYBLO] "Prey arrives for mobiles: Android version available", https://preyproject.com/blog/2010/01/prey-arrives-on-mobiles-android-version-available
+[MDROIDA] "MDroid Apps", http://mdroidapps.com/
 
 ----------------------------------  Descargas ------------------------------------------
 
