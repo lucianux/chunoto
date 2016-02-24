@@ -88,7 +88,7 @@ dump_contacts	Descarga en un archivo todos los contactos
 dump_sms		Descarga en un archivo todos los SMS
 geolocate		Obtiene la ubicación geográfica actual
 
-En esta prueba no todo salió como se esperaba, hubieron imperfecciones. Durante las pruebas con estos comandos en cada smartphone, sucedieron varias situaciones anómalas:
+En esta prueba no todo salió como se esperaba, tuvo sus imperfecciones. Durante las pruebas con estos comandos en cada smartphone, sucedieron varias situaciones anómalas:
 - A veces la sesión de la shell conectada al smartphone se cerraba inesperadamente luego de haber pasado cierto tiempo.
 - En ocasiones, fallaban los comandos cuando se ejecutaban, porque después de haber hecho una espera de 20 segundos aproximadamente después de ejecutar uno, se recibía este mensaje de error (en el caso del comando "webcam_snap"):
 [-] Error running command webcam_snap: Rex::TimeoutError Operation timed out.
