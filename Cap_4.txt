@@ -116,38 +116,34 @@ El primer paso es registrarse en el sitio web "http://www.digimessaging.com/", c
 
 Con esta prueba se demostró que la aplicación de la técnica del SMS Spoofing es factible y simple, esta técnica puede afectar a cualquier celular (ya sea un smartphone o no), sin importar el sistema operativo que utilice. En este caso, se tercerizó el trabajo a alguna de las tantas empresas que ofrecen este tipo de servicios: el envío de múltiples SMSs a celulares de casi cualquier parte del mundo, con un "caller ID" arbitrario; por lo tanto, esta prueba no exigió conocimientos técnicos específicos. En el caso de la empresa elegida, se notó durante las pruebas que tiene una restricción de seguridad: no permite enviar SMSs con un remitente de una entidad conocida, como el nombre de algún banco importante; lo que induce a pensar que maneja listas negras en el remitente que se vaya a ingresar.
 
-4.3.3 Tercer prueba --- ESTA PRUEBA QUEDA EN STANDBY
+4.3.3 Tercer prueba
 
 4.3.3.1 Introducción
 
-En esta prueba se toca un aspecto que involucra a las redes de celulares. Se pueden ejecutar comandos desde el celular (ya sea un smartphone o no) para interactuar con la red del proveedor de telefonía móvil por medio de códigos que forman parte del protocolo USSD, con el objetivo de dañar al celular.
-Un investigador en seguridad informática llamado Ravi Borgaonkar descubrió una vulnerabilidad, que en principio afecta a los smartphones de la marca Samsung. Esta vulnerabilidad conocida como "dirty ussd", fue expuesta públicamente en la conferencia de seguridad llamada "Ekoparty" en el año 2012 [COMPMOV]. La explotación de la vulnerabilidad consiste en la destrucción de datos (reestablecimiento al estado de fábrica) de un celular a partir del acceso a un link, que en el código HTML que le corresponde a este link se usa una expresión particular "tel" que es válido para el estándar W3C [RFC3966] [COMPMOV]. Este tag permite realizar una llamada telefónica mediante el acceso al link web. Aunque en este caso, se lo va a utilizar para invocar un comando USSD, el cual se lo invoca de la misma forma que se realiza una llamada: digitando números y símbolos del teclado para luego apretar "send".
+Esta prueba toca un aspecto que involucra a las redes de celulares. Lo que se quiere demostrar con esta prueba es la posibilidad de ejecutar comandos desde el celular (ya sea un smartphone o no) para interactuar con la red del proveedor de telefonía móvil por medio de códigos que forman parte del protocolo USSD, con el objetivo de dañar al celular.
+Un investigador en seguridad informática llamado Ravi Borgaonkar descubrió una vulnerabilidad, que en principio afecta a los smartphones Samsung S3 y HTC One X [SEGUINF]. Esta vulnerabilidad conocida como "dirty ussd", fue expuesta públicamente en la conferencia de seguridad llamada "Ekoparty" en el año 2012 [COMPMOV]. La explotación de la vulnerabilidad consiste en la destrucción de datos (reestablecimiento al estado de fábrica) de un celular a partir del acceso a un enlace web, que tiene una expresión particular (tag) "tel" en su código HTML, la cual es válida para el estándar W3C [RFC3966] [COMPMOV]. Esta expresión permite realizar una llamada telefónica mediante el acceso al enlace web; aunque en esta prueba, se lo va a utilizar para invocar un comando USSD, lo cual se hace de una forma similar en que se realiza una llamada telefónica: digitando números del teclado para luego apretar "send", aunque también se digitan los símbolos asterisco y numeral.
+El protocolo USSD (Unstructured Supplementary Service Data - Servicio suplementario de datos no estructurados) provee códigos especiales que sirven para marcar en un celular (ya sea un smartphone o no) y posibilitan la interacción con un programa incorporado en la red de celulares, cada código ejecuta un comando [TECUSSD]. Cada proveedor tiene su propio conjunto de códigos USSD. Es una tecnología heredada de las redes de telefonía móvil GSM, la cual empezó a ser popular en la década del 90, pero aún esta activa y puede ser usada, forma parte de los protocolos de telefonía de segunda generación (2G).
+Según un especialista en la seguridad móvil:
     "La capacidad de interpretar este tag no es exclusiva de los dispositivos con Android, si no de todas las plataformas, e inclusive de teléfonos de baja gama, solo es necesario que tenga un navegador móvil." [COMPMOV]
     "El problema se da en que Android corre de forma automática los comandos USSD, esto quiere decir que los ejecuta sin preguntarle al usuario." [COMPMOV]
-    
-El protocolo USSD (Unstructured Supplementary Service Data - Servicio suplementario de datos no estructurados) provee códigos especiales que sirven para marcar en un celular (ya sea un smartphone o no) y posibilitan la interacción con un programa incorporado en la red de celulares, cada código ejecuta un comando [TECUSSD]. Cada proveedor tiene su propio conjunto de códigos USSD. Es una tecnología heredada de las redes de telefonía móvil GSM, la cual empezó a ser popular en la década del 90, pero aún esta activa y puede ser usada, forma parte de los protocolos de telefonía de segunda generación (2G).
-La prueba consiste en usar este protocolo de comunicación para destruir datos, y así demostrar que se lo puede usar con fines maliciosos. Para ello, se usa un comando USSD que reestablece al estado de fábrica a algunos smartphones (produciendo una pérdida de datos) y/o puede llegar a dejar en un estado obsoleto al chip SIM. Este código corresponde a "*2767*3855#", que su ejecución en algunos celulares (como algunos modelos viejos de la marca Samsung) logra un reestablecimiento al estado de fábrica ("wipe-out").
-La forma en que se usan las expresiones "tel" es muy simple, se escribe el número telefónico luego de la expresión "tel=" dentro del atributo "href" en el tag "a" [RFC3966], por ejemplo: un enlace podría ser el siguiente:
-<a href="tel:+54-221-4569900" target="_blank">IMEI</a>
-Generalmente, para enviar las URLs por Internet se deben codificar algunos caracteres especiales como "#" y " " [RFC3986]. Éstos se los convierte de la siguiente forma: la expresión comienza con un "%" y sigue con 2 dígitos hexadecimales correspondientes a la tabla ASCII.
-Existen otras formas de ser atacado: SMS que inviten al usuario a acceder al link con engaños, códigos QR que apunten al link definido, enlaces recortados, etc. Una forma de probar si nos afecta esta vulnerabilidad es accediendo a la dirección [SEGUINF]: http://dylanreeve.com/phone.php, si se ejecuta el código USSD directamente mostrando el código IMEI (acción totalmente inofensiva), entonces ésto indica que el celular es propensos a sufrir el ataque "dirty ussd".
-Para que esta vulnerabilidad afecte a un smartphone, se tienen que cumplir 2 condiciones: el celular debe ser capaz de acceder a links que contienen números telefónicos marcando directamente y el proveedor de telefonía móvil debe admitir el comando USSD que realiza el "wipe-out" del equipo.
-No obstante, la vulnerabilidad ya fue controlada, los sistemas operativos actuales ya no cuentan con este tipo de riesgos, éstos evitan la ejecución directa de este tipo de comandos. Para los smartphones que aún posean la vulnerabilidad, se puede instalar una app de un tercero.
 
-[TECUSSD] [http://searchnetworking.techtarget.com/definition/USSD]
-[COMPMOV] [http://computacionmovil-ar.blogspot.com.ar/2012/09/explicacion-de-la-vulnerabilidad-de.html]
-[RFC3966] [http://www.rfc-editor.org/rfc/rfc3966.txt]
-[PCMAGSE] [http://securitywatch.pcmag.com/none/303097-dirty-ussd-hack-wipes-samsung-phones-is-yours-vulnerable]
-[SEGUINF] [http://blog.segu-info.com.ar/2012/09/el-ataque-ussd-codes-en-android-borrado.html]
-[RFC3986] [https://tools.ietf.org/html/rfc3986]
+La base de esta prueba consiste en usar este protocolo de comunicación para destruir datos y demostrar que se puede usar este protocolo con fines maliciosos. Para ello, se usa un comando USSD que reestablece al estado de fábrica ("wipe-out") a algunos smartphones (algunos modelos viejos de la marca Samsung, por ejemplo), produciendo una pérdida de datos, y también puede llegar a dejar en un estado obsoleto a la tarjeta SIM; este código corresponde a "*2767*3855#".
+La forma en que se usan las expresiones "tel" es muy simple, se escribe el número telefónico luego de la expresión "tel=" dentro del atributo "href" en el tag "a" [RFC3966]; por ejemplo, un enlace web podría estar constituido por el siguiente código HTML:
+<a href="tel:+54-221-4569900">Llamar a +54-221-4569900</a>
+Generalmente, para enviar las URLs por Internet se deben codificar algunos caracteres especiales como "#" (numeral) y otros [RFC3986]. Esta conversión se la realiza de la siguiente forma: la expresión debe comenzar con un "%" y sigue con 2 dígitos hexadecimales que corresponden al caracter que se quiere representar en código ASCII. Entonces, el código HTML del enlace web que se necesita probar es:
+<a href="tel:*2767*3855%23" target="_blank">Realizar wipe-out</a>
+Existen varias formas de ser atacado: con mensajes SMS que inviten al usuario a acceder a este enlace web con engaños, códigos QR que apunten a este enlace, enlaces recortados que representen este enlace, etc. Una forma de probar si nos afecta esta vulnerabilidad es accediendo a la dirección [SEGUINF]: http://dylanreeve.com/phone.php, si se ejecuta el código USSD directamente mostrando el código IMEI (acción totalmente inofensiva), entonces ésto indica que el celular es propensos a sufrir este ataque.
+Concluyendo, para que esta vulnerabilidad afecte a un smartphone, se tienen que cumplir 2 condiciones:
+* El celular debe ser capaz de acceder a enlaces web que contienen códigos USSD ejecutándolos directamente
+* El proveedor de telefonía móvil debe admitir el comando USSD que realiza el "wipe-out" del equipo.
+No obstante, la vulnerabilidad ya fue controlada, los sistemas operativos actuales ya no cuentan con este tipo de riesgos, éstos evitan la ejecución directa de este tipo de comandos.
+
 [REFERENCIA INTERNA] [https://www.youtube.com/watch?v=EzGIaPYmNZw] { El pibe hindú que explica como describe a dirty USSD }
 
 4.3.3.2 Procedimiento
 
-Para notar los efectos de esta explotación se puede usar el siguiente vector de ataque: un link recortado, el cual oculta su contenido original y quizás aparenta ser inofensivo con ayuda de la ingeniería social.
-(La prueba consiste en el acceso a un link que apunte a la siguiente dirección "tel:*2767*3855#".)
-El código html del archivo "index.html":
-
+Esta prueba consiste en el acceso a un enlace web que intente marcar "*2767*3855#" como se lo describió anteriormente. Para ello, se cuenta con una PC que aloja a una página web que puede ser accedida dentro del ámbito de una red local y un smartphone conectado a esa red.
+Primero, desde la PC se debe crear el archivo "index.html" en una carpeta vacía, que contiene:
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -156,20 +152,19 @@ El código html del archivo "index.html":
     </head>
     <body>
         <p>Esta página intenta demostrar los efectos de la vulnerabilidad "Dirty USSD"</p>
-        <a href="tel:*%2306%23" target="_blank">Wipe out</a>
+        <a href="tel:*%2306%23">Ver IMEI</a>
+        <a href="tel:*2767*3855%23" target="_blank">Realizar un wipe-out</a>
     </body>
 </html>
-
-<a href="tel:*%2306%23" target="_blank">IMEI</a>
-
-Luego se debe ejecutar en una consola (dentro de la carpeta que contiene "index.html"):
+Segundo, en la PC se debe ejecutar en una consola (dentro de esa carpeta que contiene "index.html"):
 $ python -m SimpleHTTPServer 8000
+Tercero, desde el smartphone conectado a esa red local, se debe abrir un navegador web y acceder al enlace constituido por el formato "{IP DE LA PC}:8000" (por ejemplo, "192.168.0.10:8000").
+Cuarto, desde el smartphone, se debe hacer click en el enlace web que titula "Realizar un wipe-out".
 
 4.3.3.3 Observaciones
 
-Esta prueba expone una vulnerabilidad que es explotada fácilmente, pero afecta a algunos equipos relativamente viejos. Sin embargo, ésto nos demuestra que existen vectores de ataque como los códigos QR, links recortados (que suelen emplearse en twitter), links enviados por sms, etc. En el futuro se podrían descubrir métodos de explotación que utilicen los mismos vectores de ataque, aunque se podrían prevenir sus efectos con la incorporación de cierta educación en el usuario para que preste atención y analice este tipo de contenido.
-El ataque se puede realizar en el smartphone "Defy+" porque ejecuta el código USSD directamente, sin embargo no se pudo ejecutar el comando que realiza el reestableciemiento al estado de fábrica porque el proveedor no lo soporta, en este caso, el proveedor es "Personal".
-Se puede evitar este ataque con apps de terceros que marcan números telefónicos, como por ejemplo "ExDialer" y "Dialer One".
+En cuanto a los resultados del experimento, el smartphone "Defy+" experimentó una ejecución directa del código USSD, pero el proveedor de telefonía celular no reconoció el comando, en este caso, el proveedor es "Personal". En los otros smartphones más modernos no se ejecutó el código de forma directa y usan el mismo proveedor de telefonía celular.
+Esta prueba expone una vulnerabilidad que es explotada fácilmente, pero afecta a algunos equipos relativamente viejos. Sin embargo, ésto nos demuestra que existen vectores de ataque como los códigos QR, enlaces web recortados (que suelen emplearse en twitter), enlaces web enviados por sms, etc. En el futuro se podrían descubrir métodos de explotación que utilicen los mismos vectores de ataque, aunque se podrían prevenir sus efectos con la incorporación de cierta educación en el usuario para que preste atención y analice este tipo de contenido. Una forma de evitar este ataque es con el uso de aplicaciones de terceros que marcan números telefónicos, como por ejemplo "ExDialer" y "Dialer One".
 
 [Una nota acerca de este bug] [http://gizmodo.com/5946334/samsung-security-bug-can-wipe-out-your-galaxy-phone-updating]
 [Android Central] [http://www.elandroidelibre.com/2012/09/todo-sobre-el-ultimo-problema-de-seguridad-de-android-en-que-consiste-y-como-saber-si-estas-afectado.html]
@@ -178,7 +173,7 @@ Se puede evitar este ataque con apps de terceros que marcan números telefónico
 
 4.3.4.1 Introducción
 
-Las diversas apps (ya sean legítimas o no) que se pueden adquirir desde los diversos medios de distribución pueden contener bugs de seguridad, los cuales pueden ser explotados para obtener privilegios en el acceso al sistema operativo, hacer daño, etc. Esta prueba consiste en demostrar otro aspecto a tener en cuenta en los sistemas operativos móviles: la seguridad en las apps.
+Las diversas apps (ya sean legítimas o no) que se pueden adquirir desde los diversos medios de distribución pueden contener bugs de seguridad, los cuales pueden ser explotados para obtener privilegios en el acceso al sistema operativo, hacer daño, etc. Esta prueba consiste en demostrar otro aspecto a tener en cuenta en la seguridad de los smartphones: los bugs de las apps.
 Para realizar esta prueba se utiliza una app legítima llamada "AirDroid", la cual es una app bastante popular. AirDroid sirve para controlar y administrar uno o varios dispositivos móviles con Android desde una PC, desde ésta se puede enviar mensajes SMS, transferir archivos, usar el GPS, usar la cámara de fotos, acceder a los contactos, etc. [AIRDROI]; para conectarse utiliza una conexión Wi-Fi.
 En esta prueba se explota una vulnerabilidad específica de "AirDroid" con la ayuda de un "exploit". En este caso, se usa un "script" escrito en "Python" que fue obtenido de un registro público de "exploits" llamado "Exploit Database" [EXPLODB]. Esta vulnerabilidad ya fue resuelta, o sea que ya se publicó una actualización que corrige este bug; entonces, para que funcione esta demostración, se necesita adquirir e instalar una versión anterior a la versión que contiene la corrección. Para ello, se acude a un repositorio alternativo llamado "Apk 4 Fun" [APKFFUN] que tiene un historial de versiones de varias apps, junto con los paquetes instaladores. En definitiva, para lo que nos compete, este repositorio aloja varias versiones viejas de "AirDroid", en este caso se va a usar la versión 3.1.3, dado que a partir de la versión 3.1.4 ya se corrigió este bug [AIRFORU]. Cabe aclarar que el marketplace oficial Google Play está descartado para obtener la app, debido a que tiene la versión más reciente.
 Este exploit permite que una PC que se encuentra conectada en una red pueda transferir archivos a un dispositivo cualquiera que esté usando AirDroid (dentro de la misma red), sin que éste lo perciba. En el marco de esta prueba, se tienen los siguientes elementos: una red local en la cual está conectado un smartphone y 2 PCs. En el entorno concreto de esta prueba se usa: una notebook con el sistema operativo "Windows 7" que usa AirDroid desde la web, un smartphone "LG G3" con Android 5.0.2 ("Lollipop") que lleva instalada la app AirDroid, y la máquina atacante es una notebook con Kali Linux que lleva la versión 2.7 de Python. La interacción entre ellos sucede así: el smartphone y la PC comparten datos por medio de la app "AirDroid", actividad normal que llevan a cabo; sin embargo, desde otra PC dentro de la misma red local, se van a transferir archivos al smartphone de forma silenciosa, sin la necesidad de estar autenticado en la aplicación AirDroid, ésto se puede lograr gracias a la ayuda del "exploit".

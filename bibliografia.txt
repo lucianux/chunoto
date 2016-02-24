@@ -181,6 +181,12 @@ Bibliografía
 [METAVER] "Metasploit: Penetration Testing Software", http://www.rapid7.com/products/metasploit/editions.jsp
 [METAFRA] "Comparing Editions: Metasploit Framework vs. Metasploit Pro", https://community.rapid7.com/docs/DOC-2281
 
+[TECUSSD] "What is USSD (Unstructured Supplementary Service Data)?", http://searchnetworking.techtarget.com/definition/USSD
+[COMPMOV] "Explicación de la vulnerabilidad de USSD en Android", http://computacionmovil-ar.blogspot.com.ar/2012/09/explicacion-de-la-vulnerabilidad-de.html
+[RFC3966] "rfc3966", http://www.rfc-editor.org/rfc/rfc3966.txt
+[SEGUINF] "El ataque USSD Codes en Android (borrado remoto) funciona en HTC, Motorola y Sony", http://blog.segu-info.com.ar/2012/09/el-ataque-ussd-codes-en-android-borrado.html
+[RFC3986] "RFC 3986 - Uniform Resource Identifier (URI): Generic Syntax", https://tools.ietf.org/html/rfc3986
+
 ::::::::::::::::::: Capítulo 5 :::::::::::::::::::
 
 [HARUNIX] Prashant Kumar Patra, Padma Lochan Pradhan, "Hardening of UNIX Operating System", 2009.
