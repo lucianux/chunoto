@@ -225,27 +225,23 @@ La primer etapa se realiza mécanicamente, o sea que casi siempre se van a efect
 En cuanto a los resultados, esta prueba se aplica a los tres smartphones y en los 3 casos se pudo filtrar información.
 En este caso, se puede realizar un ataque del tipo "man-in-the-middle" porque los datos de la cuenta (usuario y contraseña) no estan encriptados. En el caso de que el sitio web utilice una tecnología de seguridad para encriptar los datos que se transmitan entre el navegador y el servidor (como lo hace "GMail", por ejemplo), no se podría ubicar la información que interesa para este caso.
 
-4.3.6 Sexta prueba [ COMPLETAR!!! ]
+4.3.6 Sexta prueba
 
 4.3.6.1 Introducción
 
-El tamaño y peso del smartphone lo hacen portable para que el usuario pueda llevarlo consigo a cualquier lugar, para poder aprovechar sus funciones en cualquier momento. Sin embargo, esta característica lo expone a riesgos, dado que el smartphone puede estar al alcance de una persona que no sea el dueño y que tiene malas intenciones. En esta prueba se va a demostrar que existen formas para tener acceso a la información contenida en el smartphone, eludiendo medidas de seguridad, como el bloqueo de la pantalla. Se realizarán 2 pruebas: la primera consiste en forzar al smartphone a volver al estado de fábrica ("hard reset") con la finalidad de poder volver a usar el smartphone (sin la pantalla bloqueada) y poder ver lo que contiene la tarjeta SD; la segunda prueba consiste en aprovechar las facilidades que brinda Android para el desarrollo de apps, pero con intenciones maliciosas. Esta última se apoya en que cuando un smartphone se conecta a la PC y el mismo está en "modo desarrollo", se puede tener acceso al filesystem del smartphone por la línea de comandos.
-Previo a la realización de las pruebas, es recomendable tomar precauciones. Se podría extraer la tarjetas SIM y la tarjeta de memoria SD, dado que no hay certeza de que esta operación deje a la tarjeta SIM en el mismo estado que estaba antes de la prueba.
+El tamaño y peso del smartphone lo hacen portable para que el usuario pueda llevarlo consigo a cualquier lugar, para poder aprovechar sus funciones en cualquier momento. Sin embargo, esta característica lo expone a riesgos, dado que el smartphone puede estar al alcance de una persona que no sea el dueño y con malas intenciones. En esta prueba se va a demostrar que existen formas para tener acceso a la información contenida en el smartphone, eludiendo medidas de seguridad, como el bloqueo de la pantalla. La prueba consiste en forzar al smartphone (su memoria interna) a volver al estado de fábrica ("hard reset") con la finalidad de poder volver a usar el smartphone (sin la pantalla bloqueada), para poder buscar información en la tarjeta SD y copiarla.
 
 4.3.6.2 Procedimiento
 
-- Apagar el smartphone.
+Serie de pasos (para el smartphone Motorola Defy+):
+- Apagar el smartphone (la pantalla bloqueada no es un impedimento).
 - Presionar botón para bajar el volúmen y el botón de encendido a la vez.
 - Presionar botón para subir y bajar el volúmen a la vez.
 - Se muestra un menú, en el cual se debe elegir "Wipe data/factory reset".
 
-[DEV]
-Otra posibilidad es ingresar al sistema mediante shell si el equipo tiene habilitado el modo desarrollo.
-http://null-byte.wonderhowto.com/how-to/locked-out-your-phone-heres-you-bypass-android-pattern-lock-screen-0138807/
-
 4.3.6.3 Observaciones
 
-Los pasos descritos dependen del modelo del smartphone utilizado. Para volver al estado de fábrica a otro modelo de smartphone se debe consultar el sitio web llamado "Hard reset" (http://www.hard-reset.com). Lo que queda demostrado es que se puede dañar la información contenida de un smartphone fácilmente cuando el usuario descuida físicamente al equipo.
+Los pasos descritos dependen del modelo del smartphone utilizado. Para volver al estado de fábrica a otro modelo de smartphone se debe consultar el sitio web llamado "Hard reset" (http://www.hard-reset.com). Se pudo acceder al menú oculto con todos los smartphones de prueba, sólo se ejecutó la destrucción de datos con el Motorola Defy+. Lo que queda demostrado es que se puede dañar la información contenida de un smartphone fácilmente cuando el usuario descuida físicamente al equipo, dejando la posibilidad a cualquier usuario de poder acceder a los datos contenidos en la tarjeta SD.
 
 4.3.7 Séptima prueba [ COMPLETAR!!! ]
 
