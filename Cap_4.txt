@@ -247,11 +247,9 @@ Los pasos descritos dependen del modelo del smartphone utilizado. Para volver al
 
 4.3.7.1 Introducción
 
-El proceso de "rooting" de dispositivos con Android le permite al usuario tener control privilegiado (permisos de superusuario) sobre el sistema operativo; sin embargo, estos usuarios deben manajerse con cuidado porque pueden causar daños al equipo de forma involutaria, se explicó este tema en el capítulo 1 (sección 1.5.4.2). Las aplicaciones que posibilitan el "rooteo" no dan ninguna garantía de que no van a dañar al smartphone que se va a someter, o sea que el hecho de aplicar este proceso ya es un riesgo en sí mismo, a parte de las consecuencias que acarrea. Esta prueba consiste en la realización de este proceso, para ello se obtuvo información del procedimiento que se debe realizar, a partir de foros, blogs, páginas web personales, etc.
-En cuanto a la preparación del ambiente para esta prueba, se utilizó una PC con Windows 7 porque el exploit funciona en Windows.
-{ EXPLICAR QUE TAMBIÉN SE USÓ LINUX :) }
-El proceso de ejecución del exploit se lo puede dividir en 2 etapas: instalación de drivers y rooteo. Primero se deben instalar los drivers que provee el fabricante del smartphone para que el sistema operativo lo detecte y así poder ejecutar comandos en el mismo; esencialmente, la herramienta de línea de comandos llamada "adb" es la que ayuda a realizar el "rooting", con lo cual se debe probar que funcione "adb" antes de ejecutar el exploit. Finalmente, se debe ejecutar el exploit.
-Para este caso, se utilizó un smartphone modelo "Defy Plus", de la marca "Motorola".
+El proceso de "rooting" de dispositivos con Android le permite al usuario tener control privilegiado (permisos de superusuario) en el sistema operativo; sin embargo, estos usuarios deben manajerse con cuidado porque pueden causar daños al equipo de forma involutaria, se comentó de este tema en el capítulo 1. Las aplicaciones que posibilitan el "rooteo" no dan ninguna garantía de que no van a dañar al smartphone que se va a someter, o sea que el hecho de aplicar el proceso de "rooting" ya es un riesgo en sí mismo, a parte de las consecuencias negativas que acarrea. Esta prueba consiste en la realización de este proceso, para ello se obtuvo información del procedimiento que se debe realizar a partir de foros, blogs, páginas web personales, etc.
+En cuanto al ambiente de desarrollo de la prueba, se utilizó una PC con Windows 7 y un smartphone Defy+ de la marca Motorola.
+El proceso de ejecución del exploit se lo puede dividir en 2 etapas: instalación de drivers y rooteo. En la primer etapa se debe instalar los drivers que provee el fabricante del smartphone para que el sistema operativo lo detecte, y así poder ejecutar comandos en el mismo, para ello está la herramienta de línea de comandos llamada "adb" que ayuda a realizar el "rooting". En la segunda etapa se debe ejecutar el exploit.
 
 http://www.taringa.net/comunidades/motoroladefy/7710427/Consulta-Rootear-motorola-defy-plus.html [Fundamental!!!]
 http://www.taringa.net/comunidades/motoroladefy/5277669/Pedido-Root-defy-plus-2-3-5.html [Accesorio]
@@ -266,21 +264,19 @@ http://www.mediafire.com/?5d82batkh7hwm6z
 
 4.3.7.2 Procedimiento
 
+Los pasos a seguir son:
 - Se descarga la aplicación que trae los drivers del smartphone desde el sitio web del fábricante [MOTODRI]. Luego se descarga el exploit [ROOTEXP].
 - Se instala la aplicación de escritorio "Motorola Device Manager", el cual instala los drivers para que Windows reconozca al smartphone cuando se lo conecta. Esta instalación no requiere configuración.
-- Se descomprime el archivo que contiene el exploit en un carpeta temporal. Desde allí, se accede a la carpeta "Root+Boot-AIO" por la línea de comandos para ejecutar el comando "adb devices". Ésto es para probar si el sistema operativo detectó al smartphone. Si la prueba fue exitosa, se continúa con el siguiente paso.
+- Se enchufa el smartphone al puerto USB y se activa la depuración USB: ir al menú de aplicaciones, ir a "Configurar", ir a "Programador" y activar "Depuración por USB". Si es la primera vez que se accede a la opción "Programador", ésta no aparece; para develar esta opción se debe ir a "Configurar", luego ir a "Acerca del teléfono", una vez allí se pulsa 7 veces seguidas el número de compilación que aparece.
+- Se descomprime el archivo que contiene el exploit en un carpeta temporal. Desde allí, se accede a la carpeta "Root+Boot-AIO" por la línea de comandos para ejecutar el comando "adb devices". Ésto es para probar si el sistema operativo detectó al smartphone. Si devuelve un listado con al menos un elemento (lista de smartphones conectados), significa que funcionó y se puede usar adb en el smartphone.
 - Se ejecuta el exploit, el mismo no tiene complicaciones: se ejecuta el archivo "runme.bat" desde la línea de comandos que se abrió en el paso anterior. Por cada mensaje que aparece, se presiona la tecla "enter" hasta que indica que se terminó el proceso.
 
-[MOTODRI] [https://motorola-global-portal.custhelp.com/app/answers/detail/a_id/88481]
-[ROOTEXP] [http://www.mediafire.com/?5d82batkh7hwm6z]
-
-Fuentes:
-http://www.xda-developers.com/root/
-http://whiteboard.ping.se/Android/Rooting
+[http://www.xda-developers.com/root/]
+[http://whiteboard.ping.se/Android/Rooting]
 
 4.3.7.3 Observaciones
 
-La forma en que se realizó el rooteo es muy sencillo. No obstante, se corren riesgos dado que la fuente de donde se consiguió el exploit no es confiable. Se podría haber ejecutado el exploit en un entorno Linux.
+El procedimiento en que se realiza el rooteo es sencillo. No obstante, se corren riesgos dado que la fuente de donde se consiguió el exploit no es confiable. Se podría haber ejecutado el exploit en un entorno Linux.
 
 4.3.8 Octava prueba [COMPLETAR!!!]
 

@@ -221,6 +221,8 @@ Bibliografía
 [DIGANTI] "Do you need antivirus on Android? We asked the experts", http://www.digitaltrends.com/mobile/do-you-need-antivirus-on-android/
 [QRSECUR] A. Sankara Narayanan, "QR Codes and Security Solutions", Julio, 2012.
 [ANSECOV] "Security", http://www.android.com/security/overview/
+[MOTODRI] "Where can I download the USB drivers for my device?", https://motorola-global-portal.custhelp.com/app/answers/detail/a_id/88481
+[ROOTEXP] "Root+Boot+AIO", http://www.mediafire.com/?5d82batkh7hwm6z
 
 ----------------------------------  Descargas ------------------------------------------
 
