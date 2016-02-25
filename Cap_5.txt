@@ -36,7 +36,7 @@ En la siguiente guía, las pautas que definen al hardening en Android, se las pu
 
 - Mantener actualizado el software.
 	- Se debe actualizar el sistema operativo a la última versión. Sin embargo, vale aclarar que no todos los smartphones con Android pueden actualizar su sistema operativo a la versión más reciente dado que los fabricantes publican actualizaciones para algunos de sus modelos (no todos), incluso aquellos que son capaces de correr la nueva actualización. Éstas se pueden realizar de forma manual o aparecen automáticamente en modo de notificación (a pantalla completa) cuando se publica una nueva. Si se quiere realizar una actualización manual, el usuario se debe dirigir al ítem "Configurar" dentro del menú general del sistema, luego elegir "Acerca del teléfono", finalmente ir a "Actualizaciones del Sistema" donde aparecerá una notificación si es que hay una nueva actualización del sistema.
-	- Es aconsejable tener activado el servicio de actualizaciones automáticas en las aplicaciones. Éste se lo puede encontrar dentro de las opciones de la aplicación de Google Play: hay una opción que permite actualizar automáticamente o manualmente a las aplicacioness que fueron descargadas de Google Play. La primer opción es la recomendada y se explicó como acceder a ella en el capítulo 3 (sección 3.4.4).
+	- En donde la seguridad es crítica, es aconsejable tener activado el servicio de actualizaciones automáticas en las aplicaciones. Éste se lo puede encontrar dentro de las opciones de la aplicación de Google Play: hay una opción que permite actualizar automáticamente o manualmente a las aplicacioness que fueron descargadas de Google Play. La primer opción es la recomendada y se explicó como acceder a ella en el capítulo 3 (sección 3.4.4).
 	- Para ambientes donde la seguridad es importante (una organización, por ejemplo), es aconsejable planificar el reemplazo de smartphones cada 2-3 años para mantener actualizadas las versiones de los sistemas operativos, dado que para los modelos viejos se dejan de publicar actualizaciones. Además, cuando el usuario o la organización está en la fase de reemplazo del smartphone, se debe considerar el uso de los smartphones Nexus, los cuales son respaldados directamente por Google (el principal colaborador en el proyecto Android), dado que los dispositivos Nexus son los primeros dispositivos Android en recibir actualizaciones del sistema operativo. Los dispositivos de la serie Nexus no tienen modificaciones realizadas por el proveedor de telefonía móvil, ni de los fabricantes de hardware; además, tiene un gestor de inicio no bloqueado, para permitir un mayor desarrollo y personalización.
 - Evitar la instalación de aplicacioness desde fuentes desconocidas, generalmente estas fuentes son marketplaces de terceros y no son recomendables. Google Play tiene la habilidad de eliminar aplicacioness maliciosas de su marketplace ni bien se descubre alguna y también se las elimina directamente de los smartphones que descargaron esas aplicacioness maliciosas. Este tema se lo tocó en el capítulo 3 (sección 3.4.4).
 - Habilitar la encriptación del dispositivo: se puede aplicar la encriptación en los datos almacenados en la memoria interna del smartphone (cuentas, ajustes, aplicacioness descargadas, etc.), pero la facultad de encriptar los datos contenidos en la tarjeta SD varía en función del fabricante del smartphone si lo incluye o no esa funcionalidad, también se puede acudir a una aplicación de un tercero.
@@ -91,25 +91,12 @@ En la siguiente guía, las pautas que definen al hardening en Android, se las pu
 [extractos de la web]
 Eliminar aplicaciones innecesarias: Ya no hablamos de bloatware (esas aplicaciones que vienen preinstaladas de dudosa utilidad), si no de aplicaciones que en su día instalamos por una razón u otra y que ya no recordamos ni siquiera su utilidad. Cuantas más tengas, mayor será el riesgo de que alguna sea maliciosa. Mejor elimina aquellas sospechosas.
 [http://www.elandroidelibre.com/2014/12/10-sencillos-consejos-para-mejorar-la-seguridad-de-tu-android.html]
-
+[OPCIONAL]
 6. Log out of sites after you make a payment.
 If you bank or shop from your smartphone, log out of those sites once your transactions are complete. Other tips include not storing your usernames and passwords on your phone and avoiding transactions while you are on public Wi-Fi.
 8. Avoid giving out personal information.
 That text message that looks to be from your bank may not be. If you get requests via email or text for account information from any business, contact the business directly to confirm the request. The same advice goes for tapping links in unsolicited emails or texts.
 [http://www.verizonwireless.com/mobile-living/network-and-plans/security-app-tips-to-keep-your-smartphone-secure/]
-
-[  - Bibliografía -  ]
-[HARCONC] [ http://users.encs.concordia.ca/~debbabi/attachments/article/pdf/Security%20Hardening%20of%20Open%20Source%20Software.pdf ] [ Definición de Hardening ]
-[HARUNIX] [ http://interscience.in/ijcct/IJCCT_Paper7.pdf ] [ Sirve la definición de Hardening ]
-[ https://wikis.utexas.edu/display/ISO/Google+Android+Hardening+Checklist ] [ Hardening en Android ] 
-[ http://www.slideshare.net/anupriti/android-device-hardening ] [ Hardening en Android - Slides ]
-[ http://www.cisco.com/web/about/security/intelligence/Linux_Hardening_Recommendations.pdf ]
-[ http://www.colorado.edu/oit/it-security/security-awareness/hardening-your-computer ] [ Hardening en PCs ]
-[ http://cdn.ttgtmedia.com/searchEnterpriseLinux/downloads/466_HTC_Linux_02.pdf ] [NO SIRVE DE MUCHO]
-[ANDSEC] [ Libro "Android Security" ]
-[NORTSEC] [https://mobilesecurity.norton.com/]
-[MCMOBSE] [https://www.mcafeemobilesecurity.com/]
-[LOOKOUT] [https://www.lookout.com/es]
 
 5.3 Concientización del usuario
 
@@ -159,23 +146,14 @@ En esta sección se expone una serie de sugerencias para un usuario o medidas di
 	- Caducidad: se refiere al transcurso de tiempo en que una contraseña no se cambia. Muchas políticas fuerzan a los usuarios y administradores a cambiar sus contraseñas periódicamente. En esos casos, la frecuencia debe ser basada en la longitud y la complejidad exigida en la contraseña, también en la sensibilidad de la información protegida y el nivel de exposición de las contraseñas.
 	- Reutilización: se refiere al caso si una contraseña puede ser reusada. Algunos usuarios tratan de superar el requisito de caducidad cambiando la contraseña por una que han utilizado anteriormente. Si la reutilización se prohibe (por la política de contraseñas), va a ser beneficioso si es posible asegurarse de que los usuarios no puedan cambiar sus contraseñas simplemente agregando caracteres al principio o al final de sus contraseñas originales (por ejemplo, las contraseña original es "mipass" y es cambiada por "mipass1" o "1mipass").
 
-[YALESEC] [http://its.yale.edu/secure-computing/physical-security/physical-security-mobile-devices]
-[NISTSEC] [http://csrc.nist.gov/publications/nistpubs/800-123/SP800-123.pdf]
-[CERTTHR] [https://www.us-cert.gov/sites/default/files/publications/cyber_threats_to_mobile_phones.pdf]
-[USACERT] [http://www.us-cert.gov/ncas/tips/ST04-017]
-
 5.4 Software recomendado para mejorar la seguridad de Android
 
-En esta sección se sugieren algunas aplicaciones para reforzar la seguridad. La elección de estas aplicaciones se basa en 2 cualidades: simplicidad y claridad en la interfase gráfica.
-{se intentará realizar pruebas con estas aplicaciones para demostrar que se puede mejorar la seguridad con poco esfuerzo, en las actividades usuales que realizan los usuarios.}
-Se muestran 2 aplicaciones, "Signal" y "Send Anywhere", que pueden realizar funciones usuales como envíar mensajes de texto, realizar llamadas telefónicas y enviar archivos entre smartphones. Pero fundamentalmente, estas aplicaciones operan con un enfoque más seguro.
-[ No me voy a meter con la implementación ]
+En esta sección se sugieren 2 aplicaciones para reforzar la seguridad: "Signal" y "Send Anywhere", su elección se basa en 2 cualidades: simplicidad y claridad en la interfase gráfica.
+Estas aplicaciones en conjunto pueden realizar tareas corrientes como envíar mensajes de texto, realizar llamadas telefónicas y enviar archivos entre smartphones; sin embargo, tienen un enfoque más seguro.
 [ VER http://www.av-comparatives.org/wp-content/uploads/2015/09/avc_mob_2015_en.pdf ] [ HAY COMPARATIVAS ]
 ( Se podrían realizar pruebas prácticas hechas con estas aplicaciones. para mostrar las ventajas, formas de uso y observaciones. Por ahora, solo hay descripciones breves )
 
 5.4.1 Signal
-
-[ Wiki: https://github.com/WhisperSystems/Signal-Android/wiki ]
 
 [ CARACTERÍSTICAS GENERALES ]
 Signal es una aplicación Open Source y gratuita, que permite realizar llamadas de voz y enviar mensajes de texto de forma segura; evitando que otra persona pueda escuchar o leer la información que se transmite en una conversación. Estas actividades se pueden realizar entre 2 o más smartphones (u otros dispositivos móviles) vía Internet (usando una red de datos del proveedor de telefonía celular o una red Wi-Fi), opcionalmente permite el envío de mensajes SMS y MMS (sin encriptar) [USINSIG]. Se caracteriza por tener una interfase simple que tiene una buena usabilidad, en donde las llamadas y los envíos de mensajes de texto se pueden realizar directamente, sin contar con conocimientos de seguridad informática [WIRSIGN]. Es una aplicación aclamada por la comunidad que trabaja en seguridad informática, es recomendada por Edward Snowden y otros referentes más, dado que posee un protocolo de encriptación fuerte.
@@ -199,13 +177,6 @@ Para comodidad del usuario, se tiene un fácil acceso al comando que borra todos
 Después de esta reseña de "Signal" se pueden remarcar algunas ventajas y desventajas. Para empezar, Signal tiene las siguientes ventajas: es gratis, es "open source" y es fácil de usar. Puede usarse a través de una red WiFi o red de datos del proveedor de la línea del smartphone, o sea que las llamadas internacionales o de larga distancia son gratuitas, sólo se podría llegar a pagar por el acceso a Internet. Entre las desventajas, se puede mencionar que la persona a la que se le llama debe tener obligatoriamente la aplicación Signal instalada. Otra desventaja es que cuando se realiza una llamada, tiene una demora más prolongada que otras aplicaciones que soportan llamadas de voz (como la aplicación "WhatsApp"). Prosiguiendo con las desventajas, la documentación de Signal es vaga y poco precisa, para las operaciones que se pueden realizar se necesitan más detalles.
 Como conclusión se puede mencionar que hay una necesidad para enviar mensajes de una forma privada y segura. Por ejemplo, el crecimiento de Telegram refleja esta necesidad: llegó a una tasa de 10 mil millones de mensajes enviados por día [TELBLOG]. También se puede mencionar que "Signal" es bastante popular y esta ayudando a que otras empresas que desarrollan aplicaciones de mensajería instantánea tomen conciencia en la privacidad del usuario; según una nota publicada el día 18 de Noviembre del 2014 en el blog de la empresa "Open Whisper Systems" [WHISWHA], el protocolo de encriptación de mensajes de texto de Signal, que se heredó de TextSecure, se incorpora a los clientes de WhatsApp, suministrando una encriptación end-to-end por defecto.
 
-[SIGBLOG] [https://whispersystems.org/blog/signal/]
-[CHROSIG] [https://whispersystems.org/blog/signal-desktop/]
-[USINSIG] [https://github.com/WhisperSystems/Signal-Android/wiki/Using-Signal]
-[WHISWHA] [https://whispersystems.org/blog/whatsapp/]
-[TELBLOG] [https://telegram.org/blog/10-billion]
-[WIRSIGN] [http://www.wired.com/2015/11/signals-snowden-approved-phone-crypto-app-comes-to-android/]
-
 5.4.2 Send Anywhere
 
 La aplicación "Send Anywhere" es una herramienta que permite el intercambio de un archivo (o un grupo de archivos) entre smartphones, aunque también se pueden combinar entre otros dispositivos, como PCs y tablets, aunque esta reseña se va enfocar en la aplicación para smartphones con Android. Por empezar, se puede mencionar que es una aplicación directa (tiene una interfase amigable y autoexplicativa, no se requiere leer la documentación), rápida (la velocidad de la transferencia de archivos es relativamente alta) y segura (los archivos no se guardan en la Nube durante la transferencia entre 2 smartphones) [SENDPRO]. Es un servicio anónimo, se comparten archivos sin la necesidad de ingresar información personal, no requiere que el usuario se registre, ni que inicie una sesión (mediante una red social, por ejemplo). Se pueden subir o recibir archivos de varios tipos (imágenes, audio, videos, APKs, contactos y más), de cualquier tamaño y de forma gratuita [LIFEHAC]. Ofrece soporte nativo para para algunas plataformas móviles (Android, iOS, Windows Phone y Kindle), PCs (Windows, Mac OSX y Linux) y la Web.
@@ -213,10 +184,6 @@ Es simple de usar, sólo tiene 2 modos de uso que son útiles [SENDTRA]. Un modo
 En cuanto a la seguridad, esta aplicación tiene algunas características para remarcar, que se notaron con su uso. En el primer modo de uso, no se guardan los archivos en la Nube, no hay un intermediario que almacene los archivos; esta transferencia se realiza directamente entre dispositivos, cuando el destinatario ingresa la clave de acceso. Cuando los archivos ya fueron transferidos, se eliminan sin dejar rastros. Otra característica notable es que cuando se define el grupo de archivos a compartir (usando cualquier modo de uso), las únicas formas de acceso a estos archivos puede ser mediante una clave o una dirección URL acortada o un código QR; en realidad, el código QR es la codificación de la dirección URL. Finalmente, la aplicación tiene un historial de las descargas hechas y tiene al alcance un comando para eliminar todo el registro, para no dejar rastros de los movimientos hechos.
 
 {SCREENSHOT DE LA PANTALLA}
-
-[LIFEHAC] [http://lifehacker.com/send-anywhere-transfers-files-quickly-and-securely-acro-1576763031]
-[SENDPRO] [https://send-anywhere.com/web/page/product]
-[SENDTRA] [https://send-anywhere.zendesk.com/hc/en-us/articles/210404147-What-is-the-difference-between-a-basic-file-and-24-hour-file-transfer-]
 
 5.5 Medidas en el desarrollo de una aplicación.
 

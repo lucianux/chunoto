@@ -243,7 +243,7 @@ Serie de pasos (para el smartphone Motorola Defy+):
 
 Los pasos descritos dependen del modelo del smartphone utilizado. Para volver al estado de fábrica a otro modelo de smartphone se debe consultar el sitio web llamado "Hard reset" (http://www.hard-reset.com). Se pudo acceder al menú oculto con todos los smartphones de prueba, sólo se ejecutó la destrucción de datos con el Motorola Defy+. Lo que queda demostrado es que se puede dañar la información contenida de un smartphone fácilmente cuando el usuario descuida físicamente al equipo, dejando la posibilidad a cualquier usuario de poder acceder a los datos contenidos en la tarjeta SD.
 
-4.3.7 Séptima prueba [ COMPLETAR!!! ]
+4.3.7 Séptima prueba
 
 4.3.7.1 Introducción
 

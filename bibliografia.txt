@@ -223,6 +223,18 @@ Bibliografía
 [ANSECOV] "Security", http://www.android.com/security/overview/
 [MOTODRI] "Where can I download the USB drivers for my device?", https://motorola-global-portal.custhelp.com/app/answers/detail/a_id/88481
 [ROOTEXP] "Root+Boot+AIO", http://www.mediafire.com/?5d82batkh7hwm6z
+[YALESEC] "Physical Security for mobile devices", http://its.yale.edu/secure-computing/physical-security/physical-security-mobile-devices
+[NISTSEC] Karen Scarfone, Wayne Jansen, Miles Tracy, "Guide to General Server Security - Recommendations of the National Institute of Standards and Technology", Julio, 2008
+[CERTTHR] Paul Ruggiero, Jon Foote, "Cyber Threats to Mobile Phones", 2011
+[SIGBLOG] "Free, Worldwide, Encrypted Phone Calls for iPhone", https://whispersystems.org/blog/signal/
+[CHROSIG] "Signal Desktop", https://whispersystems.org/blog/signal-desktop/
+[USINSIG] "Using Signal", https://github.com/WhisperSystems/Signal-Android/wiki/Using-Signal
+[WHISWHA] "Open Whisper Systems partners with WhatsApp to provide end-to-end encryption", https://whispersystems.org/blog/whatsapp/
+[TELBLOG] "10 Billion Telegrams Delivered Daily", https://telegram.org/blog/10-billion
+[WIRSIGN] "Signal, the Snowden-Approved Crypto App, Comes to Android", http://www.wired.com/2015/11/signals-snowden-approved-phone-crypto-app-comes-to-android/
+[LIFEHAC] "Send Anywhere Transfers Files Quickly and Securely Across Devices", http://lifehacker.com/send-anywhere-transfers-files-quickly-and-securely-acro-1576763031
+[SENDPRO] "Send Anywhere - Product", https://send-anywhere.com/web/page/product
+[SENDTRA] "What is the difference between a basic file and 24 hour file transfer?", https://send-anywhere.zendesk.com/hc/en-us/articles/210404147-What-is-the-difference-between-a-basic-file-and-24-hour-file-transfer-
 
 ----------------------------------  Descargas ------------------------------------------
 
