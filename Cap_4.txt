@@ -59,7 +59,7 @@ meterpreter >
 
 Se logró una conexión con una línea de comandos remota, en el contexto de cada smartphone (la cual permite acceder a la información dentro del smartphone). Una vez que se consigue este ingreso, se pueden usar varios comandos para manipular el contenido del smartphone, sin embargo, no todos estos comandos funcionaron de la forma esperada.
 
-Estos son los comandos mas relevantes que se probaron una vez dentro de alguno de los 3 smartphones (obtenidos a partir del comando "help"):
+Estos son los comandos mas relevantes que se probaron en los smartphones (obtenidos a partir del comando "help"):
 
 Comando		Descripción 													
 cat 		Lee el contenido de un archivo y lo muestra en la pantalla

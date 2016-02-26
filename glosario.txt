@@ -1,5 +1,4 @@
 Glosario
---------
 
 Actuador
 Un actuador es un dispositivo inherentemente mecánico cuya función es proporcionar fuerza para mover o "actuar" otro dispositivo mecánico. La fuerza que provoca el actuador proviene de tres fuentes posibles: presión neumática, presión hidráulica y fuerza motriz eléctrica. Dependiendo del origen de la fuerza, el actuador se denomina "neumático", "hidráulico" o "eléctrico".
@@ -33,18 +32,6 @@ https://es.wikipedia.org/wiki/Arranque_(inform%C3%A1tica)
 Bootloader
 Un gestor de arranque o arrancador (bootloader) es un programa sencillo que no tiene la totalidad de las funcionalidades de un sistema operativo. Está diseñado exclusivamente para preparar todo lo que necesita el sistema operativo para funcionar. Normalmente se utilizan los cargadores de arranque multietapas, en los que varios programas pequeños se suman los unos a los otros, hasta que el último de ellos carga el sistema operativo.
 https://es.wikipedia.org/wiki/Gestor_de_arranque
-
-BYOD (Bring your own device)
-Es una política empresarial basada en que los empleados de una empresa utilicen sus propios dispositivos personales para realizar sus asignaciones en el trabajo, ésto quiere decir que con ellos se van a acceder a los datos privados pertenecientes a la empresa. Hay variantes de esta política como "Bring your own technology", que no sólo cubre al equipo sino que también cubre al software, y otros derivados en relación al hardware como "Bring your own computer" (BYOC), "Bring your own laptop" (BYOL), "Bring your own PC" (BYOPC), entre otras. Hay posturas a favor y en contra de BYOD, a favor se puede mencionar que permite reducir costos en la compra de los equipos, algunos creen que BYOD ayuda a los empleados a ser más productivos por llevar su trabajo en su dispositivo personal a todos lados y en cualquier momento. Sin embargo, existe otra postura que manifiesta que ésta práctica puede llegar a ser perjudicial para la empresa porque puede generar vulnerabilidades donde se puede filtrar información o se puede introducir aplicaciones maliciosas a la red privada de la empresa; considerando que BYOD hace complica la creación de un estándar de seguridad frente a una pila heterogénea de dispositivos y sistemas. Para minimizar el riesgo y acomodar las tecnologías del consumidor, muchas empresas están implementando políticas de BYOD. Además, actualmente hay una inclinación en las empresas de Estados Unidos al rechazo de la política BYOD, según un artículo en el sitio computerworld y cio que se basan en las estadísticas de la empresa CompTIA. Este estudio encontró que sólo un pequeño porcentaje de empresas, por lo general pequeñas empresas, decidió comprometerse con la política BYOD y evitar por completo la compra de dispositivos.
-[Fuente: http://www.gartner.com/it-glossary/bring-your-own-device-byod/]
-[Fuente: http://whatis.techtarget.com/definition/BYOD-bring-your-own-device]
-[Fuente: http://es.wikipedia.org/wiki/BYOD]
-[Fuente: http://www.clearrisk.com/risk-management-blog/bid/57805/What-is-BYOD-What-Are-the-Risks-How-to-Protect-Your-Business]
-http://www.cio.com/article/2973977/byod/byod-the-tech-revolution-that-wasn-t.html
-http://www.computerworld.com/article/2948470/byod/the-bring-your-own-device-fad-is-fading.html
-http://hipertextual.com/archivo/presentado-por/g-data/que-es-byod-y-que-representa-problema-seguridad-para-empresas/
-
-In Unix and related computers operating systems, a file descriptor (FD, less frequently fildes) is an abstract indicator used to access a file or other input/output resource, such as a pipe or network connection. File descriptors are part of the POSIX application programming interface. A file descriptor is a non-negative integer, represented in C programming language as the type int.
 
 Driver
 Un controlador de dispositivo o manejador de dispositivo (device driver o simplemente driver) es un programa informático que permite al sistema operativo interactuar con un periférico, haciendo una abstracción del hardware y proporcionando una interfaz (posiblemente estandarizada) para utilizar el dispositivo.

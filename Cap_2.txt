@@ -237,12 +237,12 @@ Estos son algunos managers:
 
 Los usuarios nunca ven el subsistema de Linux, ni van a interactuar con el espacio de usuario nativo, ellos van a ver la capa superior donde está la interfase gráfica del sistema operativo que muestra la funcionalidad básica y las apps que extienden esta funcionalidad. Android viene con un rico conjunto de apps pre-instaladas, incluyendo un browser, un programa que gestiona mensajes SMSs, un calendario, un cliente de emails, un administrador de contactos, un reproductor de audios, etc; muchas de estas apps son de Google y otras son del fabricante del dispositivo, ninguna de ellas se puede desinstalar, a menos que el dispositivo tenga permisos de superusuario (comúnmente se dice que el dispositivo está "rooteado"). El usuario puede instalar apps que sirven como alternativa a las apps instaladas por defecto. Android no diferencia entre apps escritas por los usuarios o provistas por el sistema operativo. Como por ejemplo, el explorador web: un usuario puede descargar Firefox, Opera u otro explorador, sin embargo Android los tratará de la misma forma que el explorador que viene por defecto [ANDSECU]. Los paquetes de instalación (archivos .apk) de las apps pre-instaladas residen en el directorio /system/app. Las apps instaladas por el usuario, como también las actualizaciones de las apps preinstaladas, residen en el directorio /data/app [ANSECIN].
 
-2.5 Desarrollo de apps en Android
+2.4 Desarrollo de apps en Android
 
 Para empezar a programar apps para Android es importante tener conocimientos en Java, así como en Programación Orientada a Objetos. También es importante tener noción de XML para definir la parte visual, el cual es un lenguaje descriptivo muy fácil de usar y que aporta simplicidad en el desarrollo de apps en Android; no obstante, para diseñar la interfase de la app, también se puede acudir a herramientas intuitivas integradas a la IDE, sin escribir código XML.
 En la siguiente parte se van a explicar las herramientas principales para poder desarrollar apps en Android (ambiente y conceptos), de esta forma se trata de demostrar que estan al alcance de cualquier desarrollador y son gratuitas.
 
-2.5.1 Ambiente de desarrollo
+2.4.1 Ambiente de desarrollo
 
 El ambiente de desarrollo puede ser usado en los sistemas operativos: Windows, MAC o Linux. Para ello se debe descargar: el SDK de Android (que contiene todas las librerías Java que utiliza Android), el emulador (para probar apps) y variedad de ejemplos.
 Los componentes que forman el entorno de desarrollo de Android son:
@@ -255,7 +255,7 @@ Los componentes que forman el entorno de desarrollo de Android son:
 - Android Debug Bridge (ADB): es una herramienta de línea de comandos versátil que permite comunicarse con una instancia de emulador de Android o un dispositivo físico con Android.
 Cabe mencionar que se pueden usar otros IDEs (por ejemplo, NetBeans), dado que se puede trabajar con un IDE por un lado y a parte se puede usar la línea de comandos para ejecutar la app.
 
-2.5.2 Principales componentes de programación
+2.4.2 Principales componentes de programación
 
 Para la construcción de una app Android, se emplean los siguientes bloques principales [ANDRFUN]:
 
@@ -302,14 +302,14 @@ public class ExampleActivity extends Activity {
 - Definir los requerimientos de hardware y software de la app, tal como la cámara fotográfica, servicios de bluetooth o una pantalla multitouch.
 - Definir los enlaces externos con las bibliotecas ajenas a la API nativa de Android, tal como la biblioteca de Google Maps.
 
-2.5.3 Distribución
+2.4.3 Distribución
 
 En Android, los desarrolladores pueden elegir un método para distribuir apps o pueden combinar. Los procesos para empaquetar y distribuir apps son independientes. Asimismo, en esta instancia se pueden distinguir dos tareas principales [PLAYPUB]:
 - Se prepara la app para la publicación (es el proceso de empaquetado), se construye un paquete instalador de la app, con que los usuarios van a poder descargar e instalar en sus dispositivos con Android.
 - Se publica la app, durante esta fase se difunde la app con publicidad, se vende y distribuye la versión de producción de la app.
 Un método posible para distribuir apps es a través de un marketplace; por lo general, con este método se puede llegar a la mayor cantidad de usuarios posible que con los otros métodos. Por ejemplo, Google Play es el principal marketplace para las apps de Android y es particularmente útil si se desea distribuir apps a una gran publico global. Sin embargo, se pueden distribuir apps a través de cualquier otro marketplace o usar varios [OPENDIS]. Otros marketplaces posibles pueden ser [ALTMARK]: Amazon Appstore [AMAZAPP], Slide Me [SLIDEME], AppsLib [APPSLIB], Insyde Market [INSMARK], FileDir [FILEDIR], AppBrain [APPBRAI], Android Pit [ANDRPIT], F-Droid [FDROIDM], entre otros.
 
-2.5.3.1 Google Play
+2.4.3.1 Google Play
 
 Google Play es una plataforma de distribución digital operada por Google, es el marketplace oficial de Android, originalmente se llamaba "Android Market". Permite a los usuarios navegar entre miles de apps para luego descargar las que seleccionen. Permite a los desarrolladores publicar sus apps desarrolladas con el SDK de Android. Además de distribuir apps, también sirve como almacén de medios digitales, ofreciendo música, revistas, libros, películas y programas de televisión [WIKPLAY][PLAYOVE].
 Entre las facilidades que Google Play ofrece al desarrollador, está el control sobre el alcance que tienen sus app en base a las características del dispositivo del usuario (por ejemplo, la versión de Android y las características del hardware), por lo tanto algunos usuarios no van a poder instalar ciertas apps por las restricciones del desarrollador; no obstante, para aumentar el alcance de la app, el desarrollador puede considerar la ausencia de los requisitos y publicar versiones alternativas para ellos. Además, Google Play permite el uso de 2 servicios: el servicio de licencias y el servicio de facturación dentro de la app. El primer servicio proporciona ayuda para prevenir la instalación y uso no autorizado de las apps; el segundo servicio facilita la venta integrada dentro de las apps, por ejemplo cuando una app ofrece una actualización que tiene un cargo económico [OPENDIS][WIKPLAY].
@@ -318,7 +318,7 @@ En cuanto a las tarifas, para registrarse en Google Play existe una tarifa únic
 Desde el punto de vista del usuario de apps, en Google Play se cuenta con un conjunto de herramientas como las calificaciones y comentarios que exponen la experiencia que tuvieron los usuarios con una app en particular. Esta información se la puede tomar como un punto de referencia clave acerca de la calidad de la app. La calificación que le asignan los usuarios a las apps es uno de los factores más importantes que influyen en el ranking que se va formando en las listas de apps por categoría y los resultados de búsqueda de Google Play, también influyen en las listas que presentan selecciones de apps y juegos para la promoción en el marketplace.
 Asimismo, el usuario puede explorar las apps por categorías (hay más de 30), en cada categoría se presentan listas de apps ordenadas por una combinación de factores: rating, críticas de los usuarios, cantidad de descargas, país y otros. El usuario también puede ubicar las apps que quiere por las búsquedas, las cuales permiten llegar a la app que necesita con mayor precisión; la búsqueda tiene características adicionales, como sugerencias de términos más relevantes o nombres de las apps más populares que se acerquen al término buscado. Igualmente, el usuario tiene a disposición listas de apps que tienen las mejores puntuaciones, divididas en categorías como: apps gratuitas, pagas, nuevas, las que crecieron con mayor rapidez, entre otras; constantemente se están creando listas de apps basadas en un tema o acontecimiento estacional, tratando de promocionar aquellas que son de mejor calidad. De hecho, hay un apartado en donde realizan reconocimientos, como por ejemplo "el mejor desarrollador". [PLAYABO]
 
-2.5.3.2 Otros métodos de distribución
+2.4.3.2 Otros métodos de distribución
 
 Otro métodos de distribución (una alternativa al marketplace), es el envío de apps a los usuarios por email, la cual es una forma fácil y rápida de publicar una app. Para utilizar esta forma, se prepara la app para la publicación (empaquetado), se adjunta en un email y se lo envía a un usuario. Cuando el usuario abre el mensaje de email en el dispositivo con Android, el sistema reconoce el paquete de instalación (archivo .apk) y muestra un botón que indica si se quiere instalar la app. La distribución de apps por email es conveniente si se lo envía a unos pocos usuarios de confianza, dado que esta forma de distribución proporciona pocas protecciones contra la piratería y la distribución no autorizada [OPENDIS].
 Finalmente, se pueden distribuir apps a través de un sitio Web. Es posible poner a disposición una app para su descarga en un sitio web. Para realizar esta distribución, primero se debe preparar el paquete de la app para publicarlo (empaquetado); luego, todo lo que se necesita hacer es alojar el archivo .apk en el sitio web y habilitar un link de descarga para los usuarios. Cuando los usuarios accedan al enlace de descarga desde sus smartphones con Android, el archivo se descargará y el sistema Android automáticamente iniciará la instalación. Sin embargo, la instalación comenzará automáticamente sólo si los usuarios tienen configurado al sistema de forma tal que permita la instalación desde fuentes desconocidas [OPENDIS].
