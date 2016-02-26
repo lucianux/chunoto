@@ -251,6 +251,7 @@ El proceso de "rooting" de dispositivos con Android le permite al usuario tener 
 En cuanto al ambiente de desarrollo de la prueba, se utilizó una PC con Windows 7 y un smartphone Defy+ de la marca Motorola.
 El proceso de ejecución del exploit se lo puede dividir en 2 etapas: instalación de drivers y rooteo. En la primer etapa se debe instalar los drivers que provee el fabricante del smartphone para que el sistema operativo lo detecte, y así poder ejecutar comandos en el mismo, para ello está la herramienta de línea de comandos llamada "adb" que ayuda a realizar el "rooting". En la segunda etapa se debe ejecutar el exploit.
 
+[INFO AUXILIAR]
 http://www.taringa.net/comunidades/motoroladefy/7710427/Consulta-Rootear-motorola-defy-plus.html [Fundamental!!!]
 http://www.taringa.net/comunidades/motoroladefy/5277669/Pedido-Root-defy-plus-2-3-5.html [Accesorio]
 ° Se bajan los drivers desde acá (son para Windows):
