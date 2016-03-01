@@ -179,3 +179,6 @@ Es la secuencia más chica de instrucciones programadas que pueden ser manejadas
 
 Ubicuidad (ubiquity)
 Este término se refiere a la relación íntima entre la tecnología móvil y las personas, que cada vez se incrementa más. Este término surge del fenómeno de la presencia de la computación móvil en varios de los entornos cotidianos (en un auto, en un bar, en una casa, etc.) que cuenta con el soporte físico de algunos de los elementos que ya contamos (teléfonos, radios, televisores, etc.).
+
+Widget
+Los widgets son pequeñas aplicaciones gráficas que se empotran en la pantalla inicial (escritorio) del smartphone para dar fácil acceso a funciones frecuentemente usadas y proveer de información visual.
