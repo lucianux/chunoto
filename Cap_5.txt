@@ -187,7 +187,33 @@ En cuanto a la seguridad, esta aplicación tiene algunas características para r
 
 5.5 Medidas en el desarrollo de una aplicación.
 
-Descripción de una aplicación simple que ayuda a incrementar la seguridad.
+En esta sección se describirá una aplicación simple que contribuirá a incrementar la seguridad y propondrá bases de código para ser usados como plantilla. Tiene la característica de utilizar las herramientas de desarrollo integradas al entorno, o sea que no se van a utilizar librerías de terceros.
+
+Primer paso: una forma de autenticación dentro de una aplicación.
+Este paso consta de una barrera de seguridad que es abierta cuando se marca el código de desbloqueo de la pantalla, el cual es conocido por el usuario real del smartphone, previo al ingreso de una parte de la aplicación que muestra contenidos privados. Asimismo, con esta medida se asegura que la persona que está usan la aplicación sea efectivamente el dueño, obligándolo a ingresar el código de desbloqueo de la pantalla que permite avanzar a la siguiente pantalla de la aplicacíón.
+http://developer.android.com/intl/es/samples/ConfirmCredential/project.html
+
+{ Acá debe haber una INTRODUCCIÓN explicando los conceptos teóricos. }
+
+Segundo paso: encriptación de los datos almacenados.
+Este paso se basa en la encriptación de datos sensibles propias de la aplicación dentro de un medio de almacenamiento inseguro (como la tarjeta SD).
+[ Ver el libro "Android Apps Security" ]
+
+{ Acá debe haber una INTRODUCCIÓN explicando los conceptos teóricos. }
+
+Tercer paso:
+Credential Storage - Android provides multiple options for storing credentials in the device. The Android developer portal documentation [CS1] recommends the use of AccountManager for service credentials that need to be accessible to multiple applications. The AccountManager class is not suitable for storing access and refresh tokens provided by Box after user authentication. Android also provides the Keychain API and the Keystore as options. The Android developer portal explains the differences between the two in detail [CS2]. Box recommends using the Keystore to store Box access and refresh tokens. If Keystore cannot be used, Box tokens can be encrypted and stored in the application’s Shared Preferences. The encryption key used to encrypt Box tokens should be uniquely generated per app installation. The tokens must be removed on user logout or any other Box account removal action from the application.
+http://titusfx.blogspot.com.ar/2013/04/cuentas-en-android.html
+http://developer.android.com/intl/es/reference/android/accounts/AccountManager.html
+
+Account Manager es un registro centralizado para guardar credenciales de los usuarios y sincronizar los datos con el servidor (de ser necesario).
+
+{ Acá debe haber una INTRODUCCIÓN explicando los conceptos teóricos. }
+
+Cuarto paso:
+Access to Source Code - It is absolutely trivial to reverse engineer an Android application. Freely available tools exist to pull out the original source code from the .apk file, making it imperative to use OBFUSCATION techniques during the development process. Thankfully CODE OBFUSCATION tools exist to help to make it more difficult for malicious attackers to get at the source code of an Android application.
+
+{ Acá debe haber una INTRODUCCIÓN explicando los conceptos teóricos. }
 
 ( se muestra una aplicación sencilla para mejorar la seguridad, con 3 contribuciones sencillas (visibles o no en la pantalla), funciones que vienen incorporadas en la API de Android, algo se me va a ocurrir... )
 
@@ -202,7 +228,6 @@ Descripción de una aplicación simple que ayuda a incrementar la seguridad.
 	[http://developer.android.com/intl/es/training/articles/security-tips.html]
 
 En términos generales:
-- Marcar un PIN previo al ingreso de una pantalla. Ésto es para asegurarse que el usuario que usa el smartphone es el dueño. "Proceso de autorización".
 - Encriptación local
 	http://developer.android.com/intl/es/reference/android/accounts/AccountManager.html
 - Encriptación remota (ej.: TLS, HTTPS, etc.)
