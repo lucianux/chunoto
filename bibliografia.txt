@@ -40,6 +40,8 @@ Bibliografía
 [AVASTMA] "Has the Windows Phone Store become a new target for hackers?", https://blog.avast.com/2015/10/06/has-the-windows-phone-store-become-a-new-target-for-hackers/
 [CHECKBL] "BrainTest - A New Level of Sophistication in Mobile Malware", http://blog.checkpoint.com/2015/09/21/braintest-a-new-level-of-sophistication-in-mobile-malware/
 [SMUDGES] Adam J. Aviv, Katherine Gibson, Evan Mossop, Matt Blaze, and Jonathan M. Smith, "Smudge Attacks on Smartphone Touch Screens", 2010.
+[MCAFFSH] "What is Shoulder Surfing?", https://blogs.mcafee.com/consumer/what-is-shoulder-surfing/
+[PAPSHOU] Florian Schaub, Ruben Deyhle, Michael Weber, "Password Entry Usability and Shoulder Surfing Susceptibility on Different Smartphone Platforms", Diciembre, 2012.
 [ZIMPSTA] "Experts Found a Unicorn in the Heart of Android", https://blog.zimperium.com/experts-found-a-unicorn-in-the-heart-of-android/
 [TIMESOC] "Teenagers unaware of social media privacy risks: Study", http://timesofindia.indiatimes.com/tech/social/Teenagers-unaware-of-social-media-privacy-risks-Study/articleshow/46609324.cms
 [COMPNUD] "Nude celebrity pictures posted online after alleged iCloud hack", http://www.computerweekly.com/news/2240227886/Nude-celebrity-pics-posted-online-after-alleged-iCloud-hack
@@ -280,6 +282,7 @@ Bibliografía
 [SMARAWA] [http://www.aueb.gr/users/amylonas/docs/COSE%20Smartphone%20Awareness.pdf]
 [IJSRMOB] [http://www.ijsr.net/archive/v4i1/SUB15466.pdf]
 [USACERT] [http://www.us-cert.gov/ncas/tips/ST04-017]
+[PAPSHOU] [https://www.uni-ulm.de/fileadmin/website_uni_ulm/iui.inst.100/institut/Papers/Prof_Weber/2012-MUM-shouldersurfing.pdf]
 [TAXONET] [http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.77.1606&rep=rep1&type=pdf] ["A Taxonomy of Network and Computer Attack Methodologies"]
 [PROTCHI] [http://mobility.protectchildren.ca/know-the-risks/text-messaging-instant-messaging]
 [NISTWNS] [http://www.pajhohesh.ir/e-books-m-biabani/computer-en/01.pdf] ["Wireless Network Security - 802.11, Bluetooth and Handheld Devices"]
