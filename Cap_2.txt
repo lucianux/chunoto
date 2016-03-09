@@ -81,6 +81,70 @@ Soporte de múltiples idiomas.
 Soporte de hardware adicional: Android puede manejar cámaras (que pueden tomar fotografías o capturar video), pantallas tipo touchscreen, GPS, acelerómetros, giroscopios, etc.
 Almacenamiento externo: la mayoría de los dispositivos Android incluyen soporte para tarjetas microSD formateadas con los sistemas de archivos FAT32, ext3 o ext4. Muchas tablets con Android incluyen entradas USB para permitir el uso de dispositivos de almacenamiento de alta capacidad como pendrives y discos duros externos vía USB [ANDROTG].
 
+
+
+2.2.5 Android Open Source
+
+(A) Definir qué es Open Source.
+(B) Presentar posturas.
+(C) Definir una conclusión.
+
+FACTORES A FAVOR Y EN CONTRA de Android que lo hacen software libre o no.
+
+* Hablar de AOSP que tiene una licencia Apache.
+
+La licencia preferible de AOSP es Apache 2.0 (Apache Software License, Version 2.0), pero hay excepciones como en los parches del kernel de Linux que tienen la versión GPLv2 [ANDRLIC].
+
+Según el proyecto AOSP [ANDOPEN], tienen intensiones de que Android sea una plataforma de software abierta. Todo el código fuente que se puede adquirir de Android se lo puede encontrar en el repositorio que provee este proyecto, AOSP es un punto central donde se concentran los esfuerzos de Google por hacer de Android un proyecto Open Source.
+
+Hay ciertas actitudes de Google en su proyecto Android que estan mal vistas por los puristas de la comunidad de software al proclamarse como Open Source, como por ejemplo ...
+Code changes are not made available to the public immediately after they are made. Instead, open source releases accompany new version releases. Unfortunately, several times the open source code was not made available at release time. In fact, the source code for Android Honeycomb (3.0) was not made available until the source code for Ice Cream Sandwich (4.0) was released. In turn, the Ice Cream Sandwich source code wasn’t released until almost a month after the official release date. Events like these detract from the spirit of open source software, which goes against two of Android’s stated goals: innovation and openness [ANDHACK].
+O SEA...
+Google desarrolla muchas veces tecnologías de forma cerrada y privada y luego libera grandes partes de estos códigos. Y esto, es bastante habitual en muchos otros proyectos open source. De hecho es razonable que así sea. [ANDROES]
+
+Otras cosas que NO vuelven a ANDROID en un proyecto Open Source son...
+The vast majority of open source projects, for example, have public mailing lists and forums where the main developers can be found interacting with one another, and public source repositories providing access to the main development branch’s tip. No such thing can be found for Android. [EMBANDR]
+
+Debido a ésto, EVIDENTEMENTE ...
+Obviously there is a certain amount of discomfort in the open source community with the continued use of the term “open source” in the context of a project whose development model contradicts the standard modus operandi of open source projects, especially given Android’s popularity. The open source community has not historically been well served by projects that have adopted a similar development model. Others fear this development model also makes them vulnerable to potential changes in Google’s business objectives.
+
+A PESAR DE ELLO, ...
+Despite its awkward development model from an open source community perspective, it remains that Google’s work on Android is a godsend for a large number of developers. []
+
+---
+
+Como punto de partida se puede analizar las características que debe tener un proyecto Open Source según Open Source Initiative (OSI) [OPENSOU]. Básicamente estas condiciones están relacionadas con los términos de la licencia y con la filosofía del movimiento del software libre.
+
+Como punto de partida se mostrará brevemente cuáles son las características que debería tener un proyecto Open Source, que algunas estan relacionadas con una filosofía y otras con las cualidades de la licencia. En base a éso se evaluará si Android cumple con estas condiciones de acuerdo a varios artículos que exponen los rasgos que tiene Android relativos a si un proyecto merece ser calificado como Open Source. Al final, se presentará una conclusión.
+
+Según la corporación sin ánimo de lucro llamada Open Source Initiative (OSI), la cual promueve el conocimiento y la importancia del software no propietario [ABOUOSI], define una serie de características que algunas son filosóficas y otras estan relacionadas con las cualidades de la licencia de software.
+
+* Hablar de que un proyecto Open Source puede otorgar privilegios de escritura para sus repositorios permitiendo la contribución a ellos.
+* Podría seguir viendo lo que dice https://source.android.com/source/faqs.html
+
+Se puede hacer un balance, exponiendo dos posturas: (POSTURA 1) y (POSTURA 2), en una se pueden contar las ventajas y en la otra las desvantajas.
+Android es un proyecto que consiste en: un sistema operativo, el middleware y aplicaciones, todas éstas combinan software Open Source y Closed Source (sin acceso al código fuente).
+
+Cualquiera puede ver el código fuente de Android, cualquiera puede hacer un fork de Android, cualquiera lo puede usar en cualquier dispositivo, incluso venderlo; todas estas actividades se pueden realizar de forma directa (sin pedir permiso a ninguna entidad) y sin pagar un canon.
+
+Android es gratis, el usuario final no le debe pagar a los responsables de Android por su uso, como sí pasa con Windows de Microsoft o Mac OS de Apple. Sin embargo, la inversión que hacen todas las empresas del consorcio llamado Open Handset Alliance (OHA) al final la recuperan con la venta de sus productos involucrados con el entorno de Android, ya sea hardware o software.
+
+Google promociona sus productos principales (Google Drive, Gmail, Chrome, Youtube, Google Maps, etc.) en Android con los cuales gana dinero lo cual está mal visto en la comunidad del software libre; no obstante, estos productos pueden ser reemplazados por cualquier otra aplicación, incluso las aplicaciones del sistema se pueden reemplazar. Generalmente se usan las de Google porque son mejores que sus alternativas; por ejemplo, los proveedores de telefonía celular y fabricantes sustituyen algunas aplicaciones por otras, por lo general son peores.
+
+Algo a favor de la apertura de Android es que hay proyectos Open Source basados en Android, como el proyecto llamado Replicant; de hecho, el proyecto Cyanogen se hizo posible por la cantidad de código abierto que contiene Android.
+
+[CONCLUSIÓN]
+La conclusión que se pudo extraer es que en un proyecto tan grande como Android, en donde hay muchos participantes, no es estrictamente Open Source. Hay partes como el núcleo, librerías y otros elementos que si son Open Source; en cambio, algunos drivers y partes de código aportadas por fabricantes no lo son [LINADIC]. Vale aclarar que Android no es el único sistema operativo móvil que forma parte de un proyecto Open Source; también se puede afirmar que la mayor parte de Android es Open Source.
+
+[LINADIC] [http://www.linuxadictos.com/realmente-android-es-un-sistema-open-source.html]
+[ABOUOSI] [https://opensource.org/about]
+[OPENSOU] [https://opensource.org/osd-annotated]
+[ANDRLIC] [https://source.android.com/source/licenses.html]
+
+[VOLKAND] [https://volkanrivera.com/esp/2010/10/es-android-open-source/]
+[ANDROES] [http://www.android.es/un-poco-de-luz-sobre-si-android-es-open-source-y-gratis.html]
+
+
 2.3 Arquitectura de Android
 
 Desde el punto de vista de la arquitectura, el sistema operativo Android esta basado en una pila de capas. Seguidamente, se comentarán los beneficios de trabajar de esta forma, luego se describirá cada capa del sistema Android.
