@@ -185,80 +185,7 @@ En cuanto a la seguridad, esta aplicación tiene algunas características para r
 
 {SCREENSHOT DE LA PANTALLA}
 
-5.5 Medidas en el desarrollo de una aplicación.
-
-En esta sección se describirá una aplicación simple que contribuirá a incrementar la seguridad y propondrá bases de código para ser usados como plantilla. Tiene la característica de utilizar las herramientas de desarrollo integradas al entorno, o sea que no se van a utilizar librerías de terceros.
-
-Primer paso: una forma de autenticación dentro de una aplicación.
-Este paso consta de una barrera de seguridad que es abierta cuando se marca el código de desbloqueo de la pantalla, el cual es conocido por el usuario real del smartphone, previo al ingreso de una parte de la aplicación que muestra contenidos privados. Asimismo, con esta medida se asegura que la persona que está usan la aplicación sea efectivamente el dueño, obligándolo a ingresar el código de desbloqueo de la pantalla que permite avanzar a la siguiente pantalla de la aplicacíón.
-http://developer.android.com/intl/es/samples/ConfirmCredential/project.html
-
-{ Acá debe haber una INTRODUCCIÓN explicando los conceptos teóricos. }
-
-Segundo paso: encriptación de los datos almacenados.
-Este paso se basa en la encriptación de datos sensibles propias de la aplicación dentro de un medio de almacenamiento inseguro (como la tarjeta SD).
-[ Ver el libro "Android Apps Security" ]
-
-{ Acá debe haber una INTRODUCCIÓN explicando los conceptos teóricos. }
-
-Tercer paso:
-Credential Storage - Android provides multiple options for storing credentials in the device. The Android developer portal documentation [CS1] recommends the use of AccountManager for service credentials that need to be accessible to multiple applications. The AccountManager class is not suitable for storing access and refresh tokens provided by Box after user authentication. Android also provides the Keychain API and the Keystore as options. The Android developer portal explains the differences between the two in detail [CS2]. Box recommends using the Keystore to store Box access and refresh tokens. If Keystore cannot be used, Box tokens can be encrypted and stored in the application’s Shared Preferences. The encryption key used to encrypt Box tokens should be uniquely generated per app installation. The tokens must be removed on user logout or any other Box account removal action from the application.
-http://titusfx.blogspot.com.ar/2013/04/cuentas-en-android.html
-http://developer.android.com/intl/es/reference/android/accounts/AccountManager.html
-
-Account Manager es un registro centralizado para guardar credenciales de los usuarios y sincronizar los datos con el servidor (de ser necesario).
-
-{ Acá debe haber una INTRODUCCIÓN explicando los conceptos teóricos. }
-
-Cuarto paso:
-Access to Source Code - It is absolutely trivial to reverse engineer an Android application. Freely available tools exist to pull out the original source code from the .apk file, making it imperative to use OBFUSCATION techniques during the development process. Thankfully CODE OBFUSCATION tools exist to help to make it more difficult for malicious attackers to get at the source code of an Android application.
-
-{ Acá debe haber una INTRODUCCIÓN explicando los conceptos teóricos. }
-
-( se muestra una aplicación sencilla para mejorar la seguridad, con 3 contribuciones sencillas (visibles o no en la pantalla), funciones que vienen incorporadas en la API de Android, algo se me va a ocurrir... )
-
-- Marcar el PIN antes de avanzar con la siguiente pantalla!
-	[http://developer.android.com/intl/es/samples/ConfirmCredential/project.html]
-- (empty)
-	[http://developer.android.com/intl/es/training/articles/keystore.html] (candidato)
-	[http://developer.android.com/intl/es/reference/java/security/KeyStore.html]
-- (empty)
-	[http://developer.android.com/intl/es/training/articles/security-ssl.html]
-- ver:
-	[http://developer.android.com/intl/es/training/articles/security-tips.html]
-
-En términos generales:
-- Encriptación local
-	http://developer.android.com/intl/es/reference/android/accounts/AccountManager.html
-- Encriptación remota (ej.: TLS, HTTPS, etc.)
-	http://developer.android.com/intl/es/reference/javax/net/ssl/HttpsURLConnection.html
-- Permisos de Android.
-	http://developer.android.com/intl/es/guide/topics/security/permissions.html
-
-Tips de seguridad en el desarrollo de software
-
-[ Para compartir datos se debe ... ]
-* You should generally avoid using the MODE_WORLD_WRITEABLE or MODE_WORLD_READABLE modes for IPC files because they do not provide the ability to limit data access to particular applications, nor do they provide any control on data format.  If you want to share your data with other app processes, you might instead consider using a content provider, which offers read and write permissions to other apps and can make dynamic permission grants on a case-by-case basis.
-Files created on external storage, such as SD Cards, are globally readable and writable. Because external storage can be removed by the user and also modified by any application, you should not store sensitive information using external storage.
-Usar la SD Card con cuidado, dado que su acceso global.
-Para compartir información es bueno usar ContentProviders.
-
-* (varias cosas más ... )
-
-- SMS-based Two-Factor Authentication (2FA) by intercepting text messages containing One-Time Passwords (OTPs).
-- Fake GPS.
-- Encriptación de archivos.
-- Comunicación segura (SSL / TLS).
-
-o
-
-[ https://www.noconname.org/paper-item/sistema-para-dispositivos-android-que-permite-proteger-el-acceso-a-la-informacion/ ] [ Diapositivas que muestran ]
-[ http://www.researchgate.net/publication/274964088_Anti-Theft_Cloud_Apps_for_Android_Operating_System ] [ Paper de Investigación!!! ]
-[ http://research.ijcaonline.org/volume122/number17/pxc3905166.pdf ] [ Malware Detection Techniques in Android ]
-[ http://research.ijcaonline.org/volume120/number5/pxc3903942.pdf ] [ Malicious Applications Detection by Analyzing Manifest Files ]
-[ http://research.ijcaonline.org/volume117/number8/pxc3902985.pdf ] [ Droid Guard: An Approach to Make Android Secure ]
-
-5.6 Plantilla de recomendaciones
+5.5 Plantilla de recomendaciones
 
 [ se puede buscar en Google scholar: "securing android" ]
 [ http://www.makeuseof.com/tag/4-smartphone-security-risks-to-be-aware-of/ ]
@@ -268,7 +195,7 @@ o
 
 En esta guía se congregan sugerencias para mitigar los riesgos de los ataques que se pueden efectuar en un smartphone.
 
-5.6.1 Protección física
+5.5.1 Protección física
 
 - Establecer un PIN para la tarjeta SIM.
 Cuando se usa una tarjeta SIM por primera vez, por lo general, viene con un código de PIN por defecto que lo suministra el proveedor de telefonía celular, es recomendable que se lo redefina manualmente; es un código que tiene una longitud de 4 a 8 dígitos y debería cumplir las típicas normas de contraseñas: que no sea el año de la fecha de nacimiento de alguien conocido, que no sea algo sencillo de adivinar como "4321", etc. Es un código que no tiene ninguna vinculación con el código de la pantalla de bloqueo. Establecer un PIN que bloquea la tarjeta SIM es importante, dado que evita que un usuario que desconoce este código (probablemente, sea un intruso) pueda realizar llamadas, enviar mensajes SMS o usar la red de datos [APPLSUP]; en fin, gastar el crédito del usuario, aunque se permite realizar llamadas de emergencia. La solicitud del PIN se realiza cuando se enciende el celular o cuando se traslada la tarjeta SIM a otro celular, hay 3 intentos y si se agotan estos intentos se bloquea la tarjeta SIM impidiendo el uso de los servicios del proveedor de telefonía móvil hasta que se ingrese el código "PUK", una contraseña más larga y formada por números, ésta es definida por el fabricante del SIM (se la consigue por medio del proveedor de telefonía móvil); generalmente se lo encuentra junto con el envoltorio de la tarjeta SIM o también se lo puede pedir al proveedor de telefonía móvil. En última instancia, cuando se excede en el número máximo de intentos de PUK, la tarjeta SIM se bloqueará permanentemente y se deberá reemplazarla por una nueva [WINPHON].
@@ -289,7 +216,7 @@ En el caso de Helium, éste se encarga de guardar y restaurar los datos de las a
 Los fabricantes de smartphones incorporan aplicaciones preinstaladas para realizar backups a la versión de Android que distribuyen en sus equipos, éstas facilitan el almacenamiento de los datos que almacena el usuario (fotos, videos, música), los datos que generan las aplicaciones (historial de navegación, puntaje en los juegos, etc), las configuraciones (conexiones de redes Wi-Fi, tonos de las distintas notificaciones, configuración de la pantalla de inicio). Asimismo, Google también incorpora un servicio de este tipo para almacenar las configuraciones del equipo en sus servidores y los asocia con la cuenta de Google asignada al smartphone.
 Alternativamente, se pueden realizar backups manualmente con distintos niveles de detalle, esta tarea es mas laboriosa que delegarla a una aplicación de un tercero. A continuación se va a describir básicamente qué datos se deben considerar para guardar en un medio externo como una PC, una tarjeta SD o la Nube. En la ubicación "/data" se guardan los datos de las aplicaciones, para copiarlos se necesita que el smartphone esté rooteado; en la ubicación "/sdcard" se guardan los datos almacenados en la tarjeta SD, acá no hay problemas de acceso. Para guardar las fotos, música y videos del usuario, se copia lo que contiene la carpeta "/sdcard/DCIM". Guardar las configuraciones del sistema y las aplicaciones de forma manual es más laborioso que utilizar las aplicaciones mencionadas, por ello no se las tendrán en cuenta en esta guía. Los contactos estan guardados en la memoria interna del smartphone y en la tarjeta SIM, se los puede trasladar todos a la tarjeta SIM como una forma de resguardarlos; ésto generalmente se realiza yendo a la aplicación que administra contactos, una vez allí se debe presionar el botón del menú principal y entre esas opciones debería estar. Este backup de contactos tiene sus limitaciones: se perdería la información adicional que guardan los smartphones como las imágenes de los contactos, los teléfonos secundarios, dirección de mail, etc.; sólo se guardarían el nombre del contacto (hasta 14 caracteres) y el número de teléfono.
 
-5.6.2 Protección ante software malicioso
+5.5.2 Protección ante software malicioso
 
 - Analizar los permisos.
 Entender y tomar conciencia de los permisos que se autorizan con la instalación de nuevas aplicaciones. Cuando se instala o se actualiza una aplicación, se debería comprobar que sus permisos sean coherentes con el propósito de la aplicación. En el caso de las actualizaciones, puede suceder que la aplicación pida los mismos permisos que pedía originalmente o pida permisos adicionales, en este último caso se listan los permisos extras. Esta sugerencia se puede aclarar con un ejemplo: si se descarga un juego nuevo, se espera que solicite acceso al sistema de archivos, y a lo sumo, acceso a Internet; sin embargo, en el caso de que exija permisos ilógicos como el acceso a los mensajes de texto o a la cámara de fotos, entonces la aplicación sería considerada sospechosa, a no ser que se confíe en la empresa creadora de la aplicación. Existen otros ejemplos, como aplicaciones que tienen características de una calculadora que exigen el acceso a la red.
@@ -300,7 +227,7 @@ Además de la lista de permisos que aparece cuando se va a instalar una determin
 Con respecto a la instalación de aplicaciones nuevas; se debe evitar el uso de una fuente externa como los marketplaces de terceros, el correo electrónico o una sitio web, a menos que sea de confianza. Es aconsejable usar el marketplace oficial Google Play, el cual permite verificar las calificaciones que le dieron los usuarios y las críticas, también se puede ver los permisos que pide la aplicación.
 Existen iniciativas independientes que distribuyen aplicaciones que siguen una tendencia, entre estos proyectos se puede mencionar a F-Droid, FossDroid, Guardian Project, PRISM Break. PRISM Break es un proyecto que busca mejorar la seguridad del usuario para impedir el espionaje por parte de autoridades guvernamentales, en este proyecto se agrupan aplicaciones de código abierto y muestran las aplicaciones equivalentes en el entorno corporativo [PRISMBR]; tiene un apartado para aplicaciones para Android [PRISAND]. F-Droid es un repositorio de aplicaciones de código abierto y gratuitas; este repositorio tiene una galería de aplicaciones que expone críticas, puntajes, novedades, revisiones y afines; tiene una aplicación cliente que facilita la búsqueda, instalación y la aplicación de actualizaciones [FDROIDA]. Guardian Project busca facilitar la distribución de aplicaciones seguras, sencillas de usar y de código abierto; está pensado para los usuarios que quieren proteger sus comunicaciones y los datos personales de la intrusión, la interceptación y la vigilancia [GUARPRO]. Fossdroid es un proyecto que promueve aplicaciones gratuitas y de código abierto para Android; Fossdroid se alimenta de los datos de F-Droid y los dispone al estilo de un marketplace [FOSSDRO].
 
-5.6.3 Protección de la privacidad de los datos
+5.5.3 Protección de la privacidad de los datos
 
 - Evitar el uso de las conexiones (Wi-Fi, GPS, Bluetooth, NFC) a otros sistemas de forma desmedida.
 Las redes Wi-Fi gratuitas, públicas y abiertas ofrecen al usuario de un smartphone una conexión a Internet sin ningún costo. No obstante, estas conexiones inseguras pueden ser despreciables para mantener la privacidad de la información que se transmite en la red inalámbrica. Para un hacker, es mucho más sencillo conectarse a esta clase de redes inalámbricas y puede captar fácilmente casi toda la información que la víctima envíe a través de Internet. Es más seguro utilizar conexiones Wi-Fi seguras, o incluso se puede reemplazar la conexión Wi-Fi por una conexión a Internet del proveedor de telefonía móvil.
@@ -314,7 +241,7 @@ Cuando se accede a la bandeja de entrada de la casilla de mails desde el smarthp
 [ENCRIPTACIÓN]
 { ??? }
 
-5.6.4 Protección del sistema
+5.5.4 Protección del sistema
 
 - Escaneo de códigos QR.
 Los códigos QR pueden contener información muy variada [QRSECUR]: una dirección de e-mail, un número de teléfono, una ubicación geográfica, un SMS (un código QR puede crear un SMS con un texto y un remitente), información de contacto (como un nombre, número de teléfono, e-mail, dirección, sitio web, etc.), un evento de calendario (puede contener información del evento como título, horario de inicio y fin, ubicación, descripción, etc.), un texto, una dirección URL (puede llevar a una página web con cierta intensión), entre otros.
@@ -337,6 +264,155 @@ En la configuración del cliente Google Play se pueden activar las actualizacion
 Cuando se libera una nueva versión de Android, no quiere decir que está lista para todos los dispositivos. Algunas versiones viejas de Android, como las versiones menores a 4.1 ("Jelly Bean") no van a poder ser actualizadas a la última versión de Android, es muy probable que ese fabricante no otorgue soporte a esa clase de smartphones.
 Antes de aplicar actualizaciones del sistema, es aconsejable realizar backups de los datos del usuario. Las actualizaciones no deberían afectar los datos, pero no hay garantías.
 Para ver si hay nuevas actualizaciones del sistema, se debe ir a las configuraciones generales del smartphone, luego elegir la opción "Acerca del teléfono" y finalmente elegir el ítem "Actualizaciones del sistema"; es allí donde aparecerán actualizaciones del sistema para ese smartphone, si las hay. Estos menús puede variar según el modelo y la marca.
+
+5.6 Medidas en el desarrollo de una aplicación.
+
+En esta sección se describe una aplicación sencilla a modo de demostración, tiene la finalidad de exponer una aproximación de 2 medidas de seguridad que se pueden implementar en un smartphone con Android. Este desarrollo sirve como base, se pueden extraer partes de su código fuente para reutilizarlo en una aplicación concreta, para mejorar su protección en el acceso a la información. La aplicación implementa 2 medidas de seguridad: la autenticación del usuario y la encriptación de la información almacenada.
+Esta aplicación utiliza librerías integradas al entorno, no se van a utilizar librerías de terceros. Concretamente, utiliza paquetes de Java (con la implementación del proyecto Apache Harmony) y algunos paquetes del framework de Android; el uso de estas librerias ahorra tiempo en desarrollo, pruebas y mantenimiento. Con esta aplicación se demuestra que con las herramientas que provee el entorno se puede construir una aplicación más segura. A continuación se explicará el mecanismo interno la aplicación.
+
+En esta aplicación se implementan 2 medidas de seguridad:
+- La autenticación del usuario actual del smartphone: en el capítulo 1 se expuso que la falta de controles físicos es una amenaza a considerar, ahora para contrarrestarla se propone la implementación de una barrera de seguridad. Esta medida consiste en una pantalla de autenticación que impide el acceso a la información sensible a aquellos usuarios que no conocen el código de desbloqueo (posibles intrusos), asumiendo que sólo lo conoce el usuario legítimo del smartphone. Entonces, se exige el ingreso del código de desbloqueo y de esta forma se comprueba si el usuario actual lo conoce; si conoce el código, se efectúa un cambio en la pantalla principal (se muestra un texto manifestando que se puede acceder a contenido exclusivo), si cancela el ingreso del código, se muestra un mensaje emergente que avisa de esta situación. Cuando el usuario ingresa un código incorrecto, no se puede ir de la pantalla de autenticación, si no que va a haber un reintento de ingreso y otro más si lo vuelve a ingresar mal, así sucesivamente hasta que tenga éxito. Concluyendo, con esta medida de seguridad se filtran a los intrusos y se asegura que la persona que está usando la aplicación sea efectivamente el dueño.
+- La encriptación de los datos que se almacenan en la memoria externa del smartphone: se basa en la encriptación de datos sensibles de la aplicación, suponiendo que estos datos se almacenan dentro de un medio de almacenamiento inseguro, como la tarjeta SD que tiene acceso público.
+
+Primer funcionalidad: autenticación del usuario actual.
+
+En cuanto a la implementación de la autenticación del usuario actual, se extrageron partes de código fuente de un proyecto de ejemplo en el sitio de desarrolladores de Android [DEVCOCR]. Esta implementación esta basada en el uso del servicio del sistema llamado Keyguard Manager que se encarga de bloquear o desbloquear la pantalla [KEYGUAR]. Este servicio se lo usa para cumplir 2 tareas: verificar si el dispositivo tiene definido una clave de bloqueo de pantalla (con un PIN, patrón o contraseña) y mostrar la pantalla de autenticación que reclama la clave de bloqueo de pantalla.
+También se utilizó un mecanismo propio de Android, el cual consiste en la espera de un resultado luego de haber invocado una pantalla. Es decir, desde un contexto determinado (por ejemplo, una pantalla principal) se inicia una pantalla nueva (un activity), luego cuando se cierra esta pantalla y se vuelve al contexto original, se recibe un resultado [DEVRESU].
+
+A continuación se explican las líneas de código fuente más significativas para la primer parte.
+
+mKeyguardManager = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
+// Se obtiene una instancia de Keyguard Manager.
+
+if (!mKeyguardManager.isDeviceSecure())
+// Comprueba si el dispositivo tiene habilitado el bloqueo de pantalla.
+
+Intent intent = mKeyguardManager.createConfirmDeviceCredentialIntent(null, null);
+// Devuelve un intent que guarda una invocación a una pantalla nueva. Esta pantalla exige el ingreso de la clave de bloqueo.
+
+startActivityForResult(intent, REQUEST_CODE_CONFIRM_DEVICE_CREDENTIALS);
+// La invocación a startActivityForResult() se realiza cuando el usuario hace click en el botón "Desbloquear".
+// Este línea de código ejecuta el intent que se le pasa como parámetro, mostrando la pantalla que pide la clave de bloqueo (un PIN, un patrón o una contraseña).
+// Se le pasa como parámetro una constante numérica, ésta sirve para identificar y simbolizar la invocación a la pantalla nueva. Luego, cuando se retorna de la pantalla nueva, se recibirá este valor para saber de donde provino el resultado. Dado que se realiza una sola invocación, su uso no va a ser útil para este caso, sin embargo en el futuro se pueden agregar más invocaciones a este método, es mejor dejarlo preparado para promover la escalabilidad de la aplicación.
+
+protected void onActivityResult(int requestCode, int resultCode, Intent data);
+// Este método es invocado cuando el usuario sale de la pantalla de autenticación.
+// Recibe 3 parámetros. El primer parámetro es un número que sirve para saber de dónde provino la invocación, este valor se lo pasó a la invocación de startActivityForResult(). El segundo parámetro es un entero que representa cómo terminó la operación en la pantalla invocada y puede tomar 2 valores: RESULT_OK y RESULT_CANCELED, que representan el éxito y el fracaso, respectivamente. El tercer parámetro es un intent que representa a los datos adicionales, en este caso no se aplica.
+
+if (requestCode == REQUEST_CODE_CONFIRM_DEVICE_CREDENTIALS)
+if (resultCode == RESULT_OK)
+// Estas líneas verifican 2 condiciones:
+// - Si la invocación al método onActivityResult() surgió a partir de la invocación previamente presentada.
+// - Si se ingresó la clave correctamente en la pantalla de autenticación.
+
+Segunda funcionalidad: encriptación de los datos almacenados.
+
+En cuanto a la implementación de la encriptación de datos, se basó en una aplicación explicada en un libro [ANAPPSE] relativo a la seguridad en aplicaciones móviles, el procedimiento básico que se realiza es: primero se inicializan los parámetros del algoritmo de encriptación, luego se ejecuta este algoritmo que devuelve datos binarios como resultado, al final éstos son convertidos a texto. En la desencriptación se realiza el proceso inverso: se convierte el texto cifrado en datos binarios, luego de inicializar los parámetros del algoritmo de desencriptación, se efectúa la desencriptación con estos datos binarios obtenidos. A continuación se va a desglosar este procedimiento elemental.
+
+Como producto de la encriptación se obtienen datos binarios (un vector de bytes), para poder visualizarlos en pantalla no se los puede convertir a texto directamente. Ésto es debido a que en el proceso de encriptación se mezclaron los datos binarios y se pudo haber agregado algún caracter no imprimible en el texto transformado (sin intención). Entonces, para poder convertir datos binarios a caracteres ASCII imprimibles y viceversa, se usó un mecanismo llamado Base64 que está implementado en un paquete dentro del framework de Android [ANDBASE]. Concluyendo, al final del proceso de encriptación, cuando se requiere convertir bytes a caracteres imprimibles, se lo hace usando la codificación Base64; como también en el descrifrado, en donde se convierte un conjunto de caracteres en Base64 a datos binarios, allí se los decodifica usando el formato Base64.
+
+[INICIALIZACION]
+Antes de ejecutar el algoritmo central (ya sea para encriptar o desencriptar), se inicializan los parámetros del proceso de encriptación, estan involucrados algunos conceptos teóricos de criptografía que se van a describir a continuación.
+
+[AES] [KEY]
+Uno de los parámetros a definir es el algoritmo que se va a utilizar, en este caso se va a usar el algoritmo Advanced Encryption Standard (AES). Éste es un algoritmo de encriptación de clave simétrica dado que hay una sola clave para la encriptación y desencriptación. Esta clave es otro parámetro a definir, según el estándar de AES [STANAES], se permiten claves de diferentes tamaños: 128, 192 y 256 bits; en este caso se usó el tamaño máximo, utilizando un texto de 32 caracteres aleatorios (32 bytes = 256 bits). Para obtener caracteres aleatorios se puede recurrir a sitios web dedicados a esta tarea, por ejemplo random.org [RANDORG].
+
+[DATA PADDING]
+Los algoritmos de encriptación simétrica procesan un conjunto de bloques de datos de tamaño fijo. Según el estándar de AES [STANAES], los bloques son de 128 bits. O sea que el tamaño total (en bits) de los datos a ser encriptados tiene que ser múltiplo de 128 bits. Sin embargo, ésto no sucede a menudo, los datos de entrada no suelen acomodarse parfectamente en todos los bloques de datos necesarios, es decir que el último bloque de datos no logra completar la agrupación. Una solución a este problema es completar el último bloque con bits en cero, este método se llama zero padding. Otra solución consiste en contar la cantidad de bits que faltan en el último bloque y completar esos bits con este número; PKCS5 Padding se basa en este mecanismo y es el que se va a usar en esta implementación, basándose en lo que indica la documentación de Java [JAVCIPH]. Para dejar en claro cómo funciona este método se puede mostrar un ejemplo ilustrativo, suponiendo que los datos de entrada constan de 1 sólo bloque de 128 bits que no puede ser completado. Entonces el bloque se manejan de la siguiente forma [PADDAES]:
+Caracteres ASCII             = Hello
+Caracteres en hexadecimal    = 48656C6C6F
+Datos (usando PKCS5 Padding) = 48656C6C6F0B0B0B0B0B0B0B0B0B0B0B
+Se repita 0B (11 en decimal) porque son 11 bytes que faltan completar.
+
+[CBC]
+Otro parámetro a considerar, es la forma de manejar los bloques de texto plano que ingresan al algoritmo central y los bloques encriptados que salen. Para ilustrar este tratamiento que se aplica a los bloques de datos, se muestra el método más simple, llamado Electronic Code Book (ECB):
+
+[GRÁFICO - ECB]
+
+Este método es sencillo y muy vulnerable porque se lo puede atacar con el reconocimiento de patrones. Dado que cada bloque se cifra de forma separada, se pueden obtener bloques cifrados iguales a partir de bloques de texto plano iguales, de acá se deduce que se usa ECB. Entonces el foco de un atacante se centraría en desencriptar un sólo bloque encriptado y no el mensaje entero encriptado.
+No se va a utilizar ECB, si no otro método más fuerte que se llama cipher-block chaining mode (CBC mode). Este método consiste en procesar cada bloque de forma secuencial, generando una dependencia entre cada uno: la entrada de uno depende de la salida del anterior. En detalle, el procedimiento es el siguiente, el primer bloque del texto plano se le aplica la operación lógica XOR junto al vector de inicialización (un parámetro adicional que definirá el usuario), su resultado será tomado como valor de entrada en la encriptación de este bloque; una vez que se encripta el bloque, se lo guarda para tenerlo en cuenta en el procesamiento del siguiente bloque. En el segundo bloque, se aplica la operación lógica XOR entre el resultado de la encriptación del bloque anterior y el segundo bloque del texto plano de entrada; este resultado se encriptará y se guardará su encriptación para procesar el siguiente bloque. Este ciclo se repite sucesivamente hasta terminar con los bloques.
+
+[GRÁFICO - CBC]
+
+[UNION DE VECTORES]
+Durante el proceso de encriptación es importante conservar el vector de inicialización para luego poder desencriptar con este valor, sin este valor es imposible desencriptar. Por eso, se ha adjuntado el vector de inicialización con los datos encriptados. Luego en el proceso de desencriptación, se los separan.
+
+Dado que se expusieron conceptos de encriptación y se dió una idea general del funcionamiento de la encriptación en esta implementación, a continuación se aplicará lo expuesto en el código fuente. Las funciones de encriptación y desencriptación se encuentran en el archivo CryptoUtils.java
+
+En el Cifrado
+
+new SecureRandom().nextBytes(iv);
+// Genera y guarda bytes aleatorios en el vector pasado como parámetro [DEVRAND].
+
+Key secretKey = new SecretKeySpec(key.getBytes("utf-8"), ALGORITHM);
+// Se especifica una clave secreta (encriptación simétrica) en formato binario y el algoritmo con la instanciación de una clase que sirve para especificar parámetros [DEVSKEY].
+// El constructor tiene 2 parámetros: la clave (en binario) y el nombre del algoritmo que se asocia con la clave.
+// Se usa getBytes("utf-8") y no getBytes(), porque si no se define un parámetro, tomará los valores por defecto del sistema. En este caso, se define un formato de codificación de caracteres para eliminar cualquier duda.
+
+AlgorithmParameterSpec ivSpec = new IvParameterSpec(iv);
+// Crea un objeto que contiene un vector de inicialización (Initialization Vector o IV) para el algoritmo de encriptado [DEVPSPE].
+// Esta instanciación es acorde a un modelo de especificación de parámetros de Java dedicado a la criptografía.
+// Se pasa un vector de bytes aleatorios como parámetro.
+
+Cipher cipher = Cipher.getInstance(TRANSFORMATION);
+// La clase Cipher se encarga de realizar el proceso de encriptación y desencriptación.
+// En esta línea de código se obtiene una instancia de la clase Cipher para los parámetros especificados, éstos se definen en un texto (se lo llama transformación) que describe la operación (o conjunto de operaciones) que se van a ejecutar dados unos datos de entrada (texto plano) para producir unos datos de salida (texto codificado) [JAVCIPH]. Este texto tiene un formato "algorithm/mode/padding"; para esta aplicación se usó el texto "AES/CBC/PKCS5Padding" que define el uso del algoritmo de encriptación asimétrica AES, usando el modo CBC para manejar los bloques de datos y el método PKCS5 Padding para completar el último bloque. El método busca un algoritmo que encaje con estos parámetros y retorna su instancia encapsulada dentro de un objeto Cipher [DEVCIPH].
+
+cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivSpec);
+// Inicializa la instancia obtenido anteriormente con los siguientes parámetros: una constante que define la operación criptográfica a ejecutar (encriptación o desencriptación), la clave (dentro de una estructura de datos) y el vector de inicialización.
+
+byte[] outputBytes = cipher.doFinal(txt.getBytes("utf-8"));
+// Ejecuta el proceso de transformación (encriptación o decriptación) con los datos binarios de entrada (contenidos en el buffer que se pasan como parámetro) y retorna el resultado de la transformación (en un nuevo buffer) [DEVCIPH].
+
+byte[] ivAndCipherText = getCombinedArray(iv, outputBytes);
+// La función "getCombinedArray()" une 2 vectores de bytes en uno. En este caso combina los parámetros del algoritmo y el resultado de la encriptación en un vector.
+
+String encryptedText = Base64.encodeToString(ivAndCipherText, Base64.NO_WRAP);
+// Codifica unos datos binarios (un array de bytes) a un texto (un string con caracteres imprimibles) con la codificación Base64.
+// La constante Base64.NO_WRAP determina la exclusión de todos los saltos de línea. Los caracteres devueltos estarán todos en una misma línea.
+
+En el descrifrado
+
+byte[] ivAndCipherText = Base64.decode(encryptedText, Base64.NO_WRAP);
+// Decodifica el texto en formato Base64 a su formato original en binario.
+
+byte[] iv = Arrays.copyOfRange(ivAndCipherText, 0, 16);
+byte[] cipherText = Arrays.copyOfRange(ivAndCipherText, 16, ivAndCipherText.length);
+// Se divide el vector "ivAndCipherText" en 2 partes: una que corresponde al vector de inicialización y otra que corresponde a los datos encriptados.
+
+AlgorithmParameterSpec ivSpec = new IvParameterSpec(iv);
+// Se explicó en el cifrado.
+
+Key secretKey = new SecretKeySpec(key.getBytes("utf-8"), ALGORITHM);
+// Se explicó en el cifrado
+
+Cipher cipher = Cipher.getInstance(TRANSFORMATION);
+// Se explicó en el cifrado
+
+cipher.init(Cipher.DECRYPT_MODE, secretKey, ivSpec);
+// Se explicó en el cifrado.
+
+byte[] outputBytes = cipher.doFinal(cipherText);
+// Se explicó en el cifrado.
+
+String s = new String(outputBytes, "utf-8");
+// Conversión directa de datos bianrios (un vector de bytes) a texto (un string), empleando el formato de codificación de caracteres UTF-8.
+
+[OPCIONAL]
+Account Manager es un registro centralizado para guardar credenciales de los usuarios y sincronizar los datos con el servidor (de ser necesario).
+Credential Storage - Android provides multiple options for storing credentials in the device. The Android developer portal documentation [CS1] recommends the use of AccountManager for service credentials that need to be accessible to multiple applications. The AccountManager class is not suitable for storing access and refresh tokens provided by Box after user authentication. Android also provides the Keychain API and the Keystore as options. The Android developer portal explains the differences between the two in detail [CS2]. Box recommends using the Keystore to store Box access and refresh tokens. If Keystore cannot be used, Box tokens can be encrypted and stored in the application’s Shared Preferences. The encryption key used to encrypt Box tokens should be uniquely generated per app installation. The tokens must be removed on user logout or any other Box account removal action from the application.
+http://titusfx.blogspot.com.ar/2013/04/cuentas-en-android.html
+http://developer.android.com/intl/es/reference/android/accounts/AccountManager.html
+
+[ Pool ]
+- SMS-based Two-Factor Authentication (2FA) by intercepting text messages containing One-Time Passwords (OTPs).
+[ http://developer.android.com/intl/es/training/articles/security-tips.html ]
+[ http://developer.android.com/intl/es/training/articles/keystore.html ] (candidato)
+[ http://developer.android.com/intl/es/guide/topics/security/permissions.html ] (Permisos de Android)
+[ http://www.researchgate.net/publication/274964088_Anti-Theft_Cloud_Apps_for_Android_Operating_System ] [ Paper de Investigación!!! ]
+[ http://research.ijcaonline.org/volume122/number17/pxc3905166.pdf ] [ Malware Detection Techniques in Android ]
+[ http://research.ijcaonline.org/volume120/number5/pxc3903942.pdf ] [ Malicious Applications Detection by Analyzing Manifest Files ]
+[ http://research.ijcaonline.org/volume117/number8/pxc3902985.pdf ] [ Droid Guard: An Approach to Make Android Secure ]
 
 5.7 Posibles políticas para el usuario y la organización
 

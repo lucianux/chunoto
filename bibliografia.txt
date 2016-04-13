@@ -143,6 +143,16 @@ Bibliografía
 [PLAYOVE] "Google Play", https://play.google.com/intl/en_us/about/overview/index.html
 [PLAYABO] "The Google Play Opportunity", https://developer.android.com/distribute/googleplay/about.html
 [PLAYPUB] "Publishing Overview", http://developer.android.com/tools/publishing/publishing_overview.html
+[LINADIC] "¿Realmente Android es un sistema open-source?", http://www.linuxadictos.com/realmente-android-es-un-sistema-open-source.html
+[ABOUOSI] "About the Open Source Initiative", https://opensource.org/about
+[OPENSOU] "The Open Source Definition", https://opensource.org/osd-annotated
+[ANDRLIC] "Licenses", https://source.android.com/source/licenses.html
+[ANDDOWN] "Downloading the Source", http://source.android.com/source/downloading.html
+[AOSPGER] "Gerrit Code Review", https://android-review.googlesource.com/
+[AOSPCOM] "Android Community", http://source.android.com/source/community.html
+[AOSPCOD] "Codelines, Branches, and Releases", http://source.android.com/source/code-lines.html
+[ANDROES] "Un poco de luz sobre si Android es Open Source y gratis", http://www.android.es/un-poco-de-luz-sobre-si-android-es-open-source-y-gratis.html
+[REPOBUG] "Report Bugs", http://source.android.com/source/report-bugs.html
 
 ::::::::::::::::::: Capítulo 3 :::::::::::::::::::
 
@@ -151,7 +161,7 @@ Bibliografía
 [APPSECU] Jeff Six, "Application Security for the Android Platform", O'Reilly, 2012.
 [SECPERM] "System Permissions", http://developer.android.com/guide/topics/security/permissions.html
 [SECOVER] "Security", http://source.android.com/tech/security/index.html
-[SIGNMAN] "Signing Your Applications", http://developer.android.com/tools/publishing/app-signing.html#signing-manually
+[SIGNMAN] "Signing Your Applications", http://developer.android.com/tools/publishing/app-signing.html
 [KEYTOOL] "keytool - Key and Certificate Management Tool", http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/keytool.html
 [QUEESSE] Hugo D. Scolnik, "Qué es la seguridad informática", Paidós, 2014.
 [SISMODE] Andrew Tanenbaum, "Sistemas Operativos Modernos", Pearson Educación, Tercera Edición, 2009.
@@ -228,6 +238,8 @@ Bibliografía
 [YALESEC] "Physical Security for mobile devices", http://its.yale.edu/secure-computing/physical-security/physical-security-mobile-devices
 [NISTSEC] Karen Scarfone, Wayne Jansen, Miles Tracy, "Guide to General Server Security - Recommendations of the National Institute of Standards and Technology", Julio, 2008
 [CERTTHR] Paul Ruggiero, Jon Foote, "Cyber Threats to Mobile Phones", 2011
+[SPOOPHI] "Internet Crime Schemes", http://www.ic3.gov/crimeschemes.aspx#item-14
+[STATPHI] Jason Hong, "The Current State of Phishing Attacks", 2012.
 [SIGBLOG] "Free, Worldwide, Encrypted Phone Calls for iPhone", https://whispersystems.org/blog/signal/
 [CHROSIG] "Signal Desktop", https://whispersystems.org/blog/signal-desktop/
 [USINSIG] "Using Signal", https://github.com/WhisperSystems/Signal-Android/wiki/Using-Signal
@@ -242,6 +254,8 @@ Bibliografía
 
 [UNDEMOB] [http://jpkc.fudan.edu.cn/picture/article/217/57/89/b0edb649422587f87d5e7abbb80c/6a31ac41-b06a-4355-984f-2dbefee6762e.pdf] ["Understanding mobile handheld device use and adoption"]
 [NISTFOR] [http://www.nist.gov/forensics/research/upload/draft-guidelines-on-mobile-device-forensics.pdf]
+[SPOOVER] [http://www.sans.org/reading-room/whitepapers/threats/spoofing-overview-current-spoofing-threats-321]
+[WEBSPOO] [http://www.csl.sri.com/users/ddean/papers/spoofing.pdf]
 [DLUENGO] [http://derecom.com/numeros/pdf/luengo.pdf]
 [NISTGUI] [http://csrc.nist.gov/publications/drafts/800-124r1/draft_sp800-124-rev1.pdf] ["Guidelines for managing and securing mobile devices in the Enterprise"]
 [PHONEAR] [http://www.phonearena.com/news/Heres-how-screen-size-preferences-have-changed-through-the-years-infographic_id71924] [ Infográfico ]
@@ -303,6 +317,7 @@ Bibliografía
 [SYMAITU] [Symantec_annual_internet_threat_report_ITU2015.pdf]
 [OVEMALW] [http://www.scirp.org/journal/PaperDownload.aspx?paperID=50704] ["An Overview of Mobile Malware and Solutions"]
 [QRSECUR] [http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.467.9840&rep=rep1&type=pdf]
+[STATPHI] [http://repository.cmu.edu/cgi/viewcontent.cgi?article=1282&context=hcii&sei-redir=1&referer=https%3A%2F%2Fscholar.google.com.ar%2Fscholar%3Fas_ylo%3D2012%26q%3Dphishing%26hl%3Des%26as_sdt%3D0%2C5#search=%22phishing%22]
 
 ---------------------------------------------------------
 
