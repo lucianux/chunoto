@@ -185,6 +185,15 @@ Bibliografía
 [ANDENCR] "Full Disk Encryption", https://source.android.com/devices/tech/security/encryption/
 [ENCDATA] "Encrypt your data", https://support.google.com/nexus/answer/2844831?hl=en
 [ENCRCEN] "What is full disk encryption in Android Lollipop?", http://www.androidcentral.com/what-full-disk-encryption-android-lollipop
+[WHATZIP] "What Is Zipalign In Android And How To Make Apps Zipaligned [Complete Guide]",
+[CRYPSTA] William Stallings, "Cryptography and network security principles and practice", Quinta edición, 2011.
+[INFOSEC] "Introduction to Cryptography", http://www.infosectoday.com/Articles/Intro_to_Cryptography/Introduction_Encryption_Algorithms.htm
+[JARSINT] "Understanding Signing and Verification", https://docs.oracle.com/javase/tutorial/deployment/jar/intro.html
+[SECINCO] Charles Pfleeger, Shari Pfleeger, Jonathan Margulies, "Security in Computing", Quinta edición, 2015.
+[SOAPPSE] "Application security", http://source.android.com/security/overview/app-security.html
+[JARSIGN] "jarsigner - JAR Signing and Verification Tool", http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/jarsigner.html
+[DEVSIGN] "Signing Your Applications", http://developer.android.com/intl/es/tools/publishing/app-signing.html
+[IBMASEC] Enrique Ortiz, "Understanding security on Android", IBM, 2010.
 
 ::::::::::::::::::: Capítulo 4 :::::::::::::::::::
 
@@ -249,9 +258,20 @@ Bibliografía
 [LIFEHAC] "Send Anywhere Transfers Files Quickly and Securely Across Devices", http://lifehacker.com/send-anywhere-transfers-files-quickly-and-securely-acro-1576763031
 [SENDPRO] "Send Anywhere - Product", https://send-anywhere.com/web/page/product
 [SENDTRA] "What is the difference between a basic file and 24 hour file transfer?", https://send-anywhere.zendesk.com/hc/en-us/articles/210404147-What-is-the-difference-between-a-basic-file-and-24-hour-file-transfer-
+[ANAPPSE] Sheran A. Gunasekera, "Android Apps Security", Apress, 2012.
+[ANDBASE] "Base64", http://developer.android.com/reference/android/util/Base64.html
+[STANAES] Federal Information Processing Standards Publications (FIPS PUBS), "FIPS PUB 197 - Advanced Encryption Standard (AES)", NIST, Noviembre, 2001.
+[RANDORG] "Random String Generator", https://www.random.org/strings/
+[JAVCIPH] "Cipher", https://docs.oracle.com/javase/7/docs/api/javax/crypto/Cipher.html
+[PADDAES] "Using Padding in Encryption", http://www.di-mgt.com.au/cryptopad.html
+[DEVRAND] "SecureRandom", http://developer.android.com/reference/java/security/SecureRandom.html
+[DEVSKEY] "SecretKeySpec", http://developer.android.com/reference/javax/crypto/spec/SecretKeySpec.html
+[DEVPSPE] "IvParameterSpec", http://developer.android.com/reference/javax/crypto/spec/IvParameterSpec.html
+[DEVCIPH] "Cipher", http://developer.android.com/reference/javax/crypto/Cipher.html
 
 ----------------------------------  Descargas ------------------------------------------
 
+[STANAES] [http://csrc.nist.gov/publications/fips/fips197/fips-197.pdf]
 [UNDEMOB] [http://jpkc.fudan.edu.cn/picture/article/217/57/89/b0edb649422587f87d5e7abbb80c/6a31ac41-b06a-4355-984f-2dbefee6762e.pdf] ["Understanding mobile handheld device use and adoption"]
 [NISTFOR] [http://www.nist.gov/forensics/research/upload/draft-guidelines-on-mobile-device-forensics.pdf]
 [SPOOVER] [http://www.sans.org/reading-room/whitepapers/threats/spoofing-overview-current-spoofing-threats-321]
