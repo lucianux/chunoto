@@ -1,0 +1,41 @@
+Diapositivas
+============
+
+****** Dispositivos móviles { BREVE, MUY BREVE }
+
+- Definición
+
+- Clasificación
+
+- Smartphones
+
+****** Seguridad en smartphones
+
++ Vectores de ataque
+
++ Vulnerabilidades
+
+- Amenaza
+
+****** Introducción a Android
+
+- Breve historia
+
++ Internals: Arquitectura
+
+(- Ambiente de desarrollo)
+
+****** Seguridad en Android
+
++ Modelo de seguridad
+
++ Permisos
+
+[+ Firma digital?]
+
+****** Pruebas en Android
+
+
+
+****** Medidas de Seguridad
+
