@@ -28,6 +28,10 @@ $ git add . // Agrega todos los archivo nuevos y modificados
 
 $ git commit -m "comentario de commit" // Publica los cambios al repositorio local
 
+## Remote commands
+
+$ git pull // Actualiza el snapshot local
+
 $ git push // Publica los cambios al repositorio remoto
 
 ## Comandos útiles
