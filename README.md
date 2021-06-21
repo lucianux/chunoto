@@ -8,6 +8,8 @@ $ git help // Sirve para mostrar como se usa un comando, por ejemplo: $ git help
 
 $ git status // Sirve para ver el estado de los archivos que fueron modificados o agregados
 
+$ git log --all --decorate --oneline --graph
+
 $ ssh-keygen -t rsa -C "lucianux@gmail.com"
 // Sirve para generar una clave ssh para establecer una conexion segura.
 // Pedirá un path para donde se va a guardar el archivo que contiene la clave (usamos la que viene por defecto -> presionar enter).
