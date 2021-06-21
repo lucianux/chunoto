@@ -1,6 +1,6 @@
 Binder [ ES VIEJO, DADO QUE SE HICIERON CAMBIOS Y SE AGREGARON COSAS. PERO SE PRESERVA COMO UN ARCHIVO ]
 ------
-
+  
 Como cualquier otro sistema basado en Unix, los procesos en Android tienen espacio de direcciones separadas y un proceso no puede acceder directamente a la memoria de otro proceso (esto se llama aislación de procesos). Generalmente, esto es una buena característica por razones de estabilidad y seguridad, la modificación de múltiples procesos en la misma área de memoria puede ser catastrófico. Sin embargo, si un proceso quiere ofrecer algún servicio/s útil a otros procesos, necesita proveer algún mecanismo que permita a otros procesos descubrir e interactuar con esos servicios. Este mecanismo es el IPC.
 [ANDSECINT]
 Hay varias formas de implementar este mecanismo de IPC, entre ellas estan: archivos, señales, sockets, pipes, semáforos, memoria compartida, colas de mensajes, etc. Mientras Android usa alguna de ellas (como los sockets locales), no tiene soporte para otras (los mecanismos IPCs de System V como semáforos, segmentos de memoria compartida y colas de mensajes).
