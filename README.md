@@ -28,6 +28,8 @@ $ git add . // Agrega todos los archivo nuevos y modificados
 
 $ git commit -m "comentario de commit" // Publica los cambios al repositorio local
 
+$ git commit -a -m "comentario de commit" // Agrega a stage y hace un commit, a la vez. Sólo de los archivos trackeados
+
 $ git push // Publica los cambios al repositorio remoto
 
 ## Comandos útiles
