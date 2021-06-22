@@ -1,6 +1,6 @@
 # Analizando el nivel de seguridad del entorno de Android
 
-## Comandos de preparacion
+## Setup
 
 $ git --version // Sirve para conocer las versiones
 
@@ -8,7 +8,9 @@ $ git help // Sirve para mostrar como se usa un comando, por ejemplo: $ git help
 
 $ git status // Sirve para ver el estado de los archivos que fueron modificados o agregados
 
-$ git log --all --decorate --oneline --graph
+$ git config --local user.name "lucianux"
+
+$ git config --local user.email lucianux@gmail.com
 
 $ ssh-keygen -t rsa -C "lucianux@gmail.com"
 // Sirve para generar una clave ssh para establecer una conexion segura.
@@ -17,6 +19,10 @@ $ ssh-keygen -t rsa -C "lucianux@gmail.com"
 // Ahora dentro del sitio de GitHub en "Settings" > "SSH Keys" > "Add SSH key", debemos añadir el contenido del fichero id_rsa.pub generado en ~/.ssh/
 // $ ssh git@github.com  ... Para probar si funciona, tendría que devolver algo como así: "Hi lucianux! You've successfully authenticated, but GitHub does not provide shell access."
 // Si devuelve lo último mezclado o no con algunos errores, entonces la prueba fue exitosa
+
+## Ver el arbol de commits
+
+$ git log --all --decorate --oneline --graph
 
 ## Comandos para iniciar un nuevo proyecto
 
@@ -27,6 +33,8 @@ $ git clone git@github.com:lucianux/workspace.git
 $ git add . // Agrega todos los archivo nuevos y modificados
 
 $ git commit -m "comentario de commit" // Publica los cambios al repositorio local
+
+$ git commit -a -m "comentario de commit" // Agrega a stage y hace un commit, a la vez. Sólo de los archivos trackeados
 
 ## Remote commands
 
